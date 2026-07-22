@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Katalog Toko</title>
+<style>
+  :root{
+    --bg: #1c1c22;
+    --card-bg: #26262e;
+    --accent: #f2994a;
+    --text-light: #f5f5f5;
+    --text-muted: #a0a0aa;
+    --price-old: #6b6b75;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text-light);
+    min-height: 100vh;
+  }
+
+  .container{
+    max-width: 900px;
+    margin: 0 auto;
+    padding-bottom: 60px;
+  }
+
+  /* BANNER */
+  .banner{
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    border-radius: 0 0 20px 20px;
+  }
+  .banner img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* PROFILE */
+  .profile{
+    text-align: center;
+    margin-top: -55px;
+    padding: 0 16px;
+  }
+  .profile .avatar{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid var(--bg);
+    overflow: hidden;
+    margin: 0 auto 14px;
+    background: var(--card-bg);
+  }
+  .profile .avatar img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .profile .username{
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .profile .tagline{
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  /* GRID */
+  .grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    padding: 28px 16px 0;
+  }
+  .card{
+    background: var(--card-bg);
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--card-stroke, #4fd1c5);
+    box-shadow: 0 6px 0 0 var(--card-stroke, #4fd1c5);
+  }
+  .card .cover{
+    width: 100%;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+  }
+  .card .cover img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .card .info{
+    padding: 10px;
+  }
+  .card .title{
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 780px){
+    .grid{
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+  }
+
+  @media (max-width: 560px){
+    .grid{
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+  }
+
+  @media (max-width: 360px){
+    .grid{
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+</style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- BANNER -->
+    <div class="banner">
+      <img src="images/banner.jpg" alt="Banner toko">
+    </div>
+
+    <!-- PROFILE -->
+    <div class="profile">
+      <div class="avatar">
+        <img src="images/avatar.jpg" alt="Foto profil toko">
+      </div>
+      <div class="username">@namatoko</div>
+      <div class="tagline">Tagline toko kamu di sini</div>
+    </div>
+
+    <!-- PRODUCT GRID -->
+    <div class="grid">
+
+      <div class="card" style="--card-stroke: #4fd1c5;">
+        <div class="cover">
+          <img src="images/produk-1.jpg" alt="Judul Produk 1">
+        </div>
+        <div class="info">
+          <div class="title">Judul Produk 1 yang Cukup Panjang di Sini</div>
+        </div>
+      </div>
+
+      <div class="card" style="--card-stroke: #f6ad55;">
+        <div class="cover">
+          <img src="images/produk-2.jpg" alt="Judul Produk 2">
+        </div>
+        <div class="info">
+          <div class="title">Judul Produk 2 yang Cukup Panjang di Sini</div>
+        </div>
+      </div>
+
+      <div class="card" style="--card-stroke: #f56565;">
+        <div class="cover">
+          <img src="images/produk-3.jpg" alt="Judul Produk 3">
+        </div>
+        <div class="info">
+          <div class="title">Judul Produk 3 yang Cukup Panjang di Sini</div>
+        </div>
+      </div>
+
+      <div class="card" style="--card-stroke: #63b3ed;">
+        <div class="cover">
+          <img src="images/produk-4.jpg" alt="Judul Produk 4">
+        </div>
+        <div class="info">
+          <div class="title">Judul Produk 4 yang Cukup Panjang di Sini</div>
+        </div>
+      </div>
+
+      <div class="card" style="--card-stroke: #9f7aea;">
+        <div class="cover">
+          <img src="images/produk-5.jpg" alt="Judul Produk 5">
+        </div>
+        <div class="info">
+          <div class="title">Judul Produk 5 yang Cukup Panjang di Sini</div>
+        </div>
+      </div>
+
+      <div class="card" style="--card-stroke: #48bb78;">
+        <div class="cover">
+          <img src="images/produk-6.jpg" alt="Judul Produk 6">
+        </div>
+        <div class="info">
+          <div class="title">Judul Produk 6 yang Cukup Panjang di Sini</div>
+        </div>
+      </div>
+
+      <div class="card" style="--card-stroke: #ed64a6;">
+        <div class="cover">
+          <img src="images/produk-7.jpg" alt="Judul Produk 7">
+        </div>
+        <div class="info">
+          <div class="title">Judul Produk 7 yang Cukup Panjang di Sini</div>
+        </div>
+      </div>
+
+      <div class="card" style="--card-stroke: #ecc94b;">
+        <div class="cover">
+          <img src="images/produk-8.jpg" alt="Judul Produk 8">
+        </div>
+        <div class="info">
+          <div class="title">Judul Produk 8 yang Cukup Panjang di Sini</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
