@@ -75,6 +75,16 @@
       link: '#bookshelf', action: 'Return to the project bookshelf'
     },
     {
+      id: 'controls', title: 'Control & Measurement Labs', edition: 'EE370L · Spring 2025 · Partner laboratory work',
+      subtitle: 'Strain gauges, frequency response, and P/PID motor control',
+      story: 'In four partner-based instrumentation and control laboratories, we connected models to bench measurements. We calibrated a strain-gauge amplifier and examined bending and vibration of a metal strip, measured RLC and motor frequency responses, then designed proportional and PID motor-speed controllers using MATLAB and physical controller boards. The valuable part was learning where theoretical predictions and measured hardware behavior disagreed.',
+      challenge: 'Measure small strain signals and dynamic responses while implementing stable feedback control on real equipment.',
+      approach: 'Use a strain-gauge half-bridge and calibrated amplifier, an oscilloscope and function generator for frequency sweeps, MATLAB step-response simulations, and op-amp controller circuits on a DC motor board. Compare rise time, settling time, phase response, and overshoot between models and measurements.',
+      tools: 'MATLAB, P/PID feedback, strain gauges, Wheatstone bridge, RLC frequency response, oscilloscope, function generator, DC motor controller board.',
+      outcome: 'The strain experiment characterized vibration near 49.3 Hz. Increasing proportional gain shortened measured rise and settling times, but P-control experiments showed roughly tenfold differences from the simulation; some PID measurements differed by over 50%. These discrepancies motivated stronger component and setup verification.',
+      link: '#bookshelf', action: 'Explore the other project books'
+    },
+    {
       id: 'iverify', title: 'IVerify', edition: 'Capstone · 2026 · Health technology',
       subtitle: 'A non-invasive IV occlusion detection concept',
       story: 'As project lead and systems integrator on a four-person senior-design team, I coordinated development of a non-invasive clip-on concept for gravity-fed IV tubing. The system applies repeatable mechanical preload and senses the tube reaction force as an indirect indicator of restrictions. Analog filtering and threshold logic feed microcontroller supervision, translating measurements into understandable status indications.',
@@ -287,6 +297,16 @@
         openTimer = null;
       }, 1120);
       pullTimer = null;
+    },
+    {
+      id: 'powershell', title: 'PowerShell Systems & Concurrency', edition: 'CS646 · Fall 2026 · Operating systems coursework',
+      subtitle: 'Inventory, safe CSV processing, and synchronized parallel tasks',
+      story: 'Across three operating-systems labs, I developed PowerShell scripts inside a Linux course container. The first inventoried the operating system and visible CPU, memory, storage, network interfaces, and packages. The second safely sorted complete CSV records without overwriting the source. The third explored how concurrent web requests improve throughput while creating new risks around shared files and ordering.',
+      challenge: 'Build scripts that behave correctly in a container, preserve input integrity, and safely coordinate shared resources.',
+      approach: 'Use Linux system interfaces with PowerShell for inventory; validate CSV fields and rows, compare SHA256 input hashes and append audit logs; then run 102 requests across three services with a throttle limit of 10, synchronization tests, and thread/process observations.',
+      tools: 'PowerShell, Debian Linux, containers, CSV processing, SHA256, ForEach-Object -Parallel, file locking, strace, ps.',
+      outcome: 'A six-row CSV test preserved the source, and larger sorting tests included 300,000 records. In one concurrency comparison, 102 requests took 8.69 s serially versus 1.68 s concurrently; locking also corrected a shared-counter race from 2 to the expected 100.',
+      link: '#bookshelf', action: 'Explore the other project books'
     }, reduceMotion.matches ? 0 : 210);
   }
 

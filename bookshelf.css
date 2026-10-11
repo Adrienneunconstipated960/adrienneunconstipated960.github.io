@@ -592,3 +592,7 @@ html.restoring-shelf-position .shelf-books{scroll-behavior:auto!important}
   .shelf-books .book-spine:nth-child(4n){height:211px}
   .shelf-books .book-spine-title{font-size:15px}
 }
+
+/* New source-backed engineering volumes, complementary to existing jackets. */
+.book-bronze{--spine:#795531;--spine-border:#52391f}
+.book-pine{--spine:#355d51;--spine-border:#234439}
