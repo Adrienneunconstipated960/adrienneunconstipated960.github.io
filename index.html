@@ -118,45 +118,73 @@
         <div class="bookshelf-heading section-heading"><div class="space-orbiter space-orbiter-shelf" aria-hidden="true"><span class="space-orbiter-body"></span><span class="space-orbiter-ring"></span><span class="space-orbiter-star"></span></div>
           <p class="eyebrow">AN ENGINEER'S LITTLE LIBRARY</p>
           <h2 id="bookshelf-heading">Every project has <em>a story.</em></h2>
-          <p>Choose a book spine to explore fourteen projects spanning robotics, embedded systems, digital design, measurements, and lighting.</p>
+          <p>Explore fourteen projects organized into three collections. Choose a book to open its engineering story.</p>
         </div>
-        <div class="bookshelf-cabinet" aria-label="Interactive bookshelf with fourteen engineering project books">
-          <div class="shelf-level" id="shelf-collection-one">
+        <div class="bookshelf-cabinet" aria-label="Interactive bookshelf with fourteen engineering project books organized into three collections">
+          <div class="shelf-level shelf-space" id="shelf-collection-one">
             <div class="shelf-label-row">
-              <h3>Volume I <span>Research &amp; engineering</span></h3>
-              <button type="button" class="shelf-collection-link" data-collection-target="shelf-collection-two" aria-controls="shelf-collection-two">Next collection <span aria-hidden="true">→</span><span class="collection-star-trail" aria-hidden="true"><i></i><i></i><i></i></span></button>
+              <h3>Volume I <span>Space &amp; Robotics</span></h3>
+              <div class="shelf-collection-actions"><button type="button" class="shelf-collection-link" data-collection-target="shelf-collection-two" aria-controls="shelf-collection-two">Next collection <span aria-hidden="true">→</span><span class="collection-star-trail" aria-hidden="true"><i></i><i></i><i></i></span></button></div>
             </div>
-            <p class="shelf-swipe-hint">Swipe sideways to browse the books <span aria-hidden="true">↔</span></p>
-            <div class="shelf-books" role="group" aria-label="Featured engineering projects, swipe horizontally to browse">
-<button class="book-spine book-rose" type="button" data-open-book="nasa" aria-label="Open NASA Robotics project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">NASA Robotics</span><span class="book-spine-year">2026</span></button>
-<button class="book-spine book-ink" type="button" data-open-book="ur3e" aria-label="Open UR3e robot analysis project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">UR3e Analysis</span><span class="book-spine-year">2026</span></button>
-<button class="book-spine book-sienna" type="button" data-open-book="iverify" aria-label="Open IVerify project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">IVerify</span><span class="book-spine-year">2026</span></button>
-<button class="book-spine book-indigo" type="button" data-open-book="thermal" aria-label="Open Thermal Logger project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">Thermal Logger</span><span class="book-spine-year">2025–26</span></button>
-<button class="book-spine book-sage" type="button" data-open-book="fingerprint" aria-label="Open STM32 Security project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">STM32 Security</span><span class="book-spine-year">2025</span></button>
-<button class="book-spine book-gold" type="button" data-open-book="vna" aria-label="Open Virtual VNA project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">Virtual VNA</span><span class="book-spine-year">2025</span></button>
-<button class="book-spine book-slate" type="button" data-open-book="hall" aria-label="Open semiconductor Hall measurement lab book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">Wafer &amp; Hall</span><span class="book-spine-year">2025</span></button>
+            <p class="shelf-collection-description">Robot motion, kinematics, and NASA systems research</p>
+            <p class="shelf-swipe-hint">Swipe horizontally to explore more books <span aria-hidden="true">↔</span></p>
+            <div class="shelf-books" role="group" aria-label="Space & Robotics project books, scroll horizontally to browse">
+<button class="book-spine book-space" type="button" data-open-book="nasa" aria-label="Open NASA Robotics project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">NASA Robotics</span><span class="book-spine-year">2026</span></button>
+<button class="book-spine book-space" type="button" data-open-book="ur3e" aria-label="Open UR3e robot analysis project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">UR3e Analysis</span><span class="book-spine-year">2026</span></button>
+<button class="book-spine book-space" type="button" data-open-book="leg" aria-label="Open 3-Link Sim project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">3-Link Sim</span><span class="book-spine-year">GitHub</span></button>
             </div>
             <div class="shelf-plank" aria-hidden="true"></div>
-          </div>
-          <div class="shelf-level" id="shelf-collection-two">
-            <div class="shelf-label-row">
-              <h3>Volume II <span>Code &amp; experimentation</span></h3>
-              <button type="button" class="shelf-collection-link" data-collection-target="shelf-collection-one" aria-controls="shelf-collection-one">Previous collection <span aria-hidden="true">↑</span><span class="collection-star-trail" aria-hidden="true"><i></i><i></i><i></i></span></button>
+            <div class="shelf-preview" data-shelf-preview aria-live="polite" aria-atomic="true">
+              <span class="shelf-preview-label">ON THIS SHELF</span>
+              <strong data-preview-title>Choose a project book</strong>
+              <span data-preview-text>Hover, focus, or tap a book to learn what it explores.</span>
             </div>
-            <p class="shelf-swipe-hint">Swipe sideways to browse the books <span aria-hidden="true">↔</span></p>
-            <div class="shelf-books" role="group" aria-label="Coding, simulation and lighting projects, swipe horizontally to browse">
-<button class="book-spine book-plum" type="button" data-open-book="leg" aria-label="Open 3-Link Sim project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">3-Link Sim</span><span class="book-spine-year">GitHub</span></button>
-<button class="book-spine book-copper" type="button" data-open-book="motor" aria-label="Open STM32 motor control project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">STM32 Motor</span><span class="book-spine-year">2025</span></button>
-<button class="book-spine book-jade" type="button" data-open-book="vhdl" aria-label="Open VHDL digital circuits project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">VHDL Logic</span><span class="book-spine-year">2025</span></button>
-<button class="book-spine book-orchid" type="button" data-open-book="alu" aria-label="Open pipelined VHDL ALU project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">Pipelined ALU</span><span class="book-spine-year">2025</span></button>
-<button class="book-spine book-wine" type="button" data-open-book="prodriver" aria-label="Open ProDriver project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">ProDriver</span><span class="book-spine-year">GitHub</span></button>
-<button class="book-spine book-teal" type="button" data-open-book="huemotion" aria-label="Open HueMotion project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">HueMotion</span><span class="book-spine-year">GitHub</span></button>
-<button class="book-spine book-lavender" type="button" data-open-book="dmx" aria-label="Open DMX Controller project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">DMX Controller</span><span class="book-spine-year">GitHub</span></button>
+          </div>
+          <div class="shelf-level shelf-digital" id="shelf-collection-two">
+            <div class="shelf-label-row">
+              <h3>Volume II <span>Embedded &amp; Digital Systems</span></h3>
+              <div class="shelf-collection-actions"><button type="button" class="shelf-collection-link" data-collection-target="shelf-collection-one" aria-controls="shelf-collection-one">Previous collection <span aria-hidden="true">←</span><span class="collection-star-trail" aria-hidden="true"><i></i><i></i><i></i></span></button><button type="button" class="shelf-collection-link" data-collection-target="shelf-collection-three" aria-controls="shelf-collection-three">Next collection <span aria-hidden="true">→</span><span class="collection-star-trail" aria-hidden="true"><i></i><i></i><i></i></span></button></div>
+            </div>
+            <p class="shelf-collection-description">Embedded control, firmware, and digital hardware</p>
+            <p class="shelf-swipe-hint">Swipe horizontally to explore more books <span aria-hidden="true">↔</span></p>
+            <div class="shelf-books" role="group" aria-label="Embedded & Digital Systems project books, scroll horizontally to browse">
+<button class="book-spine book-digital" type="button" data-open-book="fingerprint" aria-label="Open STM32 Security project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">STM32 Security</span><span class="book-spine-year">2025</span></button>
+<button class="book-spine book-digital" type="button" data-open-book="motor" aria-label="Open STM32 motor control project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">STM32 Motor</span><span class="book-spine-year">2025</span></button>
+<button class="book-spine book-digital" type="button" data-open-book="vhdl" aria-label="Open VHDL digital circuits project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">VHDL Logic</span><span class="book-spine-year">2025</span></button>
+<button class="book-spine book-digital" type="button" data-open-book="alu" aria-label="Open pipelined VHDL ALU project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">Pipelined ALU</span><span class="book-spine-year">2025</span></button>
+<button class="book-spine book-digital" type="button" data-open-book="dmx" aria-label="Open DMX Controller project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">DMX Controller</span><span class="book-spine-year">GitHub</span></button>
             </div>
             <div class="shelf-plank" aria-hidden="true"></div>
+            <div class="shelf-preview" data-shelf-preview aria-live="polite" aria-atomic="true">
+              <span class="shelf-preview-label">ON THIS SHELF</span>
+              <strong data-preview-title>Choose a project book</strong>
+              <span data-preview-text>Hover, focus, or tap a book to learn what it explores.</span>
+            </div>
+          </div>
+          <div class="shelf-level shelf-sensing" id="shelf-collection-three">
+            <div class="shelf-label-row">
+              <h3>Volume III <span>Sensing &amp; Engineering Tools</span></h3>
+              <div class="shelf-collection-actions"><button type="button" class="shelf-collection-link" data-collection-target="shelf-collection-two" aria-controls="shelf-collection-two">Previous collection <span aria-hidden="true">←</span><span class="collection-star-trail" aria-hidden="true"><i></i><i></i><i></i></span></button></div>
+            </div>
+            <p class="shelf-collection-description">Measurements, interfaces, sensing, and test automation</p>
+            <p class="shelf-swipe-hint">Swipe horizontally to explore more books <span aria-hidden="true">↔</span></p>
+            <div class="shelf-books" role="group" aria-label="Sensing & Engineering Tools project books, scroll horizontally to browse">
+<button class="book-spine book-sensing" type="button" data-open-book="iverify" aria-label="Open IVerify project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">IVerify</span><span class="book-spine-year">2026</span></button>
+<button class="book-spine book-sensing" type="button" data-open-book="thermal" aria-label="Open Thermal Logger project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">Thermal Logger</span><span class="book-spine-year">2025–26</span></button>
+<button class="book-spine book-sensing" type="button" data-open-book="vna" aria-label="Open Virtual VNA project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">Virtual VNA</span><span class="book-spine-year">2025</span></button>
+<button class="book-spine book-sensing" type="button" data-open-book="hall" aria-label="Open semiconductor Hall measurement lab book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">Wafer &amp; Hall</span><span class="book-spine-year">2025</span></button>
+<button class="book-spine book-sensing" type="button" data-open-book="prodriver" aria-label="Open ProDriver project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">ProDriver</span><span class="book-spine-year">GitHub</span></button>
+<button class="book-spine book-sensing" type="button" data-open-book="huemotion" aria-label="Open HueMotion project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">HueMotion</span><span class="book-spine-year">GitHub</span></button>
+            </div>
+            <div class="shelf-plank" aria-hidden="true"></div>
+            <div class="shelf-preview" data-shelf-preview aria-live="polite" aria-atomic="true">
+              <span class="shelf-preview-label">ON THIS SHELF</span>
+              <strong data-preview-title>Choose a project book</strong>
+              <span data-preview-text>Hover, focus, or tap a book to learn what it explores.</span>
+            </div>
           </div>
         </div>
-        <p class="bookshelf-help">Tap a spine to open a project. On phones, turn from the story to the engineering details. Return to the shelf at any time.</p>
+        <p class="bookshelf-help">Each book opens to its project story. On mobile, swipe across shelves and turn one page at a time.</p>
       </div>
     </section>
 

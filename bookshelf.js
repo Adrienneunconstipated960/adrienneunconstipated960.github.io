@@ -25,24 +25,14 @@
       link: '#robot-lab', action: 'Explore the illustrative robot lab'
     },
     {
-      id: 'iverify', title: 'IVerify', edition: 'Capstone · 2026 · Health technology',
-      subtitle: 'A non-invasive IV occlusion detection concept',
-      story: 'As project lead and systems integrator on a four-person senior-design team, I coordinated development of a non-invasive clip-on concept for gravity-fed IV tubing. The system applies repeatable mechanical preload and senses the tube reaction force as an indirect indicator of restrictions. Analog filtering and threshold logic feed microcontroller supervision, translating measurements into understandable status indications.',
-      challenge: 'Detect possible downstream flow restrictions without cutting, puncturing, or entering the sterile fluid pathway.',
-      approach: 'Integrate a clamp, force sensor, analog front end, threshold detection, microcontroller state logic, and a visual interface. The product concept defined normal, partial-restriction, and occlusion states.',
-      tools: 'Mechanical sensing, signal conditioning, threshold logic, embedded systems, risk analysis, verification planning.',
-      outcome: 'A bench-level, non-clinical proof of concept using two indicator LEDs. The proposed full three-color interface and clinical performance still required further testing.',
-      link: '#work', action: 'Return to the project summary'
-    },
-    {
-      id: 'thermal', title: 'Thermal Controller & Logger', edition: '2025–2026 · Test automation',
-      subtitle: 'Making temperature measurements easier to trust',
-      story: 'I built tools to take repetitive engineering thermal tests and make them easier to monitor, compare, and document. The interesting part was not just collecting numbers, but helping engineers recognize stable conditions and produce repeatable reports.',
-      challenge: 'Manual monitoring and inconsistent reporting slow down thermal validation.',
-      approach: 'Combine Python data collection and live visualization with Arduino ambient control, stability tracking, and structured exports.',
-      tools: 'Python, Arduino, Tkinter, temperature instrumentation, CSV and Excel.',
-      outcome: 'A more traceable and repeatable thermal-testing workflow.',
-      link: 'https://github.com/kalarcon775/Thermal-Logger', action: 'View Thermal Logger on GitHub'
+      id: 'leg', title: '3-Link Leg Simulation', edition: 'GitHub · Robotics & controls',
+      subtitle: 'Exploring how connected joints move together',
+      story: 'I modeled the hip, knee, and ankle as a connected three-link human leg. The model translates joint motion into foot position and velocity while examining the torques involved in linked-body motion.',
+      challenge: 'Calculate the position, velocity, and dynamic response of a three-joint biomechanical system.',
+      approach: 'Use a MATLAB S-function within Simulink, Jacobian kinematics, and Newton–Euler dynamics to compute joint torques.',
+      tools: 'MATLAB, Simulink, S-functions, Jacobians, Newton–Euler dynamics.',
+      outcome: 'An Honors Contract modeling project that strengthened my interest in future prosthetics and exoskeleton research; no assistive device was built.',
+      link: 'https://github.com/kalarcon775/3link-sim', action: 'Open the 3-Link Sim repository'
     },
     {
       id: 'fingerprint', title: 'Fingerprint Authentication', edition: '2025 · Embedded systems',
@@ -53,36 +43,6 @@
       tools: 'STM32F767ZI, embedded C, UART packet protocol, sensor integration, GPIO.',
       outcome: 'A group-built demonstration of enrollment, template matching, and embedded status reporting.',
       link: '#work', action: 'Return to the project summary'
-    },
-    {
-      id: 'vna', title: 'Virtual Network Analyzer', edition: '2025 · RF measurements',
-      subtitle: 'Turning RF measurements into readable engineering data',
-      story: 'For this measurement project, I used software to connect calibration, data acquisition, and visualization. I liked that even careful RF work could become easier to examine and communicate through automation.',
-      challenge: 'Automate two-port RF measurements while accounting for calibration errors.',
-      approach: 'Control the measurement workflow in MATLAB, use 12-term SOLT calibration, and visualize S-parameters.',
-      tools: 'MATLAB, two-port VNA, RF calibration, S-parameter visualization.',
-      outcome: 'An automated analysis workflow covering 100 MHz to 6 GHz.',
-      link: '#work', action: 'Return to the project summary'
-    },
-    {
-      id: 'hall', title: 'Hall-Effect Wafer Measurements', edition: 'EE421 · December 2025 · Semiconductor lab',
-      subtitle: 'Characterizing charge carriers in a semiconductor wafer',
-      story: 'I used a semiconductor measurement setup to investigate the electrical transport properties of a wafer. The experiment combined the Hall effect with Van der Pauw measurements, connecting an applied magnetic field and measured voltage to resistivity, carrier type, concentration, and mobility. It also taught me how easily physical contacts and sample setup can influence what seems like a simple number.',
-      challenge: 'Determine wafer resistivity and Hall transport characteristics while checking the validity of the contacts and measurement setup.',
-      approach: 'Position the sample on a four-contact Van der Pauw stage, check contact behavior, and collect Hall and resistivity data with the M91 FastHall controller and MeasureLINK software.',
-      tools: 'Hall effect, Van der Pauw method, M91 FastHall, electromagnet, MeasureLINK, semiconductor characterization.',
-      outcome: 'Hands-on wafer characterization. The measured values had substantial uncertainty and unexpected trends, so the results were treated as a measurement-quality lesson rather than a definitive material specification.',
-      link: '#bookshelf', action: 'Return to the project bookshelf'
-    },
-    {
-      id: 'leg', title: '3-Link Leg Simulation', edition: 'GitHub · Robotics & controls',
-      subtitle: 'Exploring how connected joints move together',
-      story: 'I modeled the hip, knee, and ankle as a connected three-link human leg. The model translates joint motion into foot position and velocity while examining the torques involved in linked-body motion.',
-      challenge: 'Calculate the position, velocity, and dynamic response of a three-joint biomechanical system.',
-      approach: 'Use a MATLAB S-function within Simulink, Jacobian kinematics, and Newton–Euler dynamics to compute joint torques.',
-      tools: 'MATLAB, Simulink, S-functions, Jacobians, Newton–Euler dynamics.',
-      outcome: 'An Honors Contract modeling project that strengthened my interest in future prosthetics and exoskeleton research; no assistive device was built.',
-      link: 'https://github.com/kalarcon775/3link-sim', action: 'Open the 3-Link Sim repository'
     },
     {
       id: 'motor', title: 'STM32 Motor Timing & PWM', edition: 'Fall 2025 · Embedded control coursework',
@@ -115,6 +75,56 @@
       link: '#bookshelf', action: 'Return to the project bookshelf'
     },
     {
+      id: 'dmx', title: 'DMX Controller', edition: 'GitHub · Lighting control',
+      subtitle: 'A browser interface connected to physical lights',
+      story: 'This project brings a familiar browser interface to a hardware lighting-control problem. Choosing a scene or brightness setting produces commands for an Arduino-based DMX system.',
+      challenge: 'Translate simple user controls into real output for RGBW lighting hardware.',
+      approach: 'Use Flask to receive browser inputs and send serial commands to Arduino for DMX output.',
+      tools: 'Python, Flask, Arduino, serial communication, DMX.',
+      outcome: 'A direct connection between software controls and physical lighting response.',
+      link: 'https://github.com/kalarcon775/DMX-Controller', action: 'Open the DMX Controller repository'
+    },
+    {
+      id: 'iverify', title: 'IVerify', edition: 'Capstone · 2026 · Health technology',
+      subtitle: 'A non-invasive IV occlusion detection concept',
+      story: 'As project lead and systems integrator on a four-person senior-design team, I coordinated development of a non-invasive clip-on concept for gravity-fed IV tubing. The system applies repeatable mechanical preload and senses the tube reaction force as an indirect indicator of restrictions. Analog filtering and threshold logic feed microcontroller supervision, translating measurements into understandable status indications.',
+      challenge: 'Detect possible downstream flow restrictions without cutting, puncturing, or entering the sterile fluid pathway.',
+      approach: 'Integrate a clamp, force sensor, analog front end, threshold detection, microcontroller state logic, and a visual interface. The product concept defined normal, partial-restriction, and occlusion states.',
+      tools: 'Mechanical sensing, signal conditioning, threshold logic, embedded systems, risk analysis, verification planning.',
+      outcome: 'A bench-level, non-clinical proof of concept using two indicator LEDs. The proposed full three-color interface and clinical performance still required further testing.',
+      link: '#work', action: 'Return to the project summary'
+    },
+    {
+      id: 'thermal', title: 'Thermal Controller & Logger', edition: '2025–2026 · Test automation',
+      subtitle: 'Making temperature measurements easier to trust',
+      story: 'I built tools to take repetitive engineering thermal tests and make them easier to monitor, compare, and document. The interesting part was not just collecting numbers, but helping engineers recognize stable conditions and produce repeatable reports.',
+      challenge: 'Manual monitoring and inconsistent reporting slow down thermal validation.',
+      approach: 'Combine Python data collection and live visualization with Arduino ambient control, stability tracking, and structured exports.',
+      tools: 'Python, Arduino, Tkinter, temperature instrumentation, CSV and Excel.',
+      outcome: 'A more traceable and repeatable thermal-testing workflow.',
+      link: 'https://github.com/kalarcon775/Thermal-Logger', action: 'View Thermal Logger on GitHub'
+    },
+    {
+      id: 'vna', title: 'Virtual Network Analyzer', edition: '2025 · RF measurements',
+      subtitle: 'Turning RF measurements into readable engineering data',
+      story: 'For this measurement project, I used software to connect calibration, data acquisition, and visualization. I liked that even careful RF work could become easier to examine and communicate through automation.',
+      challenge: 'Automate two-port RF measurements while accounting for calibration errors.',
+      approach: 'Control the measurement workflow in MATLAB, use 12-term SOLT calibration, and visualize S-parameters.',
+      tools: 'MATLAB, two-port VNA, RF calibration, S-parameter visualization.',
+      outcome: 'An automated analysis workflow covering 100 MHz to 6 GHz.',
+      link: '#work', action: 'Return to the project summary'
+    },
+    {
+      id: 'hall', title: 'Hall-Effect Wafer Measurements', edition: 'EE421 · December 2025 · Semiconductor lab',
+      subtitle: 'Characterizing charge carriers in a semiconductor wafer',
+      story: 'I used a semiconductor measurement setup to investigate the electrical transport properties of a wafer. The experiment combined the Hall effect with Van der Pauw measurements, connecting an applied magnetic field and measured voltage to resistivity, carrier type, concentration, and mobility. It also taught me how easily physical contacts and sample setup can influence what seems like a simple number.',
+      challenge: 'Determine wafer resistivity and Hall transport characteristics while checking the validity of the contacts and measurement setup.',
+      approach: 'Position the sample on a four-contact Van der Pauw stage, check contact behavior, and collect Hall and resistivity data with the M91 FastHall controller and MeasureLINK software.',
+      tools: 'Hall effect, Van der Pauw method, M91 FastHall, electromagnet, MeasureLINK, semiconductor characterization.',
+      outcome: 'Hands-on wafer characterization. The measured values had substantial uncertainty and unexpected trends, so the results were treated as a measurement-quality lesson rather than a definitive material specification.',
+      link: '#bookshelf', action: 'Return to the project bookshelf'
+    },
+    {
       id: 'prodriver', title: 'ProDriver Sim', edition: 'GitHub · Electrical simulation',
       subtitle: 'Putting LED-driver behavior into a model',
       story: 'I wanted a tool that could connect electrical measurements with predictions. The simulation provides a way to compare driver and fixture behavior with observed bench results.',
@@ -133,16 +143,6 @@
       tools: 'JavaScript, MediaPipe, Node.js, webcam tracking, RGBW lighting.',
       outcome: 'A gesture-driven prototype with an optional local Casambi bridge.',
       link: 'https://github.com/kalarcon775/HueMotion', action: 'Open HueMotion on GitHub'
-    },
-    {
-      id: 'dmx', title: 'DMX Controller', edition: 'GitHub · Lighting control',
-      subtitle: 'A browser interface connected to physical lights',
-      story: 'This project brings a familiar browser interface to a hardware lighting-control problem. Choosing a scene or brightness setting produces commands for an Arduino-based DMX system.',
-      challenge: 'Translate simple user controls into real output for RGBW lighting hardware.',
-      approach: 'Use Flask to receive browser inputs and send serial commands to Arduino for DMX output.',
-      tools: 'Python, Flask, Arduino, serial communication, DMX.',
-      outcome: 'A direct connection between software controls and physical lighting response.',
-      link: 'https://github.com/kalarcon775/DMX-Controller', action: 'Open the DMX Controller repository'
     }
   ];
 
@@ -360,16 +360,45 @@
     if (index >= 0) beginOpening(index, button);
   }));
 
-  bookButtons.forEach((button, index) => button.addEventListener('keydown', event => {
-    let target = -1;
-    if (event.key === 'ArrowRight') target = (index + 1) % bookButtons.length;
-    else if (event.key === 'ArrowLeft') target = (index - 1 + bookButtons.length) % bookButtons.length;
-    else if (event.key === 'ArrowDown') target = (index + 7) % bookButtons.length;
-    else if (event.key === 'ArrowUp') target = (index - 7 + bookButtons.length) % bookButtons.length;
-    if (target < 0) return;
+  // Keyboard arrows navigate within a collection, then across shelves.
+  const shelfRows = [...document.querySelectorAll('.shelf-books')].map(strip =>
+    [...strip.querySelectorAll('[data-open-book]')]
+  );
+  bookButtons.forEach(button => button.addEventListener('keydown', event => {
+    const rowIndex = shelfRows.findIndex(row => row.includes(button));
+    if (rowIndex < 0) return;
+    const row = shelfRows[rowIndex];
+    const columnIndex = row.indexOf(button);
+    let target;
+    if (event.key === 'ArrowRight') target = row[(columnIndex + 1) % row.length];
+    else if (event.key === 'ArrowLeft') target = row[(columnIndex - 1 + row.length) % row.length];
+    else if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+      const direction = event.key === 'ArrowDown' ? 1 : -1;
+      const otherRow = shelfRows[(rowIndex + direction + shelfRows.length) % shelfRows.length];
+      target = otherRow[Math.min(columnIndex, otherRow.length - 1)];
+    } else return;
     event.preventDefault();
-    bookButtons[target].focus();
+    target?.focus();
   }));
+
+  // One stable preview beneath each shelf updates on mouse hover or focus.
+  const booksById = new Map(books.map(book => [book.id, book]));
+  bookButtons.forEach(button => {
+    const book = booksById.get(button.dataset.openBook);
+    const shelf = button.closest('.shelf-level');
+    const preview = shelf?.querySelector('[data-shelf-preview]');
+    const title = preview?.querySelector('[data-preview-title]');
+    const summary = preview?.querySelector('[data-preview-text]');
+    if (!book || !title || !summary) return;
+    button.setAttribute('aria-label', 'Open ' + book.title + '. ' + book.subtitle);
+    const show = () => {
+      title.textContent = book.title;
+      summary.textContent = book.subtitle;
+      shelf.classList.add('is-previewing');
+    };
+    button.addEventListener('mouseenter', show);
+    button.addEventListener('focus', show);
+  });
 
   closeBtn?.addEventListener('click', () => dialog.close());
   previous?.addEventListener('click', () => turnTo(selectedIndex - 1, -1));

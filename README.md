@@ -179,3 +179,18 @@ The shelf now has fourteen books in two rows of seven. The keyboard's up/down na
 - No photographs, videos, resumes or uploaded academic files were published or modified. All existing media paths remain unchanged.
 
 Only \`index.html\`, \`bookshelf.css\`, \`bookshelf.js\`, \`ux.css\`, \`ux.js\`, and this README changed.
+
+
+## Curated engineering bookshelf collections
+
+The interactive bookshelf now organizes all 14 projects into three labeled, color-coordinated shelves:
+
+1. **Space & Robotics** (plum, 3 books): NASA Robotics, UR3e Analysis, 3-Link Leg Simulation.
+2. **Embedded & Digital Systems** (muted blue, 5 books): STM32 Security, STM32 Motor, VHDL Logic, Pipelined ALU, DMX Controller.
+3. **Sensing & Engineering Tools** (dusty rose, 6 books): IVerify, Thermal Logger, Virtual VNA, Hall Measurements, ProDriver, HueMotion.
+
+Hovering over or keyboard-focusing a book displays its title and a brief descriptive subtitle under its shelf. The preview is provided from the existing, source-accurate project data in \`bookshelf.js\`, so the subtitle is maintained in one place. Accessible book labels also include the subtitle.
+
+Keyboard arrow navigation is collection-aware (Left/Right within a shelf, Up/Down between shelves) and works with unequal shelf lengths. Previous/Next book inside the reader follows the same visible collection order. Mobile horizontal swipe, touch targets, individual book reading position, Return to Bookshelf and CSS-only page animations remain intact.
+
+Collection navigation buttons and restrained star-trail accents continue to work between all three shelves. No JPEGs, MP4s, PDFs, or user-uploaded source documents were modified or uploaded.
