@@ -1,79 +1,84 @@
-(() => {
-  'use strict';
-  const year = document.getElementById('year');
-  if (year) year.textContent = String(new Date().getFullYear());
-  const menuToggle = document.getElementById('menu-toggle');
-  const navLinks = document.getElementById('nav-links');
-  if (menuToggle && navLinks) {
-    menuToggle.addEventListener('click', () => {
-      const isOpen = navLinks.classList.toggle('open');
-      menuToggle.setAttribute('aria-expanded', String(isOpen));
-      menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
-    });
-    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-    }));
-  }
+'use strict';
 
-  // This is an artistic 2D kinematic demonstration, not a model of actual joint limits.
-  const svg = document.getElementById('arm-svg');
-  if (!svg) return;
-  const links = document.getElementById('arm-links');
-  const points = document.getElementById('arm-points');
-  const coords = document.getElementById('tip-coord');
-  const targetMarker = document.getElementById('target-marker');
-  const stateLabel = document.getElementById('sim-state');
-  const buttons = Array.from(document.querySelectorAll('[data-profile]'));
-  const RAD = Math.PI / 180;
-  const length1 = 133, length2 = 132, tool = 60;
-  const profiles = {
-    home: {angles:[20,-28,10], label:'Home position'},
-    reach:{angles:[-28,45,-25],label:'Extended reach'},
-    sweep:{angles:[-12,60,-36],label:'Sweep motion'},
-    inspect:{angles:[43,-70,44],label:'Inspection pose'}
+// Small static-site interactions, no frameworks or accounts required.
+const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.getElementById('nav-links');
+if (menuToggle && navLinks) {
+  menuToggle.addEventListener('click', () => {
+    const open = !navLinks.classList.contains('open');
+    navLinks.classList.toggle('open', open);
+    menuToggle.setAttribute('aria-expanded', String(open));
+    menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Open menu');
+  }));
+}
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Illustrative planar FK. The joints represent the shoulder, elbow and wrist
+// in a simplified side-view model. NOT a motion planner or hardware interface.
+const rad = deg => deg * Math.PI / 180;
+const poses = {
+  home:    {angles:[-48, 96, 0],   label:'✳ In home position'},
+  hello:   {angles:[-18,111,-43], label:'✳ Robot says hello!'},
+  reach:   {angles:[ 43,-80, 10], label:'✳ Reaching down'},
+  inspect: {angles:[-56,120,-42], label:'✳ Inspecting the workspace'}
+};
+const arm = {
+  bone1: document.getElementById('bone-1'), bone2:document.getElementById('bone-2'), bone3:document.getElementById('bone-3'),
+  joint1:document.getElementById('joint-1'),joint2:document.getElementById('joint-2'),
+  gripperLeft:document.getElementById('grip-left'),gripperRight:document.getElementById('grip-right'),
+  tipGlow:document.getElementById('tip-glow'),tipDot:document.getElementById('tip-dot'),
+  shoulder:document.getElementById('shoulder-readout'),elbow:document.getElementById('elbow-readout'),
+  status:document.getElementById('pose-status')
+};
+let angles = poses.home.angles.slice();
+let animationFrame = null;
+let sequenceTimers = [];
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const poseButtons = [...document.querySelectorAll('.pose-button')];
+const sequenceButton = document.getElementById('animate-button');
+function setXY(el, fields, x, y){ if(!el)return;el.setAttribute(fields[0],x.toFixed(2));el.setAttribute(fields[1],y.toFixed(2)); }
+function putBone(el,p1,p2){setXY(el,['x1','y1'],p1.x,p1.y);setXY(el,['x2','y2'],p2.x,p2.y);}
+function renderArm(a){
+  const lengths=[144,144,55],origin={x:250,y:102},points=[origin];
+  let x=origin.x,y=origin.y,theta=0;
+  a.forEach((joint,i)=>{theta+=joint;x+=lengths[i]*Math.sin(rad(theta));y+=lengths[i]*Math.cos(rad(theta));points.push({x,y});});
+  putBone(arm.bone1,points[0],points[1]);putBone(arm.bone2,points[1],points[2]);putBone(arm.bone3,points[2],points[3]);
+  setXY(arm.joint1,['cx','cy'],points[1].x,points[1].y);setXY(arm.joint2,['cx','cy'],points[2].x,points[2].y);
+  setXY(arm.tipGlow,['cx','cy'],points[3].x,points[3].y);setXY(arm.tipDot,['cx','cy'],points[3].x,points[3].y);
+  const tipTheta=rad(a.reduce((s,v)=>s+v,0));
+  const dx=Math.cos(tipTheta),dy=-Math.sin(tipTheta),tip=points[3];
+  putBone(arm.gripperLeft,tip,{x:tip.x-13*dx+11*dy,y:tip.y-13*dy-11*dx});
+  putBone(arm.gripperRight,tip,{x:tip.x+13*dx+11*dy,y:tip.y+13*dy-11*dx});
+  if(arm.shoulder)arm.shoulder.textContent=`${Math.round(a[0])}°`;
+  if(arm.elbow)arm.elbow.textContent=`${Math.round(a[1])}°`;
+}
+function cancelSequence(){sequenceTimers.forEach(clearTimeout);sequenceTimers=[];if(sequenceButton){sequenceButton.disabled=false;sequenceButton.textContent='✧ Run a mini motion sequence';}}
+function choosePose(name, fromSequence=false){
+  if(!poses[name])return;
+  if(!fromSequence)cancelSequence();
+  poseButtons.forEach(b=>{const active=b.dataset.pose===name;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});
+  if(arm.status)arm.status.textContent=poses[name].label;
+  if(animationFrame!==null)cancelAnimationFrame(animationFrame);
+  const start=angles.slice(),end=poses[name].angles.slice();
+  if(reduceMotion.matches){angles=end;renderArm(angles);return;}
+  const startTime=performance.now(),duration=740;
+  const animate=now=>{
+    const t=Math.min(1,(now-startTime)/duration),ease=t*t*(3-2*t);
+    angles=start.map((v,i)=>v+(end[i]-v)*ease);renderArm(angles);
+    if(t<1)animationFrame=requestAnimationFrame(animate);else animationFrame=null;
   };
-  const start = [0,0,0];
-  let current = start.slice();
-  let animationFrame = 0;
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const clamp = (v,min,max)=>Math.max(min,Math.min(max,v));
-  const line = (x1,y1,x2,y2,width,color) => `<line x1="${x1.toFixed(2)}" y1="${y1.toFixed(2)}" x2="${x2.toFixed(2)}" y2="${y2.toFixed(2)}" stroke="${color}" stroke-width="${width}" stroke-linecap="round" />`;
-  const circle = (x,y,r) => `<circle cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="${r}" fill="#102a3b" stroke="#b5f9ee" stroke-width="3"/>`;
-  function draw(angles){
-    let x=260,y=66,orient=0;
-    const nodes=[[x,y]];
-    [[length1,angles[0]],[length2,angles[1]],[tool,angles[2]]].forEach(([l,a])=>{
-      orient += a*RAD;
-      x += Math.sin(orient)*l;
-      y += Math.cos(orient)*l;
-      nodes.push([x,y]);
-    });
-    const [a,b,c,d]=nodes;
-    links.innerHTML=line(260,45,260,66,12,'#91b5c9')+line(...a,...b,13,'#6ce5d6')+line(...b,...c,12,'#5bbfcd')+line(...c,...d,9,'#7cb5ff')+line(...a,...b,2,'#c8fff5')+line(...b,...c,2,'#c8fff5');
-    points.innerHTML=nodes.slice(0,3).map(([px,py],i)=>circle(px,py,i?10:13)).join('')+`<circle cx="${d[0].toFixed(2)}" cy="${d[1].toFixed(2)}" r="5" fill="#f0fcff"/>`;
-    coords.textContent=`TIP: X ${Math.round(d[0]-260)} / Z ${Math.round(d[1]-45)} (DIAGRAM UNITS)`;
-    targetMarker.setAttribute('cx',String(clamp(d[0],71,449)));
-    targetMarker.setAttribute('cy',String(clamp(d[1],52,386)));
-  }
-  function selectProfile(name){
-    const profile = profiles[name];
-    if (!profile) return;
-    buttons.forEach(b=>{let selected=b.dataset.profile===name;b.classList.toggle('active',selected);b.setAttribute('aria-pressed',String(selected));});
-    stateLabel.textContent=profile.label;
-    cancelAnimationFrame(animationFrame);
-    if (reducedMotion){current=profile.angles.slice();draw(current);return;}
-    const initial=current.slice(),target=profile.angles;
-    const started=performance.now(),duration=850;
-    const step=(now)=>{
-      const t=clamp((now-started)/duration,0,1);
-      const eased=t*t*(3-2*t);
-      current=initial.map((a,i)=>a+(target[i]-a)*eased);
-      draw(current);
-      if(t<1)animationFrame=requestAnimationFrame(step);
-    };
-    animationFrame=requestAnimationFrame(step);
-  }
-  buttons.forEach(b=>b.addEventListener('click',()=>selectProfile(b.dataset.profile)));
-  current=profiles.home.angles.slice();draw(current);
-})();
+  animationFrame=requestAnimationFrame(animate);
+}
+poseButtons.forEach(button=>button.addEventListener('click',()=>choosePose(button.dataset.pose)));
+if(sequenceButton)sequenceButton.addEventListener('click',()=>{
+  cancelSequence();sequenceButton.disabled=true;sequenceButton.textContent='✧ A little dance in progress...';
+  const names=['hello','inspect','reach','home'];
+  names.forEach((name,i)=>sequenceTimers.push(setTimeout(()=>choosePose(name,true),i*1200)));
+  sequenceTimers.push(setTimeout(()=>cancelSequence(),names.length*1200));
+});
+renderArm(angles);

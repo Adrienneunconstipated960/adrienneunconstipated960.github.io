@@ -1,33 +1,43 @@
-# Kailani | Engineering Portfolio
+# Kailani | Personal Portfolio
 
-A responsive, static portfolio with a clickable robotic arm demonstration, project highlights, skills, education, and a print-friendly resume summary.
+A pink, bookish, space-inspired engineering portfolio built as a static website with HTML, CSS, and vanilla JavaScript. No installation, build step, account, or paid hosting required.
 
-## Publish with GitHub Pages
+## Included files
 
-1. Create a **public** GitHub repository named `kalarcon775.github.io` (or another repository name).
-2. Upload **all files from this folder** to the root of the repository (`index.html`, `styles.css`, `script.js`, `resume.html`, `README.md`). Do not upload only the ZIP file.
-3. In the repository open **Settings > Pages**. Under **Build and deployment**, choose **Deploy from a branch**, then select the `main` branch and `/ (root)` and click **Save**.
-4. For a repository named `kalarcon775.github.io`, the site address will be `https://kalarcon775.github.io/`. If you use another name, it will typically be `https://kalarcon775.github.io/REPOSITORY-NAME/`.
-5. GitHub Pages may take a few minutes to publish. Check Settings > Pages for deployment status.
+- `index.html` - complete single-page portfolio
+- `styles.css` - colors, typography, animations, and responsive layout
+- `script.js` - mobile menu and illustrative robotic arm motion profiles
+- `assets/space-window.jpg` - provided space photograph used in the homepage
+- `assets/Kailani_Alarcon_Resume.pdf` - provided one-page engineering resume, accessible through the site
 
-## Test locally
+## Preview locally
 
-Open `index.html` in a web browser. The site works without a build system, package installation, or external JavaScript dependencies.
+Double click `index.html` to open the page in a browser. Internet access is only used to load optional Google Fonts; the website works with system font fallbacks when offline.
 
-## Customize before sharing
+## Publish on GitHub Pages
 
-- Check the **email address**, **phone number**, **GitHub**, **LinkedIn** URL, and educational information. The LinkedIn URL is based on the provided profile identifier and has not been independently verified.
-- `resume.html` is a **concise portfolio resume summary**, not a full reproduction of your official resume. Review it carefully. Visitors can select **Print / Save as PDF**.
-- Add photos, videos, or links to public repositories for the robotic arm when available. The robotic illustration is a schematic, not a photo of the real arm.
-- The interactive arm is a **stylized 2D animation**, **not** a 6-DOF simulator, ROS system, or collision-checked motion planner. Profile presets are for visualization only.
-- ROS / ROS 2 is described as **exploration** rather than completed integration.
-- To use your actual resume PDF, put it in the repository (for example `assets/Kailani_Alarcon_Resume.pdf`) and change the resume links in `index.html` to its exact path.
+1. Sign in at https://github.com and create a **public** repository named `kalarcon775.github.io` if `kalarcon775` is your username. If your username is different, replace it accordingly.
+2. Click **Add file** > **Upload files** and upload **the contents** of this folder. `index.html` must be at the top level of the repository, not inside another folder.
+3. Commit the files to the `main` branch.
+4. Under **Settings** > **Pages**, choose **Deploy from a branch**, then `main` and `/(root)` and click **Save**.
+5. Visit `https://kalarcon775.github.io` after deployment finishes. Publication may take several minutes.
 
-## Files
+If you already published a previous portfolio, replace its old `index.html`, `styles.css`, `script.js`, and upload the `assets` folder. You can delete obsolete files such as the old `resume.html` if unused.
 
-- `index.html`: site content
-- `styles.css`: responsive visual design
-- `script.js`: menu and arm interaction
-- `resume.html`: printable resume summary
+## Update your site
 
-No external libraries or paid hosting required for this version.
+- **Name and intro:** edit hero text in `index.html`.
+- **Photo:** replace `assets/space-window.jpg` with another photo of the same name.
+- **Resume:** replace `assets/Kailani_Alarcon_Resume.pdf` with a newer PDF of the same name.
+- **Links:** update LinkedIn/GitHub/email links in `index.html`.
+- **Colors:** edit CSS variables at the top of `styles.css`.
+- **Robot presets:** edit `poses` in `script.js`.
+
+## Notes on accuracy and privacy
+
+- Professional details were taken from the uploaded resume. The NASA robotic arm content is based on the resume's public-level description.
+- The IVerify project description is intentionally high level. **The uploaded confidential technical design report is not published or bundled with the website.** IVerify is an academic prototype concept, not a clinically approved product.
+- A transcript with private academic and identifying information was **not bundled**.
+- The resume PDF contains the applicant's contact details and will be public when deployed. Review before publishing.
+- The website's robotic arm is an artistic 2D concept using illustrative dimensions and scripted motion profiles. It is not connected to hardware and should not be interpreted as a collision-safe or physically validated simulation.
+- Project visuals are stylized illustrations, not actual hardware photographs. Feel free to add approved, non-confidential images later.
