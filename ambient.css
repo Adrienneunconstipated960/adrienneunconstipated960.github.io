@@ -580,3 +580,42 @@ html.ambient-ready .ambient-active > .ambient-field .ambient-constellation{anima
 @media print{
   .ambient-constellation{display:none!important}
 }
+
+
+/* Layout correction: stop treating every section heading as a star-map canvas.
+   The eleven repeated maps were removed from the HTML to prevent collisions.
+   Keep the two dedicated constellation breaks, planet and sparse starfields. */
+.constellation-break {
+  margin:20px auto;
+  height:48px;
+  pointer-events:none;
+}
+.ambient-sky-arc {
+  width:112px;
+  opacity:.28;
+}
+.ambient-field-robot .ambient-sky-arc {
+  left:auto;right:0;top:auto;bottom:2%;width:110px;
+}
+.ambient-field-experience .ambient-sky-arc {
+  left:0;right:auto;top:auto;bottom:2%;width:108px;
+}
+.ambient-field-resume .ambient-sky-arc {
+  left:auto;right:0;top:auto;bottom:2%;width:104px;
+}
+.ambient-sky-arc .ambient-orbit-dot {
+  width:4px;height:4px;top:-2px;left:calc(50% - 2px);
+}
+@media(max-width:760px){
+  .constellation-break {
+    margin:16px auto;
+    max-width:54vw;
+    height:36px;
+  }
+  /* Keep all moving orbital shapes away from small-screen text and buttons. */
+  .ambient-sky-arc {display:none!important}
+  .ambient-field .ambient-star:nth-child(3){display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .ambient-sky-arc .ambient-orbit-runner{animation:none!important}
+}

@@ -288,3 +288,16 @@ This revision adds a **noticeable, but still restrained star-map illustration to
 HTML references the updated ambient stylesheet and script with a version query to reduce stale browser-cache issues. The project bookshelf still holds 16 books on two shelves; original marigold/plumeria symbols, planet, page-turn effects, robot lab, images, videos and resume PDF remain unchanged. No new media or third-party resources were added.
 
 The code is validated in GitHub, but its final appearance should be checked on a deployed desktop and mobile browser. If an old version remains visible, hard-refresh the page.
+
+
+## Nonoverlapping Mexican and Samoan floral redesign
+
+After visual feedback that the previous effects were overlapping, the eleven repeated background constellation maps and the flower illustrations pinned to photo corners and headings were removed from the HTML. Their positions were competing with headings, photos, and other decorative space elements at some viewport widths.
+
+Four small **botanical dividers in normal document flow** now separate sections. Each divider pairs a culturally grounded Mexican floral motif with a Samoan floral motif: Mexican **cempasúchil marigold** or **dahlia** alongside Samoan **teuila (ginger)** or **plumeria (frangipani)**. They are muted blush/plum/lavender line-art SVGs and are not external image files. The Teuila illustration is an upright spray of pointed red-ginger-inspired bracts, rather than another generic five-petal blossom. The dahlia illustration has two rings of elongated petals.
+
+Unlike earlier absolutely positioned flowers, the dividers occupy their own horizontal strip and do not overlap text, book spines, images or navigation. On phones their sizes and spacing shrink. The previously added two constellation separators are given positive margins, and the extra background orbital sketches are hidden on mobile to avoid collisions.
+
+The small background stars, existing planet animation, two constellation separators, section glows, gentle reveals, and 16 books on two shelves are preserved. The original photos, videos, resume PDF, and other user assets remain unmodified. The ambient and botanical stylesheets receive a cache-busting version to make the revised layout visible after GitHub Pages deploys.
+
+Changed files: index.html, botanical.css, ambient.css, README.md. No binary media files were added or changed.

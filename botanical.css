@@ -1,138 +1,77 @@
 /*
- * Botanical margin notes: Mexican cempasúchil-inspired marigold and Samoan
- * plumeria-inspired flowers, rendered from inline SVG symbols in index.html.
- * Static decoration only; the site's orbit/constellation effects remain intact.
+ * Mexican and Samoan flowers: four small, nonoverlapping botanical dividers.
+ * Inspired by Mexican cempasúchil / dahlia and Samoan teuila / plumeria.
+ * SVG definitions are inline in index.html. No external images or media.
  */
 .floral-definitions {
-  position: absolute;
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  pointer-events: none;
+  position:absolute;
+  width:0;height:0;
+  overflow:hidden;
+  pointer-events:none;
 }
 
-.floral-accent {
-  position: absolute;
-  display: block;
-  pointer-events: none;
-  user-select: none;
-  z-index: 1;
+/* Flowers are placed in ordinary document flow, not over text or images. */
+.botanical-divider {
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:clamp(11px,2.6vw,22px);
+  width:min(580px,calc(100% - 56px));
+  min-height:76px;
+  padding:8px 0;
+  margin:0 auto;
+  isolation:isolate;
+  pointer-events:none;
+  user-select:none;
+}
+.botanical-divider-rule {
+  flex:1 1 80px;
+  max-width:145px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(163,118,147,.33),transparent);
+}
+.botanical-bloom {
+  display:block;
+  flex:0 0 58px;
+  width:58px;
+  height:58px;
+  overflow:visible;
+  opacity:.76;
+  filter:drop-shadow(0 2px 3px rgba(103,65,91,.05));
+}
+.bloom-mexico {color:#a76c83}
+.bloom-samoa {color:#897494}
+.botanical-divider-heritage .bloom-samoa,
+.botanical-divider-closing .bloom-samoa {color:#8c718b}
+.botanical-divider-craft .bloom-mexico {color:#aa7189}
+.botanical-divider-closing .bloom-mexico {color:#b37a8a}
+
+/* Recover vertical breathing room without floating flowers on top of sections. */
+.botanical-divider + .section {
+  padding-top:clamp(58px,6vw,80px);
 }
 
-.floral-accent svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-}
-
-.hero-photo {
-  overflow: visible;
-}
-
-.floral-hero {
-  width: 110px;
-  height: 109px;
-  left: -40px;
-  bottom: 34px;
-  opacity: .49;
-}
-
-.floral-hero .floral-marigold {
-  position: absolute;
-  width: 77px;
-  height: 77px;
-  left: 0;
-  bottom: 0;
-  color: #ae748b;
-  transform: rotate(-12deg);
-}
-
-.floral-hero .floral-plumeria {
-  position: absolute;
-  width: 62px;
-  height: 62px;
-  right: 0;
-  top: 0;
-  color: #987c96;
-  transform: rotate(14deg);
-}
-
-.bookshelf-heading {
-  position: relative;
-}
-
-.floral-bookshelf {
-  width: 73px;
-  height: 73px;
-  right: -19px;
-  top: -18px;
-  color: #ad7890;
-  opacity: .28;
-  transform: rotate(9deg);
-}
-
-.about-photo {
-  position: relative;
-  overflow: visible;
-}
-
-.floral-about {
-  width: 87px;
-  height: 87px;
-  right: -26px;
-  top: -26px;
-  color: #947d99;
-  opacity: .37;
-  transform: rotate(-18deg);
-}
-
-/* On narrow screens, keep flowers at the margins, away from navigation,
-   readable copy, and the interactive book spines. */
-@media (max-width: 760px) {
-  .floral-hero {
-    width: 77px;
-    height: 79px;
-    left: 2px;
-    bottom: 31px;
-    opacity: .32;
+@media(max-width:760px){
+  .botanical-divider{
+    width:calc(100% - 36px);
+    min-height:58px;
+    padding:6px 0;
+    gap:13px;
   }
-
-  .floral-hero .floral-marigold {
-    width: 56px;
-    height: 56px;
+  .botanical-divider-rule{max-width:65px}
+  .botanical-bloom{
+    flex-basis:43px;
+    width:43px;height:43px;
+    opacity:.7;
   }
-
-  .floral-hero .floral-plumeria {
-    width: 44px;
-    height: 44px;
-  }
-
-  .floral-bookshelf {
-    width: 54px;
-    height: 54px;
-    top: -43px;
-    right: 0;
-    opacity: .23;
-  }
-
-  .floral-about {
-    width: 59px;
-    height: 59px;
-    right: -8px;
-    top: -13px;
-    opacity: .3;
-  }
+  .botanical-divider + .section {padding-top:58px}
 }
-
-@media (max-width: 420px) {
-  .floral-bookshelf {opacity: .17;}
-  .floral-hero {opacity: .26;}
-  .floral-about {opacity: .23;}
+@media(max-width:390px){
+  .botanical-divider{gap:10px}
+  .botanical-divider-rule{max-width:40px}
+  .botanical-bloom{flex-basis:38px;width:38px;height:38px}
 }
-
-/* No floral motion is introduced. Existing reduced-motion handling for
-   the planetary/constellation/star effects stays in ux.css. */
-@media (prefers-reduced-motion: reduce) {
-  .floral-accent {transition: none;animation: none;}
+@media(prefers-reduced-motion:reduce){
+  .botanical-divider,.botanical-bloom{animation:none;transition:none}
 }

@@ -17,8 +17,8 @@
   <link rel="stylesheet" href="enhancements.css">
   <link rel="stylesheet" href="bookshelf.css">
   <link rel="stylesheet" href="ux.css">
-  <link rel="stylesheet" href="botanical.css">
-  <link rel="stylesheet" href="ambient.css?v=20261011-2">
+  <link rel="stylesheet" href="botanical.css?v=20261011-4">
+  <link rel="stylesheet" href="ambient.css?v=20261011-4">
   <script src="script.js" defer></script>
   <script src="enhancements.js" defer></script>
   <script src="bookshelf.js" defer></script>
@@ -86,6 +86,51 @@
       <circle cx="60" cy="60" r="8" fill="currentColor" fill-opacity=".26" stroke="currentColor" stroke-width="1"/>
       <circle cx="60" cy="60" r="3" fill="currentColor"/>
     </symbol>
+    <symbol id="flower-dahlia" viewBox="0 0 120 120">
+      <g fill="currentColor" fill-opacity=".13" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round">
+        <path d="M56 55 Q45 41 51 21 Q60 6 69 21 Q75 39 64 55 Z" transform="rotate(0 60 60)"/>
+        <path d="M56 55 Q45 41 51 21 Q60 6 69 21 Q75 39 64 55 Z" transform="rotate(36 60 60)"/>
+        <path d="M56 55 Q45 41 51 21 Q60 6 69 21 Q75 39 64 55 Z" transform="rotate(72 60 60)"/>
+        <path d="M56 55 Q45 41 51 21 Q60 6 69 21 Q75 39 64 55 Z" transform="rotate(108 60 60)"/>
+        <path d="M56 55 Q45 41 51 21 Q60 6 69 21 Q75 39 64 55 Z" transform="rotate(144 60 60)"/>
+        <path d="M56 55 Q45 41 51 21 Q60 6 69 21 Q75 39 64 55 Z" transform="rotate(180 60 60)"/>
+        <path d="M56 55 Q45 41 51 21 Q60 6 69 21 Q75 39 64 55 Z" transform="rotate(216 60 60)"/>
+        <path d="M56 55 Q45 41 51 21 Q60 6 69 21 Q75 39 64 55 Z" transform="rotate(252 60 60)"/>
+        <path d="M56 55 Q45 41 51 21 Q60 6 69 21 Q75 39 64 55 Z" transform="rotate(288 60 60)"/>
+        <path d="M56 55 Q45 41 51 21 Q60 6 69 21 Q75 39 64 55 Z" transform="rotate(324 60 60)"/>
+      </g>
+      <g fill="currentColor" fill-opacity=".17" stroke="currentColor" stroke-width=".9">
+        <path d="M57 55 Q52 47 56 38 Q60 31 64 38 Q68 47 63 55 Z" transform="rotate(22.5 60 60)"/>
+        <path d="M57 55 Q52 47 56 38 Q60 31 64 38 Q68 47 63 55 Z" transform="rotate(67.5 60 60)"/>
+        <path d="M57 55 Q52 47 56 38 Q60 31 64 38 Q68 47 63 55 Z" transform="rotate(112.5 60 60)"/>
+        <path d="M57 55 Q52 47 56 38 Q60 31 64 38 Q68 47 63 55 Z" transform="rotate(157.5 60 60)"/>
+        <path d="M57 55 Q52 47 56 38 Q60 31 64 38 Q68 47 63 55 Z" transform="rotate(202.5 60 60)"/>
+        <path d="M57 55 Q52 47 56 38 Q60 31 64 38 Q68 47 63 55 Z" transform="rotate(247.5 60 60)"/>
+        <path d="M57 55 Q52 47 56 38 Q60 31 64 38 Q68 47 63 55 Z" transform="rotate(292.5 60 60)"/>
+        <path d="M57 55 Q52 47 56 38 Q60 31 64 38 Q68 47 63 55 Z" transform="rotate(337.5 60 60)"/>
+      </g>
+      <circle cx="60" cy="60" r="10" fill="currentColor" fill-opacity=".30" stroke="currentColor"/>
+      <circle cx="60" cy="60" r="3" fill="currentColor"/>
+    </symbol>
+    <symbol id="flower-teuila" viewBox="0 0 120 120">
+      <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M59 109 Q59 85 60 68"/>
+        <path d="M60 99 Q43 80 21 84 Q36 103 60 99" fill="currentColor" fill-opacity=".09"/>
+        <path d="M60 91 Q76 73 101 77 Q82 98 60 91" fill="currentColor" fill-opacity=".09"/>
+      </g>
+      <g fill="currentColor" fill-opacity=".14" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">
+        <path d="M61 80 Q41 69 33 51 Q49 54 61 65 Z"/>
+        <path d="M61 80 Q79 68 87 51 Q71 54 61 65 Z"/>
+        <path d="M60 69 Q38 59 35 40 Q52 43 60 54 Z"/>
+        <path d="M60 69 Q83 59 86 40 Q70 43 60 54 Z"/>
+        <path d="M60 58 Q44 45 44 28 Q57 36 60 47 Z"/>
+        <path d="M60 58 Q77 46 77 28 Q64 35 60 47 Z"/>
+        <path d="M60 47 Q52 33 56 16 Q63 28 60 47 Z"/>
+        <path d="M60 47 Q68 34 64 16 Q57 28 60 47 Z"/>
+        <path d="M60 79 Q49 71 47 60 Q57 65 60 73 Z"/>
+        <path d="M60 79 Q71 71 73 60 Q63 65 60 73 Z"/>
+      </g>
+    </symbol>
   </svg>
     <section class="hero container" aria-labelledby="hero-title">
       <div class="hero-copy">
@@ -100,36 +145,27 @@
       </div>
       <div class="intro-planet" aria-hidden="true"><span class="intro-planet-core"></span><span class="intro-planet-ring"></span><span class="intro-planet-moon"></span></div>
       <div class="ambient-field ambient-field-hero" aria-hidden="true">
-        <svg class="ambient-constellation" viewBox="0 0 260 112" focusable="false" aria-hidden="true">
-          <path class="ambient-constellation-line" d="M12 86 L53 39 L99 70 L153 24 L206 52 L247 18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-          <g fill="currentColor"><circle cx="12" cy="86" r="3.2"/><circle cx="53" cy="39" r="3.8"/><circle cx="99" cy="70" r="3.2"/><circle cx="153" cy="24" r="4"/><circle cx="206" cy="52" r="3.5"/><circle cx="247" cy="18" r="3.2"/></g>
-          <path d="M184 91 l0 -10 m-5 5 h10 M30 17 v-7 m-3.5 3.5 h7" stroke="currentColor" stroke-width="1.3" fill="none" stroke-linecap="round"/>
-        </svg>
         <span class="ambient-star"></span><span class="ambient-star"></span><span class="ambient-star"></span><span class="ambient-star"></span>
-        <span class="ambient-orbit-track"><span class="ambient-orbit-runner"><span class="ambient-orbit-dot"></span></span></span>
       </div>
       <figure class="hero-photo">
         <img src="assets/sls-rocket-kailani.jpeg" alt="Kailani standing beside a large NASA Space Launch System rocket model" fetchpriority="high">
         <figcaption>At NASA Marshall Space Flight Center</figcaption>
-        <span class="floral-accent floral-hero" aria-hidden="true">
-          <svg class="floral-marigold" viewBox="0 0 120 120" focusable="false"><use href="#flower-cempasuchil"></use></svg>
-          <svg class="floral-plumeria" viewBox="0 0 120 120" focusable="false"><use href="#flower-plumeria"></use></svg>
-        </span>
       </figure>
     </section>
 
+        <div class="botanical-divider botanical-divider-welcome" role="img" aria-label="Mexican cempasúchil marigold and Samoan teuila ginger flowers">
+      <span class="botanical-divider-rule" aria-hidden="true"></span>
+      <svg class="botanical-bloom bloom-mexico" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#flower-cempasuchil"></use></svg>
+      <svg class="botanical-bloom bloom-samoa" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#flower-teuila"></use></svg>
+      <span class="botanical-divider-rule" aria-hidden="true"></span>
+    </div>
+
     <section class="section bookshelf-section" id="bookshelf" aria-labelledby="bookshelf-heading">
       <div class="ambient-field ambient-field-bookshelf" aria-hidden="true">
-        <svg class="ambient-constellation" viewBox="0 0 260 112" focusable="false" aria-hidden="true">
-          <path class="ambient-constellation-line" d="M12 86 L53 39 L99 70 L153 24 L206 52 L247 18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-          <g fill="currentColor"><circle cx="12" cy="86" r="3.2"/><circle cx="53" cy="39" r="3.8"/><circle cx="99" cy="70" r="3.2"/><circle cx="153" cy="24" r="4"/><circle cx="206" cy="52" r="3.5"/><circle cx="247" cy="18" r="3.2"/></g>
-          <path d="M184 91 l0 -10 m-5 5 h10 M30 17 v-7 m-3.5 3.5 h7" stroke="currentColor" stroke-width="1.3" fill="none" stroke-linecap="round"/>
-        </svg>
         <span class="ambient-star"></span><span class="ambient-star"></span><span class="ambient-star"></span>
       </div>
       <div class="container">
         <div class="bookshelf-heading section-heading" data-ambient-reveal><div class="space-orbiter space-orbiter-shelf" aria-hidden="true"><span class="space-orbiter-body"></span><span class="space-orbiter-ring"></span><span class="space-orbiter-star"></span></div>
-          <span class="floral-accent floral-bookshelf" aria-hidden="true"><svg viewBox="0 0 120 120" focusable="false"><use href="#flower-cempasuchil"></use></svg></span>
           <p class="eyebrow">01 / ENGINEERING LIBRARY</p>
           <h2 id="bookshelf-heading">Every project has <em>a story.</em></h2>
           <p>Explore sixteen projects across two curated shelves. Choose a book to open its engineering story.</p>
@@ -235,11 +271,6 @@
 
     <section class="section about-section" id="about">
       <div class="ambient-field ambient-field-section ambient-field-about" aria-hidden="true">
-        <svg class="ambient-constellation" viewBox="0 0 260 112" focusable="false" aria-hidden="true">
-          <path class="ambient-constellation-line" d="M12 86 L53 39 L99 70 L153 24 L206 52 L247 18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-          <g fill="currentColor"><circle cx="12" cy="86" r="3.2"/><circle cx="53" cy="39" r="3.8"/><circle cx="99" cy="70" r="3.2"/><circle cx="153" cy="24" r="4"/><circle cx="206" cy="52" r="3.5"/><circle cx="247" cy="18" r="3.2"/></g>
-          <path d="M184 91 l0 -10 m-5 5 h10 M30 17 v-7 m-3.5 3.5 h7" stroke="currentColor" stroke-width="1.3" fill="none" stroke-linecap="round"/>
-        </svg>
         <span class="ambient-star"></span><span class="ambient-star"></span><span class="ambient-star"></span>
       </div>
       <div class="container about-grid">
@@ -250,8 +281,7 @@
           <div class="about-chips"><span>University of Nevada, Reno</span><span>M.S. EE · 2028</span><span>Robotics & embedded systems</span><span>UNR lab safety training · 2025</span></div>
           <p class="about-honors">Honors Baccalaureate · Two 2026 engineering Outstanding Service awards · Engineering peer mentor</p>
         </div>
-        <figure class="about-photo"><img src="assets/graduation-flowers.jpeg" alt="Kailani celebrating graduation while holding flowers" loading="lazy"><figcaption>A degree earned, with many more things to learn.</figcaption>
-          <span class="floral-accent floral-about" aria-hidden="true"><svg viewBox="0 0 120 120" focusable="false"><use href="#flower-plumeria"></use></svg></span></figure>
+        <figure class="about-photo"><img src="assets/graduation-flowers.jpeg" alt="Kailani celebrating graduation while holding flowers" loading="lazy"><figcaption>A degree earned, with many more things to learn.</figcaption></figure>
       </div>
     </section>
 
@@ -261,11 +291,6 @@
 
     <section class="section work-section" id="work">
       <div class="ambient-field ambient-field-section ambient-field-work" aria-hidden="true">
-        <svg class="ambient-constellation" viewBox="0 0 260 112" focusable="false" aria-hidden="true">
-          <path class="ambient-constellation-line" d="M12 86 L53 39 L99 70 L153 24 L206 52 L247 18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-          <g fill="currentColor"><circle cx="12" cy="86" r="3.2"/><circle cx="53" cy="39" r="3.8"/><circle cx="99" cy="70" r="3.2"/><circle cx="153" cy="24" r="4"/><circle cx="206" cy="52" r="3.5"/><circle cx="247" cy="18" r="3.2"/></g>
-          <path d="M184 91 l0 -10 m-5 5 h10 M30 17 v-7 m-3.5 3.5 h7" stroke="currentColor" stroke-width="1.3" fill="none" stroke-linecap="round"/>
-        </svg>
         <span class="ambient-star"></span><span class="ambient-star"></span><span class="ambient-star"></span>
       </div>
       <div class="container">
@@ -294,13 +319,15 @@
       </div>
     </section>
 
+        <div class="botanical-divider botanical-divider-craft" role="img" aria-label="Mexican dahlia and Samoan plumeria blossoms">
+      <span class="botanical-divider-rule" aria-hidden="true"></span>
+      <svg class="botanical-bloom bloom-mexico" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#flower-dahlia"></use></svg>
+      <svg class="botanical-bloom bloom-samoa" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#flower-plumeria"></use></svg>
+      <span class="botanical-divider-rule" aria-hidden="true"></span>
+    </div>
+
     <section class="section github-section" id="github-projects" aria-labelledby="github-title">
       <div class="ambient-field ambient-field-section ambient-field-github" aria-hidden="true">
-        <svg class="ambient-constellation" viewBox="0 0 260 112" focusable="false" aria-hidden="true">
-          <path class="ambient-constellation-line" d="M12 86 L53 39 L99 70 L153 24 L206 52 L247 18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-          <g fill="currentColor"><circle cx="12" cy="86" r="3.2"/><circle cx="53" cy="39" r="3.8"/><circle cx="99" cy="70" r="3.2"/><circle cx="153" cy="24" r="4"/><circle cx="206" cy="52" r="3.5"/><circle cx="247" cy="18" r="3.2"/></g>
-          <path d="M184 91 l0 -10 m-5 5 h10 M30 17 v-7 m-3.5 3.5 h7" stroke="currentColor" stroke-width="1.3" fill="none" stroke-linecap="round"/>
-        </svg>
         <span class="ambient-star"></span><span class="ambient-star"></span><span class="ambient-star"></span>
       </div><div class="container">
 <div class="section-heading github-heading" data-ambient-reveal>
@@ -387,11 +414,6 @@
 
     <section class="section robot-section" id="robot-lab">
       <div class="ambient-field ambient-field-section ambient-field-robot" aria-hidden="true">
-        <svg class="ambient-constellation" viewBox="0 0 260 112" focusable="false" aria-hidden="true">
-          <path class="ambient-constellation-line" d="M12 86 L53 39 L99 70 L153 24 L206 52 L247 18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-          <g fill="currentColor"><circle cx="12" cy="86" r="3.2"/><circle cx="53" cy="39" r="3.8"/><circle cx="99" cy="70" r="3.2"/><circle cx="153" cy="24" r="4"/><circle cx="206" cy="52" r="3.5"/><circle cx="247" cy="18" r="3.2"/></g>
-          <path d="M184 91 l0 -10 m-5 5 h10 M30 17 v-7 m-3.5 3.5 h7" stroke="currentColor" stroke-width="1.3" fill="none" stroke-linecap="round"/>
-        </svg>
         <span class="ambient-star"></span><span class="ambient-star"></span><span class="ambient-star"></span>
         <span class="ambient-sky-arc"><span class="ambient-orbit-runner"><span class="ambient-orbit-dot"></span></span></span>
       </div>
@@ -434,11 +456,6 @@
 
     <section class="section experience-section" id="experience">
       <div class="ambient-field ambient-field-section ambient-field-experience" aria-hidden="true">
-        <svg class="ambient-constellation" viewBox="0 0 260 112" focusable="false" aria-hidden="true">
-          <path class="ambient-constellation-line" d="M12 86 L53 39 L99 70 L153 24 L206 52 L247 18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-          <g fill="currentColor"><circle cx="12" cy="86" r="3.2"/><circle cx="53" cy="39" r="3.8"/><circle cx="99" cy="70" r="3.2"/><circle cx="153" cy="24" r="4"/><circle cx="206" cy="52" r="3.5"/><circle cx="247" cy="18" r="3.2"/></g>
-          <path d="M184 91 l0 -10 m-5 5 h10 M30 17 v-7 m-3.5 3.5 h7" stroke="currentColor" stroke-width="1.3" fill="none" stroke-linecap="round"/>
-        </svg>
         <span class="ambient-star"></span><span class="ambient-star"></span><span class="ambient-star"></span>
         <span class="ambient-sky-arc"><span class="ambient-orbit-runner"><span class="ambient-orbit-dot"></span></span></span>
       </div>
@@ -461,13 +478,15 @@
       <svg viewBox="0 0 280 48" focusable="false" aria-hidden="true"><path d="M16 27 L64 9 L112 31 L167 11 L215 29 L263 15" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><g fill="currentColor"><circle cx="16" cy="27" r="2.7"/><circle cx="64" cy="9" r="3"/><circle cx="112" cy="31" r="2.8"/><circle cx="167" cy="11" r="2.7"/><circle cx="215" cy="29" r="3"/><circle cx="263" cy="15" r="2.8"/></g></svg>
     </div>
 
+        <div class="botanical-divider botanical-divider-heritage" role="img" aria-label="Samoan teuila ginger and Mexican dahlia flowers">
+      <span class="botanical-divider-rule" aria-hidden="true"></span>
+      <svg class="botanical-bloom bloom-samoa" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#flower-teuila"></use></svg>
+      <svg class="botanical-bloom bloom-mexico" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#flower-dahlia"></use></svg>
+      <span class="botanical-divider-rule" aria-hidden="true"></span>
+    </div>
+
     <section class="section skills-section">
       <div class="ambient-field ambient-field-section ambient-field-skills" aria-hidden="true">
-        <svg class="ambient-constellation" viewBox="0 0 260 112" focusable="false" aria-hidden="true">
-          <path class="ambient-constellation-line" d="M12 86 L53 39 L99 70 L153 24 L206 52 L247 18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-          <g fill="currentColor"><circle cx="12" cy="86" r="3.2"/><circle cx="53" cy="39" r="3.8"/><circle cx="99" cy="70" r="3.2"/><circle cx="153" cy="24" r="4"/><circle cx="206" cy="52" r="3.5"/><circle cx="247" cy="18" r="3.2"/></g>
-          <path d="M184 91 l0 -10 m-5 5 h10 M30 17 v-7 m-3.5 3.5 h7" stroke="currentColor" stroke-width="1.3" fill="none" stroke-linecap="round"/>
-        </svg>
         <span class="ambient-star"></span><span class="ambient-star"></span><span class="ambient-star"></span>
       </div>
       <div class="container"><div class="section-heading" data-ambient-reveal><p class="eyebrow">07 / THE TOOLBOX</p><h2>What I work <em>with.</em></h2></div><div class="skill-grid"><div class="skill-column" data-ambient-reveal><span aria-hidden="true" class="skill-icon">⌘</span><h3>Programming &amp; embedded</h3><p>Python · C · C++ · PowerShell · MATLAB · VHDL · Arduino · STM32 · UART · Git</p></div><div class="skill-column" data-ambient-reveal><span aria-hidden="true" class="skill-icon">◎</span><h3>Robotics &amp; controls</h3><p>Control systems · P/PID design · PWM · RLC response · Strain gauges · Robotics · Kinematics · Simulation</p></div><div class="skill-column" data-ambient-reveal><span aria-hidden="true" class="skill-icon">✧</span><h3>Design &amp; validation</h3><p>Creo · Simulink · Oscilloscopes · FPGA design · FFT & radar processing · Test automation · Linux · Verification</p></div></div></div>
@@ -475,13 +494,7 @@
 
     <section class="section interests-section" id="little-things">
       <div class="ambient-field ambient-field-section ambient-field-interests" aria-hidden="true">
-        <svg class="ambient-constellation" viewBox="0 0 260 112" focusable="false" aria-hidden="true">
-          <path class="ambient-constellation-line" d="M12 86 L53 39 L99 70 L153 24 L206 52 L247 18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-          <g fill="currentColor"><circle cx="12" cy="86" r="3.2"/><circle cx="53" cy="39" r="3.8"/><circle cx="99" cy="70" r="3.2"/><circle cx="153" cy="24" r="4"/><circle cx="206" cy="52" r="3.5"/><circle cx="247" cy="18" r="3.2"/></g>
-          <path d="M184 91 l0 -10 m-5 5 h10 M30 17 v-7 m-3.5 3.5 h7" stroke="currentColor" stroke-width="1.3" fill="none" stroke-linecap="round"/>
-        </svg>
         <span class="ambient-star"></span><span class="ambient-star"></span><span class="ambient-star"></span>
-        <span class="ambient-watermark ambient-watermark-interests"><svg viewBox="0 0 120 120" focusable="false"><use href="#flower-plumeria"></use></svg></span>
       </div>
       <div class="container interest-layout"><div class="constellation-shape" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
         <div class="interest-copy" data-ambient-reveal>
@@ -498,11 +511,6 @@
 
     <section class="section resume-section" id="resume">
       <div class="ambient-field ambient-field-section ambient-field-resume" aria-hidden="true">
-        <svg class="ambient-constellation" viewBox="0 0 260 112" focusable="false" aria-hidden="true">
-          <path class="ambient-constellation-line" d="M12 86 L53 39 L99 70 L153 24 L206 52 L247 18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-          <g fill="currentColor"><circle cx="12" cy="86" r="3.2"/><circle cx="53" cy="39" r="3.8"/><circle cx="99" cy="70" r="3.2"/><circle cx="153" cy="24" r="4"/><circle cx="206" cy="52" r="3.5"/><circle cx="247" cy="18" r="3.2"/></g>
-          <path d="M184 91 l0 -10 m-5 5 h10 M30 17 v-7 m-3.5 3.5 h7" stroke="currentColor" stroke-width="1.3" fill="none" stroke-linecap="round"/>
-        </svg>
         <span class="ambient-star"></span><span class="ambient-star"></span><span class="ambient-star"></span>
         <span class="ambient-sky-arc"><span class="ambient-orbit-runner"><span class="ambient-orbit-dot"></span></span></span>
       </div>
@@ -517,16 +525,17 @@
       </div>
     </section>
 
+        <div class="botanical-divider botanical-divider-closing" role="img" aria-label="Samoan plumeria and Mexican cempasúchil marigold flowers">
+      <span class="botanical-divider-rule" aria-hidden="true"></span>
+      <svg class="botanical-bloom bloom-samoa" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#flower-plumeria"></use></svg>
+      <svg class="botanical-bloom bloom-mexico" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#flower-cempasuchil"></use></svg>
+      <span class="botanical-divider-rule" aria-hidden="true"></span>
+    </div>
+
     <section class="section contact-section" id="contact">
       <div class="ambient-field ambient-field-contact" aria-hidden="true">
-        <svg class="ambient-constellation" viewBox="0 0 260 112" focusable="false" aria-hidden="true">
-          <path class="ambient-constellation-line" d="M12 86 L53 39 L99 70 L153 24 L206 52 L247 18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-          <g fill="currentColor"><circle cx="12" cy="86" r="3.2"/><circle cx="53" cy="39" r="3.8"/><circle cx="99" cy="70" r="3.2"/><circle cx="153" cy="24" r="4"/><circle cx="206" cy="52" r="3.5"/><circle cx="247" cy="18" r="3.2"/></g>
-          <path d="M184 91 l0 -10 m-5 5 h10 M30 17 v-7 m-3.5 3.5 h7" stroke="currentColor" stroke-width="1.3" fill="none" stroke-linecap="round"/>
-        </svg>
         <span class="ambient-star"></span><span class="ambient-star"></span><span class="ambient-star"></span><span class="ambient-star"></span><span class="ambient-star"></span>
         <span class="ambient-comet"></span>
-        <span class="ambient-watermark ambient-watermark-contact"><svg viewBox="0 0 120 120" focusable="false"><use href="#flower-cempasuchil"></use></svg></span>
       </div>
       <div class="container contact-inner" data-ambient-reveal>
         <p class="eyebrow">10 / LET'S CONNECT</p>
