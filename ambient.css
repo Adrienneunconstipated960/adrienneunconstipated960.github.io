@@ -619,3 +619,48 @@ html.ambient-ready .ambient-active > .ambient-field .ambient-constellation{anima
 @media(prefers-reduced-motion:reduce){
   .ambient-sky-arc .ambient-orbit-runner{animation:none!important}
 }
+
+
+/* No inserted gaps: the two legacy constellation illustrations live as
+   absolutely-positioned ornaments inside existing section backgrounds. */
+.ambient-field .constellation-break{
+  position:absolute;
+  display:block;
+  margin:0;
+  width:clamp(120px,15vw,185px);
+  max-width:24vw;
+  height:34px;
+  pointer-events:none;
+  color:#a686a0;
+  opacity:.26;
+  z-index:0;
+}
+.ambient-field-work .constellation-break{
+  left:2%;bottom:9%;top:auto;right:auto;
+}
+.ambient-field-skills .constellation-break{
+  right:2%;bottom:8%;top:auto;left:auto;
+}
+
+/* Stars gently float as they twinkle. The existing scene observer pauses
+   them outside the viewport; reduced-motion users see static stars. */
+@keyframes ambient-twinkle{
+  0%,100%{opacity:.45;translate:0 0}
+  37%{opacity:.83;translate:1px -4px}
+  58%{opacity:1;translate:0 -6px}
+  78%{opacity:.65;translate:-1px -2px}
+}
+@media(max-width:760px){
+  .ambient-field .constellation-break{display:none!important}
+  .ambient-field .ambient-star{box-shadow:0 0 0 3px rgba(165,109,147,.045)}
+}
+@media(prefers-reduced-motion:reduce){
+  .ambient-field .ambient-star{animation:none!important;translate:0 0}
+  .ambient-field .constellation-break{opacity:.25}
+}
+@media(forced-colors:active){
+  .ambient-field .constellation-break{display:none!important}
+}
+@media print{
+  .ambient-field .constellation-break{display:none!important}
+}

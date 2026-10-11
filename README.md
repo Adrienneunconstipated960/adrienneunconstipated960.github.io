@@ -301,3 +301,14 @@ Unlike earlier absolutely positioned flowers, the dividers occupy their own hori
 The small background stars, existing planet animation, two constellation separators, section glows, gentle reveals, and 16 books on two shelves are preserved. The original photos, videos, resume PDF, and other user assets remain unmodified. The ambient and botanical stylesheets receive a cache-busting version to make the revised layout visible after GitHub Pages deploys.
 
 Changed files: index.html, botanical.css, ambient.css, README.md. No binary media files were added or changed.
+
+
+## Floating background flowers and continuous section spacing
+
+The floral divider rows previously inserted between the site sections caused visually inconsistent gaps. They have been removed completely; section heights and spacing are now determined by the original layout instead of extra separator elements.
+
+The same four cultural flower motifs (Mexican cempasúchil marigold and dahlia; Samoan teuila and plumeria) appear as eight low-opacity inline SVG drawings **inside existing, non-interactive background layers**, alternating at section margins. They have absolute positioning only within those background layers; no flowers sit between sections, and no new external images are loaded. The page copy, photos, books, buttons and cards remain above the backgrounds.
+
+The two older constellation illustrations are preserved but moved into section backgrounds so they do not create inter-section space; they are hidden on small screens. Stars throughout all eleven sections now have a slow, small vertical floating movement in addition to soft twinkling. Existing visibility-aware animation pausing and reduced-motion support remain intact.
+
+The two-shelf layout, all 16 books, space planet, orbital details, and original media assets remain unchanged. This release edits only index.html, botanical.css, ambient.css, and README.md. Stylesheet references are versioned to limit stale cached CSS.

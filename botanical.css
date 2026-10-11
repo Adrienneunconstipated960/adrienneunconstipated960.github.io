@@ -1,77 +1,71 @@
 /*
- * Mexican and Samoan flowers: four small, nonoverlapping botanical dividers.
- * Inspired by Mexican cempasúchil / dahlia and Samoan teuila / plumeria.
- * SVG definitions are inline in index.html. No external images or media.
+ * Mexican and Samoan flowers are background ornamentation, not
+ * between-section content. Inline SVG symbols live in index.html.
+ * Each bloom is positioned within an existing ambient-field layer,
+ * so it cannot add margins, padding or height to the document.
  */
-.floral-definitions {
+.floral-definitions{
   position:absolute;
   width:0;height:0;
   overflow:hidden;
   pointer-events:none;
 }
 
-/* Flowers are placed in ordinary document flow, not over text or images. */
-.botanical-divider {
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:clamp(11px,2.6vw,22px);
-  width:min(580px,calc(100% - 56px));
-  min-height:76px;
-  padding:8px 0;
-  margin:0 auto;
-  isolation:isolate;
+.ambient-field .botanical-background{
+  position:absolute;
+  display:block;
+  width:clamp(76px,9.5vw,128px);
+  height:clamp(76px,9.5vw,128px);
+  overflow:visible;
   pointer-events:none;
   user-select:none;
-}
-.botanical-divider-rule {
-  flex:1 1 80px;
-  max-width:145px;
-  height:1px;
-  background:linear-gradient(90deg,transparent,rgba(163,118,147,.33),transparent);
-}
-.botanical-bloom {
-  display:block;
-  flex:0 0 58px;
-  width:58px;
-  height:58px;
-  overflow:visible;
-  opacity:.76;
-  filter:drop-shadow(0 2px 3px rgba(103,65,91,.05));
-}
-.bloom-mexico {color:#a76c83}
-.bloom-samoa {color:#897494}
-.botanical-divider-heritage .bloom-samoa,
-.botanical-divider-closing .bloom-samoa {color:#8c718b}
-.botanical-divider-craft .bloom-mexico {color:#aa7189}
-.botanical-divider-closing .bloom-mexico {color:#b37a8a}
-
-/* Recover vertical breathing room without floating flowers on top of sections. */
-.botanical-divider + .section {
-  padding-top:clamp(58px,6vw,80px);
+  opacity:.33;
+  z-index:0;
+  filter:none;
 }
 
+.ambient-field .botanical-background.bloom-mexico{color:#a46f88}
+.ambient-field .botanical-background.bloom-samoa{color:#8b779d}
+
+/* Alternate the floral motifs around the margins, leaving the center of
+   each section and its readable content unobstructed. */
+.botanical-background-hero{left:2%;bottom:5%;transform:rotate(-19deg)}
+.botanical-background-bookshelf{right:2%;bottom:7%;transform:rotate(11deg)}
+.botanical-background-about{left:2%;bottom:7%;transform:rotate(-11deg)}
+.botanical-background-work{right:3%;top:5%;transform:rotate(16deg)}
+.botanical-background-robot{left:2%;top:13%;transform:rotate(9deg)}
+.botanical-background-experience{right:2%;top:8%;transform:rotate(-20deg)}
+.botanical-background-interests{left:2%;bottom:9%;transform:rotate(15deg)}
+.botanical-background-contact{left:2%;top:9%;transform:rotate(-12deg)}
+
+/* Behind text and cards, never over them. The containing ambient fields
+   already have pointer-events:none and live at z-index:0. */
 @media(max-width:760px){
-  .botanical-divider{
-    width:calc(100% - 36px);
-    min-height:58px;
-    padding:6px 0;
-    gap:13px;
+  .ambient-field .botanical-background{
+    width:66px;height:66px;
+    opacity:.19;
   }
-  .botanical-divider-rule{max-width:65px}
-  .botanical-bloom{
-    flex-basis:43px;
-    width:43px;height:43px;
-    opacity:.7;
-  }
-  .botanical-divider + .section {padding-top:58px}
+  .botanical-background-hero{left:0;bottom:3%}
+  .botanical-background-bookshelf{right:0;bottom:2%}
+  .botanical-background-about{left:0;bottom:3%}
+  .botanical-background-work{right:0;top:3%}
+  .botanical-background-robot{left:0;top:4%}
+  .botanical-background-experience{right:0;top:4%}
+  .botanical-background-interests{left:0;bottom:4%}
+  .botanical-background-contact{left:0;top:5%}
 }
 @media(max-width:390px){
-  .botanical-divider{gap:10px}
-  .botanical-divider-rule{max-width:40px}
-  .botanical-bloom{flex-basis:38px;width:38px;height:38px}
+  .ambient-field .botanical-background{
+    width:52px;height:52px;
+    opacity:.17;
+  }
 }
 @media(prefers-reduced-motion:reduce){
-  .botanical-divider,.botanical-bloom{animation:none;transition:none}
+  .ambient-field .botanical-background{animation:none!important}
+}
+@media(forced-colors:active){
+  .ambient-field .botanical-background{display:none}
+}
+@media print{
+  .ambient-field .botanical-background{display:none!important}
 }
