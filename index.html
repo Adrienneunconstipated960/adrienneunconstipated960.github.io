@@ -18,10 +18,12 @@
   <link rel="stylesheet" href="bookshelf.css">
   <link rel="stylesheet" href="ux.css">
   <link rel="stylesheet" href="botanical.css">
+  <link rel="stylesheet" href="ambient.css">
   <script src="script.js" defer></script>
   <script src="enhancements.js" defer></script>
   <script src="bookshelf.js" defer></script>
   <script src="ux.js" defer></script>
+  <script src="ambient.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -97,6 +99,10 @@
         </div>
       </div>
       <div class="intro-planet" aria-hidden="true"><span class="intro-planet-core"></span><span class="intro-planet-ring"></span><span class="intro-planet-moon"></span></div>
+      <div class="ambient-field ambient-field-hero" aria-hidden="true">
+        <span class="ambient-star"></span><span class="ambient-star"></span><span class="ambient-star"></span><span class="ambient-star"></span>
+        <span class="ambient-orbit-track"><span class="ambient-orbit-runner"><span class="ambient-orbit-dot"></span></span></span>
+      </div>
       <figure class="hero-photo">
         <img src="assets/sls-rocket-kailani.jpeg" alt="Kailani standing beside a large NASA Space Launch System rocket model" fetchpriority="high">
         <figcaption>At NASA Marshall Space Flight Center</figcaption>
@@ -108,8 +114,11 @@
     </section>
 
     <section class="section bookshelf-section" id="bookshelf" aria-labelledby="bookshelf-heading">
+      <div class="ambient-field ambient-field-bookshelf" aria-hidden="true">
+        <span class="ambient-star"></span><span class="ambient-star"></span><span class="ambient-star"></span>
+      </div>
       <div class="container">
-        <div class="bookshelf-heading section-heading"><div class="space-orbiter space-orbiter-shelf" aria-hidden="true"><span class="space-orbiter-body"></span><span class="space-orbiter-ring"></span><span class="space-orbiter-star"></span></div>
+        <div class="bookshelf-heading section-heading" data-ambient-reveal><div class="space-orbiter space-orbiter-shelf" aria-hidden="true"><span class="space-orbiter-body"></span><span class="space-orbiter-ring"></span><span class="space-orbiter-star"></span></div>
           <span class="floral-accent floral-bookshelf" aria-hidden="true"><svg viewBox="0 0 120 120" focusable="false"><use href="#flower-cempasuchil"></use></svg></span>
           <p class="eyebrow">01 / ENGINEERING LIBRARY</p>
           <h2 id="bookshelf-heading">Every project has <em>a story.</em></h2>
@@ -234,12 +243,12 @@
 
     <section class="section work-section" id="work">
       <div class="container">
-        <div class="section-heading">
+        <div class="section-heading" data-ambient-reveal>
           <p class="eyebrow">03 / FEATURED NASA WORK</p>
           <h2>Engineering for <em>another world.</em></h2>
           <p class="section-description">One project in focus. Explore the full engineering story in the library above.</p>
         </div>
-        <article class="feature-project">
+        <article class="feature-project" data-ambient-reveal>
           <figure class="feature-visual">
             <img src="assets/robotics-lab-rover.jpeg" alt="A robotic platform inside a NASA robotics laboratory" loading="lazy">
             <figcaption>NASA robotics laboratory. Illustrative of the setting, not the evaluated arm.</figcaption>
@@ -260,7 +269,7 @@
     </section>
 
     <section class="section github-section" id="github-projects" aria-labelledby="github-title"><div class="container">
-<div class="section-heading github-heading">
+<div class="section-heading github-heading" data-ambient-reveal>
 <div><p class="eyebrow">04 / PUBLIC CODE</p><h2 id="github-title">Code you can <em>explore.</em></h2>
 <p class="github-intro">A compact look at the repositories behind my engineering projects. <a href="https://github.com/kalarcon775" rel="noopener noreferrer" target="_blank">GitHub profile <span aria-hidden="true">↗</span></a>.</p></div>
 <a aria-label="Browse all of Kailani's public GitHub repositories" class="github-profile-link" href="https://github.com/kalarcon775?tab=repositories" rel="noopener noreferrer" target="_blank">All repositories <span aria-hidden="true">↗</span></a>
@@ -279,35 +288,35 @@
 </details>
 <p aria-live="polite" class="repo-result-count" id="repo-results" role="status">Showing 5 projects</p>
 <div class="repo-grid" id="repo-grid">
-<article class="repo-card" data-category="robotics" data-keywords="matlab simulink 3 link human leg simulation robotics kinematics dynamics jacobian newton euler control">
+<article class="repo-card" data-ambient-reveal data-category="robotics" data-keywords="matlab simulink 3 link human leg simulation robotics kinematics dynamics jacobian newton euler control">
 <div class="repo-card-top"><span aria-hidden="true" class="repo-symbol repo-symbol-purple">↗</span><span class="repo-category">Robotics &amp; controls</span></div>
 <h3>3-Link Leg Simulation</h3><p>Three-link leg model exploring joint motion and torque in MATLAB/Simulink.</p>
 <div class="repo-meta"><span>MATLAB</span><span>Simulink</span><span>Kinematics</span></div>
 
 <a aria-label="View 3-Link Leg Simulation source code on GitHub" class="repo-link" href="https://github.com/kalarcon775/3link-sim" rel="noopener noreferrer" target="_blank">View code on GitHub <span aria-hidden="true">↗</span></a>
 </article>
-<article class="repo-card" data-category="automation" data-keywords="thermal logger python tkinter pico tc08 arduino temperature data logging excel csv testing automation">
+<article class="repo-card" data-ambient-reveal data-category="automation" data-keywords="thermal logger python tkinter pico tc08 arduino temperature data logging excel csv testing automation">
 <div class="repo-card-top"><span aria-hidden="true" class="repo-symbol repo-symbol-pink">⌁</span><span class="repo-category">Tools &amp; automation</span></div>
 <h3>Thermal Logger</h3><p>Python temperature logger with Arduino controls and CSV/Excel reports.</p>
 <div class="repo-meta"><span>Python</span><span>Tkinter</span><span>Arduino</span></div>
 
 <a aria-label="View Thermal Logger source code on GitHub" class="repo-link" href="https://github.com/kalarcon775/Thermal-Logger" rel="noopener noreferrer" target="_blank">View code on GitHub <span aria-hidden="true">↗</span></a>
 </article>
-<article class="repo-card" data-category="automation lighting" data-keywords="prodriver sim python pyqt6 led driver fixture simulation electrical efficiency voltage current load">
+<article class="repo-card" data-ambient-reveal data-category="automation lighting" data-keywords="prodriver sim python pyqt6 led driver fixture simulation electrical efficiency voltage current load">
 <div class="repo-card-top"><span aria-hidden="true" class="repo-symbol repo-symbol-gold">◈</span><span class="repo-category">Engineering simulation</span></div>
 <h3>ProDriver Sim</h3><p>LED-driver simulation for comparing electrical predictions with bench tests.</p>
 <div class="repo-meta"><span>Python</span><span>PyQt6</span><span>Simulation</span></div>
 
 <a aria-label="View ProDriver Sim source code on GitHub" class="repo-link" href="https://github.com/kalarcon775/ProDriver-Sim" rel="noopener noreferrer" target="_blank">View code on GitHub <span aria-hidden="true">↗</span></a>
 </article>
-<article class="repo-card" data-category="lighting" data-keywords="huemotion light gesture webcam hand tracking mediapipe node js casambi rgbw gesture recognition">
+<article class="repo-card" data-ambient-reveal data-category="lighting" data-keywords="huemotion light gesture webcam hand tracking mediapipe node js casambi rgbw gesture recognition">
 <div class="repo-card-top"><span aria-hidden="true" class="repo-symbol repo-symbol-blue">✳</span><span class="repo-category">Lighting &amp; interaction</span></div>
 <h3>HueMotion</h3><p>Webcam hand gestures translated into responsive RGBW lighting.</p>
 <div class="repo-meta"><span>JavaScript</span><span>MediaPipe</span><span>Node.js</span></div>
 
 <a aria-label="View HueMotion source code on GitHub" class="repo-link" href="https://github.com/kalarcon775/HueMotion" rel="noopener noreferrer" target="_blank">View code on GitHub <span aria-hidden="true">↗</span></a>
 </article>
-<article class="repo-card" data-category="lighting automation" data-keywords="dmx controller flask python arduino serial rgbw lighting browser interface lighting control">
+<article class="repo-card" data-ambient-reveal data-category="lighting automation" data-keywords="dmx controller flask python arduino serial rgbw lighting browser interface lighting control">
 <div class="repo-card-top"><span aria-hidden="true" class="repo-symbol repo-symbol-teal">◉</span><span class="repo-category">Lighting &amp; interaction</span></div>
 <h3>DMX Controller</h3><p>Flask and Arduino interface for browser-controlled DMX lighting.</p>
 <div class="repo-meta"><span>Flask</span><span>Python</span><span>Arduino</span></div>
@@ -382,7 +391,7 @@
 
     <section class="section experience-section" id="experience">
       <div class="container">
-        <div class="section-heading"><p class="eyebrow">06 / EXPERIENCE & EDUCATION</p><h2>Learning by <em>doing.</em></h2></div>
+        <div class="section-heading" data-ambient-reveal><p class="eyebrow">06 / EXPERIENCE & EDUCATION</p><h2>Learning by <em>doing.</em></h2></div>
         <div class="experience-layout">
           <div class="experience-main"><div class="timeline"><article class="timeline-item"><div class="timeline-date">2026 · CURRENT</div><div aria-hidden="true" class="timeline-dot"></div><div><p class="project-kicker">NASA · MARSHALL SPACE FLIGHT CENTER</p><h3>OSTEM Intern, Human Factors Engineering &amp; Mechanical Design</h3><p>Investigating a lunar-dust testing robotic arm, its workspace, vacuum constraints, actuation, and system requirements.</p></div><details class="experience-more"><summary>Explore this experience</summary><p>Working through robotic-arm workspace geometry, high-vacuum test constraints, actuator options, and requirements for lunar-dust test scenarios.</p></details></article>
 <article class="timeline-item"><div class="timeline-date">2023–2026</div><div aria-hidden="true" class="timeline-dot"></div><div><p class="project-kicker">LUX DYNAMICS</p><h3>Product Development Intern</h3><p>Electrical, thermal, and photometric validation for 12+ LED products, plus automation and test-method improvements.</p></div><details class="experience-more"><summary>Explore this experience</summary><p>Product validation and engineering automation spanning electrical, thermal, and photometric testing, with Python tools for measurement and reporting.</p></details></article>
@@ -401,12 +410,12 @@
     </div>
 
     <section class="section skills-section">
-      <div class="container"><div class="section-heading"><p class="eyebrow">07 / THE TOOLBOX</p><h2>What I work <em>with.</em></h2></div><div class="skill-grid"><div class="skill-column"><span aria-hidden="true" class="skill-icon">⌘</span><h3>Programming &amp; embedded</h3><p>Python · C · C++ · PowerShell · MATLAB · VHDL · Arduino · STM32 · UART · Git</p></div><div class="skill-column"><span aria-hidden="true" class="skill-icon">◎</span><h3>Robotics &amp; controls</h3><p>Control systems · P/PID design · PWM · RLC response · Strain gauges · Robotics · Kinematics · Simulation</p></div><div class="skill-column"><span aria-hidden="true" class="skill-icon">✧</span><h3>Design &amp; validation</h3><p>Creo · Simulink · Oscilloscopes · FPGA design · FFT & radar processing · Test automation · Linux · Verification</p></div></div></div>
+      <div class="container"><div class="section-heading" data-ambient-reveal><p class="eyebrow">07 / THE TOOLBOX</p><h2>What I work <em>with.</em></h2></div><div class="skill-grid"><div class="skill-column"><span aria-hidden="true" class="skill-icon">⌘</span><h3>Programming &amp; embedded</h3><p>Python · C · C++ · PowerShell · MATLAB · VHDL · Arduino · STM32 · UART · Git</p></div><div class="skill-column"><span aria-hidden="true" class="skill-icon">◎</span><h3>Robotics &amp; controls</h3><p>Control systems · P/PID design · PWM · RLC response · Strain gauges · Robotics · Kinematics · Simulation</p></div><div class="skill-column"><span aria-hidden="true" class="skill-icon">✧</span><h3>Design &amp; validation</h3><p>Creo · Simulink · Oscilloscopes · FPGA design · FFT & radar processing · Test automation · Linux · Verification</p></div></div></div>
     </section>
 
     <section class="section interests-section" id="little-things">
       <div class="container interest-layout"><div class="constellation-shape" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
-        <div class="interest-copy">
+        <div class="interest-copy" data-ambient-reveal>
           <p class="eyebrow">08 / OUTSIDE THE LAB</p>
           <h2>Equal parts engineer <em>and dreamer.</em></h2>
           <p>I love the way space invites big questions, and the way books make you see the world differently. Jane Austen is always on my reading list, along with sci-fi like Andy Weir's <em>Project Hail Mary</em>.</p>
@@ -431,6 +440,10 @@
     </section>
 
     <section class="section contact-section" id="contact">
+      <div class="ambient-field ambient-field-contact" aria-hidden="true">
+        <span class="ambient-star"></span><span class="ambient-star"></span><span class="ambient-star"></span><span class="ambient-star"></span><span class="ambient-star"></span>
+        <span class="ambient-comet"></span>
+      </div>
       <div class="container contact-inner">
         <p class="eyebrow">10 / LET'S CONNECT</p>
         <h2>Let's make something <em>meaningful.</em></h2>

@@ -243,3 +243,21 @@ The flowers use only the existing blush, dusty-rose, plum and lavender family, w
 The **planet orbit, constellation reveals, collection star trails, and book animations remain intact**. The botanical decorations do not animate and are marked \`aria-hidden\`, with pointer interaction disabled. The existing reduced-motion behavior of the space animations is unchanged. The previous two-shelf engineering library (16 books, eight on each shelf) and all projects remain.
 
 No media assets, resume PDF, user-uploaded course reports, or training records were modified or uploaded. Changed paths are \`index.html\`, \`botanical.css\`, and this documentation.
+
+
+## Soft ambient space visualizations (October 2026)
+
+The website uses separate ambient.css and ambient.js files to introduce **understated background visuals** without replacing the existing content, the two-shelf library or the culturally inspired botanical drawings.
+
+- **Hero:** A few widely spaced twinkling dots, a pale orbit line with a single slowly revolving dot, and faint blush/lavender glows. The pre-existing planet still moves independently.
+- **Bookshelf:** A sparse backdrop of very small stars and a low-contrast gradient glow. Both shelves and the existing 16 clickable book spines remain unobstructed.
+- **About and featured NASA work:** Stationary, low-opacity background glows. Mexican marigold and Samoan plumeria accents retain their original SVG artwork and gain only an almost imperceptible 3px vertical drift.
+- **GitHub/code:** A faint CSS drafting grid sits behind the repository cards and their accessible controls.
+- **Contact:** A few dim stars and a short, rare shooting-star stroke. A visibility observer pauses the comet's animation while the contact section is offscreen.
+- **Scroll:** Selected headings and project/code cards appear with a small one-time fade-up when they enter the viewport. The elements remain fully readable if JavaScript is disabled or IntersectionObserver is unavailable.
+
+Only decorative CSS gradients, borders and inline HTML spans are used. No external images, animation libraries, canvases or high-frequency scroll handlers were added. Existing constellation drawing transitions, collection navigation star trails, planet, and interactive book animation are preserved.
+
+Accessibility: all decorative groups have aria-hidden=true and pointer-events:none. Reduced-motion users see a fully readable static layout; twinkling, orbit travel, floral drift, comet and scroll reveals are disabled. Mobile CSS scales back the visual density, and forced-colors/print views suppress purely decorative effects.
+
+This release updates index.html, adds ambient.css and ambient.js, and updates README.md. User-owned JPEG, MP4, resume PDF, and uploaded course records are **not touched**.
