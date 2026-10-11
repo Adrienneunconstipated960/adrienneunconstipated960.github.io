@@ -532,3 +532,63 @@ html.restoring-shelf-position .shelf-books{scroll-behavior:auto!important}
 @media(prefers-reduced-motion:reduce){
  .shelf-preview{transition:none}
 }
+
+
+/* Individual book-jacket colors on both shelves. Keep the family cohesive,
+   but don't repeat a single color across all books in a category. */
+.book-rose{--spine:#aa5478;--spine-border:#763651}
+.book-ink{--spine:#444b72;--spine-border:#303855}
+.book-plum{--spine:#62435e;--spine-border:#442c40}
+.book-sage{--spine:#47675d;--spine-border:#305047}
+.book-copper{--spine:#945f4d;--spine-border:#674132}
+.book-jade{--spine:#436f71;--spine-border:#2b5052}
+.book-orchid{--spine:#795d90;--spine-border:#553d69}
+.book-sienna{--spine:#915e58;--spine-border:#6a433e}
+.book-indigo{--spine:#55527b;--spine-border:#393858}
+.book-gold{--spine:#856134;--spine-border:#644826}
+.book-slate{--spine:#586775;--spine-border:#374b59}
+.book-wine{--spine:#82485e;--spine-border:#5c3041}
+.book-teal{--spine:#416c73;--spine-border:#2c5159}
+.book-lavender{--spine:#6b6288;--spine-border:#4e466a}
+
+/* Give rotated book titles real length to breathe. No clipping or ellipses;
+   the companion JS measures each exact name and scales only when necessary. */
+.shelf-books{min-height:250px;align-items:flex-end}
+.shelf-books .book-spine{
+  height:215px;
+  min-height:0;
+  max-height:none;
+  flex-shrink:0;
+  padding-block:9px;
+}
+.shelf-books .book-spine:nth-child(2n){height:207px}
+.shelf-books .book-spine:nth-child(3n){height:225px}
+.shelf-books .book-spine:nth-child(4n){height:213px}
+.shelf-books .book-spine-title{
+  flex:1 1 auto;
+  min-height:0;
+  font-size:15px;
+  line-height:1.05;
+  letter-spacing:0;
+  padding:3px 0;
+  white-space:nowrap;
+  overflow:visible;
+  text-overflow:clip;
+}
+.shelf-books .book-spine-year{flex-shrink:0}
+.shelf-books .book-spine-ornament{flex-shrink:0}
+@media(max-width:780px){
+  .shelf-books{min-height:246px}
+  .shelf-books .book-spine,
+  .shelf-books .book-spine:nth-child(2n),
+  .shelf-books .book-spine:nth-child(3n),
+  .shelf-books .book-spine:nth-child(4n){
+    min-height:0;
+    max-height:none;
+    height:215px;
+  }
+  .shelf-books .book-spine:nth-child(2n){height:206px}
+  .shelf-books .book-spine:nth-child(3n){height:222px}
+  .shelf-books .book-spine:nth-child(4n){height:211px}
+  .shelf-books .book-spine-title{font-size:15px}
+}

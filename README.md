@@ -207,3 +207,12 @@ The visitor journey now starts with a shorter hero that explicitly identifies Ka
 - CSS reduces unnecessary hero height and card spacing, preserving responsive accessibility and the existing gentle space animation motifs.
 
 The changes do **not** upload or alter any JPEG, MP4, PDF, or confidential source document. The existing image, video, resume, and GitHub repository links remain unchanged. The interactive arm, timeline, and remaining professional sections are preserved.
+
+
+## Unique book colors and title fitting
+
+All 14 books now have individual, coordinated cover colors rather than three repeated shelf-wide colors. The two shelves and seven-books-per-shelf arrangement stay unchanged. The palette uses blush, plum, blue, sage, copper, jade, ochre/gold, wine, and lavender; dark enough for legible ivory title lettering.
+
+Every spine title keeps its full visible name. On desktop and mobile the default book jackets are slightly taller to give rotated lettering more space. \`bookshelf.js\` also measures each title against the available spine height using the browser canvas text metrics. If necessary it adjusts the font to fit, then extends the spine rather than cutting the title off. It repeats the measurement after the web font loads and on viewport resize/zoom changes. No project names are abbreviated, hidden or replaced by ellipses.
+
+The selected book's opening cover still matches its spine color. Existing descriptions, hover and keyboard-focus previews, two-shelf navigation, mobile swiping, return-to-bookshelf and saved reading positions remain intact. Only \`index.html\`, \`bookshelf.css\`, and \`bookshelf.js\` and this documentation changed. All media assets remain untouched.

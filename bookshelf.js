@@ -441,5 +441,70 @@
     }
   });
 
+  // Latin spine titles are rotated vertically. Measure their full rendered
+  // length instead of hiding any letters in a fixed-height book jacket.
+  // Refit when web fonts finish loading and whenever the viewport resizes.
+  let fitFrame = null;
+  function fitSpineTitles() {
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d');
+
+    // Always recalculate from CSS, rather than carrying over a previous
+    // narrowed font size when rotating the phone or changing zoom.
+    bookButtons.forEach(button => {
+      button.style.removeProperty('height');
+      button.querySelector('.book-spine-title')?.style.removeProperty('font-size');
+    });
+    if (!context) return;
+
+    bookButtons.forEach(button => {
+      const title = button.querySelector('.book-spine-title');
+      if (!title) return;
+
+      const style = window.getComputedStyle(title);
+      const nominal = Number.parseFloat(style.fontSize) || 15;
+      const padding = (Number.parseFloat(style.paddingTop) || 0)
+        + (Number.parseFloat(style.paddingBottom) || 0);
+      const space = Math.max(1, title.clientHeight - padding - 8);
+      const content = (title.textContent || '').trim();
+      if (!content) return;
+
+      const measure = size => {
+        context.font = style.fontStyle + ' ' + style.fontWeight + ' ' +
+          size + 'px ' + style.fontFamily;
+        return context.measureText(content).width;
+      };
+      let size = nominal;
+      const required = measure(nominal);
+      if (required > space) {
+        size = Math.max(10, Math.floor((nominal * space / required) * 95) / 100);
+        title.style.fontSize = size.toFixed(2) + 'px';
+      }
+
+      // At unusually large accessibility text settings, extend the physical
+      // book rather than clip the name even at our minimum readable size.
+      const actualSpace = Math.max(1, title.clientHeight - padding - 8);
+      const remaining = measure(size) - actualSpace;
+      if (remaining > 0) {
+        const currentHeight = button.getBoundingClientRect().height;
+        button.style.height = Math.ceil(currentHeight + remaining + 8) + 'px';
+      }
+    });
+  }
+
+  function scheduleSpineFit() {
+    if (fitFrame !== null) window.cancelAnimationFrame(fitFrame);
+    fitFrame = window.requestAnimationFrame(() => {
+      fitFrame = null;
+      fitSpineTitles();
+    });
+  }
+
+  scheduleSpineFit();
+  window.addEventListener('resize', scheduleSpineFit, { passive: true });
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(scheduleSpineFit);
+  }
+
   renderBook(0);
 })();
