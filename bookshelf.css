@@ -410,3 +410,7 @@
   .book-open-stage.page-turn-mobile-forward .book-turning-page,
   .book-open-stage.page-turn-mobile-backward .book-turning-page{display:none;animation:none}
 }
+
+/* Two new volumes, colored to harmonize with the existing blush-and-plum shelf. */
+.book-slate{--spine:#586775;--spine-border:#394b59}
+.book-orchid{--spine:#795d90;--spine-border:#533e69}

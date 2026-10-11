@@ -91,7 +91,7 @@ The existing resume link, \`assets/Kailani_Alarcon_Resume.pdf\`, remains unchang
 
 The Engineering Bookshelf is an interactive project library at `#bookshelf`.
 
-- twelve individual CSS-rendered book spines represent engineering projects: NASA Robotics, IVerify, Thermal Controller & Logger, Fingerprint Authentication, Virtual Network Analyzer, 3-Link Leg Simulation, ProDriver Sim, HueMotion, and DMX Controller.
+- fourteen individual CSS-rendered book spines represent engineering projects: NASA Robotics, IVerify, Thermal Controller & Logger, Fingerprint Authentication, Virtual Network Analyzer, 3-Link Leg Simulation, ProDriver Sim, HueMotion, and DMX Controller.
 - Selecting a book opens a two-page story in a native accessible dialog, with a CSS book-cover turning animation, an overview and concrete technical details.
 - Dialog controls include Close, Previous book, Next book, Escape key to close, click outside to close, and keyboard arrow navigation among spines.
 - CSS honors `prefers-reduced-motion`; narrow screens display readable pages stacked vertically.
@@ -132,7 +132,7 @@ Only \`index.html\`, \`bookshelf.css\`, and \`bookshelf.js\` were changed for th
 
 The project reader is now styled as an open physical hardcover. The story and technical information are printed directly on two facing paper pages with a book binding, paper-stack edges, page numbers, chapter headings, and a hinged cover. The reader no longer looks like a framed tab or card.
 
-On smaller screens the book displays **one page at a time**: first the story, then the engineering details. Visitors turn that page using the control printed at the bottom of the sheet. The Previous / Next book navigation still moves among all twelve projects, and the existing Close button, Escape key, and external project links remain.
+On smaller screens the book displays **one page at a time**: first the story, then the engineering details. Visitors turn that page using the control printed at the bottom of the sheet. The Previous / Next book navigation still moves among all fourteen projects, and the existing Close button, Escape key, and external project links remain.
 
 The upgrade only modifies \`index.html\`, \`bookshelf.css\`, and \`bookshelf.js\`. All visuals are CSS shapes. No JPEG, MP4, PDF or other asset was uploaded, removed or changed.
 
@@ -150,3 +150,19 @@ The existing Fingerprint Authentication book was expanded with team-based, libra
 Additional CV evidence is included selectively in the About and Skills sections: Honors Baccalaureate, two 2026 Outstanding Service awards, mentoring, VHDL, PWM, FFT/radar processing, and cleanroom photolithography. The original NASA work, links, photographs, MP4 demos, and resume PDF remain intact.
 
 **Privacy and source handling:** The original academic reports and CV remain private; no PDF/DOCX files, source code dumps, or source images were uploaded. The site contains concise public-facing summaries only. New books do not invent public GitHub repository links that were not already available. Group work is explicitly described as collaborative.
+
+
+## October 2026 additional coursework and research context
+
+The user provided additional engineering coursework, a capstone report, and research statements. The public site **does not upload or link to any of the original documents**.
+
+Changes incorporated selectively:
+- **Pipelined VHDL ALU** is a new project book: 4-bit registered datapath, ripple-carry adder, pass-through, increment, addition, subtraction and XOR, with one-cycle output latency. This is distinct from the previously listed combinational VHDL seven-segment project.
+- **Hall-effect wafer characterization** is a new lab book: M91 FastHall, Van der Pauw four-contact geometry, Hall measurements, and characterization of transport properties. The report showed large uncertainties and unexpected results, so no precise carrier properties are portrayed as validated.
+- **IVerify** describes an external clip-on tubing-force sensing concept, an analog front end, threshold and microcontroller logic, and a simplified two-LED proof-of-concept prototype, separately from the intended three-state final design. It is not a clinically approved medical device.
+- **Three-link biomechanics** remains a completed simulation. Aspirations to develop future prosthetic or assistive devices are explicitly future-focused, not claimed as completed hardware.
+- **Research interests** mention reliable robotic sensing and assistive technologies without presenting grant proposal performance targets as achieved.
+
+The EE291 power-line numerical-methods document is an assignment prompt, not evidence of a completed implementation, so no completed solver project was added. Sensitive personal details from the scholarship statements and proprietary engineering measurements are not published.
+
+The shelf now has fourteen books in two rows of seven. The keyboard's up/down navigation moves between those rows. Existing interactive book animation, GitHub links, JPEG and MP4 paths, and resume links are unchanged. Only HTML, JavaScript, CSS, and project documentation are committed.

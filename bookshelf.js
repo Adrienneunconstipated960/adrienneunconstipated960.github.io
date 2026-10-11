@@ -27,11 +27,11 @@
     {
       id: 'iverify', title: 'IVerify', edition: 'Capstone · 2026 · Health technology',
       subtitle: 'A non-invasive IV occlusion detection concept',
-      story: 'For my senior design capstone, I led a four-person team exploring whether an IV line could be monitored without placing new components inside the fluid path. Designing a useful response required thinking about electronics, sensing, the end user, and how information would be presented.',
-      challenge: 'Identify a practical way to sense possible IV occlusion without interfering with the line.',
-      approach: 'Coordinate system architecture and integrate the mechanical sensing concept, analog electronics, embedded supervision, and three-state indication.',
-      tools: 'Systems integration, analog electronics, embedded systems, requirements and testing.',
-      outcome: 'A multidisciplinary academic design concept, not an approved clinical product.',
+      story: 'As project lead and systems integrator on a four-person senior-design team, I coordinated development of a non-invasive clip-on concept for gravity-fed IV tubing. The system applies repeatable mechanical preload and senses the tube reaction force as an indirect indicator of restrictions. Analog filtering and threshold logic feed microcontroller supervision, translating measurements into understandable status indications.',
+      challenge: 'Detect possible downstream flow restrictions without cutting, puncturing, or entering the sterile fluid pathway.',
+      approach: 'Integrate a clamp, force sensor, analog front end, threshold detection, microcontroller state logic, and a visual interface. The product concept defined normal, partial-restriction, and occlusion states.',
+      tools: 'Mechanical sensing, signal conditioning, threshold logic, embedded systems, risk analysis, verification planning.',
+      outcome: 'A bench-level, non-clinical proof of concept using two indicator LEDs. The proposed full three-color interface and clinical performance still required further testing.',
       link: '#work', action: 'Return to the project summary'
     },
     {
@@ -65,13 +65,23 @@
       link: '#work', action: 'Return to the project summary'
     },
     {
+      id: 'hall', title: 'Hall-Effect Wafer Measurements', edition: 'EE421 · December 2025 · Semiconductor lab',
+      subtitle: 'Characterizing charge carriers in a semiconductor wafer',
+      story: 'I used a semiconductor measurement setup to investigate the electrical transport properties of a wafer. The experiment combined the Hall effect with Van der Pauw measurements, connecting an applied magnetic field and measured voltage to resistivity, carrier type, concentration, and mobility. It also taught me how easily physical contacts and sample setup can influence what seems like a simple number.',
+      challenge: 'Determine wafer resistivity and Hall transport characteristics while checking the validity of the contacts and measurement setup.',
+      approach: 'Position the sample on a four-contact Van der Pauw stage, check contact behavior, and collect Hall and resistivity data with the M91 FastHall controller and MeasureLINK software.',
+      tools: 'Hall effect, Van der Pauw method, M91 FastHall, electromagnet, MeasureLINK, semiconductor characterization.',
+      outcome: 'Hands-on wafer characterization. The measured values had substantial uncertainty and unexpected trends, so the results were treated as a measurement-quality lesson rather than a definitive material specification.',
+      link: '#bookshelf', action: 'Return to the project bookshelf'
+    },
+    {
       id: 'leg', title: '3-Link Leg Simulation', edition: 'GitHub · Robotics & controls',
       subtitle: 'Exploring how connected joints move together',
       story: 'I modeled the hip, knee, and ankle as a connected three-link human leg. The model translates joint motion into foot position and velocity while examining the torques involved in linked-body motion.',
       challenge: 'Calculate the position, velocity, and dynamic response of a three-joint biomechanical system.',
       approach: 'Use a MATLAB S-function within Simulink, Jacobian kinematics, and Newton–Euler dynamics to compute joint torques.',
       tools: 'MATLAB, Simulink, S-functions, Jacobians, Newton–Euler dynamics.',
-      outcome: 'A simulation exploring how multi-link motion relates to joint-level dynamics.',
+      outcome: 'An Honors Contract modeling project that strengthened my interest in future prosthetics and exoskeleton research; no assistive device was built.',
       link: 'https://github.com/kalarcon775/3link-sim', action: 'Open the 3-Link Sim repository'
     },
     {
@@ -93,6 +103,16 @@
       tools: 'VHDL, combinational logic, full adders, lookup tables, seven-segment displays.',
       outcome: 'Synthesizable digital designs that demonstrate binary-to-decimal conversion and arithmetic display.',
       link: '#work', action: 'Browse engineering project summaries'
+    },
+    {
+      id: 'alu', title: 'Pipelined VHDL ALU', edition: 'EE421 · October 2025 · Digital design',
+      subtitle: 'A clocked four-bit arithmetic and logic unit',
+      story: 'I designed and tested a four-bit arithmetic and logic unit from a high-level datapath down to the individual logic blocks. Four chained one-bit full adders form the arithmetic core; registered inputs and outputs make the results stable and predictable. The design uses board switches and a pushbutton for commands, with LEDs and seven-segment displays as visible feedback.',
+      challenge: 'Implement multiple arithmetic and logic operations with a one-clock-cycle registered interface and clearly observable hardware outputs.',
+      approach: 'Combine a four-bit ripple-carry adder, operand selection logic, an XOR path, input/output flip-flops and a seven-segment decoder. Test pass-through, increment, addition, subtraction and XOR operations with representative switch settings.',
+      tools: 'VHDL, ripple-carry adder, sequential logic, FPGA I/O mapping, binary LED readout, seven-segment display.',
+      outcome: 'A tested synchronous design with outputs updating on the following clock cycle. Debugging pin assignments and competing LED drivers reinforced disciplined hardware integration.',
+      link: '#bookshelf', action: 'Return to the project bookshelf'
     },
     {
       id: 'prodriver', title: 'ProDriver Sim', edition: 'GitHub · Electrical simulation',
@@ -324,8 +344,8 @@
     let target = -1;
     if (event.key === 'ArrowRight') target = (index + 1) % bookButtons.length;
     else if (event.key === 'ArrowLeft') target = (index - 1 + bookButtons.length) % bookButtons.length;
-    else if (event.key === 'ArrowDown') target = (index + 6) % bookButtons.length;
-    else if (event.key === 'ArrowUp') target = (index - 6 + bookButtons.length) % bookButtons.length;
+    else if (event.key === 'ArrowDown') target = (index + 7) % bookButtons.length;
+    else if (event.key === 'ArrowUp') target = (index - 7 + bookButtons.length) % bookButtons.length;
     if (target < 0) return;
     event.preventDefault();
     bookButtons[target].focus();
