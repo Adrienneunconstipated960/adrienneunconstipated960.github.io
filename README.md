@@ -57,3 +57,31 @@ The website code references these exact filenames inside the root-level `assets/
 Do not upload the braid or Earth-window silhouette photo. Any older `.jpg` files remain unused by the updated HTML. Upload the actual JPEG bytes with the filename extension `.jpeg`, rather than merely relabeling files encoded in a different format. MP4 clips should be encoded in a browser-compatible format such as H.264. The video modules remain hidden until the MP4 metadata can be loaded.
 
 The existing `assets/Kailani_Alarcon_Resume.pdf` is a resume document rather than a photo/video and remains unchanged.
+
+
+## October 2026 interactive upgrade
+
+The portfolio now includes:
+- Motion-safe scroll reveal transitions and a subtle CSS space orbit
+- Expandable engineering case studies in the featured project and project cards
+- More informative GitHub repository cards and links to the existing MP4 demos
+- Three illustrative joint-angle sliders and a reset control for the ceiling-mounted arm
+- An expandable experience timeline
+- A keyboard-navigable Jane Austen / Project Hail Mary reading shelf
+
+### Media upload policy
+
+No images, videos, or PDF documents are added by this code update. Media remains under your control. The existing HTML references the following exact filenames under \`assets/\`:
+
+| Section | Asset |
+|---|---|
+| Homepage NASA rocket | \`sls-rocket-kailani.jpeg\` |
+| About and graduation | \`graduation-flowers.jpeg\` |
+| Featured NASA robotics project | \`robotics-lab-rover.jpeg\` |
+| Experience | \`nasa-mission-training-complex.jpeg\` |
+| Education | \`cleanroom-suit.jpeg\` |
+| Interests | \`space-helmet.jpeg\` |
+| HueMotion demonstration | \`huemotion-demo.mp4\` |
+| Lighting demonstration | \`lighting-demo.mp4\` |
+
+The existing resume link, \`assets/Kailani_Alarcon_Resume.pdf\`, remains unchanged. No new media is required for the interactive features. This site never references the braid photo. All robotic motions and angle ranges are illustrative, not verified hardware settings.

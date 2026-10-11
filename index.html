@@ -14,7 +14,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="enhancements.css">
   <script src="script.js" defer></script>
+  <script src="enhancements.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -46,6 +48,7 @@
         </div>
         <p class="hero-signoff">A little space, a little literature, and a lot of engineering.</p>
       </div>
+      <div class="hero-orbit" aria-hidden="true"><span class="orbital-ring"></span><span class="orbital-dot"></span></div>
       <figure class="hero-photo">
         <img src="assets/sls-rocket-kailani.jpeg" alt="Kailani standing beside a large NASA Space Launch System rocket model" fetchpriority="high">
         <figcaption>At NASA Marshall Space Flight Center</figcaption>
@@ -77,13 +80,15 @@
             <div class="project-metrics"><div><strong>34</strong><span>system requirements</span></div><div><strong>6</strong><span>operational scenarios</span></div><div><strong>10⁻⁷</strong><span>torr vacuum target</span></div></div>
             <div class="tag-row"><span>Robotics</span><span>Creo</span><span>Systems engineering</span></div>
             <a class="text-link" href="#robot-lab">See the illustrative robot demo ↗</a>
+            <details class="case-study"><summary>Explore the engineering approach</summary>
+<div class="case-body"><p><strong>Challenge:</strong> Evaluate whether a legacy arm could meet the workspace and vacuum constraints of a dust-mitigation test environment.</p><p><strong>My focus:</strong> Kinematic geometry, actuation considerations, requirements, and verification planning across a range of operational scenarios.</p><p class="case-note">The neighboring photograph shows a NASA robotics lab, not the robotic arm described here.</p></div></details>
           </div>
         </article>
         <div class="project-cards-wrapper"><div class="project-cards">
-<article class="project-card"><div class="card-top"><span aria-hidden="true" class="project-symbol symbol-pink">♡</span><span class="project-year">SPRING 2026</span></div><p class="project-kicker">CAPSTONE · HEALTH TECHNOLOGY</p><h3>IVerify</h3><p>Project lead and systems integrator for a four-person team designing a non-invasive clip-on IV occlusion detector. We connected mechanical sensing, analog electronics, embedded supervision, and a three-state indication concept.</p><div class="tag-row"><span>Systems integration</span><span>Embedded systems</span><span>Medical device concept</span></div><small>Academic prototype concept, not a clinically approved device.</small></article>
-<article class="project-card"><div class="card-top"><span aria-hidden="true" class="project-symbol symbol-orange">⌁</span><span class="project-year">2025–2026</span></div><p class="project-kicker">TEST AUTOMATION</p><h3>Thermal Controller &amp; Logger</h3><p>Built a Python and Arduino thermal-test platform with data collection, ambient control, live visualization, stability tracking, and automated Excel reporting to make testing more repeatable.</p><div class="tag-row"><span>Python</span><span>Arduino</span><span>Data logging</span></div></article>
-<article class="project-card"><div class="card-top"><span aria-hidden="true" class="project-symbol symbol-lilac">✳</span><span class="project-year">FALL 2025</span></div><p class="project-kicker">EMBEDDED SYSTEMS</p><h3>Fingerprint Authentication</h3><p>Developed an STM32F767ZI biometric authentication system supporting 24 fingerprint templates across four users and communicating over two UART channels.</p><div class="tag-row"><span>STM32</span><span>C</span><span>UART</span></div></article>
-<article class="project-card"><div class="card-top"><span aria-hidden="true" class="project-symbol symbol-blue">◉</span><span class="project-year">SPRING 2025</span></div><p class="project-kicker">RF &amp; MEASUREMENT</p><h3>Virtual Network Analyzer</h3><p>Used MATLAB to automate two-port VNA measurements, apply 12-term SOLT calibration, and visualize S-parameters across 100 MHz to 6 GHz.</p><div class="tag-row"><span>MATLAB</span><span>RF systems</span><span>Calibration</span></div></article>
+<article class="project-card"><div class="card-top"><span aria-hidden="true" class="project-symbol symbol-pink">♡</span><span class="project-year">SPRING 2026</span></div><p class="project-kicker">CAPSTONE · HEALTH TECHNOLOGY</p><h3>IVerify</h3><p>Project lead and systems integrator for a four-person team designing a non-invasive clip-on IV occlusion detector. We connected mechanical sensing, analog electronics, embedded supervision, and a three-state indication concept.</p><div class="tag-row"><span>Systems integration</span><span>Embedded systems</span><span>Medical device concept</span></div><small>Academic prototype concept, not a clinically approved device.</small><details class="case-study"><summary>View project details</summary><div class="case-body"><p><strong>Problem:</strong> Explore a non-invasive approach to detecting IV occlusion.</p><p><strong>Role:</strong> Team lead and systems integrator in a four-person capstone group.</p><p><strong>Architecture:</strong> Mechanical sensing, analog electronics, embedded supervision, and three-state indication.</p><p class="case-note">Academic design concept, not a clinically approved medical device.</p></div></details></article>
+<article class="project-card"><div class="card-top"><span aria-hidden="true" class="project-symbol symbol-orange">⌁</span><span class="project-year">2025–2026</span></div><p class="project-kicker">TEST AUTOMATION</p><h3>Thermal Controller &amp; Logger</h3><p>Built a Python and Arduino thermal-test platform with data collection, ambient control, live visualization, stability tracking, and automated Excel reporting to make testing more repeatable.</p><div class="tag-row"><span>Python</span><span>Arduino</span><span>Data logging</span></div><details class="case-study"><summary>View project details</summary><div class="case-body"><p><strong>Problem:</strong> Repetitive thermal validation is difficult to monitor and document consistently.</p><p><strong>Approach:</strong> Connect Python data logging with Arduino ambient control, live plots, stability checks, and Excel reporting.</p><p><strong>Value:</strong> More consistent and traceable engineering test workflows.</p></div></details></article>
+<article class="project-card"><div class="card-top"><span aria-hidden="true" class="project-symbol symbol-lilac">✳</span><span class="project-year">FALL 2025</span></div><p class="project-kicker">EMBEDDED SYSTEMS</p><h3>Fingerprint Authentication</h3><p>Developed an STM32F767ZI biometric authentication system supporting 24 fingerprint templates across four users and communicating over two UART channels.</p><div class="tag-row"><span>STM32</span><span>C</span><span>UART</span></div><details class="case-study"><summary>View project details</summary><div class="case-body"><p><strong>Hardware:</strong> STM32F767ZI embedded development board.</p><p><strong>Implementation:</strong> A biometric authentication design with 24 fingerprint templates, four users, and two UART communication channels.</p><p><strong>Engineering focus:</strong> Embedded C, serial interfaces, and reliable device communication.</p></div></details></article>
+<article class="project-card"><div class="card-top"><span aria-hidden="true" class="project-symbol symbol-blue">◉</span><span class="project-year">SPRING 2025</span></div><p class="project-kicker">RF &amp; MEASUREMENT</p><h3>Virtual Network Analyzer</h3><p>Used MATLAB to automate two-port VNA measurements, apply 12-term SOLT calibration, and visualize S-parameters across 100 MHz to 6 GHz.</p><div class="tag-row"><span>MATLAB</span><span>RF systems</span><span>Calibration</span></div><details class="case-study"><summary>View project details</summary><div class="case-body"><p><strong>Goal:</strong> Automate and visualize two-port RF network measurements.</p><p><strong>Method:</strong> MATLAB-based data acquisition, 12-term SOLT calibration, and S-parameter plots.</p><p><strong>Frequency range:</strong> 100 MHz to 6 GHz.</p></div></details></article>
 </div></div>
       </div>
     </section>
@@ -109,36 +114,41 @@
 <div class="repo-card-top"><span aria-hidden="true" class="repo-symbol repo-symbol-purple">↗</span><span class="repo-category">Robotics &amp; controls</span></div>
 <h3>3-Link Leg Simulation</h3><p>Modeled a human leg's hip, knee, and ankle in MATLAB/Simulink, calculating motion, velocity, and joint torque from a three-link system.</p>
 <div class="repo-meta"><span>MATLAB</span><span>Simulink</span><span>Kinematics</span></div>
+<details class="repo-details"><summary>What this project demonstrates</summary><p><strong>Model:</strong> Three-link human-leg kinematics and dynamics in MATLAB/Simulink, with joint torque calculations.</p><p><strong>Explore:</strong> Jacobians, angular inputs, motion, and Newton–Euler concepts.</p></details>
 <a aria-label="View 3-Link Leg Simulation source code on GitHub" class="repo-link" href="https://github.com/kalarcon775/3link-sim" rel="noopener noreferrer" target="_blank">View code on GitHub <span aria-hidden="true">↗</span></a>
 </article>
 <article class="repo-card" data-category="automation" data-keywords="thermal logger python tkinter pico tc08 arduino temperature data logging excel csv testing automation">
 <div class="repo-card-top"><span aria-hidden="true" class="repo-symbol repo-symbol-pink">⌁</span><span class="repo-category">Tools &amp; automation</span></div>
 <h3>Thermal Logger</h3><p>Desktop testing tool that logs multi-channel temperature data, supports optional Arduino ambient control, and exports reports to CSV and Excel.</p>
 <div class="repo-meta"><span>Python</span><span>Tkinter</span><span>Arduino</span></div>
+<details class="repo-details"><summary>What this project demonstrates</summary><p><strong>Interface:</strong> Python/Tkinter desktop tool for multichannel Pico TC-08 logging.</p><p><strong>Outputs:</strong> CSV data and formatted Excel reports, with optional Arduino ambient control.</p></details>
 <a aria-label="View Thermal Logger source code on GitHub" class="repo-link" href="https://github.com/kalarcon775/Thermal-Logger" rel="noopener noreferrer" target="_blank">View code on GitHub <span aria-hidden="true">↗</span></a>
 </article>
 <article class="repo-card" data-category="automation lighting" data-keywords="prodriver sim python pyqt6 led driver fixture simulation electrical efficiency voltage current load">
 <div class="repo-card-top"><span aria-hidden="true" class="repo-symbol repo-symbol-gold">◈</span><span class="repo-category">Engineering simulation</span></div>
 <h3>ProDriver Sim</h3><p>Physics-based LED driver and fixture simulator that compares predicted electrical behavior with measured bench data.</p>
 <div class="repo-meta"><span>Python</span><span>PyQt6</span><span>Simulation</span></div>
+<details class="repo-details"><summary>What this project demonstrates</summary><p><strong>Model:</strong> LED-driver electrical behavior, efficiency, voltage, current, and losses.</p><p><strong>Workflow:</strong> Compare predictions with bench measurements and tune JSON-based profiles.</p></details>
 <a aria-label="View ProDriver Sim source code on GitHub" class="repo-link" href="https://github.com/kalarcon775/ProDriver-Sim" rel="noopener noreferrer" target="_blank">View code on GitHub <span aria-hidden="true">↗</span></a>
 </article>
 <article class="repo-card" data-category="lighting" data-keywords="huemotion light gesture webcam hand tracking mediapipe node js casambi rgbw gesture recognition">
 <div class="repo-card-top"><span aria-hidden="true" class="repo-symbol repo-symbol-blue">✳</span><span class="repo-category">Lighting &amp; interaction</span></div>
 <h3>HueMotion</h3><p>Gesture-driven RGBW lighting interface using webcam hand tracking, a browser preview, and an optional local Casambi bridge.</p>
 <div class="repo-meta"><span>JavaScript</span><span>MediaPipe</span><span>Node.js</span></div>
+<details class="repo-details"><summary>What this project demonstrates</summary><p><strong>Interaction:</strong> MediaPipe webcam hand tracking maps gestures to RGBW scenes.</p><p><strong>Stack:</strong> Browser interface, Node.js bridge, and optional Casambi triggering.</p><a class="repo-extra-link" href="#video-demos">Watch the demo ↓</a></details>
 <a aria-label="View HueMotion source code on GitHub" class="repo-link" href="https://github.com/kalarcon775/HueMotion" rel="noopener noreferrer" target="_blank">View code on GitHub <span aria-hidden="true">↗</span></a>
 </article>
 <article class="repo-card" data-category="lighting automation" data-keywords="dmx controller flask python arduino serial rgbw lighting browser interface lighting control">
 <div class="repo-card-top"><span aria-hidden="true" class="repo-symbol repo-symbol-teal">◉</span><span class="repo-category">Lighting &amp; interaction</span></div>
 <h3>DMX Controller</h3><p>Browser-based RGBW lighting controls built with Flask and Arduino, with scene selection, brightness adjustment, and DMX output.</p>
 <div class="repo-meta"><span>Flask</span><span>Python</span><span>Arduino</span></div>
+<details class="repo-details"><summary>What this project demonstrates</summary><p><strong>System:</strong> Flask web interface sends brightness and scene commands to Arduino over serial.</p><p><strong>Hardware:</strong> Arduino generates DMX output for RGBW fixtures.</p><a class="repo-extra-link" href="#video-demos">See lighting demos ↓</a></details>
 <a aria-label="View DMX Controller source code on GitHub" class="repo-link" href="https://github.com/kalarcon775/DMX-Controller" rel="noopener noreferrer" target="_blank">View code on GitHub <span aria-hidden="true">↗</span></a>
 </article>
 </div>
 <div class="repo-empty" hidden="" id="repo-empty"><p>No projects found. Try another keyword or category.</p><button class="btn btn-outline" id="reset-repos" type="button">Show all projects</button></div>
 <p class="repo-more">More from my GitHub: <a href="https://github.com/kalarcon775/Count-Screws" rel="noopener noreferrer" target="_blank">Count-Screws ↗</a> · <a href="https://github.com/kalarcon775?tab=repositories" rel="noopener noreferrer" target="_blank">Explore the full collection ↗</a>.</p>
-<div class="video-demos">
+<div class="video-demos" id="video-demos">
   <div class="video-demos-intro">
     <p class="project-kicker">SMALL DEMOS, REAL HARDWARE</p>
     <h3>Seeing the ideas <em>in motion.</em></h3>
@@ -172,6 +182,14 @@
           <p class="robot-aside">Illustrative 2D kinematics only. This is not a hardware controller or a collision-validated simulation.</p>
           <div class="robot-action-row"><button aria-pressed="true" class="pose-button active" data-pose="home" type="button">Home</button><button aria-pressed="false" class="pose-button" data-pose="hello" type="button">Say hello</button><button aria-pressed="false" class="pose-button" data-pose="reach" type="button">Reach</button><button aria-pressed="false" class="pose-button" data-pose="inspect" type="button">Inspect</button></div>
           <div class="sequence-wrap"><button type="button" id="animate-button" class="sequence-button">Run motion sequence ↗</button><button type="button" id="stop-button" class="sequence-stop" hidden>Stop sequence</button></div>
+<div class="robot-tuner" aria-label="Manual joint controls">
+<h3>Try adjusting the joints</h3>
+<p class="tuner-hint">Drag a control to explore a new pose, or choose a preset above.</p>
+<div class="joint-row"><label for="joint-shoulder">Shoulder angle</label><output id="shoulder-input-value" for="joint-shoulder">-48°</output><input id="joint-shoulder" data-joint-control type="range" min="-90" max="90" step="1" value="-48" aria-describedby="shoulder-input-value"></div>
+<div class="joint-row"><label for="joint-elbow">Elbow angle</label><output id="elbow-input-value" for="joint-elbow">96°</output><input id="joint-elbow" data-joint-control type="range" min="-120" max="135" step="1" value="96" aria-describedby="elbow-input-value"></div>
+<div class="joint-row"><label for="joint-wrist">Wrist angle</label><output id="wrist-input-value" for="joint-wrist">0°</output><input id="joint-wrist" data-joint-control type="range" min="-90" max="90" step="1" value="0" aria-describedby="wrist-input-value"></div>
+<div class="tuner-bottom"><p>Angles are illustrative, not mechanical joint limits.</p><button class="tuner-reset" type="button" id="reset-robot">Reset to home</button></div>
+</div>
         </div>
         <div class="robot-console">
           <div class="console-header"><span class="console-title"><span class="live-pip"></span> KAILANI'S LITTLE ROBOT LAB</span><span class="console-tag">CONCEPT / 2D</span></div>
@@ -197,9 +215,9 @@
       <div class="container">
         <div class="section-heading"><p class="eyebrow">05 / EXPERIENCE & EDUCATION</p><h2>Learning by <em>doing.</em></h2></div>
         <div class="experience-layout">
-          <div class="experience-main"><div class="timeline"><article class="timeline-item"><div class="timeline-date">2026 · CURRENT</div><div aria-hidden="true" class="timeline-dot"></div><div><p class="project-kicker">NASA · MARSHALL SPACE FLIGHT CENTER</p><h3>OSTEM Intern, Human Factors Engineering &amp; Mechanical Design</h3><p>Investigating a lunar-dust testing robotic arm, its workspace, vacuum constraints, actuation, and system requirements.</p></div></article>
-<article class="timeline-item"><div class="timeline-date">2023–2026</div><div aria-hidden="true" class="timeline-dot"></div><div><p class="project-kicker">LUX DYNAMICS</p><h3>Product Development Intern</h3><p>Electrical, thermal, and photometric validation for 12+ LED products, plus automation and test-method improvements.</p></div></article>
-<article class="timeline-item"><div class="timeline-date">2024–2026</div><div aria-hidden="true" class="timeline-dot"></div><div><p class="project-kicker">UNIVERSITY OF NEVADA, RENO</p><h3>Engineering Peer Tutor</h3><p>Helped students navigate circuits, microcontrollers, embedded C, and control systems, one tricky problem at a time.</p></div></article></div></div>
+          <div class="experience-main"><div class="timeline"><article class="timeline-item"><div class="timeline-date">2026 · CURRENT</div><div aria-hidden="true" class="timeline-dot"></div><div><p class="project-kicker">NASA · MARSHALL SPACE FLIGHT CENTER</p><h3>OSTEM Intern, Human Factors Engineering &amp; Mechanical Design</h3><p>Investigating a lunar-dust testing robotic arm, its workspace, vacuum constraints, actuation, and system requirements.</p></div><details class="experience-more"><summary>Explore this experience</summary><p>Working through robotic-arm workspace geometry, high-vacuum test constraints, actuator options, and requirements for lunar-dust test scenarios.</p></details></article>
+<article class="timeline-item"><div class="timeline-date">2023–2026</div><div aria-hidden="true" class="timeline-dot"></div><div><p class="project-kicker">LUX DYNAMICS</p><h3>Product Development Intern</h3><p>Electrical, thermal, and photometric validation for 12+ LED products, plus automation and test-method improvements.</p></div><details class="experience-more"><summary>Explore this experience</summary><p>Product validation and engineering automation spanning electrical, thermal, and photometric testing, with Python tools for measurement and reporting.</p></details></article>
+<article class="timeline-item"><div class="timeline-date">2024–2026</div><div aria-hidden="true" class="timeline-dot"></div><div><p class="project-kicker">UNIVERSITY OF NEVADA, RENO</p><h3>Engineering Peer Tutor</h3><p>Helped students navigate circuits, microcontrollers, embedded C, and control systems, one tricky problem at a time.</p></div><details class="experience-more"><summary>Explore this experience</summary><p>Explaining circuits, microcontrollers, embedded C, and controls in ways students can test and apply independently.</p></details></article></div></div>
           <figure class="experience-photo"><img src="assets/nasa-mission-training-complex.jpeg" alt="Kailani in front of NASA's Mission Training Complex" loading="lazy"><figcaption>At the Mission Training Complex</figcaption></figure>
         </div>
         <div class="education-panel">
@@ -221,6 +239,18 @@
           <p>I love the way space invites big questions, and the way books make you see the world differently. Jane Austen is always on my reading list, along with sci-fi like Andy Weir's <em>Project Hail Mary</em>.</p>
           <p>Robotics ties the two together for me: design, motion, imagination, and the challenge of making an idea feel real.</p>
           <div class="interest-tags"><span>Space</span><span>Jane Austen</span><span>Reading</span><span>Robotics</span></div>
+<div class="reading-shelf" aria-labelledby="reading-title">
+<h3 id="reading-title">A little space on my bookshelf</h3>
+<p class="shelf-intro">Two literary interests and a reminder that curiosity extends beyond the lab.</p>
+<div class="shelf-tabs" role="tablist" aria-label="Explore Kailani's reading interests">
+<button class="shelf-tab" id="book-tab-austen" role="tab" aria-selected="true" aria-controls="book-panel-austen" tabindex="0" data-book-tab type="button">Jane Austen</button>
+<button class="shelf-tab" id="book-tab-hail-mary" role="tab" aria-selected="false" aria-controls="book-panel-hail-mary" tabindex="-1" data-book-tab type="button">Project Hail Mary</button>
+<button class="shelf-tab" id="book-tab-curiosity" role="tab" aria-selected="false" aria-controls="book-panel-curiosity" tabindex="-1" data-book-tab type="button">Why I read</button>
+</div>
+<div class="shelf-panel" id="book-panel-austen" role="tabpanel" aria-labelledby="book-tab-austen" data-book-panel><h4>Jane Austen</h4><p>I admire the wit, careful observations, and deeply human personalities in Austen's novels. Good writing can make a quiet moment feel full of possibility.</p></div>
+<div class="shelf-panel" id="book-panel-hail-mary" role="tabpanel" aria-labelledby="book-tab-hail-mary" data-book-panel hidden><h4>Project Hail Mary · Andy Weir</h4><p>Scientific problem-solving meets an unexpected connection. I love how the story treats curiosity and collaboration as ways to solve seemingly impossible problems.</p></div>
+<div class="shelf-panel" id="book-panel-curiosity" role="tabpanel" aria-labelledby="book-tab-curiosity" data-book-panel hidden><h4>Stories and systems</h4><p>Reading stretches my imagination. Robotics lets me bring that imagination back into the physical world, one experiment at a time.</p></div>
+</div>
         </div>
         <figure class="interest-photo"><img src="assets/space-helmet.jpeg" alt="Kailani wearing a space helmet in a lunar exhibit" loading="lazy"><figcaption>Always looking up.</figcaption></figure>
       </div>
