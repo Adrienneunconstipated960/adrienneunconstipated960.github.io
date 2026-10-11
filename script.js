@@ -162,3 +162,13 @@ if(stopButton){
   sequenceButton?.addEventListener('click',()=>{stopButton.hidden=false;});
   poseButtons.forEach(b=>b.addEventListener('click',()=>{stopButton.hidden=true;}));
 }
+
+// Show the optional video clips only after their user-uploaded MP4 files exist.
+// This prevents broken video players while the assets folder is being populated.
+document.querySelectorAll('[data-video-demo]').forEach(card => {
+  const video = card.querySelector('video');
+  if (!video) return;
+  video.addEventListener('loadedmetadata', () => { card.hidden = false; }, { once: true });
+  video.addEventListener('error', () => { card.hidden = true; });
+  video.load();
+});
