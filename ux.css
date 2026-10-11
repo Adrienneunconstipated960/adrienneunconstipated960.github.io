@@ -89,3 +89,44 @@ a,button,summary{ -webkit-tap-highlight-color:rgba(158,91,123,.12)}
 
 /* Quiet academic recognition, without a separate crowded awards panel. */
 .about-copy .about-honors{margin-top:16px;font-size:12px;line-height:1.7;color:var(--rose-dark);max-width:540px}
+
+
+/* Space is a navigation motif, not background confetti. Retire scattered effects. */
+.hero-orbit,.star-trio-hero,.space-orbiter-shelf,.constellation-shape{display:none!important}
+.robot-section::before,.robot-section::after{display:none!important}
+.hero-copy{position:relative;z-index:1}
+.intro-planet{position:absolute;top:10%;right:40%;width:70px;height:70px;pointer-events:none;opacity:.48;z-index:0;animation:intro-planet-drift 24s linear infinite}
+.intro-planet-core{position:absolute;inset:20px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#f0cedb 0%,#cc91aa 60%,#895d7f 100%);box-shadow:inset -4px -5px 7px #593d6045}
+.intro-planet-ring{position:absolute;inset:28px 1px;border:1.8px solid #ab6e8c;border-radius:50%;transform:rotate(-24deg) scaleY(.6)}
+.intro-planet-moon{position:absolute;left:10px;top:8px;width:6px;height:6px;border-radius:50%;background:#a57d9d;box-shadow:0 0 0 4px #b385a512}
+@keyframes intro-planet-drift{0%{transform:rotate(0deg) translateX(7px) rotate(0deg)}100%{transform:rotate(360deg) translateX(7px) rotate(-360deg)}}
+.constellation-break{width:280px;max-width:70vw;height:48px;margin:-20px auto;position:relative;color:#ab849f;opacity:.58;pointer-events:none}
+.constellation-break svg{width:100%;height:100%;overflow:visible}
+.constellation-break svg circle{transform-origin:center;transform-box:fill-box}
+html.space-reveal-ready .constellation-break path{stroke-dasharray:320;stroke-dashoffset:320;transition:stroke-dashoffset 1.5s ease}
+html.space-reveal-ready .constellation-break circle{opacity:.15;transform:scale(.65);transition:opacity .9s ease,transform .9s ease}
+html.space-reveal-ready .constellation-break.is-visible path{stroke-dashoffset:0}
+html.space-reveal-ready .constellation-break.is-visible circle{opacity:1;transform:scale(1)}
+.collection-star-trail{position:absolute;top:9px;right:19px;width:50px;height:34px;opacity:0;pointer-events:none}
+.collection-star-trail i{position:absolute;width:7px;height:7px;background:#af7d9b;clip-path:polygon(50% 0,60% 40%,100% 50%,60% 60%,50% 100%,40% 60%,0 50%,40% 40%)}
+.collection-star-trail i:nth-child(1){left:0;top:15px}
+.collection-star-trail i:nth-child(2){left:9px;top:3px;width:5px;height:5px}
+.collection-star-trail i:nth-child(3){left:18px;top:22px;width:6px;height:6px}
+.shelf-collection-link.is-traveling .collection-star-trail{opacity:1}
+.shelf-collection-link.is-traveling .collection-star-trail i{animation:collection-star-travel .72s ease-out both}
+.shelf-collection-link.is-traveling .collection-star-trail i:nth-child(2){animation-delay:.08s}
+.shelf-collection-link.is-traveling .collection-star-trail i:nth-child(3){animation-delay:.14s}
+@keyframes collection-star-travel{0%{opacity:0;transform:translate(0,0) scale(.6)}35%{opacity:.8}100%{opacity:0;transform:translate(36px,-11px) scale(1.1)}}
+@media(max-width:760px){
+ .intro-planet{width:50px;height:50px;top:0;right:9%;opacity:.35}
+ .intro-planet-core{inset:14px}
+ .intro-planet-ring{inset:20px 1px}
+ .intro-planet-moon{width:4px;height:4px}
+ .constellation-break{width:205px;max-width:65vw;height:36px;margin:-12px auto;opacity:.46}
+}
+@media(prefers-reduced-motion:reduce){
+ .intro-planet{animation:none}
+ html.space-reveal-ready .constellation-break path{stroke-dashoffset:0;transition:none}
+ html.space-reveal-ready .constellation-break circle{opacity:1;transform:none;transition:none}
+ .shelf-collection-link.is-traveling .collection-star-trail{display:none}
+}

@@ -54,8 +54,7 @@
         <p class="hero-signoff">A little space, a little literature, and a lot of engineering.</p>
         <a class="hero-secondary-link" href="#robot-lab">Or try the interactive robot lab <span aria-hidden="true">↗</span></a>
       </div>
-      <div class="hero-orbit" aria-hidden="true"><span class="orbital-ring"></span><span class="orbital-dot"></span></div>
-      <div class="star-trio star-trio-hero" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="intro-planet" aria-hidden="true"><span class="intro-planet-core"></span><span class="intro-planet-ring"></span><span class="intro-planet-moon"></span></div>
       <figure class="hero-photo">
         <img src="assets/sls-rocket-kailani.jpeg" alt="Kailani standing beside a large NASA Space Launch System rocket model" fetchpriority="high">
         <figcaption>At NASA Marshall Space Flight Center</figcaption>
@@ -81,6 +80,10 @@
         <figure class="about-photo"><img src="assets/graduation-flowers.jpeg" alt="Kailani celebrating graduation while holding flowers" loading="lazy"><figcaption>A degree earned, with many more things to learn.</figcaption></figure>
       </div>
     </section>
+
+    <div class="constellation-break" aria-hidden="true" data-constellation="discovery">
+      <svg viewBox="0 0 280 48" focusable="false" aria-hidden="true"><path d="M16 27 L64 9 L112 31 L167 11 L215 29 L263 15" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><g fill="currentColor"><circle cx="16" cy="27" r="2.7"/><circle cx="64" cy="9" r="3"/><circle cx="112" cy="31" r="2.8"/><circle cx="167" cy="11" r="2.7"/><circle cx="215" cy="29" r="3"/><circle cx="263" cy="15" r="2.8"/></g></svg>
+    </div>
 
     <section class="section work-section" id="work">
       <div class="container">
@@ -118,8 +121,13 @@
           <p>Choose a book spine to explore fourteen projects spanning robotics, embedded systems, digital design, measurements, and lighting.</p>
         </div>
         <div class="bookshelf-cabinet" aria-label="Interactive bookshelf with fourteen engineering project books">
-          <div class="shelf-level">
-            <div class="shelf-books" role="group" aria-label="Featured engineering projects">
+          <div class="shelf-level" id="shelf-collection-one">
+            <div class="shelf-label-row">
+              <h3>Volume I <span>Research &amp; engineering</span></h3>
+              <button type="button" class="shelf-collection-link" data-collection-target="shelf-collection-two" aria-controls="shelf-collection-two">Next collection <span aria-hidden="true">→</span><span class="collection-star-trail" aria-hidden="true"><i></i><i></i><i></i></span></button>
+            </div>
+            <p class="shelf-swipe-hint">Swipe sideways to browse the books <span aria-hidden="true">↔</span></p>
+            <div class="shelf-books" role="group" aria-label="Featured engineering projects, swipe horizontally to browse">
 <button class="book-spine book-rose" type="button" data-open-book="nasa" aria-label="Open NASA Robotics project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">NASA Robotics</span><span class="book-spine-year">2026</span></button>
 <button class="book-spine book-ink" type="button" data-open-book="ur3e" aria-label="Open UR3e robot analysis project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">UR3e Analysis</span><span class="book-spine-year">2026</span></button>
 <button class="book-spine book-sienna" type="button" data-open-book="iverify" aria-label="Open IVerify project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">IVerify</span><span class="book-spine-year">2026</span></button>
@@ -130,8 +138,13 @@
             </div>
             <div class="shelf-plank" aria-hidden="true"></div>
           </div>
-          <div class="shelf-level">
-            <div class="shelf-books" role="group" aria-label="Coding, simulation and lighting projects">
+          <div class="shelf-level" id="shelf-collection-two">
+            <div class="shelf-label-row">
+              <h3>Volume II <span>Code &amp; experimentation</span></h3>
+              <button type="button" class="shelf-collection-link" data-collection-target="shelf-collection-one" aria-controls="shelf-collection-one">Previous collection <span aria-hidden="true">↑</span><span class="collection-star-trail" aria-hidden="true"><i></i><i></i><i></i></span></button>
+            </div>
+            <p class="shelf-swipe-hint">Swipe sideways to browse the books <span aria-hidden="true">↔</span></p>
+            <div class="shelf-books" role="group" aria-label="Coding, simulation and lighting projects, swipe horizontally to browse">
 <button class="book-spine book-plum" type="button" data-open-book="leg" aria-label="Open 3-Link Sim project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">3-Link Sim</span><span class="book-spine-year">GitHub</span></button>
 <button class="book-spine book-copper" type="button" data-open-book="motor" aria-label="Open STM32 motor control project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">STM32 Motor</span><span class="book-spine-year">2025</span></button>
 <button class="book-spine book-jade" type="button" data-open-book="vhdl" aria-label="Open VHDL digital circuits project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">VHDL Logic</span><span class="book-spine-year">2025</span></button>
@@ -143,7 +156,7 @@
             <div class="shelf-plank" aria-hidden="true"></div>
           </div>
         </div>
-        <p class="bookshelf-help">Choose a spine. Watch your project book open, then turn through more stories. Press Escape to close.</p>
+        <p class="bookshelf-help">Tap a spine to open a project. On phones, turn from the story to the engineering details. Return to the shelf at any time.</p>
       </div>
     </section>
 
@@ -151,8 +164,9 @@
       <div class="project-book-shell">
         <div class="project-book-toolbar">
           <span class="project-book-eyebrow">FROM THE ENGINEERING LIBRARY · SELECTED WORKS</span>
-          <button id="close-project-book" class="project-book-close" type="button" aria-label="Close project book">Close book <span aria-hidden="true">×</span></button>
+          <button id="close-project-book" class="project-book-close return-bookshelf" type="button" aria-label="Return to bookshelf"><span aria-hidden="true">←</span> Return to Bookshelf</button>
         </div>
+        <p id="book-page-status" class="book-page-status" aria-live="polite">Page 1 of 2 · Project story</p>
         <div id="book-open-stage" class="book-open-stage is-closed" data-mobile-page="1">
           <div class="book-spread">
             <article class="book-page book-page-left">
@@ -164,7 +178,7 @@
               <h3 class="book-chapter-heading">The story</h3>
               <p id="book-story" class="book-story-prose"></p>
               <div class="book-page-bottomline"><span>CHAPTER ONE · THE PROJECT</span><span class="book-page-number">01</span></div>
-              <button class="book-mobile-turn book-mobile-forward" id="book-next-page" type="button">Turn the page <span aria-hidden="true">→</span></button>
+              <button class="book-mobile-turn book-mobile-forward" id="book-next-page" type="button">Turn to engineering details <span aria-hidden="true">→</span></button>
             </article>
             <article class="book-page book-page-right">
               <div class="book-page-topline"><span>NOTES FROM THE WORKSHOP</span><span class="book-page-chapter">II</span></div>
@@ -177,7 +191,7 @@
               </dl>
               <a id="book-project-link" class="book-project-link" href="#work">See project details <span aria-hidden="true">↗</span></a>
               <div class="book-page-bottomline"><span>CHAPTER TWO · THE ENGINEERING</span><span class="book-page-number">02</span></div>
-              <button class="book-mobile-turn book-mobile-backward" id="book-prev-page" type="button"><span aria-hidden="true">←</span> Previous page</button>
+              <button class="book-mobile-turn book-mobile-backward" id="book-prev-page" type="button"><span aria-hidden="true">←</span> Return to project story</button>
             </article>
           </div>
           <div class="book-turning-page" aria-hidden="true"><span class="book-turning-lines"></span></div>
@@ -324,6 +338,10 @@
         </div>
       </div>
     </section>
+
+    <div class="constellation-break" aria-hidden="true" data-constellation="craft">
+      <svg viewBox="0 0 280 48" focusable="false" aria-hidden="true"><path d="M16 27 L64 9 L112 31 L167 11 L215 29 L263 15" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><g fill="currentColor"><circle cx="16" cy="27" r="2.7"/><circle cx="64" cy="9" r="3"/><circle cx="112" cy="31" r="2.8"/><circle cx="167" cy="11" r="2.7"/><circle cx="215" cy="29" r="3"/><circle cx="263" cy="15" r="2.8"/></g></svg>
+    </div>
 
     <section class="section skills-section">
       <div class="container"><div class="section-heading"><p class="eyebrow">06 / THE TOOLBOX</p><h2>What I work <em>with.</em></h2></div><div class="skill-grid"><div class="skill-column"><span aria-hidden="true" class="skill-icon">⌘</span><h3>Programming &amp; embedded</h3><p>Python · C · C++ · MATLAB · VHDL · Arduino · STM32 · UART · SPI · I²C · Git</p></div><div class="skill-column"><span aria-hidden="true" class="skill-icon">◎</span><h3>Robotics &amp; controls</h3><p>Control systems · PWM · PID · ROS · Kinematics · Jacobians · Actuators · Simulation</p></div><div class="skill-column"><span aria-hidden="true" class="skill-icon">✧</span><h3>Design &amp; validation</h3><p>Creo · Simulink · FPGA design · FFT & radar processing · Test automation · Verification · Photolithography</p></div></div></div>

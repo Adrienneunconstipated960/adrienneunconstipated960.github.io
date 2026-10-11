@@ -150,6 +150,7 @@
   if (!dialog || typeof dialog.showModal !== 'function') return;
   const stage = document.getElementById('book-open-stage');
   const closeBtn = document.getElementById('close-project-book');
+  const pageStatus = document.getElementById('book-page-status');
   const previous = document.getElementById('book-previous');
   const next = document.getElementById('book-next');
   const counter = document.getElementById('book-counter');
@@ -177,6 +178,18 @@
   let finishTurnTimer = null;
   let isOpening = false;
   let isTurning = false;
+  const shelfStrips = [...document.querySelectorAll('.shelf-books')];
+  const savedReadingPages = new Map();
+  let shelfScrollBeforeOpen = [];
+  let pageScrollBeforeOpen = 0;
+
+  function updateReadingStatus() {
+    if (!pageStatus || !stage) return;
+    const second = stage.dataset.mobilePage === '2';
+    pageStatus.textContent = second
+      ? 'Page 2 of 2 · Engineering details'
+      : 'Page 1 of 2 · Project story';
+  }
 
   function clearTimers() {
     [pullTimer, openTimer, turnTimer, finishTurnTimer].forEach(id => {
@@ -212,7 +225,8 @@
 
     if (counter) counter.textContent = 'Book ' + (index + 1) + ' of ' + books.length;
     if (coverTitle) coverTitle.textContent = book.title;
-    if (stage) stage.dataset.mobilePage = '1';
+    if (stage) stage.dataset.mobilePage = String(savedReadingPages.get(book.id) || 1);
+    updateReadingStatus();
 
     // Match the opening hardback cover to the selected spine.
     const spine = bookButtons.find(button => button.dataset.openBook === book.id);
@@ -226,7 +240,7 @@
 
   function setBookStage(state) {
     if (!stage) return;
-    stage.classList.remove('is-closed', 'is-opening', 'is-open', 'page-turn-next', 'page-turn-prev');
+    stage.classList.remove('is-closed', 'is-opening', 'is-open', 'page-turn-next', 'page-turn-prev', 'page-turn-mobile-forward', 'page-turn-mobile-backward');
     stage.classList.add(state);
   }
 
@@ -234,6 +248,8 @@
     if (dialog.open || pullTimer !== null) return;
     clearTimers();
     lastTrigger = trigger;
+    pageScrollBeforeOpen = window.scrollY;
+    shelfScrollBeforeOpen = shelfStrips.map(strip => strip.scrollLeft);
     trigger.classList.add('is-pulling');
     isOpening = !reduceMotion.matches;
     isTurning = false;
@@ -247,7 +263,7 @@
       trigger.classList.remove('is-pulling');
       dialog.showModal();
       dialog.scrollTop = 0;
-      closeBtn?.focus();
+      closeBtn?.focus({ preventScroll: true });
 
       if (reduceMotion.matches) {
         isOpening = false;
@@ -311,6 +327,8 @@
 
     if (reduceMotion.matches) {
       stage.dataset.mobilePage = String(nextPageNumber);
+      savedReadingPages.set(books[selectedIndex].id, nextPageNumber);
+      updateReadingStatus();
       dialog.scrollTop = 0;
       return;
     }
@@ -321,6 +339,8 @@
     stage.classList.add(name);
     turnTimer = window.setTimeout(() => {
       stage.dataset.mobilePage = String(nextPageNumber);
+      savedReadingPages.set(books[selectedIndex].id, nextPageNumber);
+      updateReadingStatus();
       dialog.scrollTop = 0;
       turnTimer = null;
     }, 285);
@@ -368,13 +388,28 @@
     clearTimers();
     isOpening = false;
     isTurning = false;
-    stage?.classList.remove('page-turn-next', 'page-turn-prev');
+    if (stage) savedReadingPages.set(books[selectedIndex].id, Number(stage.dataset.mobilePage || 1));
+    stage?.classList.remove('page-turn-next', 'page-turn-prev', 'page-turn-mobile-forward', 'page-turn-mobile-backward');
     setBookStage('is-closed');
-    if (stage) stage.dataset.mobilePage = '1';
-    bookButtons.forEach(button => button.classList.remove('is-pulling'));
+    bookButtons.forEach(button => {
+      button.classList.remove('is-pulling');
+      button.classList.toggle('last-opened', button.dataset.openBook === books[selectedIndex].id);
+    });
     syncNavigation();
-    lastTrigger?.focus();
+    // Restore vertical position and the horizontal offset of each shelf.
+    const trigger = lastTrigger;
     lastTrigger = null;
+    if (trigger) {
+      shelfStrips.forEach((strip, i) => { strip.scrollLeft = shelfScrollBeforeOpen[i] || 0; });
+      document.documentElement.classList.add('restoring-shelf-position');
+      try { trigger.focus({ preventScroll: true }); } catch (_) { trigger.focus(); }
+      window.scrollTo({ top: pageScrollBeforeOpen, behavior: 'instant' });
+      window.requestAnimationFrame(() => {
+        shelfStrips.forEach((strip, i) => { strip.scrollLeft = shelfScrollBeforeOpen[i] || 0; });
+        window.scrollTo({ top: pageScrollBeforeOpen, behavior: 'instant' });
+        document.documentElement.classList.remove('restoring-shelf-position');
+      });
+    }
   });
 
   renderBook(0);

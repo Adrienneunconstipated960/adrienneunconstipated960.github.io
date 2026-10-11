@@ -166,3 +166,16 @@ Changes incorporated selectively:
 The EE291 power-line numerical-methods document is an assignment prompt, not evidence of a completed implementation, so no completed solver project was added. Sensitive personal details from the scholarship statements and proprietary engineering measurements are not published.
 
 The shelf now has fourteen books in two rows of seven. The keyboard's up/down navigation moves between those rows. Existing interactive book animation, GitHub links, JPEG and MP4 paths, and resume links are unchanged. Only HTML, JavaScript, CSS, and project documentation are committed.
+
+
+## Mobile reading and purposeful space motion (October 2026)
+
+- Two seven-book shelves remain native horizontal scroll regions on mobile, with scroll snapping, larger touch targets, and visible swipe hints. Visitors can use the **Next collection** / **Previous collection** actions to move between shelf groups.
+- The open-book dialog keeps the same two-page story on desktop and displays **only one readable page at a time** on mobile, with larger text, more room for content and explicit page-turn labels.
+- **Return to Bookshelf** closes the dialog. The script restores the visitor's vertical scroll position, both shelf scroll offsets, and keyboard focus without an unwanted jump.
+- Each book remembers its last-opened story/details page for the current browser session while that website page remains loaded. It does not store progress on the server or in browser storage.
+- The homepage has one CSS-shape orbital accent near the introduction. Two faint constellation lines draw when scrolled into view. Tiny stars animate only when visitors click collection-navigation controls. Earlier scattered animated decorations were disabled to make the theme intentional.
+- All new animations respect \`prefers-reduced-motion\`; content, navigation and the two-page reader work with animations disabled.
+- No photographs, videos, resumes or uploaded academic files were published or modified. All existing media paths remain unchanged.
+
+Only \`index.html\`, \`bookshelf.css\`, \`bookshelf.js\`, \`ux.css\`, \`ux.js\`, and this README changed.
