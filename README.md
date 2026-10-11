@@ -194,3 +194,17 @@ Hovering over or keyboard-focusing a book displays its title and a brief descrip
 Keyboard arrow navigation is collection-aware (Left/Right within a shelf, Up/Down between shelves) and works with unequal shelf lengths. Previous/Next book inside the reader follows the same visible collection order. Mobile horizontal swipe, touch targets, individual book reading position, Return to Bookshelf and CSS-only page animations remain intact.
 
 Collection navigation buttons and restrained star-trail accents continue to work between all three shelves. No JPEGs, MP4s, PDFs, or user-uploaded source documents were modified or uploaded.
+
+
+## Focused homepage and concise project summaries (October 2026)
+
+The visitor journey now starts with a shorter hero that explicitly identifies Kailani as an electrical engineer, NASA Marshall OSTEM intern, and M.S. Electrical Engineering student. It presents exactly **two primary hero actions**: **Explore My Work** (scrolls to the engineering bookshelf) and **View Resume** (opens the existing resume PDF).
+
+- The interactive **three-collection bookshelf** is now the first substantial section after the hero. Its 14 book descriptions, animations, keyboard controls, mobile swipe and reading-position behavior remain unchanged.
+- The redundant three-card navigation row is removed.
+- The separate About section is more focused and continues to preserve education, honors, and mentoring context.
+- Featured NASA work remains as a concise one-card highlight with 34 requirements, six scenarios, and the high-vacuum target. Four duplicate expanded project cards and their detail panels were removed from the homepage; the underlying projects and substantive technical descriptions remain available in the books.
+- The five public GitHub code cards now have short summaries, technology tags, and source links. Longer duplicated card details were removed. Search and category filters remain available behind an optional **Filter or search repositories** control, and both MP4 demonstrations remain referenced as before.
+- CSS reduces unnecessary hero height and card spacing, preserving responsive accessibility and the existing gentle space animation motifs.
+
+The changes do **not** upload or alter any JPEG, MP4, PDF, or confidential source document. The existing image, video, resume, and GitHub repository links remain unchanged. The interactive arm, timeline, and remaining professional sections are preserved.

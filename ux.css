@@ -130,3 +130,60 @@ html.space-reveal-ready .constellation-break.is-visible circle{opacity:1;transfo
  html.space-reveal-ready .constellation-break circle{opacity:1;transform:none;transition:none}
  .shelf-collection-link.is-traveling .collection-star-trail{display:none}
 }
+
+
+/* Homepage simplification: one clear identity, two CTAs, books before summaries. */
+.hero{min-height:0;padding-block:clamp(54px,6vw,86px) clamp(58px,7vw,88px);gap:clamp(34px,5vw,76px)}
+.hero h1{font-size:clamp(54px,5.8vw,79px);margin-bottom:18px}
+.hero-subtitle{font-size:clamp(22px,2.6vw,29px);line-height:1.38;margin-bottom:16px}
+.hero-description{max-width:520px;font-size:15px;line-height:1.83;margin-bottom:26px}
+.hero-buttons{gap:12px}
+.hero-buttons .btn{white-space:nowrap;min-height:50px}
+.hero-photo img{height:clamp(340px,38vw,470px);object-position:center 45%}
+.bookshelf-section{padding-block:clamp(65px,7vw,95px)}
+.bookshelf-heading{margin-bottom:28px}
+.about-section,.work-section{padding-block:clamp(60px,6.5vw,85px)}
+.about-copy p:not(.eyebrow){line-height:1.83}
+.work-section .feature-project{grid-template-columns:.8fr 1.2fr}
+.work-section .feature-visual{min-height:330px;padding:20px 22px 49px}
+.work-section .feature-visual img{max-height:290px;width:min(100%,218px);object-fit:contain}
+.work-section .feature-content{padding:clamp(22px,3.4vw,38px)}
+.work-section .feature-content h3{font-size:clamp(26px,3.1vw,36px);margin-bottom:12px}
+.work-section .feature-content>p:not(.project-kicker){font-size:14px;line-height:1.74;margin-bottom:17px}
+.work-section .project-metrics{padding:13px 0;margin:0 0 16px}
+.github-section .repo-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.github-section .repo-card{padding:22px;min-height:0}
+.github-section .repo-card h3{font-size:21px;line-height:1.3;margin:13px 0 9px}
+.github-section .repo-card>p{font-size:13px;line-height:1.65;margin-bottom:15px}
+.github-section .repo-card .repo-meta{margin-bottom:15px}
+.github-section .repo-card .repo-link{margin-top:auto;font-size:12px}
+.github-heading{margin-bottom:26px}
+.github-intro{font-size:14px;line-height:1.75}
+.github-refine{border:1px solid #e2ccd4;border-radius:11px;background:#fffafc;margin:0 0 21px;overflow:hidden}
+.github-refine>summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 18px;list-style:none;cursor:pointer;font-size:12px;font-weight:700;color:var(--plum);min-height:46px}
+.github-refine>summary::-webkit-details-marker{display:none}
+.github-refine>summary:hover{background:#fff3f7}
+.github-refine>summary span{font-size:19px;color:var(--rose-dark);line-height:1}
+.github-refine[open]>summary{border-bottom:1px solid #eadce1}
+.github-refine[open]>summary span{transform:rotate(45deg)}
+.github-refine .repo-toolbar{padding:18px;margin:0;align-items:end;gap:18px}
+.github-section .repo-result-count{margin:0 0 13px;font-size:11px}
+.github-section .repo-more{font-size:12px}
+@media(max-width:1060px){
+ .github-section .repo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:760px){
+ .hero{padding-block:48px 56px;gap:27px}
+ .hero h1{font-size:clamp(49px,10.5vw,66px)}
+ .hero-subtitle{font-size:23px}
+ .hero-buttons .btn{flex:1 1 158px;padding-inline:15px;justify-content:center}
+ .hero-photo img{height:340px}
+ .bookshelf-section{padding-block:62px}
+ .work-section .feature-project{grid-template-columns:1fr}
+ .work-section .feature-visual{min-height:255px;padding:18px 20px 54px}
+ .work-section .feature-visual img{max-height:205px;width:min(100%,170px)}
+ .github-section .repo-grid{grid-template-columns:1fr;gap:12px}
+ .github-section .repo-card{padding:20px 22px}
+ .github-refine .repo-toolbar{display:block;padding:14px}
+ .github-refine .repo-search-wrap{margin-top:16px}
+}
