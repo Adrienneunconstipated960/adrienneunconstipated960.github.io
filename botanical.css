@@ -1,67 +1,60 @@
 /*
- * Mexican and Samoan flowers are background ornamentation, not
- * between-section content. Inline SVG symbols live in index.html.
- * Each bloom is positioned within an existing ambient-field layer,
- * so it cannot add margins, padding or height to the document.
+ * Botanical background illustrations. Mexican cempasuchil + dahlia and
+ * Samoan teuila + plumeria use inline SVG symbols from index.html.
+ * These are decoration only: no new sections, heights, images or spacer rows.
  */
 .floral-definitions{
-  position:absolute;
-  width:0;height:0;
-  overflow:hidden;
-  pointer-events:none;
+  position:absolute;width:0;height:0;overflow:hidden;pointer-events:none;
 }
 
+/* Consistent but deliberately asymmetric positions and sizes. */
 .ambient-field .botanical-background{
   position:absolute;
   display:block;
-  width:clamp(76px,9.5vw,128px);
-  height:clamp(76px,9.5vw,128px);
+  width:90px;height:90px;
   overflow:visible;
+  color:#a86f8a;
+  opacity:.28;
   pointer-events:none;
   user-select:none;
-  opacity:.33;
   z-index:0;
-  filter:none;
 }
+.ambient-field .botanical-background.bloom-mexico{color:#a76e87}
+.ambient-field .botanical-background.bloom-samoa{color:#88779a}
 
-.ambient-field .botanical-background.bloom-mexico{color:#a46f88}
-.ambient-field .botanical-background.bloom-samoa{color:#8b779d}
+/* Placed in the margins; the content containers stack above the scenery. */
+.botanical-background-hero{left:2%;bottom:9%;transform:rotate(-12deg)}
+.botanical-background-bookshelf{right:3%;bottom:11%;transform:rotate(9deg)}
+.botanical-background-about{left:2%;bottom:9%;transform:rotate(-9deg)}
+.botanical-background-work{right:2%;bottom:7%;transform:rotate(14deg)}
+.botanical-background-robot{left:1%;bottom:10%;transform:rotate(10deg)}
+.botanical-background-experience{right:2%;bottom:8%;transform:rotate(-15deg)}
+.botanical-background-interests{left:2%;bottom:8%;transform:rotate(14deg)}
+.botanical-background-contact{right:3%;bottom:14%;transform:rotate(-10deg)}
 
-/* Alternate the floral motifs around the margins, leaving the center of
-   each section and its readable content unobstructed. */
-.botanical-background-hero{left:2%;bottom:5%;transform:rotate(-19deg)}
-.botanical-background-bookshelf{right:2%;bottom:7%;transform:rotate(11deg)}
-.botanical-background-about{left:2%;bottom:7%;transform:rotate(-11deg)}
-.botanical-background-work{right:3%;top:5%;transform:rotate(16deg)}
-.botanical-background-robot{left:2%;top:13%;transform:rotate(9deg)}
-.botanical-background-experience{right:2%;top:8%;transform:rotate(-20deg)}
-.botanical-background-interests{left:2%;bottom:9%;transform:rotate(15deg)}
-.botanical-background-contact{left:2%;top:9%;transform:rotate(-12deg)}
+.botanical-background-hero{width:98px;height:98px;opacity:.27}
+.botanical-background-bookshelf{width:78px;height:78px;opacity:.23}
+.botanical-background-about{width:96px;height:96px;opacity:.25}
+.botanical-background-work{width:82px;height:82px;opacity:.24}
+.botanical-background-robot{width:103px;height:103px;opacity:.23}
+.botanical-background-experience{width:82px;height:82px;opacity:.21}
+.botanical-background-interests{width:102px;height:102px;opacity:.26}
+.botanical-background-contact{width:86px;height:86px;color:#e6b6d1!important;opacity:.32}
 
-/* Behind text and cards, never over them. The containing ambient fields
-   already have pointer-events:none and live at z-index:0. */
-@media(max-width:760px){
-  .ambient-field .botanical-background{
-    width:66px;height:66px;
-    opacity:.19;
-  }
+/* Even quieter on phones, without colliding with headings or shelf controls. */
+@media(max-width:780px){
+  .ambient-field .botanical-background{width:56px;height:56px;opacity:.17}
   .botanical-background-hero{left:0;bottom:3%}
   .botanical-background-bookshelf{right:0;bottom:2%}
-  .botanical-background-about{left:0;bottom:3%}
-  .botanical-background-work{right:0;top:3%}
-  .botanical-background-robot{left:0;top:4%}
-  .botanical-background-experience{right:0;top:4%}
+  .botanical-background-about{left:0;bottom:5%}
+  .botanical-background-work{right:0;bottom:4%}
+  .botanical-background-robot{left:0;bottom:4%}
+  .botanical-background-experience{right:0;bottom:4%}
   .botanical-background-interests{left:0;bottom:4%}
-  .botanical-background-contact{left:0;top:5%}
+  .botanical-background-contact{right:1%;bottom:10%;opacity:.23}
 }
 @media(max-width:390px){
-  .ambient-field .botanical-background{
-    width:52px;height:52px;
-    opacity:.17;
-  }
-}
-@media(prefers-reduced-motion:reduce){
-  .ambient-field .botanical-background{animation:none!important}
+  .ambient-field .botanical-background{width:45px;height:45px;opacity:.14}
 }
 @media(forced-colors:active){
   .ambient-field .botanical-background{display:none}

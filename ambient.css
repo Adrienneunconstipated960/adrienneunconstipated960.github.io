@@ -124,11 +124,7 @@
 .ambient-field-contact .ambient-star:nth-child(4){left:91%;top:67%;animation-delay:-8s;width:2px;height:2px}
 .ambient-field-contact .ambient-star:nth-child(5){left:58%;top:86%;animation-delay:-4.9s}
 
-@keyframes ambient-twinkle{
-  0%,100%{opacity:.22}
-  35%,68%{opacity:.65}
-  50%{opacity:.95}
-}
+
 
 /* Single elliptical orbital sketch at the edge of the hero photograph. */
 .ambient-orbit-track{
@@ -190,19 +186,6 @@
   87%{opacity:0;translate:12px -8px}
   89%{opacity:.5}
   93%{opacity:0;translate:-125px 68px}
-}
-
-/* Very small botanical motion, preserving each flower's original rotation. */
-.floral-accent > svg{
-  animation:ambient-flower-drift 13s ease-in-out infinite;
-}
-.floral-hero .floral-plumeria{animation-delay:-6s;animation-duration:14s}
-.floral-bookshelf > svg{animation-delay:-4s;animation-duration:16s}
-.floral-about > svg{animation-delay:-8s;animation-duration:15s}
-
-@keyframes ambient-flower-drift{
-  0%,100%{translate:0 0}
-  50%{translate:0 -3px}
 }
 
 /* One-time scroll reveals, enabled only by ambient.js when observer + motion
@@ -392,38 +375,14 @@ html.ambient-ready [data-ambient-reveal].ambient-visible{
 .ambient-field-experience .ambient-sky-arc{left:-20px;bottom:2%;width:154px}
 .ambient-field-resume .ambient-sky-arc{right:3%;top:0;width:140px}
 
-/* Two quiet floral watermark echoes to complement the original Mexican
-   marigold and Samoan plumeria illustrations in the hero/Bookshelf/About. */
-.ambient-watermark{
-  position:absolute;
-  display:block;
-  width:94px;
-  height:94px;
-  pointer-events:none;
-  opacity:.14;
-  color:#a47c98;
-}
-.ambient-watermark svg{width:100%;height:100%;display:block}
-.ambient-watermark-interests{left:3%;top:8%;transform:rotate(24deg)}
-.ambient-watermark-contact{
-  right:4%;bottom:2%;
-  color:#f7d5e7;
-  opacity:.15;
-  width:84px;height:84px;
-  transform:rotate(-10deg);
-}
-.ambient-watermark svg{animation:ambient-flower-drift 17s ease-in-out infinite}
-
 /* Only visible sections animate. On a slow connection or without JS, all
    scenery and content still render normally; this class is JS-enabled only. */
 html.ambient-ready .ambient-field .ambient-star,
-html.ambient-ready .ambient-field .ambient-orbit-runner,
-html.ambient-ready .ambient-field .ambient-watermark svg{
+html.ambient-ready .ambient-field .ambient-orbit-runner{
   animation-play-state:paused;
 }
 html.ambient-ready .ambient-active > .ambient-field .ambient-star,
-html.ambient-ready .ambient-active > .ambient-field .ambient-orbit-runner,
-html.ambient-ready .ambient-active > .ambient-field .ambient-watermark svg{
+html.ambient-ready .ambient-active > .ambient-field .ambient-orbit-runner{
   animation-play-state:running;
 }
 
@@ -478,46 +437,7 @@ html.ambient-ready .ambient-active > .ambient-field .ambient-watermark svg{
   box-shadow:0 0 0 5px rgba(254,222,241,.10),0 0 16px rgba(255,223,244,.26);
 }
 
-@keyframes ambient-twinkle{
-  0%,100%{opacity:.46}
-  42%{opacity:.88}
-  54%{opacity:1}
-  74%{opacity:.6}
-}
 
-/* A recognizable, delicately drawn star map in the margin of EVERY
-   section. Each remains fully visible even if motion/JS is disabled. */
-.ambient-constellation{
-  position:absolute;
-  display:block;
-  width:clamp(170px,20vw,250px);
-  height:auto;
-  right:2.2%;
-  top:9%;
-  overflow:visible;
-  color:#a57698;
-  opacity:.60;
-  transform:rotate(-8deg);
-  filter:drop-shadow(0 0 5px rgba(171,113,155,.11));
-  animation:ambient-map-drift 18s ease-in-out infinite;
-}
-
-.ambient-field-hero .ambient-constellation{right:1%;top:1%;opacity:.68}
-.ambient-field-bookshelf .ambient-constellation{left:2%;right:auto;top:3%;opacity:.57;transform:rotate(4deg)}
-.ambient-field-about .ambient-constellation{right:1%;top:7%;color:#9e739a;opacity:.59}
-.ambient-field-work .ambient-constellation{right:1%;top:2%;color:#95799e;opacity:.58}
-.ambient-field-github .ambient-constellation{left:2%;right:auto;top:2%;color:#966c91;opacity:.62}
-.ambient-field-robot .ambient-constellation{left:2%;right:auto;top:7%;color:#97749b;opacity:.62}
-.ambient-field-experience .ambient-constellation{right:1%;top:6%;color:#9d7092;opacity:.61}
-.ambient-field-skills .ambient-constellation{right:2%;top:11%;color:#a5799c;opacity:.64}
-.ambient-field-interests .ambient-constellation{left:3%;right:auto;bottom:8%;top:auto;color:#9e7c9f;opacity:.60}
-.ambient-field-resume .ambient-constellation{left:1%;right:auto;top:5%;color:#a27a9f;opacity:.58}
-.ambient-field-contact .ambient-constellation{right:3%;top:9%;color:#efd4e4;opacity:.60}
-
-@keyframes ambient-map-drift{
-  0%,100%{translate:0 0}
-  50%{translate:0 -5px}
-}
 
 /* Discernible but quiet orbit details in the engineering sections. */
 .ambient-sky-arc{
@@ -644,11 +564,13 @@ html.ambient-ready .ambient-active > .ambient-field .ambient-constellation{anima
 
 /* Stars gently float as they twinkle. The existing scene observer pauses
    them outside the viewport; reduced-motion users see static stars. */
+/* Gentle stars rather than constant large movement.
+   One definition of ambient-twinkle now controls all sections. */
 @keyframes ambient-twinkle{
-  0%,100%{opacity:.45;translate:0 0}
-  37%{opacity:.83;translate:1px -4px}
-  58%{opacity:1;translate:0 -6px}
-  78%{opacity:.65;translate:-1px -2px}
+  0%,100%{opacity:.42;translate:0 0}
+  35%{opacity:.68;translate:0 -1px}
+  58%{opacity:.86;translate:0 -3px}
+  78%{opacity:.58;translate:0 -1px}
 }
 @media(max-width:760px){
   .ambient-field .constellation-break{display:none!important}

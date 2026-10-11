@@ -187,3 +187,70 @@ html.space-reveal-ready .constellation-break.is-visible circle{opacity:1;transfo
  .github-refine .repo-toolbar{display:block;padding:14px}
  .github-refine .repo-search-wrap{margin-top:16px}
 }
+
+
+/* October 2026 visual system: stable spacing, quiet detail and clear hierarchy.
+   All floral/celestial ornaments remain in existing background layers. */
+:root{
+  --section-rhythm:clamp(68px,7.2vw,92px);
+  --section-heading-gap:clamp(26px,3.2vw,38px);
+  --reading-ink:#594854;
+}
+.section{padding-block:var(--section-rhythm)}
+.section-heading{margin-bottom:var(--section-heading-gap)}
+.section-heading h2{max-width:780px;line-height:1.19;text-wrap:balance}
+.section-heading p:not(.eyebrow){max-width:64ch;line-height:1.75}
+.hero{padding-block:clamp(60px,7vw,91px) clamp(68px,7vw,92px)}
+.bookshelf-section{padding-block:clamp(78px,8.2vw,104px)}
+.work-section{padding-block:clamp(76px,7.6vw,100px)}
+.about-section,.github-section,.robot-section,.experience-section,
+.skills-section,.interests-section,.resume-section,.contact-section{
+  padding-block:var(--section-rhythm);
+}
+.about-copy,.feature-content,.interest-copy,.robot-copy{line-height:1.75}
+.about-copy p:not(.eyebrow),
+.interest-copy p:not(.eyebrow),
+.robot-copy p:not(.eyebrow){max-width:65ch}
+.feature-project,.repo-card,.resume-note{box-shadow:0 12px 32px rgba(70,43,60,.055)}
+.repo-card{transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+  .repo-card:hover,.repo-card:focus-within{
+    transform:translateY(-3px);
+    box-shadow:0 15px 34px rgba(70,43,60,.10);
+  }
+}
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible{
+  outline:3px solid #8b5e7c;
+  outline-offset:3px;
+}
+
+/* Preserve the two responsive hero CTAs as the strongest actions. */
+.hero-buttons .btn{min-height:49px}
+.hero-buttons .btn-primary{box-shadow:0 8px 21px rgba(137,75,105,.11)}
+
+/* Constellation lines and floral SVGs never create blank gaps between blocks. */
+main>.constellation-break,main>.botanical-divider{display:none}
+
+@media(max-width:780px){
+  :root{
+    --section-rhythm:56px;
+    --section-heading-gap:27px;
+  }
+  .section{padding-block:var(--section-rhythm)}
+  .bookshelf-section{padding-block:65px}
+  .work-section{padding-block:62px}
+  .hero{padding-block:51px 58px}
+  .section-heading h2{text-wrap:balance}
+  .github-section .repo-card{padding:21px 20px}
+}
+@media(max-width:440px){
+  :root{--section-rhythm:52px;--section-heading-gap:23px}
+  .hero{padding-block:45px 52px}
+  .hero-buttons{gap:10px}
+  .hero-buttons .btn{font-size:12px;min-width:0}
+}
+@media(prefers-reduced-motion:reduce){
+  .repo-card{transition:none}
+}

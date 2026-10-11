@@ -486,10 +486,7 @@ html.restoring-shelf-position .shelf-books{scroll-behavior:auto!important}
 }
 
 
-/* Three curated collections. Books on the same shelf share a restrained hue. */
-.book-space{--spine:#66506f;--spine-border:#493850}
-.book-digital{--spine:#4f6c7b;--spine-border:#334f5d}
-.book-sensing{--spine:#a06179;--spine-border:#79485b}
+/* Two thematic shelves, with independent jacket colors for all 16 books. */
 .shelf-level+.shelf-level{margin-top:34px}
 .shelf-level{--collection-ink:#70536f;scroll-margin-top:106px}
 .shelf-space{--collection-ink:#66506f}
@@ -596,3 +593,63 @@ html.restoring-shelf-position .shelf-books{scroll-behavior:auto!important}
 /* New source-backed engineering volumes, complementary to existing jackets. */
 .book-bronze{--spine:#795531;--spine-border:#52391f}
 .book-pine{--spine:#355d51;--spine-border:#234439}
+
+
+/* Final reading-room polish. Preview is part of each shelf, not another card. */
+.bookshelf-cabinet{
+  padding:clamp(25px,3.2vw,38px) clamp(14px,2.7vw,27px) 28px;
+  box-shadow:inset 0 8px 18px #b6869a13,0 20px 44px #5d3c500c;
+}
+.shelf-level+.shelf-level{margin-top:31px}
+.shelf-label-row{padding-bottom:11px}
+.shelf-collection-description{margin-bottom:10px}
+.shelf-preview{
+  border-color:#e2ced8;
+  border-left:3px solid var(--collection-ink);
+  background:rgba(255,252,253,.76);
+  transition:border-color .18s ease,background .18s ease;
+}
+.shelf-level.is-previewing .shelf-preview{
+  border-color:#caa9b9;
+  border-left-color:var(--collection-ink);
+  background:#fffafc;
+}
+.shelf-preview strong{font-size:17px}
+.shelf-preview [data-preview-text]{font-size:12px;line-height:1.6}
+.shelf-books .book-spine.last-opened{
+  outline:2px solid rgba(117,73,106,.63);
+  outline-offset:3px;
+  box-shadow:inset 3px 0 3px #ffffff18,inset -4px 0 4px #00000025,3px 6px 8px #412f3a2c;
+}
+.shelf-books .book-spine:focus-visible{
+  outline:3px solid #714f79;
+  outline-offset:4px;
+}
+@media(max-width:780px){
+  .bookshelf-cabinet{padding:22px 14px 24px}
+  .shelf-level+.shelf-level{margin-top:27px}
+  .shelf-swipe-hint{
+    display:block;
+    margin:4px 4px 13px;
+    color:#6f4b67;
+    font-size:12px;
+    font-weight:700;
+  }
+  .shelf-books{
+    justify-content:flex-start;
+    scroll-snap-type:x mandatory;
+    padding:10px 7px 14px;
+    scrollbar-color:#b98ea4 #f3e7eb;
+    scrollbar-width:thin;
+  }
+  .shelf-books::-webkit-scrollbar{height:5px}
+  .shelf-books::-webkit-scrollbar-thumb{background:#b98ea4;border-radius:20px}
+  .shelf-books::-webkit-scrollbar-track{background:#f3e7eb}
+  .book-spine:is(:hover,:focus-visible){transform:translateY(-5px)}
+  .shelf-preview{margin-top:13px;min-height:79px}
+  .shelf-preview strong{font-size:15px}
+}
+@media(prefers-reduced-motion:reduce){
+  .shelf-preview{transition:none}
+  .book-spine:is(:hover,:focus-visible){transform:none}
+}

@@ -11,7 +11,7 @@
       challenge: 'Evaluate whether a robotic arm could meet test-surface access and chamber constraints.',
       approach: 'Study the kinematic workspace, assess actuator limitations, and organize verification across six operational scenarios and 34 system requirements.',
       tools: 'Robotics, Creo, systems engineering, verification planning, simulation.',
-      outcome: 'A better understanding of how requirements, physics, and real hardware choices connect.',
+      outcome: 'A requirements-led assessment of workspace and actuator constraints across 34 system requirements and six planned test scenarios, identifying the verification still needed before a hardware decision.',
       link: '#robot-lab', action: 'Explore the illustrative robot demo'
     },
     {
@@ -153,7 +153,17 @@
       tools: 'Python, Flask, Arduino, serial communication, DMX.',
       outcome: 'A direct connection between software controls and physical lighting response.',
       link: 'https://github.com/kalarcon775/DMX-Controller', action: 'Open the DMX Controller repository'
-    }
+    },
+    {
+      id: 'powershell', title: 'PowerShell Systems & Concurrency', edition: 'CS646 · Fall 2026 · Operating systems coursework',
+      subtitle: 'Inventory, safe CSV processing, and synchronized parallel tasks',
+      story: 'Across three operating-systems labs, I developed PowerShell scripts inside a Linux course container. The first inventoried the operating system and visible CPU, memory, storage, network interfaces, and packages. The second safely sorted complete CSV records without overwriting the source. The third explored how concurrent web requests improve throughput while creating new risks around shared files and ordering.',
+      challenge: 'Build scripts that behave correctly in a container, preserve input integrity, and safely coordinate shared resources.',
+      approach: 'Use Linux system interfaces with PowerShell for inventory; validate CSV fields and rows, compare SHA256 input hashes and append audit logs; then run 102 requests across three services with a throttle limit of 10, synchronization tests, and thread/process observations.',
+      tools: 'PowerShell, Debian Linux, containers, CSV processing, SHA256, ForEach-Object -Parallel, file locking, strace, ps.',
+      outcome: 'A six-row CSV test preserved the source, and larger sorting tests included 300,000 records. In one concurrency comparison, 102 requests took 8.69 s serially versus 1.68 s concurrently; locking also corrected a shared-counter race from 2 to the expected 100.',
+      link: '#bookshelf', action: 'Explore the other project books'
+    },
   ];
 
   const dialog = document.getElementById('project-book-dialog');
@@ -297,16 +307,6 @@
         openTimer = null;
       }, 1120);
       pullTimer = null;
-    },
-    {
-      id: 'powershell', title: 'PowerShell Systems & Concurrency', edition: 'CS646 · Fall 2026 · Operating systems coursework',
-      subtitle: 'Inventory, safe CSV processing, and synchronized parallel tasks',
-      story: 'Across three operating-systems labs, I developed PowerShell scripts inside a Linux course container. The first inventoried the operating system and visible CPU, memory, storage, network interfaces, and packages. The second safely sorted complete CSV records without overwriting the source. The third explored how concurrent web requests improve throughput while creating new risks around shared files and ordering.',
-      challenge: 'Build scripts that behave correctly in a container, preserve input integrity, and safely coordinate shared resources.',
-      approach: 'Use Linux system interfaces with PowerShell for inventory; validate CSV fields and rows, compare SHA256 input hashes and append audit logs; then run 102 requests across three services with a throttle limit of 10, synchronization tests, and thread/process observations.',
-      tools: 'PowerShell, Debian Linux, containers, CSV processing, SHA256, ForEach-Object -Parallel, file locking, strace, ps.',
-      outcome: 'A six-row CSV test preserved the source, and larger sorting tests included 300,000 records. In one concurrency comparison, 102 requests took 8.69 s serially versus 1.68 s concurrently; locking also corrected a shared-counter race from 2 to the expected 100.',
-      link: '#bookshelf', action: 'Explore the other project books'
     }, reduceMotion.matches ? 0 : 210);
   }
 
@@ -380,7 +380,18 @@
     if (index >= 0) beginOpening(index, button);
   }));
 
-  // Keyboard arrows navigate within each of the two seven-book shelves.
+  // Open the featured NASA case study directly while retaining a working
+  // hash destination if JavaScript is unavailable.
+  document.querySelectorAll('[data-open-feature-book]').forEach(link => {
+    link.addEventListener('click', event => {
+      const index = books.findIndex(book => book.id === link.dataset.openFeatureBook);
+      if (index < 0) return;
+      event.preventDefault();
+      beginOpening(index, link);
+    });
+  });
+
+  // Keyboard arrows navigate within the two eight-book shelves.
   const shelfRows = [...document.querySelectorAll('.shelf-books')].map(strip =>
     [...strip.querySelectorAll('[data-open-book]')]
   );
@@ -452,10 +463,10 @@
       shelfStrips.forEach((strip, i) => { strip.scrollLeft = shelfScrollBeforeOpen[i] || 0; });
       document.documentElement.classList.add('restoring-shelf-position');
       try { trigger.focus({ preventScroll: true }); } catch (_) { trigger.focus(); }
-      window.scrollTo({ top: pageScrollBeforeOpen, behavior: 'instant' });
+      window.scrollTo({ top: pageScrollBeforeOpen, behavior: 'auto' });
       window.requestAnimationFrame(() => {
         shelfStrips.forEach((strip, i) => { strip.scrollLeft = shelfScrollBeforeOpen[i] || 0; });
-        window.scrollTo({ top: pageScrollBeforeOpen, behavior: 'instant' });
+        window.scrollTo({ top: pageScrollBeforeOpen, behavior: 'auto' });
         document.documentElement.classList.remove('restoring-shelf-position');
       });
     }

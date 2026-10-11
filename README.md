@@ -312,3 +312,18 @@ The same four cultural flower motifs (Mexican cempasúchil marigold and dahlia; 
 The two older constellation illustrations are preserved but moved into section backgrounds so they do not create inter-section space; they are hidden on small screens. Stars throughout all eleven sections now have a slow, small vertical floating movement in addition to soft twinkling. Existing visibility-aware animation pausing and reduced-motion support remain intact.
 
 The two-shelf layout, all 16 books, space planet, orbital details, and original media assets remain unchanged. This release edits only index.html, botanical.css, ambient.css, and README.md. Stylesheet references are versioned to limit stale cached CSS.
+
+
+## Portfolio refinement: spacing, reading-room polish and code hygiene (October 2026)
+
+The engineering portfolio was refined without changing its two-shelf, sixteen-project structure or any user-owned media:
+
+- **One spacing system:** Section padding, heading spacing, and narrow-screen rhythm are now driven by shared layout tokens. Bookshelf and NASA featured work keep slightly more generous spacing without adding separate content-free rows.
+- **Cultural floral details:** Mexican marigold/dahlia and Samoan teuila/plumeria SVG motifs remain lightly drawn behind existing content. They have controlled, intentionally varied sizes and positions and become smaller/fainter on mobile.
+- **Space visual hierarchy:** The original intro planet, ambient stars and the robot-lab orbit remain the visual anchors. The ambient stylesheet no longer contains three competing definitions of the star-twinkle animation, and it no longer contains the obsolete repeated star-map component.
+- **Bookshelf interaction:** The previously opened book has a clearer but gentle outline. Focus indication and per-shelf preview feedback are stronger; phones have a more explicit eight-book swipe hint, a visible horizontal scroll track, and snap-to-spine browsing. Title fitting and remembered reading/scroll position remain.
+- **Project narratives:** Page labels prioritize design methods and results. NASA's outcome now clearly describes a requirements-driven *assessment*, not a deployed robotic system. The featured NASA card opens its corresponding book directly, with a normal bookshelf-link fallback when JavaScript is off.
+- **Functional correction:** The PowerShell Systems & Concurrency book record was mistakenly embedded as a second argument to the opening animation timer in a previous release. It now resides inside the book-data array as the sixteenth record, and the proper opening animation timer argument is restored.
+- **Accessibility and performance:** CSS focus-visible treatment, reduced-motion behavior, responsive spacing, the native book dialog, visibility-paused decorative animations, and safe fallback content remain.
+
+Only website HTML/CSS/JS files and README documentation changed; no JPEGs, videos, PDFs, course reports, or other binary user media were modified or uploaded. CSS/JS asset references are versioned to reduce stale-browser-cache issues.
