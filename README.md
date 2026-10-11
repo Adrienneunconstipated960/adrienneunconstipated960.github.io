@@ -91,7 +91,7 @@ The existing resume link, \`assets/Kailani_Alarcon_Resume.pdf\`, remains unchang
 
 The Engineering Bookshelf is an interactive project library at `#bookshelf`.
 
-- Nine individual CSS-rendered book spines represent engineering projects: NASA Robotics, IVerify, Thermal Controller & Logger, Fingerprint Authentication, Virtual Network Analyzer, 3-Link Leg Simulation, ProDriver Sim, HueMotion, and DMX Controller.
+- twelve individual CSS-rendered book spines represent engineering projects: NASA Robotics, IVerify, Thermal Controller & Logger, Fingerprint Authentication, Virtual Network Analyzer, 3-Link Leg Simulation, ProDriver Sim, HueMotion, and DMX Controller.
 - Selecting a book opens a two-page story in a native accessible dialog, with a CSS book-cover turning animation, an overview and concrete technical details.
 - Dialog controls include Close, Previous book, Next book, Escape key to close, click outside to close, and keyboard arrow navigation among spines.
 - CSS honors `prefers-reduced-motion`; narrow screens display readable pages stacked vertically.
@@ -132,6 +132,21 @@ Only \`index.html\`, \`bookshelf.css\`, and \`bookshelf.js\` were changed for th
 
 The project reader is now styled as an open physical hardcover. The story and technical information are printed directly on two facing paper pages with a book binding, paper-stack edges, page numbers, chapter headings, and a hinged cover. The reader no longer looks like a framed tab or card.
 
-On smaller screens the book displays **one page at a time**: first the story, then the engineering details. Visitors turn that page using the control printed at the bottom of the sheet. The Previous / Next book navigation still moves among all nine projects, and the existing Close button, Escape key, and external project links remain.
+On smaller screens the book displays **one page at a time**: first the story, then the engineering details. Visitors turn that page using the control printed at the bottom of the sheet. The Previous / Next book navigation still moves among all twelve projects, and the existing Close button, Escape key, and external project links remain.
 
 The upgrade only modifies \`index.html\`, \`bookshelf.css\`, and \`bookshelf.js\`. All visuals are CSS shapes. No JPEG, MP4, PDF or other asset was uploaded, removed or changed.
+
+
+## Additional engineering source content (October 2026)
+
+Three new project books were added, based on privately supplied technical coursework:
+
+- **UR3e Robot Kinematics (ME422, collaborative)**: Six-link Denavit–Hartenberg frame modeling, homogeneous transforms, Jacobian velocity analysis, and rank-5 singularity at the evaluated zero-angle configuration.
+- **STM32 Motor Timing & PWM**: Embedded motor timing, PWM control and encoder capture from the CV, complemented by STM32 timer/channel-2 duty-cycle examples from the uploaded microprocessor lab materials.
+- **VHDL Digital Logic (EE421)**: Pure combinational 4-bit binary-to-decimal display and two-operand 4-bit addition plus carry-in, producing a 0–31 result on seven-segment displays.
+
+The existing Fingerprint Authentication book was expanded with team-based, library-free UART packet handling, guided enrollment, template indexing, and success/failure LED signaling. The Three-Link Simulation book now mentions the MATLAB S-function, Jacobian kinematics, and Newton–Euler dynamics.
+
+Additional CV evidence is included selectively in the About and Skills sections: Honors Baccalaureate, two 2026 Outstanding Service awards, mentoring, VHDL, PWM, FFT/radar processing, and cleanroom photolithography. The original NASA work, links, photographs, MP4 demos, and resume PDF remain intact.
+
+**Privacy and source handling:** The original academic reports and CV remain private; no PDF/DOCX files, source code dumps, or source images were uploaded. The site contains concise public-facing summaries only. New books do not invent public GitHub repository links that were not already available. Group work is explicitly described as collaborative.

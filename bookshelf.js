@@ -15,6 +15,16 @@
       link: '#robot-lab', action: 'Explore the illustrative robot demo'
     },
     {
+      id: 'ur3e', title: 'UR3e Robot Kinematics', edition: 'ME422 · Spring 2026 · Group study',
+      subtitle: 'Modeling six degrees of freedom with Jacobians',
+      story: 'In a three-person robotics analysis project, our team studied the Universal Robots UR3e, a six-joint collaborative arm. We assigned Denavit–Hartenberg frames and derived the transformations that describe how each joint contributes to the end-effector pose. The project connected the mathematics of robot motion to an industrial manipulator.',
+      challenge: 'Represent the pose and end-effector velocity of a six-revolute-joint robot and identify singular configurations.',
+      approach: 'Develop a six-link DH table, multiply homogeneous transformations, derive the Jacobian, and evaluate its rank with MATLAB. The analyzed zero-angle configuration produced rank 5, indicating a singularity.',
+      tools: 'MATLAB, Denavit–Hartenberg convention, forward kinematics, Jacobians, velocity analysis.',
+      outcome: 'A group analysis of end-effector motion and singularity, with another evaluated configuration reaching full Jacobian rank.',
+      link: '#robot-lab', action: 'Explore the illustrative robot lab'
+    },
+    {
       id: 'iverify', title: 'IVerify', edition: 'Capstone · 2026 · Health technology',
       subtitle: 'A non-invasive IV occlusion detection concept',
       story: 'For my senior design capstone, I led a four-person team exploring whether an IV line could be monitored without placing new components inside the fluid path. Designing a useful response required thinking about electronics, sensing, the end user, and how information would be presented.',
@@ -37,11 +47,11 @@
     {
       id: 'fingerprint', title: 'Fingerprint Authentication', edition: '2025 · Embedded systems',
       subtitle: 'A small system with meaningful communication challenges',
-      story: 'This project brought an authentication concept onto an STM32 microcontroller. Beyond the biometric feature itself, I was interested in how the software organized users, stored templates, and communicated with the sensor.',
-      challenge: 'Manage multiple users and fingerprint templates with reliable embedded communication.',
-      approach: 'Build an STM32F767ZI system supporting four users, 24 templates, and two UART channels.',
-      tools: 'STM32F767ZI, embedded C, UART, microcontroller programming.',
-      outcome: 'Practical experience designing and debugging an embedded interface.',
+      story: 'Our four-person embedded-systems group built a standalone fingerprint identification system around an STM32F767ZI and an optical sensor. Instead of relying on the sensor library, the firmware uses manually constructed UART command packets and response parsing. A guided enrollment process lets users register prints, while green and red LEDs indicate matching results.',
+      challenge: 'Coordinate reliable sensor enrollment, fingerprint searching, serial packets, and clear feedback for multiple users.',
+      approach: 'Configure two UART channels, implement protocol framing and acknowledgment handling, map 24 template IDs to four users, and drive status LEDs and terminal messages.',
+      tools: 'STM32F767ZI, embedded C, UART packet protocol, sensor integration, GPIO.',
+      outcome: 'A group-built demonstration of enrollment, template matching, and embedded status reporting.',
       link: '#work', action: 'Return to the project summary'
     },
     {
@@ -57,12 +67,32 @@
     {
       id: 'leg', title: '3-Link Leg Simulation', edition: 'GitHub · Robotics & controls',
       subtitle: 'Exploring how connected joints move together',
-      story: 'I modeled a human leg as three connected links. Simulating a multi-joint system helped make the relationships among geometry, movement, and joint torque more tangible.',
-      challenge: 'Represent motion and dynamics across the hip, knee, and ankle.',
-      approach: 'Build a MATLAB/Simulink model and calculate joint positions, velocities, and torque.',
-      tools: 'MATLAB, Simulink, kinematics, dynamics, Newton–Euler methods.',
-      outcome: 'A simulation-based way to study how linked mechanisms behave.',
+      story: 'I modeled the hip, knee, and ankle as a connected three-link human leg. The model translates joint motion into foot position and velocity while examining the torques involved in linked-body motion.',
+      challenge: 'Calculate the position, velocity, and dynamic response of a three-joint biomechanical system.',
+      approach: 'Use a MATLAB S-function within Simulink, Jacobian kinematics, and Newton–Euler dynamics to compute joint torques.',
+      tools: 'MATLAB, Simulink, S-functions, Jacobians, Newton–Euler dynamics.',
+      outcome: 'A simulation exploring how multi-link motion relates to joint-level dynamics.',
       link: 'https://github.com/kalarcon775/3link-sim', action: 'Open the 3-Link Sim repository'
+    },
+    {
+      id: 'motor', title: 'STM32 Motor Timing & PWM', edition: 'Fall 2025 · Embedded control coursework',
+      subtitle: 'From timer registers to measured motor behavior',
+      story: 'Working with an STM32F767ZI introduced the practical side of motor timing: configuring timer outputs, changing pulse-width modulation, and gathering response data to understand hardware behavior. Related microprocessor lab work also covered push-button inputs and direct GPIO control.',
+      challenge: 'Generate controlled timing signals and relate PWM behavior to physical motor responses.',
+      approach: 'Develop STM32 firmware for PWM-based motor control and encoder capture; examine logged motor-response timing. A related lab example sweeps the TIM3 channel 2 compare register to vary duty cycle.',
+      tools: 'STM32F767ZI, embedded C, hardware timers, PWM, encoder capture, GPIO.',
+      outcome: 'Experience connecting microcontroller peripherals, control timing, and experimental observations.',
+      link: '#work', action: 'Browse engineering project summaries'
+    },
+    {
+      id: 'vhdl', title: 'VHDL Digital Logic', edition: 'EE421 · 2025 · Digital electronics',
+      subtitle: 'Binary arithmetic displayed in decimal without a clock',
+      story: 'For a digital electronics assignment, I developed purely combinational VHDL circuits that translate binary switch inputs into two-digit seven-segment output. A second design adds two 4-bit numbers and a carry-in and displays the result as a readable decimal value.',
+      challenge: 'Convert binary values to decimal display patterns using concurrent hardware logic rather than clocked software-like control.',
+      approach: 'Use XOR, AND, and OR equations with full-adder stages and lookup tables for active-low seven-segment displays. The adder produces a five-bit result representing 0 through 31.',
+      tools: 'VHDL, combinational logic, full adders, lookup tables, seven-segment displays.',
+      outcome: 'Synthesizable digital designs that demonstrate binary-to-decimal conversion and arithmetic display.',
+      link: '#work', action: 'Browse engineering project summaries'
     },
     {
       id: 'prodriver', title: 'ProDriver Sim', edition: 'GitHub · Electrical simulation',
@@ -294,8 +324,8 @@
     let target = -1;
     if (event.key === 'ArrowRight') target = (index + 1) % bookButtons.length;
     else if (event.key === 'ArrowLeft') target = (index - 1 + bookButtons.length) % bookButtons.length;
-    else if (event.key === 'ArrowDown') target = (index + 5) % bookButtons.length;
-    else if (event.key === 'ArrowUp') target = (index - 5 + bookButtons.length) % bookButtons.length;
+    else if (event.key === 'ArrowDown') target = (index + 6) % bookButtons.length;
+    else if (event.key === 'ArrowUp') target = (index - 6 + bookButtons.length) % bookButtons.length;
     if (target < 0) return;
     event.preventDefault();
     bookButtons[target].focus();

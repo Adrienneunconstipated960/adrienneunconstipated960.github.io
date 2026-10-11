@@ -16,6 +16,9 @@
 .book-spine-year{font:700 9px/1 var(--sans);white-space:nowrap}
 .book-spine-ornament{font:15px/1 var(--serif)}
 .book-rose{--spine:#aa5478;--spine-border:#7d3955}.book-sienna{--spine:#915e58;--spine-border:#72423c}.book-indigo{--spine:#55527b;--spine-border:#3a3858}.book-sage{--spine:#47675d;--spine-border:#334f47}.book-gold{--spine:#997343;--spine-border:#77552d}.book-plum{--spine:#62435e;--spine-border:#462f44}.book-wine{--spine:#82485e;--spine-border:#5d3043}.book-teal{--spine:#416c73;--spine-border:#2f545b}.book-lavender{--spine:#777399;--spine-border:#534c74}
+.book-ink{--spine:#444b72;--spine-border:#323452}
+.book-copper{--spine:#945f4d;--spine-border:#6c4638}
+.book-jade{--spine:#436f71;--spine-border:#2b4f53}
 .shelf-plank{height:17px;border-radius:4px;background:linear-gradient(180deg,#a17c89 0%,#795362 26%,#6f4b59 75%,#523745 100%);box-shadow:0 10px 14px #47323e24, inset 0 2px 0 #e3c5cd9e}
 .bookshelf-help{text-align:center;font-size:13px;margin:19px 0 0;color:#795b6c}
 

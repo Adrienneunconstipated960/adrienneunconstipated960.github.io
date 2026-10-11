@@ -86,3 +86,6 @@ a,button,summary{ -webkit-tap-highlight-color:rgba(158,91,123,.12)}
  .pathway:hover{transform:none}
  .scroll-progress span{will-change:auto}
 }
+
+/* Quiet academic recognition, without a separate crowded awards panel. */
+.about-copy .about-honors{margin-top:16px;font-size:12px;line-height:1.7;color:var(--rose-dark);max-width:540px}
