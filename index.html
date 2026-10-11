@@ -16,9 +16,11 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="enhancements.css">
   <link rel="stylesheet" href="bookshelf.css">
+  <link rel="stylesheet" href="ux.css">
   <script src="script.js" defer></script>
   <script src="enhancements.js" defer></script>
   <script src="bookshelf.js" defer></script>
+  <script src="ux.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -29,13 +31,14 @@
       <div class="nav-links" id="nav-links">
         <a href="#about">About</a>
         <a href="#bookshelf">Bookshelf</a>
-        <a href="#github-projects">GitHub</a>
-        <a href="#robot-lab">Robot demo</a>
+        <a href="#github-projects">Code</a>
+        <a href="#robot-lab">Robot lab</a>
         <a href="#experience">Experience</a>
-        <a href="#little-things">Beyond work</a>
+        <a href="#little-things">Interests</a>
         <a class="nav-cta" href="#resume">Resume ↗</a>
       </div>
     </nav>
+    <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-fill"></span></div>
   </header>
   <main id="main" tabindex="-1">
     <section class="hero container" aria-labelledby="hero-title">
@@ -45,17 +48,25 @@
         <p class="hero-subtitle">Building thoughtful things, from circuits to robots.</p>
         <p class="hero-description">I’m an electrical engineer pursuing my master's at the University of Nevada, Reno. I'm drawn to hands-on research, elegant problem-solving, and the places where engineering meets human curiosity.</p>
         <div class="hero-buttons">
-          <a href="#work" class="btn btn-primary">Explore my work <span aria-hidden="true">↗</span></a>
+          <a href="#bookshelf" class="btn btn-primary">Explore the project bookshelf <span aria-hidden="true">↗</span></a>
           <a href="assets/Kailani_Alarcon_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline">View resume <span aria-hidden="true">↗</span></a>
         </div>
         <p class="hero-signoff">A little space, a little literature, and a lot of engineering.</p>
+        <a class="hero-secondary-link" href="#robot-lab">Or try the interactive robot lab <span aria-hidden="true">↗</span></a>
       </div>
       <div class="hero-orbit" aria-hidden="true"><span class="orbital-ring"></span><span class="orbital-dot"></span></div>
+      <div class="star-trio star-trio-hero" aria-hidden="true"><span></span><span></span><span></span></div>
       <figure class="hero-photo">
         <img src="assets/sls-rocket-kailani.jpeg" alt="Kailani standing beside a large NASA Space Launch System rocket model" fetchpriority="high">
         <figcaption>At NASA Marshall Space Flight Center</figcaption>
       </figure>
     </section>
+
+    <nav class="pathways container" aria-label="Popular places to explore">
+      <a class="pathway" href="#bookshelf"><span class="pathway-icon" aria-hidden="true">✧</span><span><strong>Open a project book</strong><small>Nine engineering stories</small></span><span class="pathway-arrow" aria-hidden="true">↗</span></a>
+      <a class="pathway" href="#robot-lab"><span class="pathway-icon" aria-hidden="true">◎</span><span><strong>Try the robot lab</strong><small>Explore joint motion</small></span><span class="pathway-arrow" aria-hidden="true">↗</span></a>
+      <a class="pathway" href="#github-projects"><span class="pathway-icon" aria-hidden="true">⌘</span><span><strong>Browse the code</strong><small>Real GitHub projects</small></span><span class="pathway-arrow" aria-hidden="true">↗</span></a>
+    </nav>
 
     <section class="section about-section" id="about">
       <div class="container about-grid">
@@ -86,21 +97,24 @@
 <div class="case-body"><p><strong>Challenge:</strong> Evaluate whether a legacy arm could meet the workspace and vacuum constraints of a dust-mitigation test environment.</p><p><strong>My focus:</strong> Kinematic geometry, actuation considerations, requirements, and verification planning across a range of operational scenarios.</p><p class="case-note">The neighboring photograph shows a NASA robotics lab, not the robotic arm described here.</p></div></details>
           </div>
         </article>
-        <div class="project-cards-wrapper"><div class="project-cards">
+        <details class="project-index">
+          <summary><span class="project-index-heading">More engineering project snapshots</span><span class="project-index-caption">Four additional projects · expand to browse</span><span class="project-index-symbol" aria-hidden="true"></span></summary>
+          <div class="project-cards-wrapper"><div class="project-cards">
 <article class="project-card"><div class="card-top"><span aria-hidden="true" class="project-symbol symbol-pink">♡</span><span class="project-year">SPRING 2026</span></div><p class="project-kicker">CAPSTONE · HEALTH TECHNOLOGY</p><h3>IVerify</h3><p>Project lead and systems integrator for a four-person team designing a non-invasive clip-on IV occlusion detector. We connected mechanical sensing, analog electronics, embedded supervision, and a three-state indication concept.</p><div class="tag-row"><span>Systems integration</span><span>Embedded systems</span><span>Medical device concept</span></div><small>Academic prototype concept, not a clinically approved device.</small><details class="case-study"><summary>View project details</summary><div class="case-body"><p><strong>Problem:</strong> Explore a non-invasive approach to detecting IV occlusion.</p><p><strong>Role:</strong> Team lead and systems integrator in a four-person capstone group.</p><p><strong>Architecture:</strong> Mechanical sensing, analog electronics, embedded supervision, and three-state indication.</p><p class="case-note">Academic design concept, not a clinically approved medical device.</p></div></details></article>
 <article class="project-card"><div class="card-top"><span aria-hidden="true" class="project-symbol symbol-orange">⌁</span><span class="project-year">2025–2026</span></div><p class="project-kicker">TEST AUTOMATION</p><h3>Thermal Controller &amp; Logger</h3><p>Built a Python and Arduino thermal-test platform with data collection, ambient control, live visualization, stability tracking, and automated Excel reporting to make testing more repeatable.</p><div class="tag-row"><span>Python</span><span>Arduino</span><span>Data logging</span></div><details class="case-study"><summary>View project details</summary><div class="case-body"><p><strong>Problem:</strong> Repetitive thermal validation is difficult to monitor and document consistently.</p><p><strong>Approach:</strong> Connect Python data logging with Arduino ambient control, live plots, stability checks, and Excel reporting.</p><p><strong>Value:</strong> More consistent and traceable engineering test workflows.</p></div></details></article>
 <article class="project-card"><div class="card-top"><span aria-hidden="true" class="project-symbol symbol-lilac">✳</span><span class="project-year">FALL 2025</span></div><p class="project-kicker">EMBEDDED SYSTEMS</p><h3>Fingerprint Authentication</h3><p>Developed an STM32F767ZI biometric authentication system supporting 24 fingerprint templates across four users and communicating over two UART channels.</p><div class="tag-row"><span>STM32</span><span>C</span><span>UART</span></div><details class="case-study"><summary>View project details</summary><div class="case-body"><p><strong>Hardware:</strong> STM32F767ZI embedded development board.</p><p><strong>Implementation:</strong> A biometric authentication design with 24 fingerprint templates, four users, and two UART communication channels.</p><p><strong>Engineering focus:</strong> Embedded C, serial interfaces, and reliable device communication.</p></div></details></article>
 <article class="project-card"><div class="card-top"><span aria-hidden="true" class="project-symbol symbol-blue">◉</span><span class="project-year">SPRING 2025</span></div><p class="project-kicker">RF &amp; MEASUREMENT</p><h3>Virtual Network Analyzer</h3><p>Used MATLAB to automate two-port VNA measurements, apply 12-term SOLT calibration, and visualize S-parameters across 100 MHz to 6 GHz.</p><div class="tag-row"><span>MATLAB</span><span>RF systems</span><span>Calibration</span></div><details class="case-study"><summary>View project details</summary><div class="case-body"><p><strong>Goal:</strong> Automate and visualize two-port RF network measurements.</p><p><strong>Method:</strong> MATLAB-based data acquisition, 12-term SOLT calibration, and S-parameter plots.</p><p><strong>Frequency range:</strong> 100 MHz to 6 GHz.</p></div></details></article>
 </div></div>
+        </details>
       </div>
     </section>
 
     <section class="section bookshelf-section" id="bookshelf" aria-labelledby="bookshelf-heading">
       <div class="container">
-        <div class="bookshelf-heading section-heading">
+        <div class="bookshelf-heading section-heading"><div class="space-orbiter space-orbiter-shelf" aria-hidden="true"><span class="space-orbiter-body"></span><span class="space-orbiter-ring"></span><span class="space-orbiter-star"></span></div>
           <p class="eyebrow">AN ENGINEER'S LITTLE LIBRARY</p>
           <h2 id="bookshelf-heading">Every project has <em>a story.</em></h2>
-          <p>My work, collected as a shelf of books. Choose a spine to open the story behind a project, from the challenge to the engineering that brought it to life.</p>
+          <p>Choose a book spine to open the story behind a project, from the initial challenge to the engineering that brought it to life.</p>
         </div>
         <div class="bookshelf-cabinet" aria-label="Interactive bookshelf with nine engineering project books">
           <div class="shelf-level">
@@ -305,7 +319,7 @@
     </section>
 
     <section class="section interests-section" id="little-things">
-      <div class="container interest-layout">
+      <div class="container interest-layout"><div class="constellation-shape" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
         <div class="interest-copy">
           <p class="eyebrow">07 / OUTSIDE THE LAB</p>
           <h2>Equal parts engineer <em>and dreamer.</em></h2>
@@ -323,7 +337,7 @@
         <div class="resume-text">
           <p class="eyebrow">08 / THE PROFESSIONAL DETAILS</p>
           <h2>Let's get down to <em>the details.</em></h2>
-          <p>Want to learn more about my engineering background, technical skills, and experience? The full one-page resume is here.</p>
+          <p>A one-page overview of my education, experience, and technical work.</p>
           <div class="resume-actions"><a href="assets/Kailani_Alarcon_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View resume PDF ↗</a><a href="assets/Kailani_Alarcon_Resume.pdf" download="Kailani_Alarcon_Resume.pdf" class="btn btn-outline">Download PDF ↓</a></div>
         </div>
         <div class="resume-note" aria-label="Resume summary"><span class="resume-caption">KAILANI ALARCON</span><strong>Electrical Engineering</strong><p>NASA · LUX Dynamics · Robotics · Embedded systems · Product development</p><span class="resume-small">M.S. Electrical Engineering · 2028</span></div>

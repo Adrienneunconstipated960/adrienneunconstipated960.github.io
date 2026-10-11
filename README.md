@@ -98,3 +98,17 @@ The Engineering Bookshelf is an interactive project library at `#bookshelf`.
 - The existing project summaries, GitHub repositories, resume PDF, JPEG photos and MP4 videos remain in place. The former small reading tabs were replaced by the full project bookshelf. Literature interests remain in their existing prose section.
 
 **No new assets are needed.** This feature uses `bookshelf.css`, `bookshelf.js` and an updated `index.html` only. Add or change book descriptions in `bookshelf.js`. The stories are based on the existing project and GitHub descriptions; links to private or confidential documents have not been added.
+
+
+## Streamlined navigation and subtle space elements
+
+The latest update retains the full interactive bookshelf, GitHub project filters, robot joint controls, experience timeline, JPEG photographs, MP4 demos, and resume. It adds:
+
+- A three-option quick-navigation row below the hero (project bookshelf, robot lab, and GitHub code).
+- A main homepage call-to-action that opens the project bookshelf directly.
+- A collapsible group of four supplementary project cards, keeping their existing details while shortening the default page.
+- A lightweight reading-progress line in the sticky header, updated with one throttled requestAnimationFrame per scroll frame.
+- CSS-only star details, a restrained orbiting planet near the bookshelf, and a shooting-star accent beside the robot lab.
+- Improved section spacing, tappable links, responsive layouts, keyboard-friendly native disclosure, and support for reduced-motion preferences.
+
+All design elements in \`ux.css\` are implemented with CSS shapes and no media assets. \`ux.js\` handles only the progress indicator and the disclosure hint. No JPEGs, MP4s, or PDFs were uploaded or edited. Keep the existing JPEG and MP4 media filenames documented above.
