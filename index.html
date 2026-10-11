@@ -20,9 +20,10 @@
   <link rel="stylesheet" href="botanical.css?v=20261011-6">
   <link rel="stylesheet" href="ambient.css?v=20261011-6">
   <link rel="stylesheet" href="engineering.css?v=20261011-7">
+  <link rel="stylesheet" href="case-studies.css?v=20261011-9">
   <script src="script.js" defer></script>
   <script src="enhancements.js" defer></script>
-  <script src="bookshelf.js?v=20261011-6" defer></script>
+  <script src="bookshelf.js?v=20261011-9" defer></script>
   <script src="ux.js" defer></script>
   <script src="ambient.js?v=20261011-2" defer></script>
 </head>
@@ -323,6 +324,127 @@
           </div>
         </article>
       </div>
+
+        <div class="technical-dossiers" aria-labelledby="dossiers-title">
+          <div class="section-heading dossier-intro" data-ambient-reveal>
+            <p class="eyebrow">03A / ENGINEERING EVIDENCE</p>
+            <h3 id="dossiers-title">Inside the <em>engineering.</em></h3>
+            <p>Three close looks at the decisions, signal paths, and verification evidence behind the project books. Figures are explanatory diagrams, not reproduced experimental data.</p>
+          </div>
+
+          <article class="technical-dossier" id="case-nasa" aria-labelledby="case-nasa-title" data-ambient-reveal>
+            <header class="dossier-head">
+              <div><p class="dossier-id">CASE 01 / SYSTEMS ENGINEERING · NASA MARSHALL</p><h4 id="case-nasa-title">Robotic-arm workspace and verification</h4></div>
+              <span class="dossier-status">Requirements assessment</span>
+            </header>
+            <p class="dossier-summary">Could a legacy robotic arm support lunar-dust mitigation tests inside a constrained high-vacuum chamber? The work connected reach and motion geometry to actuator limits, physical boundaries, and a planned verification strategy.</p>
+            <div class="dossier-body">
+              <div class="dossier-notes">
+                <h5>Engineering approach</h5>
+                <ul>
+                  <li>Evaluate workspace and reach against chamber boundaries and target surfaces.</li>
+                  <li>Consider actuator capability and joint constraints before choosing a motion profile.</li>
+                  <li>Organize requirements and proposed tests to identify what must be verified before hardware use.</li>
+                </ul>
+                <h5>What the record supports</h5>
+                <p>An assessment structured around <strong>34 system requirements</strong> and <strong>six planned test scenarios</strong>, with a <strong>10⁻⁷ torr target</strong> as an operating constraint. These figures describe evaluation scope, not six completed qualification tests.</p>
+              </div>
+              <figure class="dossier-figure">
+                <figcaption>FIG. A · Requirements-to-verification logic (conceptual)</figcaption>
+                <ol class="dossier-chain" aria-label="Requirements, kinematic reach, actuator constraints, planned verification">
+                  <li><span class="chain-index">01</span><strong>Requirements</strong><small>Surfaces · vacuum · geometry</small></li>
+                  <li><span class="chain-index">02</span><strong>Workspace</strong><small>Reach · joint limits · interference</small></li>
+                  <li><span class="chain-index">03</span><strong>Hardware limits</strong><small>Actuators · mounting · tools</small></li>
+                  <li><span class="chain-index">04</span><strong>Verification plan</strong><small>Six proposed scenarios</small></li>
+                </ol>
+                <p class="figure-foot">Design logic summary. Not a photograph or validated workspace simulation.</p>
+              </figure>
+            </div>
+            <footer class="dossier-footer">
+              <p><strong>Boundary:</strong> A documented engineering evaluation, not evidence that an arm was vacuum-qualified, deployed, or that all six scenarios passed.</p>
+              <span class="dossier-footer-links"><a href="#bookshelf" data-open-feature-book="nasa">Open the NASA project book <span aria-hidden="true">↗</span></a><a href="#robot-lab">Try the illustrative robot lab <span aria-hidden="true">↗</span></a></span>
+            </footer>
+          </article>
+
+          <article class="technical-dossier" id="case-iverify" aria-labelledby="case-iverify-title" data-ambient-reveal>
+            <header class="dossier-head">
+              <div><p class="dossier-id">CASE 02 / SENIOR CAPSTONE · SYSTEMS INTEGRATION</p><h4 id="case-iverify-title">IVerify: from tubing force to a state indication</h4></div>
+              <span class="dossier-status">Bench-level proof of concept</span>
+            </header>
+            <p class="dossier-summary">As project lead and systems integrator on a four-person team, I coordinated an external, clip-on concept intended to flag potential downstream restrictions in gravity-fed IV tubing without contacting the sterile fluid path.</p>
+            <div class="dossier-body">
+              <div class="dossier-notes">
+                <h5>System architecture</h5>
+                <p>A clamp applies controlled preload. Tubing reaction force becomes a sensor signal, which is conditioned and compared with thresholds. The microcontroller supervises timing and controls the indication.</p>
+                <h5>Reported prototype observations</h5>
+                <ul>
+                  <li>Clamp preload averaged about <strong>5.0 N</strong>, within approximately <strong>±10%</strong> of the target in repeated bench trials.</li>
+                  <li>Sensor output changed as test conditions changed; comparator thresholds and firmware-driven <strong>two-LED</strong> states were exercised.</li>
+                  <li>Selected tubing showed no visible puncture, leakage, or permanent collapse in the reported tests.</li>
+                </ul>
+              </div>
+              <figure class="dossier-figure">
+                <figcaption>FIG. B · Prototype signal chain (functional schematic)</figcaption>
+                <ol class="dossier-chain" aria-label="Tubing and clamp, force sensor, analog threshold, microcontroller, prototype LEDs">
+                  <li><span class="chain-index">MECH</span><strong>Preloaded tubing</strong><small>External force response</small></li>
+                  <li><span class="chain-index">SENSE</span><strong>Force sensor</strong><small>Electrical response</small></li>
+                  <li><span class="chain-index">ANALOG</span><strong>Filter + compare</strong><small>Threshold events</small></li>
+                  <li><span class="chain-index">LOGIC</span><strong>MCU + two LEDs</strong><small>Prototype state output</small></li>
+                </ol>
+                <p class="figure-foot">Functional schematic based on the capstone final report; not a circuit diagram or clinical instrument.</p>
+              </figure>
+            </div>
+            <div class="dossier-evidence" aria-label="Selected IVerify verification evidence">
+              <div><span>Preload</span><strong>≈5.0 N</strong><small>Reported average, bench trials</small></div>
+              <div><span>Variation</span><strong>≈±10%</strong><small>Relative to target preload</small></div>
+              <div><span>Indication</span><strong>2 LEDs</strong><small>Demonstrated prototype, not final UI</small></div>
+            </div>
+            <footer class="dossier-footer">
+              <p><strong>Boundary:</strong> A student prototype, not a clinically validated or approved medical device. Quantified flow sensitivity, false-alarm rates, and repeatable detection-time distributions still need testing. Three-color indication was a design goal, not implemented in the reported prototype.</p>
+              <a href="#bookshelf" data-open-feature-book="iverify">Open the IVerify project book <span aria-hidden="true">↗</span></a>
+            </footer>
+          </article>
+
+          <article class="technical-dossier" id="case-controls" aria-labelledby="case-controls-title" data-ambient-reveal>
+            <header class="dossier-head">
+              <div><p class="dossier-id">CASE 03 / EE370L · INSTRUMENTATION LAB</p><h4 id="case-controls-title">Strain-gauge calibration and vibration response</h4></div>
+              <span class="dossier-status">Recorded bench observations</span>
+            </header>
+            <p class="dossier-summary">In partner-based lab work, we calibrated a strain-gauge amplifier and observed the response of a metal strip under mechanical excitation. Signal quality mattered as much as obtaining a number.</p>
+            <div class="dossier-body">
+              <div class="dossier-notes">
+                <h5>Measurement method</h5>
+                <ul>
+                  <li>Set up a half-bridge strain gauge and calibrated the signal-conditioning indicator before measurement.</li>
+                  <li>Compare loaded and unloaded readings, then observe a mechanically excited waveform on an oscilloscope.</li>
+                  <li>Discard the first noisy trace for interpretation and use the cleaner strummed trace reported in the lab.</li>
+                </ul>
+                <h5>Instrumentation</h5>
+                <p>Strain-gauge half-bridge, Validyne CD12 transducer indicator, Keysight MSOX3000 oscilloscope, and Keithley 2110 multimeter.</p>
+              </div>
+              <figure class="dossier-figure">
+                <figcaption>FIG. C · Measurement chain (conceptual)</figcaption>
+                <ol class="dossier-chain" aria-label="Strained beam, half-bridge, transducer indicator, oscilloscope">
+                  <li><span class="chain-index">INPUT</span><strong>Beam deflection</strong><small>Applied mechanical load</small></li>
+                  <li><span class="chain-index">SENSOR</span><strong>Strain half-bridge</strong><small>Small resistance change</small></li>
+                  <li><span class="chain-index">SIGNAL</span><strong>Amplifier</strong><small>Balance and calibration</small></li>
+                  <li><span class="chain-index">READOUT</span><strong>Oscilloscope</strong><small>Waveform and decay</small></li>
+                </ol>
+                <p class="figure-foot">Conceptual wiring and measurement order, not a plotted time-series or a reproduced circuit schematic.</p>
+              </figure>
+            </div>
+            <div class="dossier-evidence" aria-label="Selected cleaner waveform measurements from the strain-gauge lab">
+              <div><span>Observed frequency</span><strong>49.256 Hz</strong><small>Selected strummed trace</small></div>
+              <div><span>Peak output</span><strong>610 mV</strong><small>Selected waveform</small></div>
+              <div><span>Reported decay</span><strong>6.335 ms</strong><small>Time constant in lab report</small></div>
+            </div>
+            <footer class="dossier-footer">
+              <p><strong>Boundary:</strong> Values come from the selected cleaner trace in the March 2025 lab report, not an average across trials or a certified sensor characterization. Other attempted traces were less reliable.</p>
+              <a href="#bookshelf" data-open-feature-book="controls">Open the control lab project book <span aria-hidden="true">↗</span></a>
+            </footer>
+          </article>
+          <p class="dossier-source-note">Evidence basis: portfolio NASA assessment, IVerify Spring 2026 final report, and EE370L Lab 7 (March 2025). Source reports and raw experimental files are not published on this site.</p>
+        </div>
     </section>
 
     <section class="section github-section" id="github-projects" aria-labelledby="github-title">

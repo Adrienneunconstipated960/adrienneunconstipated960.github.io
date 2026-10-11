@@ -12,7 +12,7 @@
       approach: 'Study the kinematic workspace, assess actuator limitations, and organize verification across six operational scenarios and 34 system requirements.',
       tools: 'Robotics, Creo, systems engineering, verification planning, simulation.',
       outcome: 'A requirements-led assessment of workspace and actuator constraints across 34 system requirements and six planned test scenarios, identifying the verification still needed before a hardware decision.',
-      link: '#robot-lab', action: 'Explore the illustrative robot demo'
+      link: '#case-nasa', action: 'Read the NASA engineering case study'
     },
     {
       id: 'ur3e', title: 'UR3e Robot Kinematics', edition: 'ME422 · Spring 2026 · Group study',
@@ -82,7 +82,7 @@
       approach: 'Use a strain-gauge half-bridge and calibrated amplifier, an oscilloscope and function generator for frequency sweeps, MATLAB step-response simulations, and op-amp controller circuits on a DC motor board. Compare rise time, settling time, phase response, and overshoot between models and measurements.',
       tools: 'MATLAB, P/PID feedback, strain gauges, Wheatstone bridge, RLC frequency response, oscilloscope, function generator, DC motor controller board.',
       outcome: 'The strain experiment characterized vibration near 49.3 Hz. Increasing proportional gain shortened measured rise and settling times, but P-control experiments showed roughly tenfold differences from the simulation; some PID measurements differed by over 50%. These discrepancies motivated stronger component and setup verification.',
-      link: '#bookshelf', action: 'Explore the other project books'
+      link: '#case-controls', action: 'Read the controls and instrumentation case study'
     },
     {
       id: 'iverify', title: 'IVerify', edition: 'Capstone · 2026 · Health technology',
@@ -92,7 +92,7 @@
       approach: 'Integrate a clamp, force sensor, analog front end, threshold detection, microcontroller state logic, and a visual interface. The product concept defined normal, partial-restriction, and occlusion states.',
       tools: 'Mechanical sensing, signal conditioning, threshold logic, embedded systems, risk analysis, verification planning.',
       outcome: 'A bench-level, non-clinical proof of concept using two indicator LEDs. The proposed full three-color interface and clinical performance still required further testing.',
-      link: '#work', action: 'Return to the project summary'
+      link: '#case-iverify', action: 'Read the IVerify engineering case study'
     },
     {
       id: 'thermal', title: 'Thermal Controller & Logger', edition: '2025–2026 · Test automation',

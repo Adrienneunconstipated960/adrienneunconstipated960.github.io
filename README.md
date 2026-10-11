@@ -352,3 +352,18 @@ Only `index.html`, `engineering.css`, and this README are changed. Existing GitH
 ## ROS2 and Thermal Desktop skills update
 
 The engineering-focus legend and technical-toolkit section now explicitly name **ROS2** under Robotics & Controls and **Thermal Desktop** under Design & Validation. These additions identify the tools without implying a particular proficiency level, project result, or certification. The existing two shelves, 16 project books, space and floral effects, page layout, and user-owned media are unchanged. This update touches only `index.html` and this README.
+
+
+## Source-grounded engineering case studies (October 2026)
+
+Three expanded technical case studies are now placed **within the existing NASA/Engineering Work section** (not as empty separators). Their anchor IDs are case-nasa, case-iverify, and case-controls.
+
+- **NASA robotic-arm assessment:** Illustrates the decision chain from requirements and kinematic reach to actuator constraints and verification planning. Retains the already-documented 34 system requirements, six proposed scenarios, and 1e-7 torr vacuum target. Describes the assessment as an evaluation, not a vacuum-qualified robot or completed qualification tests. The diagram is a conceptual summary of engineering workflow, not a real workspace plot.
+- **IVerify senior capstone:** Based on the student's Spring 2026 IVerify Final Report. Explains the force-sensing architecture (clamp/preload -> sensor -> analog conditioning/threshold -> MCU -> LEDs), the student's role in systems integration, and limited bench prototype findings. The report states roughly 5.0 N average preload within about ±10% of the target; two-LED state indications and observed analog threshold changes. It does not report comprehensive sensitivity/false-alarm distributions, demonstrate the complete three-color indicator, or support medical approval. The report and images remain private and were **not uploaded**.
+- **Strain-gauge instrumentation:** Based on the submitted March 2025 EE370L Lab 7 report. Explains amplifier/bridge calibration and the experimental signal chain, with the selected cleaner strummed trace: reported 49.256 Hz, 610 mV peak voltage, and 6.335 ms time constant. These are reported values from a selected trace, not averaged performance data. No fabricated waveform plot or undocumented calibration is added.
+
+Each dossier has a compact semantic flow diagram, explanatory text, clearly labeled evidence, and limitations. The bookshelf's existing project entries for these three projects now link to their corresponding case-study anchors, and the page links can open the matching books. A new case-studies.css file provides desktop/mobile styling, accessibility, and reduced-motion support.
+
+A separate approved/safe-to-share project diagram or raw result is needed before adding actual plots, NASA internal figures, ROS2 node graphs, Thermal Desktop results, or IV medical-device performance metrics. Those were not invented.
+
+Existing media (photos, MP4, resume PDF), 16 book spines on two shelves, 8 background floral accents, 36 stars, planetary motion and chapter interactions are unchanged.
