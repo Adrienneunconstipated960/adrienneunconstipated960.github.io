@@ -5,7 +5,8 @@
 (() => {
   const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
   const elements = [...document.querySelectorAll('[data-ambient-reveal]')];
-  const contact = document.querySelector('.contact-section');
+  const scenes = [...document.querySelectorAll('.hero, section.section')]
+    .filter(section => section.querySelector(':scope > .ambient-field'));
 
   // Native rendering is the fallback on old browsers or for reduced motion.
   if (!('IntersectionObserver' in window) || motionPreference.matches) return;
@@ -26,24 +27,26 @@
   elements.forEach(element => revealObserver.observe(element));
   if (elements.length) document.documentElement.classList.add('ambient-ready');
 
-  // Keep the occasional comet paused when its section is offscreen.
-  let contactObserver = null;
-  if (contact) {
-    contactObserver = new IntersectionObserver(entries => {
-      for (const entry of entries) {
-        contact.classList.toggle('ambient-active', entry.isIntersecting && !motionPreference.matches);
-      }
-    }, { threshold: 0.04 });
-    contactObserver.observe(contact);
-  }
+  // Share one visibility observer across every section. Only the section
+  // currently on screen animates its starfield/orbit; the comet stays off when
+  // the contact section isn't visible. This avoids unnecessary background work.
+  const sceneObserver = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      entry.target.classList.toggle(
+        'ambient-active',
+        entry.isIntersecting && !motionPreference.matches
+      );
+    }
+  }, { threshold: 0, rootMargin: '80px 0px 80px 0px' });
+  scenes.forEach(scene => sceneObserver.observe(scene));
 
   const disableAnimation = event => {
     if (!event.matches) return;
     document.documentElement.classList.remove('ambient-ready');
     elements.forEach(element => element.classList.add('ambient-visible'));
-    contact?.classList.remove('ambient-active');
+    scenes.forEach(scene => scene.classList.remove('ambient-active'));
     revealObserver.disconnect();
-    contactObserver?.disconnect();
+    sceneObserver.disconnect();
   };
   motionPreference.addEventListener?.('change', disableAnimation);
 })();

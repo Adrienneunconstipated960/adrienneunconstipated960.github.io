@@ -261,3 +261,19 @@ Only decorative CSS gradients, borders and inline HTML spans are used. No extern
 Accessibility: all decorative groups have aria-hidden=true and pointer-events:none. Reduced-motion users see a fully readable static layout; twinkling, orbit travel, floral drift, comet and scroll reveals are disabled. Mobile CSS scales back the visual density, and forced-colors/print views suppress purely decorative effects.
 
 This release updates index.html, adds ambient.css and ambient.js, and updates README.md. User-owned JPEG, MP4, resume PDF, and uploaded course records are **not touched**.
+
+
+## Consistent ambient visuals throughout every section
+
+The user requested that background visualizations feel continuous across the *whole* portfolio, not only the introduction. Every one of the eleven main sections now contains a small, non-interactive CSS starfield. The same muted blush/plum/lavender glows, two existing constellations, and very slow orbital language connect the layout end-to-end.
+
+- **Hero and bookshelf:** Retain the previously added starfields, orbital sketch, planet, project-library glows and quiet decorative flowers.
+- **About, NASA feature and GitHub:** Gain unobtrusive twinkling points near section margins. The code section retains its faint engineering drafting grid.
+- **Robot lab, experience and resume:** Gain three very faint ellipse/orbit sketches with tiny slowly moving dots, placed behind the existing content and controls.
+- **Skills:** Gains the shared star-and-glow background.
+- **Interests and contact:** Gain low-opacity plumeria and Mexican marigold SVG watermark motifs in background margins, reusing existing symbols. The contact comet remains rare and subtle.
+- **Scrolling:** Existing headings and code cards continue to reveal gently; the About and Robot introduction, timeline entries, skills blocks, resume panels, and contact introduction now use the same one-time reveal.
+- **Performance:** A single IntersectionObserver watches the site's ambient section fields, animating decorative stars/orbits only while their sections are visible. No scroll polling, downloaded imagery or external animation libraries.
+- **Accessibility:** Decorative layers remain aria-hidden and pointer-events:none; users with reduced-motion preferences receive a static presentation. Content is readable without JavaScript, and mobile, high-contrast and print views reduce or suppress the effects.
+
+No existing site media, PDFs, source documents, book titles, interactive controls, or images were added, uploaded, renamed or changed. This update modifies index.html, ambient.css, ambient.js and README.md only.
