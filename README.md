@@ -40,3 +40,20 @@ The PDF resume is intended to be public once deployed and contains personal cont
 ## Image update
 
 The earlier Earth-window silhouette photo has been removed and is no longer part of this website. The Interests section instead features the provided space helmet photograph.
+
+## Upload your own media (JPEG and MP4 only)
+
+The website code references these exact filenames inside the root-level `assets/` directory. **Do not rename the files arbitrarily**: GitHub Pages paths are case-sensitive.
+
+- `sls-rocket-kailani.jpeg` - standing by NASA rocket (homepage)
+- `graduation-flowers.jpeg` - graduation photo (About)
+- `robotics-lab-rover.jpeg` - NASA robotics-lab photo (featured project)
+- `nasa-mission-training-complex.jpeg` - NASA mission training photo (Experience)
+- `cleanroom-suit.jpeg` - cleanroom photo (Education)
+- `space-helmet.jpeg` - space helmet photo (Interests)
+- `huemotion-demo.mp4` - HueMotion hand tracking demonstration (GitHub section)
+- `lighting-demo.mp4` - illuminated light demonstration (GitHub section)
+
+Do not upload the braid or Earth-window silhouette photo. Any older `.jpg` files remain unused by the updated HTML. Upload the actual JPEG bytes with the filename extension `.jpeg`, rather than merely relabeling files encoded in a different format. MP4 clips should be encoded in a browser-compatible format such as H.264. The video modules remain hidden until the MP4 metadata can be loaded.
+
+The existing `assets/Kailani_Alarcon_Resume.pdf` is a resume document rather than a photo/video and remains unchanged.
