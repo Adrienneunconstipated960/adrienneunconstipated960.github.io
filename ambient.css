@@ -456,3 +456,127 @@ html.ambient-ready .ambient-active > .ambient-field .ambient-watermark svg{
   .robot-section::before,.experience-section::before,.skills-section::before,
   .interests-section::before,.resume-section::before{display:none!important}
 }
+
+
+/* Visibility pass: the earlier 2-3px stars and 0.1-alpha glows were barely
+   perceptible at normal desktop zoom. Keep the same style but give it form. */
+.ambient-field{
+  background:
+    radial-gradient(ellipse 30% 40% at 98% 11%,rgba(178,132,173,.075),transparent 90%),
+    radial-gradient(ellipse 27% 44% at 1% 88%,rgba(194,153,183,.065),transparent 88%);
+}
+
+.ambient-field .ambient-star{
+  width:4px;
+  height:4px;
+  background:rgba(143,91,134,.82);
+  box-shadow:0 0 0 5px rgba(165,109,147,.07),0 0 17px rgba(141,86,133,.19);
+}
+.ambient-field .ambient-star:nth-child(2){width:3px;height:3px}
+.ambient-field-contact .ambient-star{
+  background:rgba(255,232,246,.92);
+  box-shadow:0 0 0 5px rgba(254,222,241,.10),0 0 16px rgba(255,223,244,.26);
+}
+
+@keyframes ambient-twinkle{
+  0%,100%{opacity:.46}
+  42%{opacity:.88}
+  54%{opacity:1}
+  74%{opacity:.6}
+}
+
+/* A recognizable, delicately drawn star map in the margin of EVERY
+   section. Each remains fully visible even if motion/JS is disabled. */
+.ambient-constellation{
+  position:absolute;
+  display:block;
+  width:clamp(170px,20vw,250px);
+  height:auto;
+  right:2.2%;
+  top:9%;
+  overflow:visible;
+  color:#a57698;
+  opacity:.60;
+  transform:rotate(-8deg);
+  filter:drop-shadow(0 0 5px rgba(171,113,155,.11));
+  animation:ambient-map-drift 18s ease-in-out infinite;
+}
+
+.ambient-field-hero .ambient-constellation{right:1%;top:1%;opacity:.68}
+.ambient-field-bookshelf .ambient-constellation{left:2%;right:auto;top:3%;opacity:.57;transform:rotate(4deg)}
+.ambient-field-about .ambient-constellation{right:1%;top:7%;color:#9e739a;opacity:.59}
+.ambient-field-work .ambient-constellation{right:1%;top:2%;color:#95799e;opacity:.58}
+.ambient-field-github .ambient-constellation{left:2%;right:auto;top:2%;color:#966c91;opacity:.62}
+.ambient-field-robot .ambient-constellation{left:2%;right:auto;top:7%;color:#97749b;opacity:.62}
+.ambient-field-experience .ambient-constellation{right:1%;top:6%;color:#9d7092;opacity:.61}
+.ambient-field-skills .ambient-constellation{right:2%;top:11%;color:#a5799c;opacity:.64}
+.ambient-field-interests .ambient-constellation{left:3%;right:auto;bottom:8%;top:auto;color:#9e7c9f;opacity:.60}
+.ambient-field-resume .ambient-constellation{left:1%;right:auto;top:5%;color:#a27a9f;opacity:.58}
+.ambient-field-contact .ambient-constellation{right:3%;top:9%;color:#efd4e4;opacity:.60}
+
+@keyframes ambient-map-drift{
+  0%,100%{translate:0 0}
+  50%{translate:0 -5px}
+}
+
+/* Discernible but quiet orbit details in the engineering sections. */
+.ambient-sky-arc{
+  border-width:1.5px;
+  border-color:rgba(139,99,151,.5);
+  opacity:.69;
+}
+.ambient-sky-arc .ambient-orbit-dot{
+  width:5px;height:5px;top:-3px;left:calc(50% - 2.5px);
+  background:#936d99;
+}
+.ambient-orbit-track{
+  border-color:rgba(143,101,149,.39);
+}
+.ambient-watermark{opacity:.25}
+.ambient-watermark-contact{opacity:.23}
+
+/* Keep the distinctive palette in every area. The backgrounds have more
+   presence now, while portraits, books and text remain the visual anchors. */
+.hero::before,
+.about-section::before,
+.work-section::before,
+.experience-section::before,
+.skills-section::before,
+.interests-section::before,
+.resume-section::before{
+  background-image:
+    radial-gradient(ellipse 33% 45% at 97% 13%,rgba(168,125,175,.125),transparent 84%),
+    radial-gradient(ellipse 33% 46% at 3% 89%,rgba(204,163,188,.11),transparent 88%);
+}
+.bookshelf-section::before{
+  background:radial-gradient(ellipse 54% 32% at 50% 14%,rgba(191,145,186,.13),transparent 90%);
+}
+.github-section::before{opacity:.68}
+
+/* Paused offscreen with the same observer used for stars and orbital dots. */
+html.ambient-ready .ambient-field .ambient-constellation{animation-play-state:paused}
+html.ambient-ready .ambient-active > .ambient-field .ambient-constellation{animation-play-state:running}
+
+@media(max-width:760px){
+  .ambient-constellation{width:125px;opacity:.36;filter:none}
+  .ambient-field-hero .ambient-constellation{width:100px;right:0;top:1%;opacity:.38}
+  .ambient-field-bookshelf .ambient-constellation{left:auto;right:1%;top:2%;opacity:.34}
+  .ambient-field-about .ambient-constellation{right:1%;top:2%;opacity:.34}
+  .ambient-field-robot .ambient-constellation{right:0;left:auto;top:3%;opacity:.38}
+  .ambient-field-experience .ambient-constellation{width:100px}
+  .ambient-field-github .ambient-constellation{left:auto;right:1%;top:1%;opacity:.36}
+  .ambient-field-contact .ambient-constellation{width:116px;opacity:.4}
+  .ambient-field .ambient-star{width:3px;height:3px}
+  .ambient-field .ambient-star:nth-child(2){width:2.5px;height:2.5px}
+  .ambient-sky-arc{opacity:.40}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .ambient-constellation{animation:none!important}
+}
+@media(forced-colors:active){
+  .ambient-constellation{display:none}
+}
+@media print{
+  .ambient-constellation{display:none!important}
+}

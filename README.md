@@ -277,3 +277,14 @@ The user requested that background visualizations feel continuous across the *wh
 - **Accessibility:** Decorative layers remain aria-hidden and pointer-events:none; users with reduced-motion preferences receive a static presentation. Content is readable without JavaScript, and mobile, high-contrast and print views reduce or suppress the effects.
 
 No existing site media, PDFs, source documents, book titles, interactive controls, or images were added, uploaded, renamed or changed. This update modifies index.html, ambient.css, ambient.js and README.md only.
+
+
+## Background-visibility correction and cache refresh
+
+A follow-up review found that the previously published global starfields were technically present across all 11 sections but often almost invisible: some points were 2–3 CSS pixels, surrounding rings had extremely low opacity, and gradient glows were similarly faint. That made the newer layout appear unchanged at standard zoom.
+
+This revision adds a **noticeable, but still restrained star-map illustration to the background edge of each of the 11 primary sections**, using the same muted floral/space palette. It also increases the legibility of the small stars, orbit outlines, and soft glows without placing animations over text, books, or interactive controls. The patterns gently drift by a few pixels only when their section is on screen, and all motion stops under reduced-motion settings.
+
+HTML references the updated ambient stylesheet and script with a version query to reduce stale browser-cache issues. The project bookshelf still holds 16 books on two shelves; original marigold/plumeria symbols, planet, page-turn effects, robot lab, images, videos and resume PDF remain unchanged. No new media or third-party resources were added.
+
+The code is validated in GitHub, but its final appearance should be checked on a deployed desktop and mobile browser. If an old version remains visible, hard-refresh the page.
