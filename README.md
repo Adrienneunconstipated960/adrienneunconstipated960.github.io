@@ -1,43 +1,38 @@
-# Kailani | Personal Portfolio
+# Kailani | Engineering & Curiosity
 
-A pink, bookish, space-inspired engineering portfolio built as a static website with HTML, CSS, and vanilla JavaScript. No installation, build step, account, or paid hosting required.
+A minimalist, elegant portfolio that maintains a blush-and-plum aesthetic while focusing attention on engineering work, actual GitHub repositories, and personal photographs.
 
-## Included files
+## Files
 
-- `index.html` - complete single-page portfolio
-- `styles.css` - colors, typography, animations, and responsive layout
-- `script.js` - mobile menu and illustrative robotic arm motion profiles
-- `assets/space-window.jpg` - provided space photograph used in the homepage
-- `assets/Kailani_Alarcon_Resume.pdf` - provided one-page engineering resume, accessible through the site
+- `index.html`, `styles.css`, `script.js`
+- `assets/` with six selectively integrated personal photographs and the provided PDF resume
 
 ## Preview locally
 
-Double click `index.html` to open the page in a browser. Internet access is only used to load optional Google Fonts; the website works with system font fallbacks when offline.
+Open `index.html` in a browser, or use `python -m http.server 8000` to preview at `http://localhost:8000`.
 
 ## Publish on GitHub Pages
 
-1. Sign in at https://github.com and create a **public** repository named `kalarcon775.github.io` if `kalarcon775` is your username. If your username is different, replace it accordingly.
-2. Click **Add file** > **Upload files** and upload **the contents** of this folder. `index.html` must be at the top level of the repository, not inside another folder.
-3. Commit the files to the `main` branch.
-4. Under **Settings** > **Pages**, choose **Deploy from a branch**, then `main` and `/(root)` and click **Save**.
-5. Visit `https://kalarcon775.github.io` after deployment finishes. Publication may take several minutes.
+1. Open your repository at `https://github.com/kalarcon775/kalarcon775.github.io`.
+2. Upload `index.html`, `styles.css`, `script.js`, and the files in `assets/` to the repository root and `assets/` respectively.
+3. Commit the changes. GitHub Pages will republish from your `main` branch if configured for `/(root)`.
+4. Visit `https://kalarcon775.github.io` when deployment finishes.
 
-If you already published a previous portfolio, replace its old `index.html`, `styles.css`, `script.js`, and upload the `assets` folder. You can delete obsolete files such as the old `resume.html` if unused.
+The PDF resume is intended to be public once deployed and contains personal contact information. Review before publishing.
 
-## Update your site
+## Content and photographs
 
-- **Name and intro:** edit hero text in `index.html`.
-- **Photo:** replace `assets/space-window.jpg` with another photo of the same name.
-- **Resume:** replace `assets/Kailani_Alarcon_Resume.pdf` with a newer PDF of the same name.
-- **Links:** update LinkedIn/GitHub/email links in `index.html`.
-- **Colors:** edit CSS variables at the top of `styles.css`.
-- **Robot presets:** edit `poses` in `script.js`.
+- NASA robotic-arm project descriptions are based on the supplied engineering resume.
+- The NASA robotics lab image is a personal site photograph, **not** a claim that the pictured rover is the user's robotic-arm project.
+- IVerify content remains conceptual: it is not an approved clinical product.
+- The confidential IVerify report and the academic transcript are not included.
+- The robot lab is an artistic simplified 2D kinematic visualization, not a real hardware controller or collision-safe simulation.
+- Photos appear within their relevant sections. There is no gallery page.
+- The GitHub projects are authored links to public repositories and can be searched/filtered without an API key.
 
-## Notes on accuracy and privacy
+## How to edit
 
-- Professional details were taken from the uploaded resume. The NASA robotic arm content is based on the resume's public-level description.
-- The IVerify project description is intentionally high level. **The uploaded confidential technical design report is not published or bundled with the website.** IVerify is an academic prototype concept, not a clinically approved product.
-- A transcript with private academic and identifying information was **not bundled**.
-- The resume PDF contains the applicant's contact details and will be public when deployed. Review before publishing.
-- The website's robotic arm is an artistic 2D concept using illustrative dimensions and scripted motion profiles. It is not connected to hardware and should not be interpreted as a collision-safe or physically validated simulation.
-- Project visuals are stylized illustrations, not actual hardware photographs. Feel free to add approved, non-confidential images later.
+- Change content in `index.html`.
+- Adjust the refined palette at the top of `styles.css`.
+- Replace photos or the resume PDF within `assets/` with the same filenames.
+- Change robot poses in `script.js`.

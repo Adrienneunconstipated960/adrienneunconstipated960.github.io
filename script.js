@@ -57,7 +57,7 @@ function renderArm(a){
   if(arm.shoulder)arm.shoulder.textContent=`${Math.round(a[0])}°`;
   if(arm.elbow)arm.elbow.textContent=`${Math.round(a[1])}°`;
 }
-function cancelSequence(){sequenceTimers.forEach(clearTimeout);sequenceTimers=[];if(sequenceButton){sequenceButton.disabled=false;sequenceButton.textContent='✧ Run a mini motion sequence';}}
+function cancelSequence(){sequenceTimers.forEach(clearTimeout);sequenceTimers=[];const stop=document.getElementById('stop-button');if(stop)stop.hidden=true;if(sequenceButton){sequenceButton.disabled=false;sequenceButton.textContent='✧ Run a mini motion sequence';}}
 function choosePose(name, fromSequence=false){
   if(!poses[name])return;
   if(!fromSequence)cancelSequence();
@@ -82,3 +82,83 @@ if(sequenceButton)sequenceButton.addEventListener('click',()=>{
   sequenceTimers.push(setTimeout(()=>cancelSequence(),names.length*1200));
 });
 renderArm(angles);
+
+// GitHub project discovery: client-side filtering only, no network calls or tokens.
+const repoCards = [...document.querySelectorAll('.repo-card')];
+const repoFilters = [...document.querySelectorAll('.repo-filter')];
+const repoSearch = document.getElementById('repo-search');
+const repoResultCount = document.getElementById('repo-results');
+const repoEmpty = document.getElementById('repo-empty');
+let repoCategory = 'all';
+function filterRepos(){
+  const query = (repoSearch?.value || '').trim().toLowerCase();
+  let count = 0;
+  repoCards.forEach(card => {
+    const categories = (card.dataset.category || '').split(' ');
+    const haystack = [card.querySelector('h3')?.textContent, card.querySelector('p')?.textContent, card.dataset.keywords].join(' ').toLowerCase();
+    const visible = (repoCategory === 'all' || categories.includes(repoCategory)) && (!query || haystack.includes(query));
+    card.hidden = !visible;
+    if(visible) count++;
+  });
+  if(repoResultCount) repoResultCount.textContent = `Showing ${count} of ${repoCards.length} projects`;
+  if(repoEmpty) repoEmpty.hidden = count !== 0;
+}
+repoFilters.forEach(button => button.addEventListener('click', () => {
+  repoCategory = button.dataset.filter;
+  repoFilters.forEach(filter => {
+    const active = filter === button;
+    filter.classList.toggle('active', active);
+    filter.setAttribute('aria-pressed', String(active));
+  });
+  filterRepos();
+}));
+repoSearch?.addEventListener('input', filterRepos);
+document.getElementById('reset-repos')?.addEventListener('click', () => {
+  repoSearch.value = '';
+  repoFilters.find(filter => filter.dataset.filter === 'all')?.click();
+  repoSearch.focus();
+});
+filterRepos();
+
+// Navigation keyboard behavior and active section indicators.
+function closeNav(){
+  if(!navLinks || !menuToggle) return;
+  navLinks.classList.remove('open');
+  menuToggle.setAttribute('aria-expanded','false');
+  menuToggle.setAttribute('aria-label','Open menu');
+}
+document.addEventListener('keydown', event => {
+  if(event.key === 'Escape' && navLinks?.classList.contains('open')) {closeNav();menuToggle.focus();}
+});
+document.addEventListener('click', event => {
+  if(navLinks?.classList.contains('open') && !navLinks.contains(event.target) && !menuToggle?.contains(event.target)) closeNav();
+});
+const sectionLinks = [...document.querySelectorAll('.nav-links a[href^="#"]')];
+if('IntersectionObserver' in window){
+  const observer = new IntersectionObserver(entries => {
+    const visible = entries.filter(e => e.isIntersecting).sort((a,b) => b.intersectionRatio-a.intersectionRatio)[0];
+    if(!visible) return;
+    sectionLinks.forEach(a => {
+      if(a.getAttribute('href') === '#' + visible.target.id) a.setAttribute('aria-current','location');
+      else a.removeAttribute('aria-current');
+    });
+  }, {rootMargin:'-16% 0px -60% 0px',threshold:[0,0.1,0.3]});
+  sectionLinks.forEach(a => {const el=document.querySelector(a.getAttribute('href'));if(el)observer.observe(el);});
+}
+const backTop = document.getElementById('back-top');
+function updateBackTop(){backTop?.classList.toggle('is-visible',window.scrollY>720);}
+window.addEventListener('scroll',updateBackTop,{passive:true});
+updateBackTop();
+
+// Sequence cancellation works for pointer or keyboard use.
+const stopButton=document.getElementById('stop-button');
+if(stopButton){
+  stopButton.addEventListener('click',()=>{
+    cancelSequence();
+    if(animationFrame!==null){cancelAnimationFrame(animationFrame);animationFrame=null;}
+    if(arm.status)arm.status.textContent='✳ Sequence stopped';
+    stopButton.hidden=true;
+  });
+  sequenceButton?.addEventListener('click',()=>{stopButton.hidden=false;});
+  poseButtons.forEach(b=>b.addEventListener('click',()=>{stopButton.hidden=true;}));
+}
