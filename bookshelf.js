@@ -75,16 +75,6 @@
       link: '#bookshelf', action: 'Return to the project bookshelf'
     },
     {
-      id: 'dmx', title: 'DMX Controller', edition: 'GitHub · Lighting control',
-      subtitle: 'A browser interface connected to physical lights',
-      story: 'This project brings a familiar browser interface to a hardware lighting-control problem. Choosing a scene or brightness setting produces commands for an Arduino-based DMX system.',
-      challenge: 'Translate simple user controls into real output for RGBW lighting hardware.',
-      approach: 'Use Flask to receive browser inputs and send serial commands to Arduino for DMX output.',
-      tools: 'Python, Flask, Arduino, serial communication, DMX.',
-      outcome: 'A direct connection between software controls and physical lighting response.',
-      link: 'https://github.com/kalarcon775/DMX-Controller', action: 'Open the DMX Controller repository'
-    },
-    {
       id: 'iverify', title: 'IVerify', edition: 'Capstone · 2026 · Health technology',
       subtitle: 'A non-invasive IV occlusion detection concept',
       story: 'As project lead and systems integrator on a four-person senior-design team, I coordinated development of a non-invasive clip-on concept for gravity-fed IV tubing. The system applies repeatable mechanical preload and senses the tube reaction force as an indirect indicator of restrictions. Analog filtering and threshold logic feed microcontroller supervision, translating measurements into understandable status indications.',
@@ -143,6 +133,16 @@
       tools: 'JavaScript, MediaPipe, Node.js, webcam tracking, RGBW lighting.',
       outcome: 'A gesture-driven prototype with an optional local Casambi bridge.',
       link: 'https://github.com/kalarcon775/HueMotion', action: 'Open HueMotion on GitHub'
+    },
+    {
+      id: 'dmx', title: 'DMX Controller', edition: 'GitHub · Lighting control',
+      subtitle: 'A browser interface connected to physical lights',
+      story: 'This project brings a familiar browser interface to a hardware lighting-control problem. Choosing a scene or brightness setting produces commands for an Arduino-based DMX system.',
+      challenge: 'Translate simple user controls into real output for RGBW lighting hardware.',
+      approach: 'Use Flask to receive browser inputs and send serial commands to Arduino for DMX output.',
+      tools: 'Python, Flask, Arduino, serial communication, DMX.',
+      outcome: 'A direct connection between software controls and physical lighting response.',
+      link: 'https://github.com/kalarcon775/DMX-Controller', action: 'Open the DMX Controller repository'
     }
   ];
 
@@ -360,7 +360,7 @@
     if (index >= 0) beginOpening(index, button);
   }));
 
-  // Keyboard arrows navigate within a collection, then across shelves.
+  // Keyboard arrows navigate within each of the two seven-book shelves.
   const shelfRows = [...document.querySelectorAll('.shelf-books')].map(strip =>
     [...strip.querySelectorAll('[data-open-book]')]
   );

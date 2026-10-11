@@ -181,26 +181,25 @@ The shelf now has fourteen books in two rows of seven. The keyboard's up/down na
 Only \`index.html\`, \`bookshelf.css\`, \`bookshelf.js\`, \`ux.css\`, \`ux.js\`, and this README changed.
 
 
-## Curated engineering bookshelf collections
+## Two-shelf engineering library
 
-The interactive bookshelf now organizes all 14 projects into three labeled, color-coordinated shelves:
+The portfolio displays all **14 project books on two shelves with seven books each**. This intentionally returns to the simpler, more compact two-shelf presentation.
 
-1. **Space & Robotics** (plum, 3 books): NASA Robotics, UR3e Analysis, 3-Link Leg Simulation.
-2. **Embedded & Digital Systems** (muted blue, 5 books): STM32 Security, STM32 Motor, VHDL Logic, Pipelined ALU, DMX Controller.
-3. **Sensing & Engineering Tools** (dusty rose, 6 books): IVerify, Thermal Logger, Virtual VNA, Hall Measurements, ProDriver, HueMotion.
+- **Volume I: Robotics & Digital Systems (seven books):** NASA Robotics, UR3e Analysis, 3-Link Leg Simulation (plum); STM32 Security, STM32 Motor, VHDL Logic, and Pipelined ALU (muted blue).
+- **Volume II: Sensing & Engineering Tools (seven books):** IVerify, Thermal Logger, Virtual VNA, Hall Measurements, ProDriver, HueMotion, and DMX Controller (dusty rose).
 
-Hovering over or keyboard-focusing a book displays its title and a brief descriptive subtitle under its shelf. The preview is provided from the existing, source-accurate project data in \`bookshelf.js\`, so the subtitle is maintained in one place. Accessible book labels also include the subtitle.
+The three color families remain, but the visible bookshelf uses only two labeled rows. The lighting controller is grouped with practical engineering tools.
 
-Keyboard arrow navigation is collection-aware (Left/Right within a shelf, Up/Down between shelves) and works with unequal shelf lengths. Previous/Next book inside the reader follows the same visible collection order. Mobile horizontal swipe, touch targets, individual book reading position, Return to Bookshelf and CSS-only page animations remain intact.
+Hovering over or keyboard-focusing any book displays its existing technical subtitle in a description beneath that shelf. Keyboard arrow navigation works within and between the equally sized seven-book rows; Previous/Next inside the reader follows the displayed shelf order.
 
-Collection navigation buttons and restrained star-trail accents continue to work between all three shelves. No JPEGs, MP4s, PDFs, or user-uploaded source documents were modified or uploaded.
+Horizontal swiping, the book-opening animation, saved reading and scroll position, Return to Bookshelf, and the subtle star effect on the two shelf-navigation buttons remain intact. No JPEG, MP4, PDF, or other asset was uploaded or changed.
 
 
 ## Focused homepage and concise project summaries (October 2026)
 
 The visitor journey now starts with a shorter hero that explicitly identifies Kailani as an electrical engineer, NASA Marshall OSTEM intern, and M.S. Electrical Engineering student. It presents exactly **two primary hero actions**: **Explore My Work** (scrolls to the engineering bookshelf) and **View Resume** (opens the existing resume PDF).
 
-- The interactive **three-collection bookshelf** is now the first substantial section after the hero. Its 14 book descriptions, animations, keyboard controls, mobile swipe and reading-position behavior remain unchanged.
+- The interactive **two-shelf bookshelf** is now the first substantial section after the hero. Its 14 book descriptions, animations, keyboard controls, mobile swipe and reading-position behavior remain unchanged.
 - The redundant three-card navigation row is removed.
 - The separate About section is more focused and continues to preserve education, honors, and mentoring context.
 - Featured NASA work remains as a concise one-card highlight with 34 requirements, six scenarios, and the high-vacuum target. Four duplicate expanded project cards and their detail panels were removed from the homepage; the underlying projects and substantive technical descriptions remain available in the books.
