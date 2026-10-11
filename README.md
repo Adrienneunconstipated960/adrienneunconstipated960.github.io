@@ -36,3 +36,7 @@ The PDF resume is intended to be public once deployed and contains personal cont
 - Adjust the refined palette at the top of `styles.css`.
 - Replace photos or the resume PDF within `assets/` with the same filenames.
 - Change robot poses in `script.js`.
+
+## Image update
+
+The earlier Earth-window silhouette photo has been removed and is no longer part of this website. The Interests section instead features the provided space helmet photograph.
