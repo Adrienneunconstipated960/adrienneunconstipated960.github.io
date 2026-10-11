@@ -15,8 +15,10 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="enhancements.css">
+  <link rel="stylesheet" href="bookshelf.css">
   <script src="script.js" defer></script>
   <script src="enhancements.js" defer></script>
+  <script src="bookshelf.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -26,7 +28,7 @@
       <button id="menu-toggle" class="menu-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Open menu" type="button"><span></span><span></span><span></span></button>
       <div class="nav-links" id="nav-links">
         <a href="#about">About</a>
-        <a href="#work">Work</a>
+        <a href="#bookshelf">Bookshelf</a>
         <a href="#github-projects">GitHub</a>
         <a href="#robot-lab">Robot demo</a>
         <a href="#experience">Experience</a>
@@ -92,6 +94,77 @@
 </div></div>
       </div>
     </section>
+
+    <section class="section bookshelf-section" id="bookshelf" aria-labelledby="bookshelf-heading">
+      <div class="container">
+        <div class="bookshelf-heading section-heading">
+          <p class="eyebrow">AN ENGINEER'S LITTLE LIBRARY</p>
+          <h2 id="bookshelf-heading">Every project has <em>a story.</em></h2>
+          <p>My work, collected as a shelf of books. Choose a spine to open the story behind a project, from the challenge to the engineering that brought it to life.</p>
+        </div>
+        <div class="bookshelf-cabinet" aria-label="Interactive bookshelf with nine engineering project books">
+          <div class="shelf-level">
+            <div class="shelf-books" role="group" aria-label="Featured engineering projects">
+<button class="book-spine book-rose" type="button" data-open-book="nasa" aria-label="Open NASA Robotics project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">NASA Robotics</span><span class="book-spine-year">2026</span></button>
+<button class="book-spine book-sienna" type="button" data-open-book="iverify" aria-label="Open IVerify project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">IVerify</span><span class="book-spine-year">2026</span></button>
+<button class="book-spine book-indigo" type="button" data-open-book="thermal" aria-label="Open Thermal Logger project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">Thermal Logger</span><span class="book-spine-year">2025–26</span></button>
+<button class="book-spine book-sage" type="button" data-open-book="fingerprint" aria-label="Open STM32 Security project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">STM32 Security</span><span class="book-spine-year">2025</span></button>
+<button class="book-spine book-gold" type="button" data-open-book="vna" aria-label="Open Virtual VNA project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">Virtual VNA</span><span class="book-spine-year">2025</span></button>
+            </div>
+            <div class="shelf-plank" aria-hidden="true"></div>
+          </div>
+          <div class="shelf-level">
+            <div class="shelf-books" role="group" aria-label="Coding, simulation and lighting projects">
+<button class="book-spine book-plum" type="button" data-open-book="leg" aria-label="Open 3-Link Sim project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">3-Link Sim</span><span class="book-spine-year">GitHub</span></button>
+<button class="book-spine book-wine" type="button" data-open-book="prodriver" aria-label="Open ProDriver project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">ProDriver</span><span class="book-spine-year">GitHub</span></button>
+<button class="book-spine book-teal" type="button" data-open-book="huemotion" aria-label="Open HueMotion project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">HueMotion</span><span class="book-spine-year">GitHub</span></button>
+<button class="book-spine book-lavender" type="button" data-open-book="dmx" aria-label="Open DMX Controller project book"><span class="book-spine-ornament" aria-hidden="true">✦</span><span class="book-spine-title">DMX Controller</span><span class="book-spine-year">GitHub</span></button>
+            </div>
+            <div class="shelf-plank" aria-hidden="true"></div>
+          </div>
+        </div>
+        <p class="bookshelf-help">Select a book to read its story. Use Escape to close the open book.</p>
+      </div>
+    </section>
+
+    <dialog id="project-book-dialog" class="project-book-dialog" aria-labelledby="book-modal-title" aria-describedby="book-modal-intro">
+      <div class="project-book-shell">
+        <div class="project-book-toolbar">
+          <span class="project-book-eyebrow">KAILANI'S ENGINEERING LIBRARY</span>
+          <button id="close-project-book" class="project-book-close" type="button" aria-label="Close book">Close <span aria-hidden="true">×</span></button>
+        </div>
+        <div id="book-open-stage" class="book-open-stage">
+          <div class="book-spread">
+            <article class="book-page book-page-left">
+              <p class="book-edition" id="book-edition">PROJECT STORY</p>
+              <h2 id="book-modal-title"></h2>
+              <p class="book-modal-subtitle" id="book-modal-intro"></p>
+              <div class="book-page-rule" aria-hidden="true"></div>
+              <h3>The story</h3>
+              <p id="book-story"></p>
+              <p class="book-page-number">01</p>
+            </article>
+            <article class="book-page book-page-right">
+              <h3>Behind the build</h3>
+              <dl class="book-project-facts">
+                <div><dt>The challenge</dt><dd id="book-challenge"></dd></div>
+                <div><dt>My approach</dt><dd id="book-approach"></dd></div>
+                <div><dt>Tools &amp; methods</dt><dd id="book-tools"></dd></div>
+                <div><dt>What mattered</dt><dd id="book-outcome"></dd></div>
+              </dl>
+              <a id="book-project-link" class="book-project-link" href="#work">See project details <span aria-hidden="true">↗</span></a>
+              <p class="book-page-number">02</p>
+            </article>
+          </div>
+          <div class="book-flipping-cover" aria-hidden="true"><span class="book-cover-emblem">✦</span><span class="book-cover-title" id="book-cover-title">ENGINEERING STORIES</span><span class="book-cover-foot">EST. 2026</span></div>
+        </div>
+        <div class="book-modal-actions">
+          <button id="book-previous" class="book-page-control" type="button">← Previous book</button>
+          <span id="book-counter" aria-live="polite"></span>
+          <button id="book-next" class="book-page-control" type="button">Next book →</button>
+        </div>
+      </div>
+    </dialog>
 
     <section class="section github-section" id="github-projects" aria-labelledby="github-title"><div class="container">
 <div class="section-heading github-heading">
@@ -239,18 +312,7 @@
           <p>I love the way space invites big questions, and the way books make you see the world differently. Jane Austen is always on my reading list, along with sci-fi like Andy Weir's <em>Project Hail Mary</em>.</p>
           <p>Robotics ties the two together for me: design, motion, imagination, and the challenge of making an idea feel real.</p>
           <div class="interest-tags"><span>Space</span><span>Jane Austen</span><span>Reading</span><span>Robotics</span></div>
-<div class="reading-shelf" aria-labelledby="reading-title">
-<h3 id="reading-title">A little space on my bookshelf</h3>
-<p class="shelf-intro">Two literary interests and a reminder that curiosity extends beyond the lab.</p>
-<div class="shelf-tabs" role="tablist" aria-label="Explore Kailani's reading interests">
-<button class="shelf-tab" id="book-tab-austen" role="tab" aria-selected="true" aria-controls="book-panel-austen" tabindex="0" data-book-tab type="button">Jane Austen</button>
-<button class="shelf-tab" id="book-tab-hail-mary" role="tab" aria-selected="false" aria-controls="book-panel-hail-mary" tabindex="-1" data-book-tab type="button">Project Hail Mary</button>
-<button class="shelf-tab" id="book-tab-curiosity" role="tab" aria-selected="false" aria-controls="book-panel-curiosity" tabindex="-1" data-book-tab type="button">Why I read</button>
-</div>
-<div class="shelf-panel" id="book-panel-austen" role="tabpanel" aria-labelledby="book-tab-austen" data-book-panel><h4>Jane Austen</h4><p>I admire the wit, careful observations, and deeply human personalities in Austen's novels. Good writing can make a quiet moment feel full of possibility.</p></div>
-<div class="shelf-panel" id="book-panel-hail-mary" role="tabpanel" aria-labelledby="book-tab-hail-mary" data-book-panel hidden><h4>Project Hail Mary · Andy Weir</h4><p>Scientific problem-solving meets an unexpected connection. I love how the story treats curiosity and collaboration as ways to solve seemingly impossible problems.</p></div>
-<div class="shelf-panel" id="book-panel-curiosity" role="tabpanel" aria-labelledby="book-tab-curiosity" data-book-panel hidden><h4>Stories and systems</h4><p>Reading stretches my imagination. Robotics lets me bring that imagination back into the physical world, one experiment at a time.</p></div>
-</div>
+
         </div>
         <figure class="interest-photo"><img src="assets/space-helmet.jpeg" alt="Kailani wearing a space helmet in a lunar exhibit" loading="lazy"><figcaption>Always looking up.</figcaption></figure>
       </div>
