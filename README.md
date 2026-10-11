@@ -347,3 +347,8 @@ This pass makes the page immediately identifiable as an electrical-engineering, 
 - Mobile-specific styling keeps the engineering-focus labels and assessment path readable without inserting any between-section spacers. No external visual libraries, third-party assets, photographs, videos, or documents are added.
 
 Only `index.html`, `engineering.css`, and this README are changed. Existing GitHub Pages media assets and user-owned files remain untouched.
+
+
+## ROS2 and Thermal Desktop skills update
+
+The engineering-focus legend and technical-toolkit section now explicitly name **ROS2** under Robotics & Controls and **Thermal Desktop** under Design & Validation. These additions identify the tools without implying a particular proficiency level, project result, or certification. The existing two shelves, 16 project books, space and floral effects, page layout, and user-owned media are unchanged. This update touches only `index.html` and this README.
