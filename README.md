@@ -367,3 +367,15 @@ Each dossier has a compact semantic flow diagram, explanatory text, clearly labe
 A separate approved/safe-to-share project diagram or raw result is needed before adding actual plots, NASA internal figures, ROS2 node graphs, Thermal Desktop results, or IV medical-device performance metrics. Those were not invented.
 
 Existing media (photos, MP4, resume PDF), 16 book spines on two shelves, 8 background floral accents, 36 stars, planetary motion and chapter interactions are unchanged.
+
+
+## NASA integrated tool usage clarification (October 2026)
+
+User-confirmed scope: ROS2 and Thermal Desktop were both used on **the same NASA Marshall robotic-arm project** for high-vacuum lunar-dust testing.
+
+- **ROS2:** Used for **controlling and calibrating the robotic arm**. No unsupported claims are made about particular nodes, topics, controllers, calibration tolerances, or test accuracy.
+- **Thermal Desktop:** Used for **thermal modeling of the robotic arm in high vacuum**. The site does not invent temperatures, thermal margins, simulation validation status, or assumed boundary conditions.
+- Updated the portfolio hero, the NASA feature summary, the existing NASA experience timeline, the featured NASA engineering case study, and the corresponding project book to make the tools' specific roles and common NASA project clear.
+- Added two compact tool-use panels *inside* the NASA case study without changing the page's section flow or adding decorative spacers.
+- Preserved the previously grounded 34 system requirements, six planned scenarios, and 10^-7 torr target. These remain scope/constraints, not measured performance or completed qualification outcomes.
+- Preserved all 16 book records/two shelves, three technical case studies, all user photos and media, and the background star and flower illustrations.

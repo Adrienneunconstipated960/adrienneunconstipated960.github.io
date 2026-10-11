@@ -20,10 +20,10 @@
   <link rel="stylesheet" href="botanical.css?v=20261011-6">
   <link rel="stylesheet" href="ambient.css?v=20261011-6">
   <link rel="stylesheet" href="engineering.css?v=20261011-7">
-  <link rel="stylesheet" href="case-studies.css?v=20261011-9">
+  <link rel="stylesheet" href="case-studies.css?v=20261011-10">
   <script src="script.js" defer></script>
   <script src="enhancements.js" defer></script>
-  <script src="bookshelf.js?v=20261011-9" defer></script>
+  <script src="bookshelf.js?v=20261011-10" defer></script>
   <script src="ux.js" defer></script>
   <script src="ambient.js?v=20261011-2" defer></script>
 </head>
@@ -139,7 +139,7 @@
         <p class="eyebrow">ELECTRICAL ENGINEERING / ROBOTICS / SYSTEMS VALIDATION</p>
         <h1 id="hero-title">Kailani <em>Alarcon.</em></h1>
         <p class="hero-subtitle">From system requirements to working engineering models.</p>
-        <p class="hero-description">I’m an electrical engineer and NASA Marshall OSTEM intern evaluating a legacy robotic arm for lunar-dust testing in high vacuum. I’m pursuing an M.S. in Electrical Engineering at the University of Nevada, Reno, with hands-on projects in embedded systems, controls, sensing, and verification.</p>
+        <p class="hero-description">I’m an electrical engineer and NASA Marshall OSTEM intern. For a lunar-dust testing arm, I used ROS2 for control and calibration and Thermal Desktop for high-vacuum thermal modeling. I’m pursuing an M.S. in Electrical Engineering at the University of Nevada, Reno, with projects in embedded systems, controls, sensing, and verification.</p>
         <div class="hero-buttons">
           <a href="#bookshelf" class="btn btn-primary">Explore My Work <span aria-hidden="true">↗</span></a>
           <a href="assets/Kailani_Alarcon_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline">View Resume <span aria-hidden="true">↗</span></a>
@@ -300,7 +300,7 @@
         <div class="section-heading" data-ambient-reveal>
           <p class="eyebrow">03 / NASA · SYSTEMS ENGINEERING</p>
           <h2>Robotics under <em>real constraints.</em></h2>
-          <p class="section-description">A requirements-driven assessment of a legacy arm for constrained lunar-dust test scenarios.</p>
+          <p class="section-description">A robotic-arm project combining ROS2 control and calibration, Thermal Desktop high-vacuum thermal modeling, and systems verification.</p>
         </div>
         <article class="feature-project" data-ambient-reveal>
           <figure class="feature-visual">
@@ -310,7 +310,7 @@
           <div class="feature-content">
             <p class="project-kicker">NASA MARSHALL · OSTEM 2026</p>
             <h3>Robotics for <em>lunar-dust testing.</em></h3>
-            <p>I evaluated a legacy robotic arm for high-vacuum lunar-dust testing. The assessment connected reach geometry, actuator constraints, system requirements, and planned verification. It was an engineering evaluation, not a claim of deployed hardware.</p>
+            <p>I used ROS2 to control and calibrate a legacy robotic arm, and Thermal Desktop to model the arm’s thermal behavior in high vacuum. This work supported a lunar-dust testing assessment spanning workspace geometry, actuator constraints, system requirements, and verification planning. It does not establish vacuum qualification or deployment.</p>
             <div class="engineering-flow" aria-label="Assessment workflow: geometry, hardware constraints, verification">
               <span class="flow-label">ASSESSMENT PATH</span>
               <ol><li><span>01</span> Geometry</li><li><span>02</span> Actuator limits</li><li><span>03</span> Verification</li></ol>
@@ -337,13 +337,26 @@
               <div><p class="dossier-id">CASE 01 / SYSTEMS ENGINEERING · NASA MARSHALL</p><h4 id="case-nasa-title">Robotic-arm workspace and verification</h4></div>
               <span class="dossier-status">Requirements assessment</span>
             </header>
-            <p class="dossier-summary">Could a legacy robotic arm support lunar-dust mitigation tests inside a constrained high-vacuum chamber? The work connected reach and motion geometry to actuator limits, physical boundaries, and a planned verification strategy.</p>
+            <p class="dossier-summary">Could a legacy robotic arm support lunar-dust mitigation tests inside a constrained high-vacuum chamber? I used ROS2 for arm control and calibration and Thermal Desktop for high-vacuum thermal modeling as part of that same NASA project, alongside workspace analysis, actuator constraints, and verification planning.</p>
+            <div class="dossier-nasa-tools" aria-label="Software used on the NASA robotic-arm project">
+              <div>
+                <span class="dossier-nasa-tool-label">CONTROL + CALIBRATION</span>
+                <strong>ROS2</strong>
+                <p>Used to control and calibrate the robotic arm for the project's motion work.</p>
+              </div>
+              <div>
+                <span class="dossier-nasa-tool-label">HIGH-VACUUM THERMAL MODEL</span>
+                <strong>Thermal Desktop</strong>
+                <p>Used to model the arm's thermal behavior for a high-vacuum environment.</p>
+              </div>
+            </div>
             <div class="dossier-body">
               <div class="dossier-notes">
                 <h5>Engineering approach</h5>
                 <ul>
-                  <li>Evaluate workspace and reach against chamber boundaries and target surfaces.</li>
-                  <li>Consider actuator capability and joint constraints before choosing a motion profile.</li>
+                  <li>Control and calibrate the robotic arm using ROS2.</li>
+                  <li>Model the arm's high-vacuum thermal behavior using Thermal Desktop.</li>
+                  <li>Evaluate workspace and reach against chamber boundaries, target surfaces, and actuator/joint constraints.</li>
                   <li>Organize requirements and proposed tests to identify what must be verified before hardware use.</li>
                 </ul>
                 <h5>What the record supports</h5>
@@ -361,7 +374,7 @@
               </figure>
             </div>
             <footer class="dossier-footer">
-              <p><strong>Boundary:</strong> A documented engineering evaluation, not evidence that an arm was vacuum-qualified, deployed, or that all six scenarios passed.</p>
+              <p><strong>Boundary:</strong> Control/calibration and thermal modeling work formed part of this assessment, not evidence of vacuum qualification, validated thermal margins, deployment, or six completed scenarios.</p>
               <span class="dossier-footer-links"><a href="#bookshelf" data-open-feature-book="nasa">Open the NASA project book <span aria-hidden="true">↗</span></a><a href="#robot-lab">Try the illustrative robot lab <span aria-hidden="true">↗</span></a></span>
             </footer>
           </article>
@@ -585,7 +598,7 @@
       <div class="container">
         <div class="section-heading" data-ambient-reveal><p class="eyebrow">06 / EXPERIENCE & EDUCATION</p><h2>Learning by <em>doing.</em></h2></div>
         <div class="experience-layout">
-          <div class="experience-main"><div class="timeline"><article class="timeline-item" data-ambient-reveal><div class="timeline-date">2026 · CURRENT</div><div aria-hidden="true" class="timeline-dot"></div><div><p class="project-kicker">NASA · MARSHALL SPACE FLIGHT CENTER</p><h3>OSTEM Intern, Human Factors Engineering &amp; Mechanical Design</h3><p>Investigating a lunar-dust testing robotic arm, its workspace, vacuum constraints, actuation, and system requirements.</p></div><details class="experience-more"><summary>Explore this experience</summary><p>Working through robotic-arm workspace geometry, high-vacuum test constraints, actuator options, and requirements for lunar-dust test scenarios.</p></details></article>
+          <div class="experience-main"><div class="timeline"><article class="timeline-item" data-ambient-reveal><div class="timeline-date">2026 · CURRENT</div><div aria-hidden="true" class="timeline-dot"></div><div><p class="project-kicker">NASA · MARSHALL SPACE FLIGHT CENTER</p><h3>OSTEM Intern, Human Factors Engineering &amp; Mechanical Design</h3><p>Used ROS2 for robotic-arm control and calibration and Thermal Desktop for high-vacuum thermal modeling, alongside workspace and systems-requirements analysis for lunar-dust testing.</p></div><details class="experience-more"><summary>Explore this experience</summary><p>Worked on one integrated lunar-dust robotic-arm project: ROS2 control and calibration, Thermal Desktop thermal modeling of the arm under high-vacuum conditions, and evaluation of reach, actuator constraints, and test requirements.</p></details></article>
 <article class="timeline-item" data-ambient-reveal><div class="timeline-date">2023–2026</div><div aria-hidden="true" class="timeline-dot"></div><div><p class="project-kicker">LUX DYNAMICS</p><h3>Product Development Intern</h3><p>Electrical, thermal, and photometric validation for 12+ LED products, plus automation and test-method improvements.</p></div><details class="experience-more"><summary>Explore this experience</summary><p>Product validation and engineering automation spanning electrical, thermal, and photometric testing, with Python tools for measurement and reporting.</p></details></article>
 <article class="timeline-item" data-ambient-reveal><div class="timeline-date">2024–2026</div><div aria-hidden="true" class="timeline-dot"></div><div><p class="project-kicker">UNIVERSITY OF NEVADA, RENO</p><h3>Engineering Peer Tutor</h3><p>Helped students navigate circuits, microcontrollers, embedded C, and control systems, one tricky problem at a time.</p></div><details class="experience-more"><summary>Explore this experience</summary><p>Explaining circuits, microcontrollers, embedded C, and controls in ways students can test and apply independently.</p></details></article></div></div>
           <figure class="experience-photo"><img src="assets/nasa-mission-training-complex.jpeg" alt="Kailani in front of NASA's Mission Training Complex" loading="lazy"><figcaption>At the Mission Training Complex</figcaption></figure>

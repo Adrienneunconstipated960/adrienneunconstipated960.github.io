@@ -7,11 +7,11 @@
     {
       id: 'nasa', title: 'Robotics for Another World', edition: 'NASA · 2026 · Robotics',
       subtitle: 'Lunar-dust testing in a high-vacuum environment',
-      story: 'At NASA Marshall Space Flight Center, I investigated how a legacy robotic arm could support dust-mitigation testing. What started as a question about reach became a larger system problem involving geometry, mechanical limits, and the reality of operating inside a vacuum chamber.',
+      story: 'At NASA Marshall Space Flight Center, I worked on a legacy robotic arm for lunar-dust mitigation testing. Within that project I used ROS2 to control and calibrate the arm and Thermal Desktop to model its thermal behavior in high vacuum. The wider assessment connected workspace geometry, actuator constraints, and verification planning.',
       challenge: 'Evaluate whether a robotic arm could meet test-surface access and chamber constraints.',
-      approach: 'Study the kinematic workspace, assess actuator limitations, and organize verification across six operational scenarios and 34 system requirements.',
-      tools: 'Robotics, Creo, systems engineering, verification planning, simulation.',
-      outcome: 'A requirements-led assessment of workspace and actuator constraints across 34 system requirements and six planned test scenarios, identifying the verification still needed before a hardware decision.',
+      approach: 'Use ROS2 for robotic-arm control and calibration, Thermal Desktop for high-vacuum thermal modeling, and workspace/actuator analysis to organize planned verification across six operational scenarios and 34 system requirements.',
+      tools: 'ROS2 (arm control and calibration), Thermal Desktop (high-vacuum thermal modeling), Creo, robotics, systems engineering, verification planning.',
+      outcome: 'Integrated control/calibration and thermal modeling into the requirements-led evaluation of a high-vacuum robotic-arm application. The 34 requirements and six scenarios describe assessment scope, not completed vacuum qualification or proven thermal margins.',
       link: '#case-nasa', action: 'Read the NASA engineering case study'
     },
     {
