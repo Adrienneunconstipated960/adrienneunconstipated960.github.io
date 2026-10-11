@@ -112,3 +112,17 @@ The latest update retains the full interactive bookshelf, GitHub project filters
 - Improved section spacing, tappable links, responsive layouts, keyboard-friendly native disclosure, and support for reduced-motion preferences.
 
 All design elements in \`ux.css\` are implemented with CSS shapes and no media assets. \`ux.js\` handles only the progress indicator and the disclosure hint. No JPEGs, MP4s, or PDFs were uploaded or edited. Keep the existing JPEG and MP4 media filenames documented above.
+
+
+## Book opening and page-turning interaction
+
+Selecting any project spine now triggers a physical-book-inspired sequence:
+
+1. The selected book pulls upward from the shelf.
+2. A closed, matching-color hardback appears in the center of an accessible dialog.
+3. The front cover rotates around its hinge, revealing an open two-page project story.
+4. Previous and Next animate a paper page turning in the appropriate direction.
+
+The content is still text, readable, and accessible. Native Escape, Close, and outside-dialog dismissal work. The animations use only CSS shapes and transforms, and are disabled for visitors who prefer reduced motion. The narrow-screen version provides a stacked reading layout with a smaller opening-book effect.
+
+Only \`index.html\`, \`bookshelf.css\`, and \`bookshelf.js\` were changed for the interaction. No media assets are required or uploaded.

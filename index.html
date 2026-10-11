@@ -137,7 +137,7 @@
             <div class="shelf-plank" aria-hidden="true"></div>
           </div>
         </div>
-        <p class="bookshelf-help">Select a book to read its story. Use Escape to close the open book.</p>
+        <p class="bookshelf-help">Choose a spine. Watch your project book open, then turn through more stories. Press Escape to close.</p>
       </div>
     </section>
 
@@ -147,7 +147,7 @@
           <span class="project-book-eyebrow">KAILANI'S ENGINEERING LIBRARY</span>
           <button id="close-project-book" class="project-book-close" type="button" aria-label="Close book">Close <span aria-hidden="true">×</span></button>
         </div>
-        <div id="book-open-stage" class="book-open-stage">
+        <div id="book-open-stage" class="book-open-stage is-closed">
           <div class="book-spread">
             <article class="book-page book-page-left">
               <p class="book-edition" id="book-edition">PROJECT STORY</p>
@@ -170,6 +170,7 @@
               <p class="book-page-number">02</p>
             </article>
           </div>
+          <div class="book-turning-page" aria-hidden="true"><span class="book-turning-lines"></span></div>
           <div class="book-flipping-cover" aria-hidden="true"><span class="book-cover-emblem">✦</span><span class="book-cover-title" id="book-cover-title">ENGINEERING STORIES</span><span class="book-cover-foot">EST. 2026</span></div>
         </div>
         <div class="book-modal-actions">

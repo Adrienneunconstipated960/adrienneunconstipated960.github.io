@@ -119,9 +119,27 @@
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let selectedIndex = 0;
   let lastTrigger = null;
-  let turnTimeout = null;
+  let pullTimer = null;
+  let openTimer = null;
+  let turnTimer = null;
+  let finishTurnTimer = null;
+  let isOpening = false;
+  let isTurning = false;
 
-  function fillBook(index, animated = true) {
+  function clearTimers() {
+    [pullTimer, openTimer, turnTimer, finishTurnTimer].forEach(id => {
+      if (id !== null) window.clearTimeout(id);
+    });
+    pullTimer = openTimer = turnTimer = finishTurnTimer = null;
+  }
+
+  function syncNavigation() {
+    if (previous) previous.disabled = isOpening || isTurning || selectedIndex === 0;
+    if (next) next.disabled = isOpening || isTurning || selectedIndex === books.length - 1;
+  }
+
+  // Project information is filled from trusted, authored text only.
+  function renderBook(index) {
     if (index < 0 || index >= books.length) return;
     selectedIndex = index;
     const book = books[index];
@@ -139,34 +157,101 @@
         detailLink.removeAttribute('rel');
       }
     }
+
     if (counter) counter.textContent = 'Book ' + (index + 1) + ' of ' + books.length;
     if (coverTitle) coverTitle.textContent = book.title;
-    dialog.scrollTop = 0;
-    if (previous) previous.disabled = index === 0;
-    if (next) next.disabled = index === books.length - 1;
 
-    if (stage) {
-      stage.classList.remove('turning');
-      if (turnTimeout) clearTimeout(turnTimeout);
-      if (animated && !reduceMotion.matches) {
-        // Restart a decorative CSS cover turn. The content remains readable throughout.
-        void stage.offsetWidth;
-        stage.classList.add('turning');
-        turnTimeout = setTimeout(() => {
-          stage.classList.remove('turning');
-          turnTimeout = null;
-        }, 850);
-      }
+    // Match the opening hardback cover to the selected spine.
+    const spine = bookButtons.find(button => button.dataset.openBook === book.id);
+    if (spine && stage) {
+      const style = getComputedStyle(spine);
+      stage.style.setProperty('--active-book-color', style.getPropertyValue('--spine').trim() || '#874861');
+      stage.style.setProperty('--active-book-border', style.getPropertyValue('--spine-border').trim() || '#54354a');
     }
+    syncNavigation();
+  }
+
+  function setBookStage(state) {
+    if (!stage) return;
+    stage.classList.remove('is-closed', 'is-opening', 'is-open', 'page-turn-next', 'page-turn-prev');
+    stage.classList.add(state);
+  }
+
+  function beginOpening(index, trigger) {
+    if (dialog.open || pullTimer !== null) return;
+    clearTimers();
+    lastTrigger = trigger;
+    trigger.classList.add('is-pulling');
+    isOpening = !reduceMotion.matches;
+    isTurning = false;
+    renderBook(index);
+    setBookStage('is-closed');
+    syncNavigation();
+
+    // First pull the spine slightly out of the shelf. Then reveal a closed
+    // hardcover that physically swings open on its center hinge.
+    pullTimer = window.setTimeout(() => {
+      trigger.classList.remove('is-pulling');
+      dialog.showModal();
+      dialog.scrollTop = 0;
+      closeBtn?.focus();
+
+      if (reduceMotion.matches) {
+        isOpening = false;
+        setBookStage('is-open');
+        syncNavigation();
+        return;
+      }
+
+      // Paint the closed cover before starting the opening transition.
+      void stage?.offsetWidth;
+      window.requestAnimationFrame(() => {
+        if (!dialog.open) return;
+        setBookStage('is-opening');
+      });
+
+      openTimer = window.setTimeout(() => {
+        if (!dialog.open) return;
+        isOpening = false;
+        setBookStage('is-open');
+        syncNavigation();
+        openTimer = null;
+      }, 1120);
+      pullTimer = null;
+    }, reduceMotion.matches ? 0 : 210);
+  }
+
+  function turnTo(index, direction) {
+    if (!dialog.open || isOpening || isTurning || index < 0 || index >= books.length) return;
+
+    if (reduceMotion.matches) {
+      renderBook(index);
+      dialog.scrollTop = 0;
+      return;
+    }
+
+    isTurning = true;
+    syncNavigation();
+    stage?.classList.add(direction > 0 ? 'page-turn-next' : 'page-turn-prev');
+
+    // Replace the book's text halfway through the paper's 3D turn.
+    turnTimer = window.setTimeout(() => {
+      renderBook(index);
+      dialog.scrollTop = 0;
+      turnTimer = null;
+    }, 340);
+
+    finishTurnTimer = window.setTimeout(() => {
+      stage?.classList.remove('page-turn-next', 'page-turn-prev');
+      isTurning = false;
+      syncNavigation();
+      finishTurnTimer = null;
+    }, 760);
   }
 
   bookButtons.forEach(button => button.addEventListener('click', () => {
     const index = books.findIndex(book => book.id === button.dataset.openBook);
-    if (index < 0) return;
-    lastTrigger = button;
-    fillBook(index, true);
-    dialog.showModal();
-    closeBtn?.focus();
+    if (index >= 0) beginOpening(index, button);
   }));
 
   bookButtons.forEach((button, index) => button.addEventListener('keydown', event => {
@@ -181,17 +266,29 @@
   }));
 
   closeBtn?.addEventListener('click', () => dialog.close());
-  previous?.addEventListener('click', () => fillBook(selectedIndex - 1));
-  next?.addEventListener('click', () => fillBook(selectedIndex + 1));
+  previous?.addEventListener('click', () => turnTo(selectedIndex - 1, -1));
+  next?.addEventListener('click', () => turnTo(selectedIndex + 1, 1));
+
   detailLink?.addEventListener('click', () => {
-    if (detailLink.getAttribute('href')?.startsWith('#')) { lastTrigger = null; dialog.close(); }
+    if (detailLink.getAttribute('href')?.startsWith('#')) {
+      lastTrigger = null;
+      dialog.close();
+    }
   });
   dialog.addEventListener('click', event => {
     if (event.target === dialog) dialog.close();
   });
   dialog.addEventListener('close', () => {
-    if (turnTimeout) clearTimeout(turnTimeout);
-    stage?.classList.remove('turning');
+    clearTimers();
+    isOpening = false;
+    isTurning = false;
+    stage?.classList.remove('page-turn-next', 'page-turn-prev');
+    setBookStage('is-closed');
+    bookButtons.forEach(button => button.classList.remove('is-pulling'));
+    syncNavigation();
     lastTrigger?.focus();
+    lastTrigger = null;
   });
+
+  renderBook(0);
 })();
