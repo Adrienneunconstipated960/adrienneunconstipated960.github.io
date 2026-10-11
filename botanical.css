@@ -1,0 +1,138 @@
+/*
+ * Botanical margin notes: Mexican cempasúchil-inspired marigold and Samoan
+ * plumeria-inspired flowers, rendered from inline SVG symbols in index.html.
+ * Static decoration only; the site's orbit/constellation effects remain intact.
+ */
+.floral-definitions {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.floral-accent {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}
+
+.floral-accent svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.hero-photo {
+  overflow: visible;
+}
+
+.floral-hero {
+  width: 110px;
+  height: 109px;
+  left: -40px;
+  bottom: 34px;
+  opacity: .49;
+}
+
+.floral-hero .floral-marigold {
+  position: absolute;
+  width: 77px;
+  height: 77px;
+  left: 0;
+  bottom: 0;
+  color: #ae748b;
+  transform: rotate(-12deg);
+}
+
+.floral-hero .floral-plumeria {
+  position: absolute;
+  width: 62px;
+  height: 62px;
+  right: 0;
+  top: 0;
+  color: #987c96;
+  transform: rotate(14deg);
+}
+
+.bookshelf-heading {
+  position: relative;
+}
+
+.floral-bookshelf {
+  width: 73px;
+  height: 73px;
+  right: -19px;
+  top: -18px;
+  color: #ad7890;
+  opacity: .28;
+  transform: rotate(9deg);
+}
+
+.about-photo {
+  position: relative;
+  overflow: visible;
+}
+
+.floral-about {
+  width: 87px;
+  height: 87px;
+  right: -26px;
+  top: -26px;
+  color: #947d99;
+  opacity: .37;
+  transform: rotate(-18deg);
+}
+
+/* On narrow screens, keep flowers at the margins, away from navigation,
+   readable copy, and the interactive book spines. */
+@media (max-width: 760px) {
+  .floral-hero {
+    width: 77px;
+    height: 79px;
+    left: 2px;
+    bottom: 31px;
+    opacity: .32;
+  }
+
+  .floral-hero .floral-marigold {
+    width: 56px;
+    height: 56px;
+  }
+
+  .floral-hero .floral-plumeria {
+    width: 44px;
+    height: 44px;
+  }
+
+  .floral-bookshelf {
+    width: 54px;
+    height: 54px;
+    top: -43px;
+    right: 0;
+    opacity: .23;
+  }
+
+  .floral-about {
+    width: 59px;
+    height: 59px;
+    right: -8px;
+    top: -13px;
+    opacity: .3;
+  }
+}
+
+@media (max-width: 420px) {
+  .floral-bookshelf {opacity: .17;}
+  .floral-hero {opacity: .26;}
+  .floral-about {opacity: .23;}
+}
+
+/* No floral motion is introduced. Existing reduced-motion handling for
+   the planetary/constellation/star effects stays in ux.css. */
+@media (prefers-reduced-motion: reduce) {
+  .floral-accent {transition: none;animation: none;}
+}

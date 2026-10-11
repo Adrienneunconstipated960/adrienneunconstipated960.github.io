@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="enhancements.css">
   <link rel="stylesheet" href="bookshelf.css">
   <link rel="stylesheet" href="ux.css">
+  <link rel="stylesheet" href="botanical.css">
   <script src="script.js" defer></script>
   <script src="enhancements.js" defer></script>
   <script src="bookshelf.js" defer></script>
@@ -41,6 +42,49 @@
     <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-fill"></span></div>
   </header>
   <main id="main" tabindex="-1">
+  <!-- Decorative vector flowers. Built into the HTML; no uploaded media. -->
+  <svg class="floral-definitions" xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true" focusable="false">
+    <symbol id="flower-cempasuchil" viewBox="0 0 120 120">
+      <g fill="currentColor" fill-opacity=".10" stroke="currentColor" stroke-width="1.15" stroke-linejoin="round">
+        <path d="M53 48 C45 39 45 27 51 18 C57 9 66 11 72 18 C77 29 71 40 66 49 Z" transform="rotate(0 60 60)"/>
+        <path d="M53 48 C45 39 45 27 51 18 C57 9 66 11 72 18 C77 29 71 40 66 49 Z" transform="rotate(30 60 60)"/>
+        <path d="M53 48 C45 39 45 27 51 18 C57 9 66 11 72 18 C77 29 71 40 66 49 Z" transform="rotate(60 60 60)"/>
+        <path d="M53 48 C45 39 45 27 51 18 C57 9 66 11 72 18 C77 29 71 40 66 49 Z" transform="rotate(90 60 60)"/>
+        <path d="M53 48 C45 39 45 27 51 18 C57 9 66 11 72 18 C77 29 71 40 66 49 Z" transform="rotate(120 60 60)"/>
+        <path d="M53 48 C45 39 45 27 51 18 C57 9 66 11 72 18 C77 29 71 40 66 49 Z" transform="rotate(150 60 60)"/>
+        <path d="M53 48 C45 39 45 27 51 18 C57 9 66 11 72 18 C77 29 71 40 66 49 Z" transform="rotate(180 60 60)"/>
+        <path d="M53 48 C45 39 45 27 51 18 C57 9 66 11 72 18 C77 29 71 40 66 49 Z" transform="rotate(210 60 60)"/>
+        <path d="M53 48 C45 39 45 27 51 18 C57 9 66 11 72 18 C77 29 71 40 66 49 Z" transform="rotate(240 60 60)"/>
+        <path d="M53 48 C45 39 45 27 51 18 C57 9 66 11 72 18 C77 29 71 40 66 49 Z" transform="rotate(270 60 60)"/>
+        <path d="M53 48 C45 39 45 27 51 18 C57 9 66 11 72 18 C77 29 71 40 66 49 Z" transform="rotate(300 60 60)"/>
+        <path d="M53 48 C45 39 45 27 51 18 C57 9 66 11 72 18 C77 29 71 40 66 49 Z" transform="rotate(330 60 60)"/>
+      </g>
+      <g fill="currentColor" fill-opacity=".13" stroke="currentColor" stroke-width=".95" stroke-linejoin="round">
+        <path d="M56 54 C51 47 51 38 60 32 C69 38 69 47 64 54 Z" transform="rotate(22.5 60 60)"/>
+        <path d="M56 54 C51 47 51 38 60 32 C69 38 69 47 64 54 Z" transform="rotate(67.5 60 60)"/>
+        <path d="M56 54 C51 47 51 38 60 32 C69 38 69 47 64 54 Z" transform="rotate(112.5 60 60)"/>
+        <path d="M56 54 C51 47 51 38 60 32 C69 38 69 47 64 54 Z" transform="rotate(157.5 60 60)"/>
+        <path d="M56 54 C51 47 51 38 60 32 C69 38 69 47 64 54 Z" transform="rotate(202.5 60 60)"/>
+        <path d="M56 54 C51 47 51 38 60 32 C69 38 69 47 64 54 Z" transform="rotate(247.5 60 60)"/>
+        <path d="M56 54 C51 47 51 38 60 32 C69 38 69 47 64 54 Z" transform="rotate(292.5 60 60)"/>
+        <path d="M56 54 C51 47 51 38 60 32 C69 38 69 47 64 54 Z" transform="rotate(337.5 60 60)"/>
+      </g>
+      <circle cx="60" cy="60" r="11" fill="currentColor" fill-opacity=".22" stroke="currentColor" stroke-width="1.1"/>
+      <circle cx="57" cy="57" r="1.4" fill="currentColor"/><circle cx="64" cy="58" r="1.2" fill="currentColor"/>
+      <circle cx="59" cy="64" r="1.2" fill="currentColor"/><circle cx="65" cy="65" r="1.1" fill="currentColor"/>
+    </symbol>
+    <symbol id="flower-plumeria" viewBox="0 0 120 120">
+      <g fill="currentColor" fill-opacity=".12" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round">
+        <path d="M60 60 C50 49 48 35 56 24 C65 14 80 16 87 25 C94 37 80 52 64 61 Z" transform="rotate(0 60 60)"/>
+        <path d="M60 60 C50 49 48 35 56 24 C65 14 80 16 87 25 C94 37 80 52 64 61 Z" transform="rotate(72 60 60)"/>
+        <path d="M60 60 C50 49 48 35 56 24 C65 14 80 16 87 25 C94 37 80 52 64 61 Z" transform="rotate(144 60 60)"/>
+        <path d="M60 60 C50 49 48 35 56 24 C65 14 80 16 87 25 C94 37 80 52 64 61 Z" transform="rotate(216 60 60)"/>
+        <path d="M60 60 C50 49 48 35 56 24 C65 14 80 16 87 25 C94 37 80 52 64 61 Z" transform="rotate(288 60 60)"/>
+      </g>
+      <circle cx="60" cy="60" r="8" fill="currentColor" fill-opacity=".26" stroke="currentColor" stroke-width="1"/>
+      <circle cx="60" cy="60" r="3" fill="currentColor"/>
+    </symbol>
+  </svg>
     <section class="hero container" aria-labelledby="hero-title">
       <div class="hero-copy">
         <p class="eyebrow">ELECTRICAL ENGINEER · NASA OSTEM · ROBOTICS</p>
@@ -56,12 +100,17 @@
       <figure class="hero-photo">
         <img src="assets/sls-rocket-kailani.jpeg" alt="Kailani standing beside a large NASA Space Launch System rocket model" fetchpriority="high">
         <figcaption>At NASA Marshall Space Flight Center</figcaption>
+        <span class="floral-accent floral-hero" aria-hidden="true">
+          <svg class="floral-marigold" viewBox="0 0 120 120" focusable="false"><use href="#flower-cempasuchil"></use></svg>
+          <svg class="floral-plumeria" viewBox="0 0 120 120" focusable="false"><use href="#flower-plumeria"></use></svg>
+        </span>
       </figure>
     </section>
 
     <section class="section bookshelf-section" id="bookshelf" aria-labelledby="bookshelf-heading">
       <div class="container">
         <div class="bookshelf-heading section-heading"><div class="space-orbiter space-orbiter-shelf" aria-hidden="true"><span class="space-orbiter-body"></span><span class="space-orbiter-ring"></span><span class="space-orbiter-star"></span></div>
+          <span class="floral-accent floral-bookshelf" aria-hidden="true"><svg viewBox="0 0 120 120" focusable="false"><use href="#flower-cempasuchil"></use></svg></span>
           <p class="eyebrow">01 / ENGINEERING LIBRARY</p>
           <h2 id="bookshelf-heading">Every project has <em>a story.</em></h2>
           <p>Explore sixteen projects across two curated shelves. Choose a book to open its engineering story.</p>
@@ -174,7 +223,8 @@
           <div class="about-chips"><span>University of Nevada, Reno</span><span>M.S. EE · 2028</span><span>Robotics & embedded systems</span><span>UNR lab safety training · 2025</span></div>
           <p class="about-honors">Honors Baccalaureate · Two 2026 engineering Outstanding Service awards · Engineering peer mentor</p>
         </div>
-        <figure class="about-photo"><img src="assets/graduation-flowers.jpeg" alt="Kailani celebrating graduation while holding flowers" loading="lazy"><figcaption>A degree earned, with many more things to learn.</figcaption></figure>
+        <figure class="about-photo"><img src="assets/graduation-flowers.jpeg" alt="Kailani celebrating graduation while holding flowers" loading="lazy"><figcaption>A degree earned, with many more things to learn.</figcaption>
+          <span class="floral-accent floral-about" aria-hidden="true"><svg viewBox="0 0 120 120" focusable="false"><use href="#flower-plumeria"></use></svg></span></figure>
       </div>
     </section>
 

@@ -228,3 +228,18 @@ Seven additional course lab reports, the EE421 Hall project report, and UNR labo
 - **UNR laboratory safety training** was documented as online plus hands-on training in September 2025, and is included in the About credentials without implying a professional certification.
 
 The original submitted coursework files and training PDF are **not hosted, linked, or included as GitHub repository assets**. Only short public project summaries and one factual training credential appear on the site. Lab and team projects remain clearly identified as collaborative where applicable. No confidential personal identifiers from the training history are published. This update modifies only \`index.html\`, \`bookshelf.js\`, \`bookshelf.css\`, and this README.
+
+
+## Understated Mexican and Samoan floral details
+
+A few static botanical illustrations now complement the existing space-oriented design:
+
+- A tiny pairing of **Mexican cempasúchil-inspired marigold** and **Samoan plumeria-inspired blossom** accents sits at the margin of the NASA introduction image.
+- A faded marigold-like floral line drawing appears near the engineering bookshelf heading.
+- A muted plumeria flower frames a corner of the About portrait.
+
+The flowers use only the existing blush, dusty-rose, plum and lavender family, with low opacity; they do not obstruct page text, interactive controls or project book spines. Mobile styling reduces their size and opacity. These are original lightweight inline SVG vector shapes stored in the site HTML and styled with the new \`botanical.css\` file, not stock graphics, photography, or additional downloaded files.
+
+The **planet orbit, constellation reveals, collection star trails, and book animations remain intact**. The botanical decorations do not animate and are marked \`aria-hidden\`, with pointer interaction disabled. The existing reduced-motion behavior of the space animations is unchanged. The previous two-shelf engineering library (16 books, eight on each shelf) and all projects remain.
+
+No media assets, resume PDF, user-uploaded course reports, or training records were modified or uploaded. Changed paths are \`index.html\`, \`botanical.css\`, and this documentation.
