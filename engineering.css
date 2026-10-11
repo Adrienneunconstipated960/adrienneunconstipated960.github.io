@@ -1,0 +1,244 @@
+/*
+ * Engineering-first visual layer.
+ * Existing space, botanical artwork, book colors and interactions are preserved.
+ * All graphical drafting details are CSS-only, behind the real content.
+ */
+
+:root{
+  --eng-ink:#333f51;
+  --eng-graphite:#566272;
+  --eng-rule:#cdd2db;
+  --eng-accent:#77657e;
+  --eng-surface:rgba(255,253,253,.88);
+  --eng-mono:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace;
+}
+
+/* Typography: editorial name, unmistakably technical supporting information. */
+.hero .eyebrow,
+.section .eyebrow,
+.project-kicker,
+.repo-category,
+.shelf-preview-label,
+.book-edition,
+.timeline-date,
+.book-page-topline,
+.book-page-bottomline,
+.book-project-facts dt{
+  font-family:var(--eng-mono);
+  font-weight:650;
+  letter-spacing:.075em;
+}
+.hero .eyebrow{font-size:10px;color:#785871;letter-spacing:.09em}
+.hero h1{
+  font-size:clamp(47px,5.6vw,72px);
+  line-height:1.09;
+  letter-spacing:-.047em;
+  text-wrap:balance;
+  margin-bottom:17px;
+}
+.hero .hero-subtitle{
+  font-size:clamp(23px,2.1vw,28px);
+  line-height:1.38;
+  max-width:520px;
+  margin-bottom:17px;
+  color:#51445b;
+}
+.hero .hero-description{font-size:14px;line-height:1.85;max-width:62ch}
+.hero .hero-buttons{margin-top:22px}
+
+/* Three factual focus areas, like a compact instrument legend.
+   This is within the hero, not an inserted spacer between sections. */
+.engineering-focus{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:0;
+  max-width:575px;
+  margin-top:30px;
+  border-block:1px solid var(--eng-rule);
+  background:rgba(255,252,253,.5);
+}
+.engineering-focus>div{
+  padding:13px 12px 13px 0;
+  min-width:0;
+}
+.engineering-focus>div+div{
+  border-left:1px solid var(--eng-rule);
+  padding-left:13px;
+}
+.engineering-focus .focus-code{
+  display:block;
+  margin-bottom:8px;
+  color:#786779;
+  font:700 10px/1.5 var(--eng-mono);
+  letter-spacing:.035em;
+}
+.engineering-focus strong{
+  display:block;
+  color:var(--eng-ink);
+  font:700 12px/1.35 var(--sans);
+  letter-spacing:-.012em;
+}
+.engineering-focus small{
+  display:block;
+  margin-top:5px;
+  color:var(--eng-graphite);
+  font:400 10px/1.5 var(--sans);
+}
+.figure-index{
+  font:700 10px/1.5 var(--eng-mono);
+  color:#77647d;
+  letter-spacing:.06em;
+  margin-right:8px;
+}
+.hero-photo figcaption{font-style:normal;line-height:1.7}
+
+/* Technically informed line/grid details. Only background layers; content
+   remains above the scenery in its existing stacking context. */
+.ambient-field-github{
+  background-image:
+    linear-gradient(to right,rgba(82,100,117,.048) 1px,transparent 1px),
+    linear-gradient(to bottom,rgba(82,100,117,.048) 1px,transparent 1px);
+  background-size:46px 46px;
+}
+.ambient-field-work,
+.ambient-field-robot,
+.ambient-field-skills{
+  background-image:
+    linear-gradient(90deg,transparent 0 92%,rgba(90,104,122,.085) 92% 92.18%,transparent 92.18%),
+    linear-gradient(0deg,transparent 0 86%,rgba(90,104,122,.075) 86% 86.2%,transparent 86.2%);
+  background-size:146px 146px;
+  opacity:.92;
+}
+.ambient-field-robot{background-size:172px 172px}
+.ambient-field-skills{background-size:162px 162px}
+
+.section-heading h2{letter-spacing:-.038em}
+.section-heading .eyebrow{color:#765a70}
+.section-heading>p:not(.eyebrow){font-size:14px;color:#646272}
+
+/* Distinct engineering assessment panel, not fabricated numerical data. */
+.work-section .feature-project{
+  border-color:#d4cbd6;
+  box-shadow:0 10px 34px rgba(53,58,75,.06);
+}
+.work-section .feature-content{position:relative}
+.work-section .feature-content::before{
+  content:"CASE STUDY / 01";
+  position:absolute;
+  top:13px;
+  right:18px;
+  font:700 9px/1.35 var(--eng-mono);
+  letter-spacing:.11em;
+  color:#a399aa;
+}
+.feature-content .project-kicker{font-size:10px;color:#775b74}
+.feature-content>p:not(.project-kicker){color:#5a5662}
+.engineering-flow{
+  margin:16px 0 10px;
+  padding:13px 0 14px;
+  border-block:1px solid #ded6de;
+}
+.engineering-flow .flow-label{
+  display:block;
+  font:700 10px/1.5 var(--eng-mono);
+  letter-spacing:.065em;
+  color:#736177;
+  margin-bottom:9px;
+}
+.engineering-flow ol{
+  display:flex;
+  align-items:stretch;
+  flex-wrap:wrap;
+  list-style:none;
+  padding:0;
+  margin:0;
+  gap:6px;
+}
+.engineering-flow li{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  padding:7px 9px;
+  border:1px solid #ddd5dc;
+  background:#f8f7f9;
+  border-radius:4px;
+  color:#4a5160;
+  font:650 11px/1.35 var(--sans);
+  white-space:normal;
+}
+.engineering-flow li>span{
+  color:#795f7c;
+  font:700 10px/1 var(--eng-mono);
+}
+.engineering-flow li+li::before{
+  content:"→";
+  margin-left:-5px;
+  margin-right:3px;
+  color:#836e82;
+  font:700 12px/1 var(--eng-mono);
+}
+.project-metrics strong{font-family:var(--eng-mono);font-variant-numeric:tabular-nums;letter-spacing:-.05em}
+.project-metrics span{font-size:11px}
+
+/* Cards and the project-library pages present methods and evidence clearly. */
+.github-section .repo-card{
+  border:1px solid #d9d5df;
+  border-top:2px solid #b1a2b8;
+  box-shadow:0 8px 26px rgba(45,55,73,.055);
+}
+.github-section .repo-category,.repo-meta,.repo-result-count{
+  font-family:var(--eng-mono);
+  letter-spacing:.01em;
+}
+.github-section .repo-card>p{color:#5d5e6a}
+.shelf-label-row h3>span{font-size:12px;letter-spacing:0}
+.shelf-preview-label,.shelf-collection-description{font-family:var(--eng-mono)}
+.shelf-collection-description{font-size:11px;line-height:1.6}
+.shelf-preview [data-preview-text]{color:#565d69}
+.book-project-facts dt{color:#795b74;font-size:10px;letter-spacing:.065em}
+.book-project-facts dd{line-height:1.75}
+.skill-column{
+  border-top:2px solid #ada3b5;
+  padding-top:17px;
+}
+.skill-column h3{font-size:22px}
+.skill-column p{font-size:13px;line-height:1.85;color:#57606b}
+.timeline-date{font-size:10px;letter-spacing:.04em}
+
+/* Decorative flowers and drifting stars stay subtle and noninteractive.
+   No changes to their position, number, or accessibility properties. */
+@media(max-width:1100px){
+  .engineering-focus small{font-size:9.5px}
+  .engineering-focus>div{padding-right:8px}
+  .engineering-focus>div+div{padding-left:9px}
+  .engineering-flow li{padding:6px 7px}
+}
+@media(max-width:780px){
+  .hero h1{font-size:clamp(46px,10vw,65px)}
+  .engineering-focus{margin-top:24px;max-width:650px}
+  .engineering-focus>div{padding-block:11px}
+  .engineering-focus strong{font-size:11px}
+  .engineering-focus small{font-size:10px}
+  .ambient-field-work,.ambient-field-robot,.ambient-field-skills{opacity:.57}
+  .work-section .feature-content::before{top:9px;right:12px}
+  .engineering-flow li+li::before{display:none}
+}
+@media(max-width:480px){
+  .hero h1{font-size:clamp(42px,10.3vw,55px)}
+  .engineering-focus .focus-code{font-size:9px}
+  .engineering-focus strong{font-size:10px;line-height:1.38}
+  .engineering-focus small{display:none}
+  .engineering-focus>div{padding:10px 6px 10px 0}
+  .engineering-focus>div+div{padding-left:9px}
+  .engineering-flow ol{gap:6px}
+  .engineering-flow li{font-size:10px}
+  .figure-index{display:block;margin-bottom:3px}
+  .skill-column h3{font-size:21px}
+}
+@media(prefers-reduced-motion:reduce){
+  .engineering-focus,.engineering-flow{transition:none}
+}
+@media print{
+  .ambient-field-github,.ambient-field-work,.ambient-field-robot,
+  .ambient-field-skills{background-image:none}
+}

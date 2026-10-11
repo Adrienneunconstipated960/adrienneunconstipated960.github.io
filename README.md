@@ -327,3 +327,23 @@ The engineering portfolio was refined without changing its two-shelf, sixteen-pr
 - **Accessibility and performance:** CSS focus-visible treatment, reduced-motion behavior, responsive spacing, the native book dialog, visibility-paused decorative animations, and safe fallback content remain.
 
 Only website HTML/CSS/JS files and README documentation changed; no JPEGs, videos, PDFs, course reports, or other binary user media were modified or uploaded. CSS/JS asset references are versioned to reduce stale-browser-cache issues.
+
+
+## Engineering-first portfolio presentation (October 2026)
+
+This pass makes the page immediately identifiable as an electrical-engineering, robotics, and systems-validation portfolio while retaining the previously established muted palette, space motifs, Mexican and Samoan flowers, and interactive two-shelf library.
+
+**Content and information hierarchy**
+- The hero now leads with the engineer's full name, robotics and systems-validation focus, NASA Marshall OSTEM assessment work, and the University of Nevada, Reno electrical-engineering M.S.
+- A small three-column technical focus legend highlights real project categories: robotics/kinematics, STM32/VHDL embedded hardware/firmware, and instrumentation/requirements-driven verification. This is within the hero, not a spacer between sections.
+- The bookshelf is introduced as 16 engineering case studies rather than decorative stories; the existing book pages still contain challenge, methods, tools, outcomes, and sourced project details.
+- The featured NASA case study now explicitly states that it was an **evaluation of a legacy arm**, not deployed hardware. An assessment-path panel shows geometry, actuator limits, and verification. The previously sourced values of 34 requirements, six scenarios, and a 10^-7 torr target are retained.
+- Technical headings across the code, robot lab, toolkit, and resume sections emphasize engineering purpose, while the interests and personal sections retain warmth. The About paragraph identifies the actual technical domains and the approach of testing assumptions rather than claiming unverified performance.
+
+**Visual engineering language**
+- A new `engineering.css` file, loaded after the existing styles, applies graphite/navy technical typography and instrument-label monospace to small labels, results, and project metadata. Serif headings and the rose/plum identity remain.
+- Lightweight drafting-grid textures sit behind the software, NASA, robot, and tools sections, never over interactive controls or project books. The NASA path uses semantic HTML in a compact, labeled sequence rather than a made-up data plot.
+- The 8 Mexican/Samoan background flower assets, 36 soft floating stars, 16 multicolored book spines, 2 shelves, animations, reduced-motion support, and media are unchanged.
+- Mobile-specific styling keeps the engineering-focus labels and assessment path readable without inserting any between-section spacers. No external visual libraries, third-party assets, photographs, videos, or documents are added.
+
+Only `index.html`, `engineering.css`, and this README are changed. Existing GitHub Pages media assets and user-owned files remain untouched.
