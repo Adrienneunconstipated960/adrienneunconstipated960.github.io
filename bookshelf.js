@@ -105,6 +105,8 @@
   const counter = document.getElementById('book-counter');
   const coverTitle = document.getElementById('book-cover-title');
   const detailLink = document.getElementById('book-project-link');
+  const nextPage = document.getElementById('book-next-page');
+  const previousPage = document.getElementById('book-prev-page');
   const fields = {
     edition: document.getElementById('book-edition'),
     title: document.getElementById('book-modal-title'),
@@ -160,6 +162,7 @@
 
     if (counter) counter.textContent = 'Book ' + (index + 1) + ' of ' + books.length;
     if (coverTitle) coverTitle.textContent = book.title;
+    if (stage) stage.dataset.mobilePage = '1';
 
     // Match the opening hardback cover to the selected spine.
     const spine = bookButtons.find(button => button.dataset.openBook === book.id);
@@ -242,12 +245,45 @@
     }, 340);
 
     finishTurnTimer = window.setTimeout(() => {
-      stage?.classList.remove('page-turn-next', 'page-turn-prev');
+      stage?.classList.remove('page-turn-next', 'page-turn-prev', 'page-turn-mobile-forward', 'page-turn-mobile-backward');
       isTurning = false;
       syncNavigation();
       finishTurnTimer = null;
     }, 760);
   }
+
+  // On narrow screens a real book presents one printed page at a time.
+  // The two in-page controls turn between the story and the engineering notes.
+  function turnMobilePage(nextPageNumber) {
+    if (!dialog.open || isOpening || isTurning || !stage) return;
+    const current = stage.dataset.mobilePage || '1';
+    if (current === String(nextPageNumber)) return;
+
+    if (reduceMotion.matches) {
+      stage.dataset.mobilePage = String(nextPageNumber);
+      dialog.scrollTop = 0;
+      return;
+    }
+
+    isTurning = true;
+    syncNavigation();
+    const name = nextPageNumber === 2 ? 'page-turn-mobile-forward' : 'page-turn-mobile-backward';
+    stage.classList.add(name);
+    turnTimer = window.setTimeout(() => {
+      stage.dataset.mobilePage = String(nextPageNumber);
+      dialog.scrollTop = 0;
+      turnTimer = null;
+    }, 285);
+    finishTurnTimer = window.setTimeout(() => {
+      stage.classList.remove(name);
+      isTurning = false;
+      syncNavigation();
+      finishTurnTimer = null;
+    }, 620);
+  }
+
+  nextPage?.addEventListener('click', () => turnMobilePage(2));
+  previousPage?.addEventListener('click', () => turnMobilePage(1));
 
   bookButtons.forEach(button => button.addEventListener('click', () => {
     const index = books.findIndex(book => book.id === button.dataset.openBook);
@@ -284,6 +320,7 @@
     isTurning = false;
     stage?.classList.remove('page-turn-next', 'page-turn-prev');
     setBookStage('is-closed');
+    if (stage) stage.dataset.mobilePage = '1';
     bookButtons.forEach(button => button.classList.remove('is-pulling'));
     syncNavigation();
     lastTrigger?.focus();

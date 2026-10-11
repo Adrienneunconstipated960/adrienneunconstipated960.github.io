@@ -144,22 +144,25 @@
     <dialog id="project-book-dialog" class="project-book-dialog" aria-labelledby="book-modal-title" aria-describedby="book-modal-intro">
       <div class="project-book-shell">
         <div class="project-book-toolbar">
-          <span class="project-book-eyebrow">KAILANI'S ENGINEERING LIBRARY</span>
-          <button id="close-project-book" class="project-book-close" type="button" aria-label="Close book">Close <span aria-hidden="true">×</span></button>
+          <span class="project-book-eyebrow">FROM THE ENGINEERING LIBRARY · SELECTED WORKS</span>
+          <button id="close-project-book" class="project-book-close" type="button" aria-label="Close project book">Close book <span aria-hidden="true">×</span></button>
         </div>
-        <div id="book-open-stage" class="book-open-stage is-closed">
+        <div id="book-open-stage" class="book-open-stage is-closed" data-mobile-page="1">
           <div class="book-spread">
             <article class="book-page book-page-left">
+              <div class="book-page-topline"><span>THE WORKS OF KAILANI ALARCON</span><span class="book-page-chapter">I</span></div>
               <p class="book-edition" id="book-edition">PROJECT STORY</p>
               <h2 id="book-modal-title"></h2>
               <p class="book-modal-subtitle" id="book-modal-intro"></p>
               <div class="book-page-rule" aria-hidden="true"></div>
-              <h3>The story</h3>
-              <p id="book-story"></p>
-              <p class="book-page-number">01</p>
+              <h3 class="book-chapter-heading">The story</h3>
+              <p id="book-story" class="book-story-prose"></p>
+              <div class="book-page-bottomline"><span>CHAPTER ONE · THE PROJECT</span><span class="book-page-number">01</span></div>
+              <button class="book-mobile-turn book-mobile-forward" id="book-next-page" type="button">Turn the page <span aria-hidden="true">→</span></button>
             </article>
             <article class="book-page book-page-right">
-              <h3>Behind the build</h3>
+              <div class="book-page-topline"><span>NOTES FROM THE WORKSHOP</span><span class="book-page-chapter">II</span></div>
+              <h3 class="book-chapter-heading">Behind the build</h3>
               <dl class="book-project-facts">
                 <div><dt>The challenge</dt><dd id="book-challenge"></dd></div>
                 <div><dt>My approach</dt><dd id="book-approach"></dd></div>
@@ -167,7 +170,8 @@
                 <div><dt>What mattered</dt><dd id="book-outcome"></dd></div>
               </dl>
               <a id="book-project-link" class="book-project-link" href="#work">See project details <span aria-hidden="true">↗</span></a>
-              <p class="book-page-number">02</p>
+              <div class="book-page-bottomline"><span>CHAPTER TWO · THE ENGINEERING</span><span class="book-page-number">02</span></div>
+              <button class="book-mobile-turn book-mobile-backward" id="book-prev-page" type="button"><span aria-hidden="true">←</span> Previous page</button>
             </article>
           </div>
           <div class="book-turning-page" aria-hidden="true"><span class="book-turning-lines"></span></div>
