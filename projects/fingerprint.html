@@ -30,22 +30,23 @@
 <header class="detail-heading">
 <p class="eyebrow">2025 · Embedded systems</p><h1>Fingerprint Authentication</h1><p>A small system with meaningful communication challenges</p>
 </header>
-<nav class="detail-jump" aria-label="Jump to project sections"><span>ON THIS PAGE</span><a href="#project-method">Methods &amp; tools</a><a href="#project-results">Outcomes</a><a href="#project-evidence">Evidence &amp; limitations</a></nav>
-<article class="detail-card" aria-label="Fingerprint Authentication engineering detail">
-<span class="detail-tag">PROJECT 04 / 16</span>
-<p class="detail-lead">Our four-person embedded-systems group built a standalone fingerprint identification system around an STM32F767ZI and an optical sensor. Instead of relying on the sensor library, the firmware uses manually constructed UART command packets and response parsing. A guided enrollment process lets users register prints, while green and red LEDs indicate matching results.</p>
+<nav class="detail-jump" aria-label="Project sections"><span>EXPLORE THIS PROJECT</span><a href="#project-overview">Overview</a><a href="#project-method">Approach</a><a href="#project-results">Findings</a><a href="#project-evidence">Evidence</a></nav>
+<section class="project-overview" id="project-overview" aria-label="Project overview"><span class="detail-tag">PROJECT 04 / 16</span><p class="detail-lead">Our four-person embedded-systems group built a standalone fingerprint identification system around an STM32F767ZI and an optical sensor. Instead of relying on the sensor library, the firmware uses manually constructed UART command packets and response parsing. A guided enrollment process lets users register prints, while green and red LEDs indicate matching results.</p></section>
+<article class="detail-card" aria-label="Fingerprint Authentication engineering detail"><h2 class="project-details-title">Engineering details</h2>
 
-<div class="detail-panel detail-role"><h2>My contribution / team context</h2><p>Member of a four-person embedded-systems team building a fingerprint identification prototype.</p></div>
+
+
 <div id="project-method" class="detail-grid">
-<section class="detail-panel"><h2>Engineering challenge</h2><p>Coordinate reliable sensor enrollment, fingerprint searching, serial packets, and clear feedback for multiple users.</p></section>
-<section class="detail-panel"><h2>Methods and approach</h2><p>Configure two UART channels, implement protocol framing and acknowledgment handling, map 24 template IDs to four users, and drive status LEDs and terminal messages.</p></section>
-<section class="detail-panel"><h2>Tools and environment</h2><p>STM32F767ZI, embedded C, UART packet protocol, sensor integration, GPIO.</p></section>
-<section class="detail-panel"><h2>Evidence and limitations</h2><p>This page summarizes the work documented in the portfolio project book. Where underlying test data, design files, or screenshots are not public, the summary does not imply those materials were independently verified.</p></section>
+<section class="detail-panel"><h2>Challenge</h2><p>Coordinate reliable sensor enrollment, fingerprint searching, serial packets, and clear feedback for multiple users.</p></section>
+<section class="detail-panel"><h2>Approach</h2><p>Configure two UART channels, implement protocol framing and acknowledgment handling, map 24 template IDs to four users, and drive status LEDs and terminal messages.</p></section>
+<section class="detail-panel"><h2>Tools</h2><p>STM32F767ZI, embedded C, UART packet protocol, sensor integration, GPIO.</p></section>
+
 </div>
 <div id="project-results" class="detail-results"><h2>Documented outcome</h2><p>A group-built demonstration of enrollment, template matching, and embedded status reporting.</p></div>
-<div class="detail-buttons"><a href="index.html">Browse all projects ↗</a></div>
-<p id="project-evidence" class="detail-source-note">This page is based on the existing portfolio project description. It distinguishes reported results from targets and does not publish restricted NASA files or unavailable raw data.</p>
+
+
 </article>
+<section class="project-evidence" id="project-evidence" aria-labelledby="project-evidence-title"><h2 id="project-evidence-title">Evidence &amp; limitations</h2><p>Project methods and findings follow the available portfolio records. Original raw data and independent test evidence are not represented where unavailable.</p></section>
 <nav class="detail-footer" aria-label="Adjacent projects">
 <a class="detail-home-link" href="leg.html">← 3-Link Leg Simulation</a>
 <span aria-hidden="true"> · </span>
