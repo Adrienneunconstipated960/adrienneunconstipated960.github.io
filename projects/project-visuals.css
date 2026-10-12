@@ -4,16 +4,16 @@
 .project-visual-gallery__head{padding:clamp(24px,4vw,44px);background:radial-gradient(circle at 92% 4%,rgba(173,74,135,.18),transparent 52%),linear-gradient(115deg,#f8edf4,#efecf5)}
 .project-visual-gallery__head .eyebrow{font-size:11px;color:#823c68;margin:0 0 12px}
 .project-visual-gallery__head h2{font:500 clamp(29px,3.7vw,43px)/1.17 var(--serif,Georgia,serif);color:#36283f;letter-spacing:-.035em;margin:0 0 13px}
-.project-visual-gallery__head p:last-child{font-size:14px;line-height:1.8;color:#55495e;margin:0;max-width:85ch}
+.project-visual-gallery__head p:last-child{font-size:15px;line-height:1.8;color:#55495e;margin:0;max-width:85ch}
 .project-visual-gallery__item{padding:clamp(18px,3.3vw,37px);border-top:1px solid #e6d8e5}
 .project-visual-gallery__top{display:flex;align-items:start;justify-content:space-between;gap:17px;margin-bottom:18px}
 .project-visual-gallery__top h3{font:500 clamp(21px,2.7vw,32px)/1.24 var(--serif,Georgia,serif);color:#3c3046;margin:0 0 7px}
-.project-visual-gallery__top p{font-size:13px;line-height:1.75;color:#5c5066;max-width:81ch;margin:0}
+.project-visual-gallery__top p{font-size:15px;line-height:1.8;color:#5c5066;max-width:81ch;margin:0}
 .project-visual-gallery__count{font:750 11px/1.5 var(--sans,system-ui,sans-serif);white-space:nowrap;letter-spacing:.08em;color:#99557d;padding:5px 0}
 .project-visual-gallery__figure{margin:0}
 .project-visual-gallery__figure img{width:100%;height:auto;aspect-ratio:16/9;display:block;object-fit:contain;background:#181a28;border-radius:13px;border:1px solid #554960}
-.project-visual-gallery__figure figcaption{font:400 12px/1.75 var(--sans,system-ui,sans-serif);color:#61546a;margin:11px 0 0}
-.project-visual-gallery__note{margin:0;padding:20px clamp(21px,3vw,37px);background:#f2e7ef;color:#58465e;font-size:12px;line-height:1.8}
+.project-visual-gallery__figure figcaption{font:400 13px/1.8 var(--sans,system-ui,sans-serif);color:#61546a;margin:11px 0 0}
+.project-visual-gallery__note{margin:0;padding:20px clamp(21px,3vw,37px);background:#f2e7ef;color:#58465e;font-size:14px;line-height:1.8}
 .project-visual-gallery__note strong{color:#68365b}
 .project-visual-gallery__item + .project-visual-gallery__item{border-top:1px solid #e7d8e6}
 .project-visual-gallery__inline{padding:clamp(18px,3vw,30px);border-top:1px solid #e7d8e6}
@@ -29,14 +29,14 @@
 :root[data-theme="dark"] .project-visual-gallery__item,:root[data-theme="dark"] .project-visual-gallery__inline,.project-visual-gallery__inline .project-visual-gallery__item+.project-visual-gallery__item{border-color:#69536e}
 :root[data-theme="dark"] .project-visual-gallery__note{background:#3c293b;color:#f0e3ee}
 :root[data-theme="dark"] .project-visual-gallery__note strong{color:#ffc8e4}
-@media(max-width:620px){.project-visual-gallery{border-radius:14px}.project-visual-gallery__top{display:block}.project-visual-gallery__count{display:block;margin:0 0 7px}.project-visual-gallery__figure figcaption{font-size:11px}.project-visual-gallery__item{padding:19px 14px}.project-visual-gallery__inline{padding:17px 14px}}
+@media(max-width:620px){.project-visual-gallery{border-radius:14px}.project-visual-gallery__top{display:block}.project-visual-gallery__count{display:block;margin:0 0 7px}.project-visual-gallery__figure figcaption{font-size:13px}.project-visual-gallery__item{padding:19px 14px}.project-visual-gallery__inline{padding:17px 14px}}
 
 
 /* Diagrams contain fine labels: pan rather than shrink them to illegible mobile sizes. */
 @media(max-width:650px){
   .project-visual-gallery__figure{max-width:100%;overflow-x:auto;overscroll-behavior-inline:contain;scrollbar-width:thin;scrollbar-color:#b9759e transparent}
   .project-visual-gallery__figure:has(img)::before{content:"Swipe sideways to inspect the full diagram ↔";display:block;padding:7px 3px 11px;color:#97567e;font:700 11px/1.5 var(--sans,system-ui,sans-serif)}
-  .project-visual-gallery__figure img{width:720px;min-width:720px;max-width:none;height:auto}
+  .project-visual-gallery__figure img{width:1100px;min-width:1100px;max-width:none;height:auto}
   :root[data-theme="dark"] .project-visual-gallery__figure::before{color:#ffbbdc}
 }
 
