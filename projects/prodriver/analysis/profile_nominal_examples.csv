@@ -1,0 +1,3 @@
+source_profile,model,input_voltage_V,nominal_current_A,module_voltage_V,calculated_output_power_W,estimated_efficiency,estimated_input_power_W,source_note
+BST1_plus_HO7_4800lm,HO7 4800lm,120,0.600,44.7,26.82,0.88337,30.36113,"NEW profile-based calculation; not a real bench observation"
+BST1_plus_HO7_6400lm,HO7 6400lm,120,0.800,44.7,35.76,0.88863,40.24193,"NEW profile-based calculation; not a real bench observation"
