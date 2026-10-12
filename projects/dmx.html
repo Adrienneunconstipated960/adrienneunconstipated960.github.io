@@ -17,6 +17,7 @@
 <meta property="og:image:alt" content="Kailani at NASA Marshall Space Flight Center">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://kailania.vercel.app/assets/sls-rocket-kailani.jpeg">
+<link rel="stylesheet" href="project-visuals.css?v=20261012-v1">
 <script src="../portfolio-upgrade.js?v=20261011" defer></script>
 </head>
 <body class="project-page">
@@ -30,26 +31,56 @@
 <header class="detail-heading">
 <p class="eyebrow">GitHub · Lighting control</p><h1>DMX Controller</h1><p>A browser interface connected to physical lights</p>
 </header>
-<nav class="detail-jump" aria-label="Jump to project sections"><span>ON THIS PAGE</span><a href="#project-method">Methods &amp; tools</a><a href="#project-results">Outcomes</a><a href="#project-evidence">Evidence &amp; limitations</a></nav>
+<nav class="detail-jump" aria-label="Jump to project sections"><span>ON THIS PAGE</span><a href="#project-method">Methods &amp; tools</a><a href="#project-results">Outcomes</a><a href="#project-evidence">Evidence &amp; limitations</a><a href="#dmx-visuals">Engineering graphics</a></nav>
 <article class="detail-card" aria-label="DMX Controller engineering detail">
 <span class="detail-tag">PROJECT 15 / 16</span>
 <p class="detail-lead">This project brings a familiar browser interface to a hardware lighting-control problem. Choosing a scene or brightness setting produces commands for an Arduino-based DMX system.</p>
-<figure class="detail-figure"><video controls preload="metadata" playsinline aria-label="Lighting demonstration"><source src="../assets/lighting-demo.mp4" type="video/mp4">Your browser does not support video playback.</video><figcaption>Existing lighting demonstration from the portfolio; not labeled as a verified DMX-specific qualification test.</figcaption></figure>
+
 
 <div id="project-method" class="detail-grid">
 <section class="detail-panel"><h2>Engineering challenge</h2><p>Translate simple user controls into real output for RGBW lighting hardware.</p></section>
 <section class="detail-panel"><h2>Methods and approach</h2><p>Use Flask to receive browser inputs and send serial commands to Arduino for DMX output.</p></section>
 <section class="detail-panel"><h2>Tools and environment</h2><p>Python, Flask, Arduino, serial communication, DMX.</p></section>
-<section class="detail-panel"><h2>Evidence and limitations</h2><p>This page summarizes the work documented in the portfolio project book. Where underlying test data, design files, or screenshots are not public, the summary does not imply those materials were independently verified.</p></section>
+<section class="detail-panel"><h2>Evidence and limitations</h2><p>The application source establishes command handling, RGBW channel values and DMX frame construction. Hardware timing, transceiver wiring and actual fixture response remain unverified; the demonstration video alone does not establish DMX protocol compliance.</p></section>
 </div>
 <div id="project-results" class="detail-results"><h2>Recovered lighting-control system</h2><p>The original Flask interface and Arduino Mega sketch are available in GitHub. The controller sends newline-delimited serial commands at 115,200 baud, and the firmware constructs DMX frames with a zero start code and four RGBW data channels. The original sketch's invalid <code>fconst</code> declaration was corrected; the Flask service now listens on localhost by default. The existing demonstration video is preserved, but physical DMX timing and fixture response have not been retested in this recovery.</p></div>
-<figure class="detail-figure"><img src="dmx/visuals/control_architecture.svg" width="960" height="545" loading="lazy" alt="Source-based DMX control flow: browser sends POST to Flask, USB serial communicates with Arduino Mega, DMX serial and transceiver drive an RGBW fixture"><figcaption>Reconstructed architecture from the original Flask application and Arduino firmware. External DMX wiring remains unverified.</figcaption></figure>
-<figure class="detail-figure"><img src="dmx/visuals/frame_timing.svg" width="960" height="535" loading="lazy" alt="DMX frame timing estimate: 513 slots with eleven bits each at 250 kilobaud, a 120 microsecond BREAK, a 16 microsecond mark-after-break, and 25 millisecond loop delay"><figcaption>Analytical timing estimate: minimum nominal frame about 22.708 ms, or roughly 21 updates per second after the programmed loop delay, before processing overhead. Not an oscilloscope result.</figcaption></figure>
-<figure class="detail-figure"><img src="dmx/visuals/scene_sequence.svg" width="960" height="510" loading="lazy" alt="Source-defined DMX demonstration stages, gradient colors and calculated brightness-byte values"><figcaption>Documented nominal demo stages and calculated DMX brightness bytes. These are not measured lamp currents, output power or optical brightness.</figcaption></figure>
+
+
+
 <div class="detail-panel"><h2>Recovered engineering and verification</h2><p>The source describes seven scene commands, dimming from 0% to 100%, a six-color gradient, and a 20-second nominal demonstration timeline. An independent offline reference model and 13 synthetic tests check the channel assignment, integer dimming, scene sequencing and timing calculations. Arduino compilation, physical signal integrity, luminaire channel mapping and current ratings require a subsequent hardware test. The original HTTP endpoints do not authenticate users, so the recovered app should remain local-only unless explicitly secured.</p></div>
-<div class="detail-buttons"><a href="https://github.com/kalarcon775/DMX-Controller" target="_blank" rel="noopener noreferrer">Original Flask and Arduino source ↗</a><a href="https://github.com/kalarcon775/kalarcon775.github.io/tree/main/projects/dmx" target="_blank" rel="noopener noreferrer">Engineering diagrams and calculations ↗</a><a href="index.html">Browse all projects ↗</a></div>
-<p id="project-evidence" class="detail-source-note">This page is based on the existing portfolio project description. It distinguishes reported results from targets and does not publish restricted NASA files or unavailable raw data.</p>
+<div class="detail-buttons"><a href="#dmx-visuals">Explore the lighting-control graphics ↓</a><a href="index.html">Browse all projects ↗</a></div>
+<p id="project-evidence" class="detail-source-note">These graphics document the recovered source and calculations, not recorded fixture measurements. The video is existing portfolio demonstration footage; no oscilloscope trace, fixture photometry or independently verified DMX qualification is claimed.</p>
 </article>
+<section class="project-visual-gallery" id="dmx-visuals" aria-labelledby="dmx-visuals-title">
+<header class="project-visual-gallery__head">
+ <p class="eyebrow">EMBEDDED CONTROL / VISUAL CASE STUDY</p>
+ <h2 id="dmx-visuals-title">From a browser scene to a lighting command</h2>
+ <p>This project links a local browser interface to an Arduino Mega that prepares RGBW DMX frames. The visuals trace the implemented command path, explain DMX slot timing and show calculated scene and dimming behavior. They are source-informed graphics, not captured oscilloscope data or independently measured lamp performance.</p>
+</header>
+<article class="project-visual-gallery__item" aria-labelledby="dmx-demo-title">
+ <div class="project-visual-gallery__top"><div><h3 id="dmx-demo-title">Lighting demonstration</h3><p>Existing portfolio footage gives the project a physical lighting reference before the diagrams explain the software and firmware. The recording is presented as a demonstration, not evidence of verified DMX electrical signaling.</p></div><span class="project-visual-gallery__count">FIG 01 / DEMO VIDEO</span></div>
+ <figure class="project-visual-gallery__figure">
+  <video controls preload="metadata" playsinline aria-label="Existing lighting demonstration, not a verified DMX test" title="Portfolio lighting demonstration"><source src="../assets/lighting-demo.mp4" type="video/mp4">Your browser does not support video playback.</video>
+  <figcaption>Existing lighting demonstration from the portfolio. The recording is not a traceable DMX timing test, measured brightness comparison or qualification of the recovered Arduino firmware.</figcaption>
+ </figure>
+</article>
+<article class="project-visual-gallery__item" aria-labelledby="dmx-control-title">
+ <div class="project-visual-gallery__top"><div><h3 id="dmx-control-title">How the control chain works</h3><p>Scene and brightness selections become local Flask HTTP requests. Flask sends newline-delimited serial text at 115,200 baud, the Arduino Mega parses commands, and its DMX transmitter writes RGBW channel values through a required external RS-485 interface.</p></div><span class="project-visual-gallery__count">FIG 02 / ARCHITECTURE</span></div>
+ <figure class="project-visual-gallery__figure"><img src="dmx/media/control-path.svg" width="1280" height="720" loading="lazy" decoding="async" alt="Five-step control diagram showing browser UI, local Flask server, USB serial commands, Arduino Mega, RS-485 interface and RGBW DMX light fixture.">
+ <figcaption>Reconstructed software-to-hardware functional architecture. A successful HTTP response means a serial write was attempted without error; it does not prove Arduino acknowledgement, DMX signal integrity or fixture response. The unauthenticated Flask service should remain localhost-only.</figcaption></figure>
+</article>
+<article class="project-visual-gallery__item" aria-labelledby="dmx-timing-title">
+ <div class="project-visual-gallery__top"><div><h3 id="dmx-timing-title">Inside a DMX frame</h3><p>The firmware uses a zero start code followed by four RGBW slots and 508 unused channels. With 513 transmitted slots at 250 kbit/s in 8N2 format, the calculated minimum frame is 22.708 ms. Adding the programmed 25 ms loop delay gives a nominal upper estimate of about 21 cycles per second.</p></div><span class="project-visual-gallery__count">FIG 03 / TIMING MODEL</span></div>
+ <figure class="project-visual-gallery__figure"><img src="dmx/media/dmx-frame-timing.svg" width="1280" height="720" loading="lazy" decoding="async" alt="DMX timing model showing 120-microsecond break, 16-microsecond mark-after-break, 513 serial slots including RGBW channels, calculated 22.708-millisecond frame and approximately 20.96 updates per second before overhead.">
+ <figcaption>Calculated using source constants, including 120 µs BREAK, 16 µs mark-after-break and 11 serial bits per slot. The refresh-rate estimate excludes processing and other overhead. The graphics are not oscilloscope captures or verified hardware timing.</figcaption></figure>
+</article>
+<article class="project-visual-gallery__item" aria-labelledby="dmx-sequence-title">
+ <div class="project-visual-gallery__top"><div><h3 id="dmx-sequence-title">Scene sequencing and brightness scaling</h3><p>The software defines fixed red, green, blue, white and off scenes, plus gradient and demo modes. Channel brightness uses integer arithmetic, so a 50% command maps an active base value of 255 to byte 127, not to a verified optical brightness percentage.</p></div><span class="project-visual-gallery__count">FIG 04 / SCENE LOGIC</span></div>
+ <figure class="project-visual-gallery__figure"><img src="dmx/media/scene-dimming.svg" width="1280" height="720" loading="lazy" decoding="async" alt="Twenty-second idealized DMX demonstration sequence of red, green, blue, white, gradient and off stages, with calculated DMX brightness bytes for zero, one, ten, fifty and one-hundred percent commands.">
+ <figcaption>Nominal scene order and computed DMX bytes are source-derived, not measured fixture currents or lumens. The actual demo-gradient entry may start at a later color because the sketch reuses elapsed animation state; timing and visual fidelity remain unverified.</figcaption></figure>
+</article>
+<p class="project-visual-gallery__note"><strong>Evidence boundary:</strong> Source inspection and offline synthetic tests establish the intended control logic only. Arduino compilation, RS-485 wiring, electrical DMX timing, output channel order, fixture response and lighting safety require hardware checks. No proprietary logs, raw measurements or source downloads are included on this page.</p>
+</section>
 <nav class="detail-footer" aria-label="Adjacent projects">
 <a class="detail-home-link" href="huemotion.html">← HueMotion</a>
 <span aria-hidden="true"> · </span>
