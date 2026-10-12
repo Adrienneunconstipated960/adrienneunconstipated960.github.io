@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc"><title id="title">Hall-Effect Wafer Measurements - Four-contact transport characterization · conceptual arrangement</title><desc id="desc">Educational schematic; historical wiring, wafer thickness, and contact polarity were not recovered.</desc><defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#151723"/><stop offset="1" stop-color="#262038"/></linearGradient><linearGradient id="wafer" x2="1" y2="1"><stop stop-color="#8ab9d1"/><stop offset="1" stop-color="#4c6c96"/></linearGradient><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" stroke="#74657f" stroke-width="1" opacity=".14" fill="none"/></pattern><marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9" fill="none" stroke="#edbbd2" stroke-width="1.5"/></marker></defs><rect width="1280" height="720" rx="22" fill="url(#bg)"/><rect width="1280" height="720" rx="22" fill="url(#grid)"/><rect x="38" y="34" width="7" height="83" rx="3.5" fill="#e65a98"/><text x="65" y="74" font-family="Arial,Helvetica,sans-serif" font-size="38" font-weight="800" fill="#fff0fa" >Hall-Effect Wafer Measurements</text><text x="68" y="108" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="600" fill="#efa1c9" >Four-contact transport characterization · conceptual arrangement</text>
+<rect x="42" y="160" width="756" height="474" rx="19" fill="#202739" stroke="#ad6090" stroke-width="2"/>
+<text x="72" y="199" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="750" fill="#f0a9cf" >SEMICONDUCTOR WAFER + FOUR CONTACTS</text>
+<g transform="translate(45 20)">
+<path d="M195 355L325 245L638 335L506 453Z" fill="#1c3147" stroke="#91b4d7" stroke-width="4"/>
+<path d="M195 340L325 230L638 319L506 439Z" fill="url(#wafer)" stroke="#d4ecf4" stroke-width="3"/>
+<path d="M215 339L330 245L617 321L502 421Z" fill="none" stroke="#d1e6f5" stroke-opacity=".52" stroke-width="1.5"/>
+<circle cx="325" cy="230" r="17" fill="#e6ae63" stroke="#fff3d5" stroke-width="3"/>
+<circle cx="638" cy="319" r="17" fill="#e6ae63" stroke="#fff3d5" stroke-width="3"/>
+<circle cx="506" cy="439" r="17" fill="#e6ae63" stroke="#fff3d5" stroke-width="3"/>
+<circle cx="195" cy="340" r="17" fill="#e6ae63" stroke="#fff3d5" stroke-width="3"/>
+<text x="305" y="199" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="800" fill="#fff" >A</text><text x="661" y="314" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="800" fill="#fff" >B</text><text x="515" y="475" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="800" fill="#fff" >C</text><text x="150" y="341" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="800" fill="#fff" >D</text>
+<path d="M242 325L574 333" fill="none" stroke="#ffb3dc" stroke-width="7" marker-end="url(#arrow)"/>
+<text x="400" y="307" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" fill="#ffdeed" >Applied current I</text>
+<path d="M430 422L434 345" fill="none" stroke="#75e5ed" stroke-width="6" marker-end="url(#arrow)"/>
+<text x="452" y="393" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="800" fill="#c7f7ff" >V</text>
+<path d="M426 233V140" fill="none" stroke="#ef96c5" stroke-width="4" marker-end="url(#arrow)"/>
+<circle cx="426" cy="216" r="28" fill="#252e49" stroke="#d487b8" stroke-width="2"/>
+<text x="415" y="225" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="800" fill="#f1aed3" >B</text>
+<text x="457" y="162" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="650" fill="#ffdeed" >Perpendicular magnetic field</text>
+</g>
+<rect x="829" y="160" width="407" height="474" rx="19" fill="#2b2437" stroke="#98688f" stroke-width="2"/>
+<text x="856" y="200" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="750" fill="#f0a9cf" >MEASUREMENT PATH</text>
+<rect x="857" y="232" width="352" height="84" rx="10" fill="#242d3f" stroke="#6799b0" stroke-width="2"/>
+<text x="880" y="262" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="750" fill="#fff" >Van der Pauw stage</text>
+<text x="880" y="291" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="500" fill="#d7d8e6" >Small perimeter contacts</text>
+<path d="M1033 320L1033 344" fill="none" stroke="#dc76a4" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="857" y="351" width="352" height="83" rx="10" fill="#33293f" stroke="#bc74a0" stroke-width="2"/>
+<text x="880" y="382" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="750" fill="#fff" >M91 FastHall controller</text>
+<text x="880" y="409" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="500" fill="#ded3e2" >Excitation and voltage readout</text>
+<path d="M1033 438L1033 458" fill="none" stroke="#dc76a4" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="857" y="464" width="352" height="83" rx="10" fill="#242d3f" stroke="#6799b0" stroke-width="2"/>
+<text x="880" y="493" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="750" fill="#fff" >MeasureLINK software</text>
+<text x="880" y="521" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="500" fill="#d4e5f0" >Measurement and analysis</text>
+<text x="855" y="582" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#f3bad3" >Stage wiring / lead polarity</text>
+<text x="855" y="609" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="500" fill="#dfd5e5" >shown for explanation only.</text>
+<text x="42" y="685" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="500" fill="#d4c6d8" >Educational schematic; historical wiring, wafer thickness, and contact polarity were not recovered.</text></svg>
