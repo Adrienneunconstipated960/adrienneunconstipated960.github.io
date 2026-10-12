@@ -17,6 +17,7 @@
 .project-page .detail-figure img,.project-page .detail-figure video{display:block;width:100%;height:auto;max-height:410px;object-fit:contain;border-radius:5px;background:#ece7ed}
 .project-page .detail-figure figcaption{margin-top:10px;font-size:11px;line-height:1.6;color:#716978}
 </style>
+<link rel="stylesheet" href="iverify-showcase.css?v=20261012">
 <meta property="og:image" content="https://kailania.vercel.app/assets/sls-rocket-kailani.jpeg">
 <meta property="og:image:alt" content="Kailani at NASA Marshall Space Flight Center">
 <meta name="twitter:card" content="summary_large_image">
@@ -34,7 +35,7 @@
 <header class="detail-heading">
 <p class="eyebrow">Capstone · 2026 · Health technology</p><h1>IVerify</h1><p>A non-invasive IV occlusion detection concept</p>
 </header>
-<nav class="detail-jump" aria-label="Jump to project sections"><span>ON THIS PAGE</span><a href="#project-method">Methods &amp; tools</a><a href="#project-results">Outcomes</a><a href="#project-evidence">Evidence &amp; limitations</a></nav>
+<nav class="detail-jump" aria-label="Jump to project sections"><span>ON THIS PAGE</span><a href="#project-method">Methods &amp; tools</a><a href="#project-results">Outcomes</a><a href="#project-evidence">Evidence &amp; limitations</a><a href="#iverify-reconstruction">Concept CAD &amp; design basis</a></nav>
 <article class="detail-card" aria-label="IVerify engineering detail">
 <span class="detail-tag">PROJECT 09 / 16</span>
 <p class="detail-lead">As project lead and systems integrator on a four-person senior-design team, I coordinated development of a non-invasive clip-on concept for gravity-fed IV tubing. The system applies repeatable mechanical preload and senses the tube reaction force as an indirect indicator of restrictions. Analog filtering and threshold logic feed microcontroller supervision, translating measurements into understandable status indications.</p>
@@ -48,8 +49,125 @@
 </div>
 <div id="project-results" class="detail-results"><h2>Documented outcome</h2><p>A bench-level, non-clinical proof of concept using two indicator LEDs. The proposed full three-color interface and clinical performance still required further testing.</p></div>
 <div class="detail-buttons"><a href="../index.html#case-iverify">Detailed capstone case study ↗</a><a href="https://github.com/kalarcon775/kalarcon775.github.io/tree/main/projects/iverify" target="_blank" rel="noopener noreferrer">View reconstructed CAD and engineering source ↗</a><a href="index.html">Browse all projects ↗</a></div>
-<p id="project-evidence" class="detail-source-note">This page is based on the existing portfolio project description. It distinguishes reported results from targets and does not publish restricted NASA files or unavailable raw data.</p>
+<p id="project-evidence" class="detail-source-note">This page distinguishes the original Spring 2026 student prototype from the later reconstructed CAD concept. The original team reports and unpublished source data are not distributed here; use the linked public reconstruction notes for assumptions.</p>
 </article>
+<section class="iverify-showcase" id="iverify-reconstruction" aria-labelledby="iverify-reconstruction-title">
+  <header class="iverify-showcase-header">
+    <p class="eyebrow">PUBLIC ENGINEERING WORK / CONCEPT RECONSTRUCTION</p>
+    <h2 id="iverify-reconstruction-title">Inside the IVerify design concept</h2>
+    <p>The student prototype and the later CAD reconstruction represent different stages of work. This section documents the openly available reconstructed geometry, intended sensing approach, and design targets without implying that the reconstructed parts were fabricated or clinically tested.</p>
+  </header>
+  <div class="iverify-concept-grid">
+    <figure class="iverify-concept-figure">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 442" role="img" aria-labelledby="iv-concept-title iv-concept-desc">
+        <title id="iv-concept-title">IVerify reconstructed clamshell geometry: exploded schematic</title>
+        <desc id="iv-concept-desc">Simplified exploded view of a fixed jaw, removable jaw, reference tubing, contact sensor placeholder, indicator board, and three conceptual indicator lights. This is not the original team's mechanical design.</desc>
+        <defs>
+          <linearGradient id="iv-bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f6f6fa"/><stop offset="1" stop-color="#dbe4ee"/></linearGradient>
+          <linearGradient id="iv-jaw" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#435b71"/><stop offset="1" stop-color="#24384a"/></linearGradient>
+          <linearGradient id="iv-cover" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a7b4c2"/><stop offset="1" stop-color="#768da1"/></linearGradient>
+          <linearGradient id="iv-tube" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#5da4b7"/><stop offset=".5" stop-color="#b2e8f1"/><stop offset="1" stop-color="#4887a6"/></linearGradient>
+          <marker id="iv-arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6" fill="none" stroke="#805273" stroke-width="1.5"/></marker>
+        </defs>
+        <rect x="0" y="0" width="680" height="442" fill="url(#iv-bg)"/>
+        <g opacity=".32" stroke="#9ca7bc" stroke-width=".6">
+          <path d="M0 32H680M0 64H680M0 96H680M0 128H680M0 160H680M0 192H680M0 224H680M0 256H680M0 288H680M0 320H680M0 352H680M0 384H680M0 416H680"/>
+          <path d="M32 0V442M64 0V442M96 0V442M128 0V442M160 0V442M192 0V442M224 0V442M256 0V442M288 0V442M320 0V442M352 0V442M384 0V442M416 0V442M448 0V442M480 0V442M512 0V442M544 0V442M576 0V442M608 0V442M640 0V442"/>
+        </g>
+        <text x="24" y="28" fill="#5e5269" font-family="system-ui,sans-serif" font-size="12" font-weight="750" letter-spacing="1.1">EXPLODED CONCEPT / NOT TO SCALE</text>
+        <g transform="translate(55 162)">
+          <path d="M0 32 L52 0 H220 L172 32Z" fill="#b9c7d3"/>
+          <path d="M172 32L220 0V165L172 198Z" fill="#73899b"/>
+          <rect x="0" y="32" width="172" height="166" rx="12" fill="url(#iv-cover)"/>
+          <ellipse cx="46" cy="87" rx="12" ry="16" fill="#5e7283" stroke="#e3eaf0" stroke-width="3"/>
+          <ellipse cx="133" cy="158" rx="12" ry="16" fill="#5e7283" stroke="#e3eaf0" stroke-width="3"/>
+          <path d="M172 110Q150 121 141 131" fill="none" stroke="#d7e9f1" stroke-width="4" stroke-dasharray="5 5"/>
+        </g>
+        <g transform="translate(343 141)">
+          <path d="M0 34L70 0H244L175 34Z" fill="#52728b"/>
+          <path d="M175 34L244 0V163L175 203Z" fill="#2b4054"/>
+          <rect x="0" y="34" width="175" height="169" rx="12" fill="url(#iv-jaw)"/>
+          <ellipse cx="38" cy="108" rx="11" ry="14" fill="#152b3d" stroke="#68859b" stroke-width="2"/>
+          <path d="M-19 113L36 113" stroke="#dbb976" stroke-width="7" stroke-linecap="round"/>
+          <rect x="32" y="91" width="24" height="43" rx="3" fill="#dfd4ba" stroke="#a89b84"/>
+        </g>
+        <g>
+          <path d="M303 74V362" stroke="url(#iv-tube)" stroke-width="29" stroke-linecap="round" opacity=".76"/>
+          <path d="M300 74V362" stroke="#b9f3fa" stroke-width="8" opacity=".55" stroke-linecap="round"/>
+          <rect x="372" y="92" width="175" height="20" rx="3" fill="#175d44" stroke="#338166" stroke-width="2"/>
+          <path d="M375 112L361 136M541 112L558 136" stroke="#7cba97" stroke-width="2" stroke-dasharray="5 4"/>
+          <circle cx="410" cy="79" r="12" fill="#31b957" stroke="#1b7d3d" stroke-width="3"/>
+          <circle cx="459" cy="79" r="12" fill="#efab34" stroke="#a06c14" stroke-width="3"/>
+          <circle cx="508" cy="79" r="12" fill="#d95563" stroke="#8b2536" stroke-width="3"/>
+        </g>
+        <g fill="#5c4058" stroke="#7d526b" stroke-width="1.8" font-family="system-ui,sans-serif" font-size="12">
+          <path d="M135 375L95 399" fill="none" marker-end="url(#iv-arrow)"/>
+          <path d="M479 345L560 393" fill="none" marker-end="url(#iv-arrow)"/>
+          <path d="M301 96L257 54" fill="none" marker-end="url(#iv-arrow)"/>
+          <path d="M535 106L609 56" fill="none" marker-end="url(#iv-arrow)"/>
+        </g>
+        <g fill="#352a45" font-family="system-ui,sans-serif" font-weight="700" font-size="12">
+          <text x="20" y="417">Removable jaw</text>
+          <text x="554" y="417">Fixed jaw</text>
+          <text x="158" y="49">Reference tube</text>
+          <text x="562" y="45">Concept indicator</text>
+        </g>
+      </svg>
+      <figcaption>Fig. 1. Simplified illustration of the public R1 CAD concept. The later reconstructed clamshell, sensor geometry, and three lights are assumptions, not photographs or recovered drawings of the original prototype.</figcaption>
+    </figure>
+    <div class="iverify-concept-copy">
+      <span class="iverify-label">CONCEPT CAD · NINE SOLIDS</span>
+      <h3>CAD files you can inspect</h3>
+      <p>The public reconstruction provides an editable mechanical reference rather than a finished product. It separates a fixed jaw, removable jaw, reference tube, contact plunger, and placeholder sensor and indicator hardware.</p>
+      <ul>
+        <li>3.0 mm tubing used as an assumed reference size.</li>
+        <li>46 × 30 × 18 mm combined jaw envelope, invented for the reconstruction.</li>
+        <li>Nine-solid STEP model and parametric CadQuery source.</li>
+        <li>No proven spring preload, fabricated latch, calibrated sensor, or tested tolerance stack-up.</li>
+      </ul>
+      <div class="iverify-links">
+        <a href="iverify/cad/IVerify_Concept_Assembly.step" download>Download concept STEP ↓</a>
+        <a href="iverify/cad/iverify_cad.py">CAD source ↗</a>
+        <a href="iverify/docs/RECONSTRUCTION_NOTES.md">Design assumptions ↗</a>
+      </div>
+    </div>
+  </div>
+  <section class="iverify-section" aria-labelledby="iverify-targets-title">
+    <h3 id="iverify-targets-title">Engineering targets, not verified performance</h3>
+    <p>These requirements and ranges are documented in the publicly available reconstruction notes as original design goals. They are not presented as completed product qualification or clinical detection results.</p>
+    <div class="iverify-target-grid">
+      <div class="iverify-target"><strong>5 N</strong><span>Nominal mechanical preload target</span></div>
+      <div class="iverify-target"><strong>3–8 N</strong><span>Intended adjustable preload range</span></div>
+      <div class="iverify-target"><strong>0–20 N</strong><span>Target force-sensor measurement range</span></div>
+      <div class="iverify-target"><strong>≥50 Hz</strong><span>Target sensing/sample frequency</span></div>
+    </div>
+  </section>
+  <section class="iverify-section" aria-labelledby="iverify-chain-title">
+    <h3 id="iverify-chain-title">How the proposed sensing path works</h3>
+    <p>This is the functional architecture of the student concept, not a reproduced circuit diagram or a clinically established relationship between restriction and sensed force.</p>
+    <ol class="iverify-flow">
+      <li><small>01 · CONTACT</small><strong>Preloaded tubing</strong><span>Mechanical reaction at the clamp</span></li>
+      <li><small>02 · SENSE</small><strong>Force sensor</strong><span>External force into an electrical signal</span></li>
+      <li><small>03 · CONDITION</small><strong>Analog front end</strong><span>Gain and filtering</span></li>
+      <li><small>04 · DECIDE</small><strong>Threshold + MCU</strong><span>Candidate events and timing logic</span></li>
+      <li><small>05 · INDICATE</small><strong>LED status</strong><span>Two LEDs on the reported bench prototype</span></li>
+    </ol>
+  </section>
+  <section class="iverify-section" aria-labelledby="iverify-evidence-title">
+    <h3 id="iverify-evidence-title">What is demonstrated versus proposed</h3>
+    <div class="iverify-status-grid">
+      <div class="iverify-status">
+        <h4>Spring 2026 student prototype</h4>
+        <p>Bench-level investigation of external tubing-force sensing, analog threshold response, microcontroller supervision, and two-LED indications. These results do not establish clinical accuracy or safety.</p>
+      </div>
+      <div class="iverify-status">
+        <h4>Later reconstructed model</h4>
+        <p>Parametric, AI-assisted concept geometry informed by the public project description. The removable jaw and three-LED board are illustrative design changes, not recovered original CAD or proven hardware.</p>
+      </div>
+    </div>
+  </section>
+  <div class="iverify-safety"><strong>Evidence boundary:</strong> No quantitative clinical sensitivity, false-alarm rate, validated flow classification, or approved patient-use capability is claimed. The original team documents are not distributed through this website. Educational engineering concept only; not for IV therapy or clinical decisions.</div>
+</section>
 <nav class="detail-footer" aria-label="Adjacent projects">
 <a class="detail-home-link" href="controls.html">← Control &amp; Measurement Labs</a>
 <span aria-hidden="true"> · </span>
