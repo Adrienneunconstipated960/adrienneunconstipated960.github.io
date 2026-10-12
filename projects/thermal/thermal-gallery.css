@@ -138,3 +138,13 @@
   .thermal-feature img{width:720px;min-width:720px;max-width:none;height:auto}
   :root[data-theme="dark"] .thermal-feature figure::before{color:#ffbbdc}
 }
+
+
+/* Large enough to read on desktop, with horizontal panning for dense mobile charts. */
+.thermal-showcase-head>p:last-child{font-size:15px;line-height:1.8}
+.thermal-feature-heading p{font-size:15px;line-height:1.8}
+.thermal-feature figcaption{font-size:13px;line-height:1.8}
+.thermal-description-split .thermal-note :is(p,li){font-size:14px;line-height:1.75}
+.thermal-fact span{font-size:12px;line-height:1.6}
+.thermal-boundary{font-size:14px;line-height:1.75}
+@media(max-width:650px){.thermal-feature img{width:1100px;min-width:1100px;max-width:none;height:auto}}
