@@ -30,3 +30,12 @@
 :root[data-theme="dark"] .project-visual-gallery__note{background:#3c293b;color:#f0e3ee}
 :root[data-theme="dark"] .project-visual-gallery__note strong{color:#ffc8e4}
 @media(max-width:620px){.project-visual-gallery{border-radius:14px}.project-visual-gallery__top{display:block}.project-visual-gallery__count{display:block;margin:0 0 7px}.project-visual-gallery__figure figcaption{font-size:11px}.project-visual-gallery__item{padding:19px 14px}.project-visual-gallery__inline{padding:17px 14px}}
+
+
+/* Diagrams contain fine labels: pan rather than shrink them to illegible mobile sizes. */
+@media(max-width:650px){
+  .project-visual-gallery__figure{max-width:100%;overflow-x:auto;overscroll-behavior-inline:contain;scrollbar-width:thin;scrollbar-color:#b9759e transparent}
+  .project-visual-gallery__figure::before{content:"Swipe sideways to inspect the full diagram ↔";display:block;padding:7px 3px 11px;color:#97567e;font:700 11px/1.5 var(--sans,system-ui,sans-serif)}
+  .project-visual-gallery__figure img{width:720px;min-width:720px;max-width:none;height:auto}
+  :root[data-theme="dark"] .project-visual-gallery__figure::before{color:#ffbbdc}
+}
