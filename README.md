@@ -420,3 +420,14 @@ The main navigation links directly to NASA Work, Case Studies, Bookshelf, Code, 
 - Existing 16 book spines/two shelves, space/flowers, project links, robot lab, photos, two videos and resume PDF remain in place.
 
 Static validation confirms HTML structure, unique IDs, internal anchors, book-data alignment, source-asset references, syntax, CSS order and bundle contents. Live visual/browser and Lighthouse performance tests should still be run on the deployed site; no unmeasured performance score is claimed.
+
+
+## Animated celestial background (October 2026)
+
+- Retained the site's original sparse stars (36) and added three in the new standalone case-study background, bringing the total to 39 real star elements.
+- Stars now softly **fade/blip in and out while drifting a few pixels** over 18–25-second cycles with varied phases. Each background layer includes two additional tiny pseudo-element stars, with similarly slow pulses. No sharp flashes or fast jumps.
+- Added **six small rotating pastel planets** as decorative children of the existing background layers in NASA Work, Engineering Case Studies, Bookshelf, Robot Lab, Experience, and Interests. Each consists of a CSS-shaded sphere with a slowly rotating texture, an independently rotating translucent ring and a gentle hover. These are behind the real content and never clickable.
+- The existing hero intro planet remains in place; its shaded core also rotates slowly.
+- Colors are muted rose/lavender/sage and keep the Mexican and Samoan flower shapes visible. No photos, video, resume, project files, SVG flower symbols, or book data were changed.
+- Motion is paused while its section is offscreen by the site's existing `ambient-active` observer, and fully disabled for `prefers-reduced-motion: reduce`. The planet graphics and extra stars are hidden in forced-colors and print modes. Mobile sizes are smaller and lower opacity.
+- This update modifies `index.html`, `ambient.css`, the exact rebuilt `portfolio.css` bundle, and these documentation notes. To regenerate: `node build-css.js`.

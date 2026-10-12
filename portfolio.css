@@ -1882,10 +1882,10 @@ html.ambient-ready .ambient-active > .ambient-field .ambient-constellation{anima
 /* Gentle stars rather than constant large movement.
    One definition of ambient-twinkle now controls all sections. */
 @keyframes ambient-twinkle{
-  0%,100%{opacity:.42;translate:0 0}
-  35%{opacity:.68;translate:0 -1px}
-  58%{opacity:.86;translate:0 -3px}
-  78%{opacity:.58;translate:0 -1px}
+  0%,100%{opacity:.10;transform:translate3d(0,0,0) scale(.84)}
+  24%{opacity:.35;transform:translate3d(2px,-2px,0) scale(.91)}
+  52%{opacity:.90;transform:translate3d(var(--star-dx,8px),var(--star-dy,-9px),0) scale(1.09)}
+  78%{opacity:.42;transform:translate3d(var(--star-dx,8px),var(--star-dy,-9px),0) scale(.94)}
 }
 @media(max-width:760px){
   .ambient-field .constellation-break{display:none!important}
@@ -1900,6 +1900,176 @@ html.ambient-ready .ambient-active > .ambient-field .ambient-constellation{anima
 }
 @media print{
   .ambient-field .constellation-break{display:none!important}
+}
+
+
+/* Celestial motion pass: slow, non-flashing stars and rotating pastel planets.
+   Decorative shapes stay in existing clipped background fields behind content.
+   Only viewport-visible scenes animate, and reduced-motion disables everything. */
+.ambient-field .ambient-star{
+  animation-name:ambient-twinkle;
+  animation-duration:var(--twinkle-time,18s);
+  animation-timing-function:ease-in-out;
+  animation-iteration-count:infinite;
+  --star-dx:8px;
+  --star-dy:-9px;
+}
+.ambient-field .ambient-star:nth-child(2){
+  --twinkle-time:22s;--star-dx:-10px;--star-dy:7px;
+}
+.ambient-field .ambient-star:nth-child(3){
+  --twinkle-time:25s;--star-dx:5px;--star-dy:11px;
+}
+.ambient-field .ambient-star:nth-child(4){
+  --twinkle-time:20s;--star-dx:-7px;--star-dy:-6px;
+}
+.ambient-field .ambient-star:nth-child(5){
+  --twinkle-time:24s;--star-dx:9px;--star-dy:-6px;
+}
+/* An extra pair of tiny distant stars per section, without added markup. */
+.ambient-field::before,.ambient-field::after{
+  content:"";
+  display:block;
+  position:absolute;
+  z-index:0;
+  width:2px;height:2px;
+  border-radius:50%;
+  background:rgba(141,104,149,.70);
+  box-shadow:0 0 8px rgba(164,121,170,.27);
+  pointer-events:none;
+  animation:ambient-twinkle 22s ease-in-out infinite;
+}
+.ambient-field::before{
+  left:23%;top:71%;animation-delay:-9s;
+  --star-dx:9px;--star-dy:-7px;
+}
+.ambient-field::after{
+  right:17%;top:39%;animation-duration:27s;animation-delay:-16s;
+  --star-dx:-10px;--star-dy:8px;
+}
+.ambient-field-contact::before,.ambient-field-contact::after{
+  background:rgba(255,237,247,.77);
+  box-shadow:0 0 8px rgba(255,228,242,.27);
+}
+/* The independent case-study section has its own quiet star coordinates. */
+.case-studies-section{position:relative;isolation:isolate}
+.case-studies-section>.technical-dossiers{position:relative;z-index:1}
+.ambient-field-cases .ambient-star:nth-child(1){left:4%;top:13%;animation-delay:-5s}
+.ambient-field-cases .ambient-star:nth-child(2){right:6%;top:37%;animation-delay:-12s;--twinkle-time:22s}
+.ambient-field-cases .ambient-star:nth-child(3){left:9%;bottom:13%;animation-delay:-18s;--twinkle-time:25s}
+
+/* Actual slowly rotating sphere textures, not static planet circles. */
+.ambient-planet{
+  --planet-light:#f4dce9;
+  --planet-mid:#c3a1c5;
+  --planet-dark:#816f9a;
+  --planet-ring:rgba(157,117,165,.61);
+  position:absolute;
+  display:block;
+  width:clamp(75px,9vw,125px);
+  aspect-ratio:1;
+  pointer-events:none;
+  opacity:.57;
+  isolation:isolate;
+  filter:saturate(.86);
+  animation:ambient-planet-hover 32s ease-in-out infinite;
+}
+.ambient-planet--rose{
+  --planet-light:#f8e6ec;--planet-mid:#dbabbf;
+  --planet-dark:#a0799b;--planet-ring:rgba(183,120,154,.56);
+}
+.ambient-planet--sage{
+  --planet-light:#f2eadf;--planet-mid:#b9c8bc;
+  --planet-dark:#829c9e;--planet-ring:rgba(129,156,153,.58);
+}
+.ambient-planet-body{
+  position:absolute;
+  inset:15%;
+  border-radius:50%;
+  background:
+    radial-gradient(ellipse at 29% 33%,rgba(255,255,255,.52) 0 7%,transparent 11%),
+    radial-gradient(ellipse at 76% 66%,rgba(255,255,255,.25) 0 9%,transparent 12%),
+    repeating-linear-gradient(155deg,transparent 0 12px,rgba(255,255,255,.19) 14px 18px,transparent 22px 34px),
+    radial-gradient(circle at 33% 29%,var(--planet-light) 0%,var(--planet-mid) 54%,var(--planet-dark) 100%);
+  box-shadow:
+    inset -10px -9px 16px rgba(77,65,98,.19),
+    inset 5px 5px 10px rgba(255,255,255,.33),
+    0 0 22px rgba(166,135,178,.14);
+  animation:ambient-planet-spin 74s linear infinite;
+}
+.ambient-planet-body::after{
+  content:"";
+  position:absolute;inset:0;border-radius:50%;
+  background:radial-gradient(circle at 28% 25%,rgba(255,255,255,.32),transparent 45%);
+}
+.ambient-planet-ring{
+  position:absolute;
+  display:block;
+  inset:11% -9%;
+  border:2px solid var(--planet-ring);
+  border-radius:50%;
+  box-shadow:0 0 0 1px rgba(250,247,251,.18);
+  transform:rotate(-29deg) scaleY(.42);
+  animation:ambient-planet-ring-turn 112s linear infinite;
+}
+@keyframes ambient-planet-spin{to{transform:rotate(360deg)}}
+@keyframes ambient-planet-hover{
+  0%,100%{translate:0 0}
+  50%{translate:3px -9px}
+}
+@keyframes ambient-planet-ring-turn{
+  from{transform:rotate(-29deg) scaleY(.42)}
+  to{transform:rotate(331deg) scaleY(.42)}
+}
+.ambient-planet-work{right:2%;top:6%;width:105px}
+.ambient-planet-cases{right:1.5%;top:2%;width:115px}
+.ambient-planet-bookshelf{left:1%;top:5%;width:105px}
+.ambient-planet-robot{right:2%;bottom:6%;width:119px}
+.ambient-planet-experience{left:1%;top:5%;width:98px}
+.ambient-planet-interests{right:3%;bottom:5%;width:110px}
+
+/* Include the existing hero planet in the slow rotation language. */
+.intro-planet-core{animation:ambient-planet-spin 86s linear infinite}
+
+/* Extend the existing visibility observer's pause policy to every new effect. */
+html.ambient-ready .ambient-field::before,
+html.ambient-ready .ambient-field::after,
+html.ambient-ready .ambient-field .ambient-planet,
+html.ambient-ready .ambient-field .ambient-planet-body,
+html.ambient-ready .ambient-field .ambient-planet-ring{
+  animation-play-state:paused;
+}
+html.ambient-ready .ambient-active>.ambient-field::before,
+html.ambient-ready .ambient-active>.ambient-field::after,
+html.ambient-ready .ambient-active>.ambient-field .ambient-planet,
+html.ambient-ready .ambient-active>.ambient-field .ambient-planet-body,
+html.ambient-ready .ambient-active>.ambient-field .ambient-planet-ring{
+  animation-play-state:running;
+}
+@media(max-width:760px){
+  .ambient-field .ambient-star{--star-dx:4px;--star-dy:-5px}
+  .ambient-field::before,.ambient-field::after{width:2px;height:2px}
+  .ambient-planet{width:64px!important;opacity:.33;filter:saturate(.70)}
+  .ambient-planet-work,.ambient-planet-cases{right:0;top:3%}
+  .ambient-planet-bookshelf{left:0;top:3%}
+  .ambient-planet-robot{right:0;bottom:4%}
+  .ambient-planet-experience{left:0;top:3%}
+  .ambient-planet-interests{right:0;bottom:3%}
+}
+@media(prefers-reduced-motion:reduce){
+  .ambient-field::before,.ambient-field::after,
+  .ambient-planet,.ambient-planet-body,.ambient-planet-ring,
+  .intro-planet-core{
+    animation:none!important;
+  }
+  .ambient-field::before,.ambient-field::after{opacity:.38;transform:none}
+  .ambient-planet{translate:0 0}
+}
+@media(forced-colors:active){
+  .ambient-field::before,.ambient-field::after,.ambient-planet{display:none!important}
+}
+@media print{
+  .ambient-field::before,.ambient-field::after,.ambient-planet{display:none!important}
 }
 
 /* SOURCE: engineering.css */
