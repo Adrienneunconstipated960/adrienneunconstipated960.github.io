@@ -12,7 +12,7 @@
       approach: 'Use ROS2 for robotic-arm control and calibration, Thermal Desktop for steady-state and transient thermal analysis in high vacuum, and workspace/actuator analysis to organize planned verification across six operational scenarios and 34 system requirements.',
       tools: 'ROS2 (arm control and calibration), Thermal Desktop (steady-state and transient high-vacuum thermal analysis), Creo, robotics, systems engineering, verification planning.',
       outcome: 'Integrated control/calibration and thermal modeling into the requirements-led evaluation of a high-vacuum robotic-arm application. The 34 requirements and six scenarios describe assessment scope, not completed vacuum qualification or proven thermal margins.',
-      link: '#case-nasa', action: 'Read the NASA engineering case study'
+      link: 'projects/nasa.html', action: 'Read the complete project page'
     },
     {
       id: 'ur3e', title: 'UR3e Robot Kinematics', edition: 'ME422 · Spring 2026 · Group study',
@@ -22,7 +22,7 @@
       approach: 'Develop a six-link DH table, multiply homogeneous transformations, derive the Jacobian, and evaluate its rank with MATLAB. The analyzed zero-angle configuration produced rank 5, indicating a singularity.',
       tools: 'MATLAB, Denavit–Hartenberg convention, forward kinematics, Jacobians, velocity analysis.',
       outcome: 'A group analysis of end-effector motion and singularity, with another evaluated configuration reaching full Jacobian rank.',
-      link: '#robot-lab', action: 'Explore the illustrative robot lab'
+      link: 'projects/ur3e.html', action: 'Read the complete project page'
     },
     {
       id: 'leg', title: '3-Link Leg Simulation', edition: 'GitHub · Robotics & controls',
@@ -32,7 +32,7 @@
       approach: 'Use a MATLAB S-function within Simulink, Jacobian kinematics, and Newton–Euler dynamics to compute joint torques.',
       tools: 'MATLAB, Simulink, S-functions, Jacobians, Newton–Euler dynamics.',
       outcome: 'An Honors Contract modeling project that strengthened my interest in future prosthetics and exoskeleton research; no assistive device was built.',
-      link: 'https://github.com/kalarcon775/3link-sim', action: 'Open the 3-Link Sim repository'
+      link: 'projects/leg.html', action: 'Read the complete project page'
     },
     {
       id: 'fingerprint', title: 'Fingerprint Authentication', edition: '2025 · Embedded systems',
@@ -42,7 +42,7 @@
       approach: 'Configure two UART channels, implement protocol framing and acknowledgment handling, map 24 template IDs to four users, and drive status LEDs and terminal messages.',
       tools: 'STM32F767ZI, embedded C, UART packet protocol, sensor integration, GPIO.',
       outcome: 'A group-built demonstration of enrollment, template matching, and embedded status reporting.',
-      link: '#work', action: 'Return to the project summary'
+      link: 'projects/fingerprint.html', action: 'Read the complete project page'
     },
     {
       id: 'motor', title: 'STM32 Motor Timing & PWM', edition: 'Fall 2025 · Embedded control coursework',
@@ -52,7 +52,7 @@
       approach: 'Develop STM32 firmware for PWM-based motor control and encoder capture; examine logged motor-response timing. A related lab example sweeps the TIM3 channel 2 compare register to vary duty cycle.',
       tools: 'STM32F767ZI, embedded C, hardware timers, PWM, encoder capture, GPIO.',
       outcome: 'Experience connecting microcontroller peripherals, control timing, and experimental observations.',
-      link: '#work', action: 'Browse engineering project summaries'
+      link: 'projects/motor.html', action: 'Read the complete project page'
     },
     {
       id: 'vhdl', title: 'VHDL Digital Logic', edition: 'EE421 · 2025 · Digital electronics',
@@ -62,7 +62,7 @@
       approach: 'Use XOR, AND, and OR equations with full-adder stages and lookup tables for active-low seven-segment displays. The adder produces a five-bit result representing 0 through 31.',
       tools: 'VHDL, combinational logic, full adders, lookup tables, seven-segment displays.',
       outcome: 'Synthesizable digital designs that demonstrate binary-to-decimal conversion and arithmetic display.',
-      link: '#work', action: 'Browse engineering project summaries'
+      link: 'projects/vhdl.html', action: 'Read the complete project page'
     },
     {
       id: 'alu', title: 'Pipelined VHDL ALU', edition: 'EE421 · October 2025 · Digital design',
@@ -72,7 +72,7 @@
       approach: 'Combine a four-bit ripple-carry adder, operand selection logic, an XOR path, input/output flip-flops and a seven-segment decoder. Test pass-through, increment, addition, subtraction and XOR operations with representative switch settings.',
       tools: 'VHDL, ripple-carry adder, sequential logic, FPGA I/O mapping, binary LED readout, seven-segment display.',
       outcome: 'A tested synchronous design with outputs updating on the following clock cycle. Debugging pin assignments and competing LED drivers reinforced disciplined hardware integration.',
-      link: '#bookshelf', action: 'Return to the project bookshelf'
+      link: 'projects/alu.html', action: 'Read the complete project page'
     },
     {
       id: 'controls', title: 'Control & Measurement Labs', edition: 'EE370L · Spring 2025 · Partner laboratory work',
@@ -82,7 +82,7 @@
       approach: 'Use a strain-gauge half-bridge and calibrated amplifier, an oscilloscope and function generator for frequency sweeps, MATLAB step-response simulations, and op-amp controller circuits on a DC motor board. Compare rise time, settling time, phase response, and overshoot between models and measurements.',
       tools: 'MATLAB, P/PID feedback, strain gauges, Wheatstone bridge, RLC frequency response, oscilloscope, function generator, DC motor controller board.',
       outcome: 'The strain experiment characterized vibration near 49.3 Hz. Increasing proportional gain shortened measured rise and settling times, but P-control experiments showed roughly tenfold differences from the simulation; some PID measurements differed by over 50%. These discrepancies motivated stronger component and setup verification.',
-      link: '#case-controls', action: 'Read the controls and instrumentation case study'
+      link: 'projects/controls.html', action: 'Read the complete project page'
     },
     {
       id: 'iverify', title: 'IVerify', edition: 'Capstone · 2026 · Health technology',
@@ -92,7 +92,7 @@
       approach: 'Integrate a clamp, force sensor, analog front end, threshold detection, microcontroller state logic, and a visual interface. The product concept defined normal, partial-restriction, and occlusion states.',
       tools: 'Mechanical sensing, signal conditioning, threshold logic, embedded systems, risk analysis, verification planning.',
       outcome: 'A bench-level, non-clinical proof of concept using two indicator LEDs. The proposed full three-color interface and clinical performance still required further testing.',
-      link: '#case-iverify', action: 'Read the IVerify engineering case study'
+      link: 'projects/iverify.html', action: 'Read the complete project page'
     },
     {
       id: 'thermal', title: 'Thermal Controller & Logger', edition: '2025–2026 · Test automation',
@@ -102,7 +102,7 @@
       approach: 'Combine Python data collection and live visualization with Arduino ambient control, stability tracking, and structured exports.',
       tools: 'Python, Arduino, Tkinter, temperature instrumentation, CSV and Excel.',
       outcome: 'A more traceable and repeatable thermal-testing workflow.',
-      link: 'https://github.com/kalarcon775/Thermal-Logger', action: 'View Thermal Logger on GitHub'
+      link: 'projects/thermal.html', action: 'Read the complete project page'
     },
     {
       id: 'vna', title: 'Virtual Network Analyzer', edition: '2025 · RF measurements',
@@ -112,7 +112,7 @@
       approach: 'Control the measurement workflow in MATLAB, use 12-term SOLT calibration, and visualize S-parameters.',
       tools: 'MATLAB, two-port VNA, RF calibration, S-parameter visualization.',
       outcome: 'An automated analysis workflow covering 100 MHz to 6 GHz.',
-      link: '#work', action: 'Return to the project summary'
+      link: 'projects/vna.html', action: 'Read the complete project page'
     },
     {
       id: 'hall', title: 'Hall-Effect Wafer Measurements', edition: 'EE421 · December 2025 · Semiconductor lab',
@@ -122,7 +122,7 @@
       approach: 'Position the sample on a four-contact Van der Pauw stage, check contact behavior, and collect Hall and resistivity data with the M91 FastHall controller and MeasureLINK software.',
       tools: 'Hall effect, Van der Pauw method, M91 FastHall, electromagnet, MeasureLINK, semiconductor characterization.',
       outcome: 'Hands-on wafer characterization. The measured values had substantial uncertainty and unexpected trends, so the results were treated as a measurement-quality lesson rather than a definitive material specification.',
-      link: '#bookshelf', action: 'Return to the project bookshelf'
+      link: 'projects/hall.html', action: 'Read the complete project page'
     },
     {
       id: 'prodriver', title: 'ProDriver Sim', edition: 'GitHub · Electrical simulation',
@@ -132,7 +132,7 @@
       approach: 'Model voltage, current, load, and efficiency; compare predicted behavior with measurements.',
       tools: 'Python, PyQt6, electrical modeling, bench testing.',
       outcome: 'An engineering tool for comparing model behavior and measured values.',
-      link: 'https://github.com/kalarcon775/ProDriver-Sim', action: 'Open the ProDriver Sim repository'
+      link: 'projects/prodriver.html', action: 'Read the complete project page'
     },
     {
       id: 'huemotion', title: 'HueMotion', edition: 'GitHub · Human interaction',
@@ -142,7 +142,7 @@
       approach: 'Track hands with MediaPipe and map gesture states to lighting controls and a browser preview.',
       tools: 'JavaScript, MediaPipe, Node.js, webcam tracking, RGBW lighting.',
       outcome: 'A gesture-driven prototype with an optional local Casambi bridge.',
-      link: 'https://github.com/kalarcon775/HueMotion', action: 'Open HueMotion on GitHub'
+      link: 'projects/huemotion.html', action: 'Read the complete project page'
     },
     {
       id: 'dmx', title: 'DMX Controller', edition: 'GitHub · Lighting control',
@@ -152,7 +152,7 @@
       approach: 'Use Flask to receive browser inputs and send serial commands to Arduino for DMX output.',
       tools: 'Python, Flask, Arduino, serial communication, DMX.',
       outcome: 'A direct connection between software controls and physical lighting response.',
-      link: 'https://github.com/kalarcon775/DMX-Controller', action: 'Open the DMX Controller repository'
+      link: 'projects/dmx.html', action: 'Read the complete project page'
     },
     {
       id: 'powershell', title: 'PowerShell Systems & Concurrency', edition: 'CS646 · Fall 2026 · Operating systems coursework',
@@ -162,7 +162,7 @@
       approach: 'Use Linux system interfaces with PowerShell for inventory; validate CSV fields and rows, compare SHA256 input hashes and append audit logs; then run 102 requests across three services with a throttle limit of 10, synchronization tests, and thread/process observations.',
       tools: 'PowerShell, Debian Linux, containers, CSV processing, SHA256, ForEach-Object -Parallel, file locking, strace, ps.',
       outcome: 'A six-row CSV test preserved the source, and larger sorting tests included 300,000 records. In one concurrency comparison, 102 requests took 8.69 s serially versus 1.68 s concurrently; locking also corrected a shared-counter race from 2 to the expected 100.',
-      link: '#bookshelf', action: 'Explore the other project books'
+      link: 'projects/powershell.html', action: 'Read the complete project page'
     },
   ];
 

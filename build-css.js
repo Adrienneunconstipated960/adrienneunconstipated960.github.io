@@ -18,7 +18,8 @@ const sources = [
   'botanical.css',
   'ambient.css',
   'engineering.css',
-  'case-studies.css'
+  'case-studies.css',
+  'project-pages.css'
 ];
 const root = __dirname;
 const output = '/* Compiled portfolio stylesheet. Source: build-css.js; CSS files concatenated in exact cascade order. */\n' +

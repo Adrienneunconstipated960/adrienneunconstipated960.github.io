@@ -431,3 +431,28 @@ Static validation confirms HTML structure, unique IDs, internal anchors, book-da
 - Colors are muted rose/lavender/sage and keep the Mexican and Samoan flower shapes visible. No photos, video, resume, project files, SVG flower symbols, or book data were changed.
 - Motion is paused while its section is offscreen by the site's existing `ambient-active` observer, and fully disabled for `prefers-reduced-motion: reduce`. The planet graphics and extra stars are hidden in forced-colors and print modes. Mobile sizes are smaller and lower opacity.
 - This update modifies `index.html`, `ambient.css`, the exact rebuilt `portfolio.css` bundle, and these documentation notes. To regenerate: `node build-css.js`.
+
+
+## Engineering graph paper, featured projects, and 16 project pages (October 2026)
+
+A recruiter-oriented follow-on improves discoverability and evidence clarity while preserving the celestial and floral theme.
+
+### New layout and design
+- Replaced the earlier decorative graph-grid treatment with **engineering drafting paper**: very light blue-grey 20 px minor grid subdivisions and darker 100 px major grid lines (five subdivisions per major cell) behind sections. Text, cards, books and controls remain on an opaque or near-opaque surface. The graph is decorative only, not a data axis, and is omitted in print or forced-color mode.
+- Added a compact **Featured Engineering Work** row directly after the hero, with direct links to NASA Robotics, IVerify, Controls & Instrumentation, and the 16-project directory. The interactive bookshelf remains unchanged and immediately follows the detailed cases.
+- Clarified the bookshelf title as **The engineering library** rather than a duplicate case-study heading, and linked the all-project directory.
+- Added a concise **My contribution** panel to each of the three featured case studies, distinguishing first-person NASA tools work, IVerify lead/integration responsibility, and partner-based instrumentation work.
+- Added a direct route from each major case study to its static project detail page.
+
+### Individual project pages
+- Created **`projects/index.html`**, a simple, no-script directory of 16 projects, and **16 static project URLs** such as `projects/nasa.html`, `projects/iverify.html` and `projects/motor.html`.
+- Each detail page uses the existing bookshelf project facts for the problem, approach, tools, documented outcome, and evidence limitations. Where a team role is explicitly documented, it is included, without inventing individual contributions.
+- Existing public GitHub repositories are linked directly where present; the site's published HueMotion and lighting demonstration videos appear in their relevant project pages. The existing NASA laboratory photograph is labeled as context, *not* as a photo of the evaluated robotic arm.
+- Every bookshelf book now links to its own direct, shareable static page. The static detail pages link back to the corresponding case study where applicable, as well as to the original bookshelf and directory.
+- The sitemap now lists the homepage, project directory, and all 16 project pages.
+
+### Build and verification
+- Added `project-pages.css` after `case-studies.css` in `build-css.js`; `portfolio.css` remains the single served local stylesheet, built by concatenating **nine** source CSS files in cascade order with `node build-css.js`.
+- No new raw charts, ROS2 screenshots, NASA internal documentation, invented thermal margins, IVerify clinical claims, or unapproved third-party media were published. Actual experimental figures need approved/shareable source artifacts.
+- Updated styles include responsive featured cards, project-detail layout, obvious keyboard focus, high-contrast/print behavior and reduced-motion support. Real-browser screenshot, screen-reader and Lighthouse audits remain worthwhile follow-ups and are *not claimed completed*.
+- Kept the original 16 interactive books (8 per shelf), decorative flowers, stars, orbiting planets, photos, videos, resume, and project-dossier evidence intact.

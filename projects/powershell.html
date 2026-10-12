@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fcfaf8">
+<link rel="canonical" href="https://kalarcon775.github.io/projects/powershell.html">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta name="description" content="Inventory, safe CSV processing, and synchronized parallel tasks. Engineering project summary, methods, tools, and documented outcomes.">
+<meta property="og:type" content="article"><meta property="og:title" content="PowerShell Systems &amp; Concurrency | Kailani Alarcon">
+<meta property="og:description" content="Inventory, safe CSV processing, and synchronized parallel tasks"><meta property="og:url" content="https://kalarcon775.github.io/projects/powershell.html">
+<title>PowerShell Systems &amp; Concurrency | Kailani Alarcon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../portfolio.css?v=20261011-14"><style>
+.project-page .detail-figure{margin:20px 0 0;padding:13px;border:1px solid #ded5df;background:#f9f7fa;border-radius:8px;max-width:690px}
+.project-page .detail-figure img,.project-page .detail-figure video{display:block;width:100%;height:auto;max-height:410px;object-fit:contain;border-radius:5px;background:#ece7ed}
+.project-page .detail-figure figcaption{margin-top:10px;font-size:11px;line-height:1.6;color:#716978}
+</style>
+</head>
+<body class="project-page">
+<a class="skip-link" href="#project-main">Skip to project details</a>
+<header class="detail-navigation"><nav class="detail-nav-inner" aria-label="Project navigation">
+<a class="detail-home" href="../index.html">kailani.</a>
+<div class="detail-nav-actions">
+<a href="index.html">All 16 projects</a><a href="../index.html#case-studies">Case studies</a><a href="../index.html#bookshelf">Interactive bookshelf</a><a href="../assets/Kailani_Alarcon_Resume.pdf">Resume PDF</a>
+</div></nav></header>
+<main class="project-paper" id="project-main" tabindex="-1"><div class="detail-container">
+<header class="detail-heading">
+<p class="eyebrow">CS646 · Fall 2026 · Operating systems coursework</p><h1>PowerShell Systems &amp; Concurrency</h1><p>Inventory, safe CSV processing, and synchronized parallel tasks</p>
+</header>
+<article class="detail-card" aria-label="PowerShell Systems &amp; Concurrency engineering detail">
+<span class="detail-tag">PROJECT 16 / 16</span>
+<p class="detail-lead">Across three operating-systems labs, I developed PowerShell scripts inside a Linux course container. The first inventoried the operating system and visible CPU, memory, storage, network interfaces, and packages. The second safely sorted complete CSV records without overwriting the source. The third explored how concurrent web requests improve throughput while creating new risks around shared files and ordering.</p>
+
+
+<div class="detail-grid">
+<section class="detail-panel"><h2>Engineering challenge</h2><p>Build scripts that behave correctly in a container, preserve input integrity, and safely coordinate shared resources.</p></section>
+<section class="detail-panel"><h2>Methods and approach</h2><p>Use Linux system interfaces with PowerShell for inventory; validate CSV fields and rows, compare SHA256 input hashes and append audit logs; then run 102 requests across three services with a throttle limit of 10, synchronization tests, and thread/process observations.</p></section>
+<section class="detail-panel"><h2>Tools and environment</h2><p>PowerShell, Debian Linux, containers, CSV processing, SHA256, ForEach-Object -Parallel, file locking, strace, ps.</p></section>
+<section class="detail-panel"><h2>Evidence and limitations</h2><p>This page summarizes the work documented in the portfolio project book. Where underlying test data, design files, or screenshots are not public, the summary does not imply those materials were independently verified.</p></section>
+</div>
+<div class="detail-results"><h2>Documented outcome</h2><p>A six-row CSV test preserved the source, and larger sorting tests included 300,000 records. In one concurrency comparison, 102 requests took 8.69 s serially versus 1.68 s concurrently; locking also corrected a shared-counter race from 2 to the expected 100.</p></div>
+<div class="detail-buttons"><a href="index.html">Browse all projects ↗</a></div>
+<p class="detail-source-note">This page is based on the existing portfolio project description. It distinguishes reported results from targets and does not publish restricted NASA files or unavailable raw data.</p>
+</article>
+<nav class="detail-footer" aria-label="Adjacent projects">
+<a class="detail-home-link" href="dmx.html">← DMX Controller</a>
+<span aria-hidden="true"> · </span>
+<a class="detail-home-link" href="nasa.html">Robotics for Another World →</a>
+</nav></div></main>
+<footer class="footer"><div class="container footer-inner"><span class="footer-logo">kailani<span>.</span></span><p>Engineering work and project evidence · © 2026</p><a href="../index.html">Return home ↑</a></div></footer>
+</body></html>

@@ -20,10 +20,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
   <!-- Bundle regenerated with node build-css.js; original CSS remains editable. -->
-  <link rel="stylesheet" href="portfolio.css?v=20261011-13">
+  <link rel="stylesheet" href="portfolio.css?v=20261011-14">
   <script src="script.js" defer></script>
   <script src="enhancements.js" defer></script>
-  <script src="bookshelf.js?v=20261011-11" defer></script>
+  <script src="bookshelf.js?v=20261011-14" defer></script>
   <script src="ux.js" defer></script>
   <script src="ambient.js?v=20261011-2" defer></script>
 </head>
@@ -161,7 +161,42 @@
       </figure>
     </section>
 
-<section class="section work-section" id="work">
+<section class="section featured-projects-section" id="featured-projects" aria-labelledby="featured-projects-title">
+      <div class="featured-projects-inner">
+        <div class="featured-projects-head">
+          <p class="eyebrow" id="featured-projects-title">FEATURED / ENGINEERING WORK</p>
+          <p>Select a project to see the methods, results, and evidence status.</p>
+        </div>
+        <div class="featured-project-grid">
+          <a class="featured-project-card" href="#case-nasa">
+            <span class="featured-category">NASA / ROBOTICS</span>
+            <strong>High-Vacuum Robotic Arm</strong>
+            <small>ROS2 control and calibration · Thermal Desktop analysis</small>
+            <span class="featured-more">Open case study ↗</span>
+          </a>
+          <a class="featured-project-card" href="#case-iverify">
+            <span class="featured-category">CAPSTONE / SYSTEMS INTEGRATION</span>
+            <strong>IVerify</strong>
+            <small>External force sensing · microcontroller logic · verification</small>
+            <span class="featured-more">Open case study ↗</span>
+          </a>
+          <a class="featured-project-card" href="#case-controls">
+            <span class="featured-category">INSTRUMENTATION / CONTROLS</span>
+            <strong>Measurement Labs</strong>
+            <small>Strain calibration · waveforms · experimental results</small>
+            <span class="featured-more">Open case study ↗</span>
+          </a>
+          <a class="featured-project-card" href="projects/index.html">
+            <span class="featured-category">ENGINEERING LIBRARY</span>
+            <strong>All 16 Projects</strong>
+            <small>Robotics · embedded · sensing · testing · prototypes</small>
+            <span class="featured-more">Browse project directory ↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section work-section" id="work">
       <div class="ambient-field ambient-field-section ambient-field-work" aria-hidden="true">
         <div class="constellation-break" aria-hidden="true" data-constellation="discovery">
       <svg viewBox="0 0 280 48" focusable="false" aria-hidden="true"><path d="M16 27 L64 9 L112 31 L167 11 L215 29 L263 15" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><g fill="currentColor"><circle cx="16" cy="27" r="2.7"/><circle cx="64" cy="9" r="3"/><circle cx="112" cy="31" r="2.8"/><circle cx="167" cy="11" r="2.7"/><circle cx="215" cy="29" r="3"/><circle cx="263" cy="15" r="2.8"/></g></svg>
@@ -205,7 +240,7 @@
           <div class="section-heading dossier-intro" data-ambient-reveal>
             <p class="eyebrow">02 / SELECTED TECHNICAL WORK</p>
             <h2 id="dossiers-title">Engineering <em>case studies.</em></h2>
-            <p>Three close looks at the decisions, signal paths, and verification evidence behind the project books. Figures are explanatory diagrams, not reproduced experimental data.</p>
+            <p>Three deeper reviews of engineering decisions, documented measurements, and verification status. Conceptual figures are labeled; source reports and restricted NASA results are not published.</p>
           </div>
 
           <article class="technical-dossier nasa-dossier" id="case-nasa" aria-labelledby="case-nasa-title" data-ambient-reveal>
@@ -214,6 +249,7 @@
               <span class="dossier-status">Engineering assessment</span>
             </header>
             <p class="dossier-summary">Could a legacy robotic arm support lunar-dust mitigation tests inside a constrained high-vacuum chamber? I used ROS2 for arm control and calibration and Thermal Desktop for both steady-state and transient thermal analysis of the arm in high vacuum as part of that same NASA project, alongside workspace analysis, actuator constraints, and verification planning.</p>
+            <div class="dossier-role"><strong>My contribution</strong><p>I used ROS2 to control and calibrate the arm and Thermal Desktop for both steady-state and transient analysis, while contributing to workspace and requirements evaluation.</p></div>
             <div class="dossier-body">
               <div class="dossier-notes">
                 <h5>Engineering approach</h5>
@@ -272,6 +308,7 @@
             <footer class="dossier-footer">
               <p><strong>Boundary:</strong> Control/calibration and thermal modeling work formed part of this assessment, not evidence of vacuum qualification, validated thermal margins, deployment, or six completed scenarios.</p>
               <span class="dossier-footer-links"><a href="#bookshelf" data-open-feature-book="nasa">Open the NASA project book <span aria-hidden="true">↗</span></a><a href="#robot-lab">Try the illustrative robot lab <span aria-hidden="true">↗</span></a></span>
+            <a class="dossier-detail-link" href="projects/nasa.html">Read complete project details ↗</a>
             </footer>
           </article>
 
@@ -281,6 +318,7 @@
               <span class="dossier-status">Bench-level proof of concept</span>
             </header>
             <p class="dossier-summary">As project lead and systems integrator on a four-person team, I coordinated an external, clip-on concept intended to flag potential downstream restrictions in gravity-fed IV tubing without contacting the sterile fluid path.</p>
+            <div class="dossier-role"><strong>My contribution</strong><p>Project lead and systems integrator on a four-person senior-design team; coordinated subsystem integration, documentation, and system-level direction.</p></div>
             <div class="dossier-body">
               <div class="dossier-notes">
                 <h5>System architecture</h5>
@@ -326,6 +364,7 @@
             <footer class="dossier-footer">
               <p><strong>Boundary:</strong> A student prototype, not a clinically validated or approved medical device. Quantified flow sensitivity, false-alarm rates, and repeatable detection-time distributions still need testing. Three-color indication was a design goal, not implemented in the reported prototype.</p>
               <a href="#bookshelf" data-open-feature-book="iverify">Open the IVerify project book <span aria-hidden="true">↗</span></a>
+            <a class="dossier-detail-link" href="projects/iverify.html">Read complete project details ↗</a>
             </footer>
           </article>
 
@@ -335,6 +374,7 @@
               <span class="dossier-status">Recorded bench observations</span>
             </header>
             <p class="dossier-summary">In partner-based lab work, we calibrated a strain-gauge amplifier and observed the response of a metal strip under mechanical excitation. Signal quality mattered as much as obtaining a number.</p>
+            <div class="dossier-role"><strong>My contribution</strong><p>Worked with a lab partner on instrument setup, strain-gauge amplifier calibration, and oscilloscope-based vibration measurements.</p></div>
             <div class="dossier-body">
               <div class="dossier-notes">
                 <h5>Measurement method</h5>
@@ -379,6 +419,7 @@
             <footer class="dossier-footer">
               <p><strong>Boundary:</strong> Values come from the selected cleaner trace in the March 2025 lab report, not an average across trials or a certified sensor characterization. Other attempted traces were less reliable.</p>
               <a href="#bookshelf" data-open-feature-book="controls">Open the control lab project book <span aria-hidden="true">↗</span></a>
+            <a class="dossier-detail-link" href="projects/controls.html">Read complete project details ↗</a>
             </footer>
           </article>
           <p class="dossier-source-note">Evidence basis: portfolio NASA assessment, IVerify Spring 2026 final report, and EE370L Lab 7 (March 2025). Source reports and raw experimental files are not published on this site.</p>
@@ -394,8 +435,8 @@
       <div class="container">
         <div class="bookshelf-heading section-heading" data-ambient-reveal><div class="space-orbiter space-orbiter-shelf" aria-hidden="true"><span class="space-orbiter-body"></span><span class="space-orbiter-ring"></span><span class="space-orbiter-star"></span></div>
           <p class="eyebrow">03 / PROJECT LIBRARY</p>
-          <h2 id="bookshelf-heading">Engineering <em>case studies.</em></h2>
-          <p>Sixteen projects in robotics, digital design, controls, and measurement. Select a book to review the problem, design methods, and results.</p>
+          <h2 id="bookshelf-heading">The engineering <em>library.</em></h2>
+          <p>Sixteen projects in robotics, digital design, controls, and measurement. Open a book for the story or <a href="projects/index.html">browse the full project directory ↗</a> for direct technical pages.</p>
         </div>
         <div class="bookshelf-cabinet" aria-label="Interactive bookshelf with sixteen engineering project books on two shelves">
           <div class="shelf-level shelf-space" id="shelf-collection-one">
