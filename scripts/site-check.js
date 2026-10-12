@@ -77,5 +77,33 @@ for(const file of htmlFiles){
 check(home.includes('id="robot-2d-controls" hidden'),'2D panel should start hidden while 3D view is selected');
 check(home.includes('data-robot-mode="3d"'),'3D view should start as the selected robot mode');
 
+
+/* Content hierarchy and visual-first case-study invariants. */
+const caseStudyFiles=htmlFiles.filter(file=>file.startsWith('projects/')&&file!=='projects/index.html');
+for(const file of caseStudyFiles){
+  const html=fs.readFileSync(path.join(root,file),'utf8');
+  const overview=html.indexOf('id="project-overview"');
+  const method=html.indexOf('id="project-method"');
+  const findings=html.indexOf('id="project-results"');
+  const evidence=html.indexOf('id="project-evidence"');
+  check(overview>=0&&method>overview&&findings>method&&evidence>findings,
+    file+' needs overview → methods → findings → evidence ordering');
+  const visualIds=['dmx-visuals','hall-visuals','huemotion-visuals',
+    'iverify-reconstruction','prodriver-visuals','thermal-visuals','vna-visuals'];
+  for(const id of visualIds){
+    const visual=html.indexOf('id="'+id+'"');
+    if(visual>=0){
+      check(visual>overview&&visual<method,
+        file+' should introduce visuals after overview, before detailed analysis');
+    }
+  }
+  check(!/<h2>Evidence and limitations<\/h2>/.test(html),
+    file+' includes repeated evidence-limitations card');
+}
+for(const group of ['robotics','embedded','measurement','software']){
+  check(directory.includes('data-gallery-group="'+group+'"'),
+    'Project directory missing discipline '+group);
+}
+
 console.log((failed?'FAIL':'PASS')+': '+(checks-failed)+'/'+checks+' static checks');
 if(failed)process.exitCode=1;
