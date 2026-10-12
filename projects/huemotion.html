@@ -12,12 +12,12 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 <script>try{document.documentElement.dataset.theme=localStorage.getItem('kailani-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch{document.documentElement.dataset.theme='light'}</script>
 <link rel="stylesheet" href="../portfolio.css?v=20261011-14">
-<link rel="stylesheet" href="../portfolio-upgrade.css?v=20261011">
+<link rel="stylesheet" href="../portfolio-upgrade.css?v=20261011-readability">
 <meta property="og:image" content="https://kailania.vercel.app/assets/sls-rocket-kailani.jpeg">
 <meta property="og:image:alt" content="Kailani at NASA Marshall Space Flight Center">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://kailania.vercel.app/assets/sls-rocket-kailani.jpeg">
-<script src="../portfolio-upgrade.js?v=20261011" defer></script>
+<script src="../portfolio-upgrade.js?v=20261011-readability" defer></script>
 </head>
 <body class="project-page">
 <a class="skip-link" href="#project-main">Skip to project details</a>
@@ -47,9 +47,9 @@
 
 
 <div id="project-method" class="detail-grid">
-<section class="detail-panel"><h2>Challenge</h2><p>Make gesture recognition useful for controlling lighting in an intuitive way.</p></section>
-<section class="detail-panel"><h2>Approach</h2><p>Track hands with MediaPipe and map gesture states to lighting controls and a browser preview.</p></section>
-<section class="detail-panel"><h2>Tools</h2><p>JavaScript, MediaPipe, Node.js, webcam tracking, RGBW lighting.</p></section>
+<section class="detail-panel"><h3>Challenge</h3><p>Make gesture recognition useful for controlling lighting in an intuitive way.</p></section>
+<section class="detail-panel"><h3>Approach</h3><p>Track hands with MediaPipe and map gesture states to lighting controls and a browser preview.</p></section>
+<section class="detail-panel"><h3>Tools</h3><p>JavaScript, MediaPipe, Node.js, webcam tracking, RGBW lighting.</p></section>
 
 </div>
 <div id="project-results" class="detail-results"><h2>Recovered gesture-control prototype</h2><p>The original source and manual are still available. A browser uses MediaPipe hand landmarks, custom gesture classification, frame-based stabilization, and an RGBW preview. An optional local Node.js bridge maps eight approved keys to configured Casambi lighting scenes. The recovered software's functionality is established by source inspection; live camera accuracy and physical lighting response have not been independently retested.</p></div>
