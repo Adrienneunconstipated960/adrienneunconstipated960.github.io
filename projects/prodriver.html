@@ -17,6 +17,7 @@
 .project-page .detail-figure img,.project-page .detail-figure video{display:block;width:100%;height:auto;max-height:410px;object-fit:contain;border-radius:5px;background:#ece7ed}
 .project-page .detail-figure figcaption{margin-top:10px;font-size:11px;line-height:1.6;color:#716978}
 </style>
+<link rel="stylesheet" href="project-visuals.css?v=20261012-v1">
 <meta property="og:image" content="https://kailania.vercel.app/assets/sls-rocket-kailani.jpeg">
 <meta property="og:image:alt" content="Kailani at NASA Marshall Space Flight Center">
 <meta name="twitter:card" content="summary_large_image">
@@ -34,7 +35,7 @@
 <header class="detail-heading">
 <p class="eyebrow">GitHub · Electrical simulation</p><h1>ProDriver Sim</h1><p>Putting LED-driver behavior into a model</p>
 </header>
-<nav class="detail-jump" aria-label="Jump to project sections"><span>ON THIS PAGE</span><a href="#project-method">Methods &amp; tools</a><a href="#project-results">Outcomes</a><a href="#project-evidence">Evidence &amp; limitations</a></nav>
+<nav class="detail-jump" aria-label="Jump to project sections"><span>ON THIS PAGE</span><a href="#project-method">Methods &amp; tools</a><a href="#project-results">Outcomes</a><a href="#project-evidence">Evidence &amp; limitations</a><a href="#prodriver-visuals">Engineering graphics</a></nav>
 <article class="detail-card" aria-label="ProDriver Sim engineering detail">
 <span class="detail-tag">PROJECT 13 / 16</span>
 <p class="detail-lead">I wanted a tool that could connect electrical measurements with predictions. The simulation provides a way to compare driver and fixture behavior with observed bench results.</p>
@@ -47,13 +48,33 @@
 <section class="detail-panel"><h2>Evidence and limitations</h2><p>This page summarizes the work documented in the portfolio project book. Where underlying test data, design files, or screenshots are not public, the summary does not imply those materials were independently verified.</p></section>
 </div>
 <div id="project-results" class="detail-results"><h2>Recovered engineering model</h2><p>The original public Python application and LED driver/module JSON profiles were recovered. The implementation interpolates module I-V curves, estimates efficiency from driver profile tables, calculates DC output and estimated input power, and flags operating-limit violations. The current simulation reports out-of-range conditions rather than automatically limiting driver output.</p></div>
-<figure class="detail-figure"><img src="prodriver/visuals/model_architecture.svg" width="960" height="510" loading="lazy" alt="Schematic of ProDriver Sim original source architecture, from driver and LED module JSON profiles through interpolation, power estimates and limit reporting"><figcaption>Reconstructed software architecture from the original public source, with implemented features distinguished from unimplemented features.</figcaption></figure>
-<figure class="detail-figure"><img src="prodriver/visuals/module_iv_profiles.svg" width="960" height="570" loading="lazy" alt="Voltage versus current curves from three publicly archived HO7 LED module configuration tables, labeled as profile data rather than independent measurements"><figcaption>Archived public LED module configuration curves. Profile provenance and physical test uncertainty are not independently verified.</figcaption></figure>
-<figure class="detail-figure"><img src="prodriver/visuals/driver_efficiency_reference.svg" width="960" height="570" loading="lazy" alt="Voltage-dependent driver efficiency profile control points at nominal 120 and 277 volt mains inputs from the archived BST1 configuration"><figcaption>Driver efficiency reference curves from archived BST1 JSON; these are lookup tables, not measured performance from a newly conducted test.</figcaption></figure>
 <div class="detail-panel"><h2>Engineering calculations and validation</h2><p>Using the public model tables, the nominal HO7 4800 lm configuration predicts 44.7 V at 0.60 A, or 26.82 W output. The HO7 6400 lm configuration predicts 44.7 V at 0.80 A, or 35.76 W output. These values are calculated estimates, not recovered bench readings. An independent offline model check, a synthetic test suite, and a verification matrix document what can be reproduced and what still requires instrument testing.</p></div>
-<div class="detail-buttons"><a href="https://github.com/kalarcon775/ProDriver-Sim" target="_blank" rel="noopener noreferrer">Original application source ↗</a><a href="https://github.com/kalarcon775/kalarcon775.github.io/tree/main/projects/prodriver" target="_blank" rel="noopener noreferrer">Reconstructed model and engineering evidence ↗</a><a href="index.html">Browse all projects ↗</a></div>
-<p id="project-evidence" class="detail-source-note">This page is based on the existing portfolio project description. It distinguishes reported results from targets and does not publish restricted NASA files or unavailable raw data.</p>
+<div class="detail-buttons"><a href="#prodriver-visuals">Explore electrical modeling graphics ↓</a><a href="index.html">Browse all projects ↗</a></div>
+<p id="project-evidence" class="detail-source-note">The engineering diagrams below use source-backed electrical model features and archived public configuration tables. Their estimates are not new bench measurements; the original PyQt6 interface, physical operating limits and fixture performance have not been revalidated here.</p>
 </article>
+<section class="project-visual-gallery" id="prodriver-visuals" aria-labelledby="prodriver-visuals-title">
+<header class="project-visual-gallery__head">
+ <p class="eyebrow">LED DRIVER DESIGN / VISUAL CASE STUDY</p>
+ <h2 id="prodriver-visuals-title">Inside the electrical simulation</h2>
+ <p>These engineering illustrations explain how ProDriver Sim turns archived LED module and driver profiles into predicted voltage, power and efficiency values. Unlike a generic simulation mockup, the curves and operating-point estimates use public source configuration data. They remain modeling inputs and predictions, not independently calibrated measurements.</p>
+</header>
+<article class="project-visual-gallery__item" aria-labelledby="prodriver-model-title">
+ <div class="project-visual-gallery__top"><div><h3 id="prodriver-model-title">How the application calculates an operating point</h3><p>The software loads LED-module and driver tables, interpolates voltage at the requested current, estimates power and efficiency, and reports conditions that violate configured limits. It flags such violations without automatically reducing the current command.</p></div><span class="project-visual-gallery__count">FIG 01 / MODEL FLOW</span></div>
+ <figure class="project-visual-gallery__figure"><img src="prodriver/media/model-signal-flow.svg" width="1280" height="720" decoding="async" loading="lazy" alt="ProDriver Sim conceptual application flow with driver JSON profile, LED module lookup, I-V interpolation, modeled power and efficiency calculation, and out-of-range warnings that do not enforce current limits.">
+ <figcaption>Functional architecture reconstructed from the public application's implementation. Warning flags are not validated protective actions, and the model does not implement automated thermal derating or physical current clipping.</figcaption></figure>
+</article>
+<article class="project-visual-gallery__item" aria-labelledby="prodriver-iv-title">
+ <div class="project-visual-gallery__top"><div><h3 id="prodriver-iv-title">How current changes predicted module voltage</h3><p>Two archived HO7 LED-module configuration tables define voltage versus commanded module current. Their piecewise interpolation produces a nominal 44.70 V for the HO7 4800 lm profile at 0.60 A and the HO7 6400 lm profile at 0.80 A.</p></div><span class="project-visual-gallery__count">FIG 02 / PROFILE POINTS</span></div>
+ <figure class="project-visual-gallery__figure"><img src="prodriver/media/led-profile-curves.svg" width="1280" height="720" decoding="async" loading="lazy" alt="Source-based I-V graph plotting HO7 4800 lm and HO7 6400 lm LED module public lookup points, highlighting nominal 44.70 volt modeled values at 0.60 and 0.80 amp respectively.">
+ <figcaption>Values are based on public module-profile lookup points. They are not a new laboratory current sweep, verified module I–V characterization, or a claim about optical lumen output.</figcaption></figure>
+</article>
+<article class="project-visual-gallery__item" aria-labelledby="prodriver-power-title">
+ <div class="project-visual-gallery__top"><div><h3 id="prodriver-power-title">Predicted output power, input power and efficiency</h3><p>At nominal currents, the profiles predict 26.82 W and 35.76 W delivered to the respective modules. Input power estimates follow from modeled efficiency, not a physical mains-power measurement.</p></div><span class="project-visual-gallery__count">FIG 03 / POWER MODEL</span></div>
+ <figure class="project-visual-gallery__figure"><img src="prodriver/media/power-estimates.svg" width="1280" height="720" decoding="async" loading="lazy" alt="Two ProDriver simulation output panels showing predicted LED module output power 26.82 and 35.76 watts, estimated input power 30.36 and 40.24 watts, and model efficiencies around 88 percent; explicitly not bench readings.">
+ <figcaption>Derived estimates from the archived BST1 driver and HO7 module tables at nominal 120 V input. The output-power operating points lie below the driver's earliest archived output-power efficiency-table point, so endpoint clamping adds uncertainty. No calibration or hardware efficiency validation is implied.</figcaption></figure>
+</article>
+<p class="project-visual-gallery__note"><strong>Evidence boundary:</strong> The archived application and its configuration tables provide a reproducible electrical model, not verified fixture performance. These figures do not establish input current waveform, AC losses, device lifetime, LED junction temperature, actual delivered lumens, or safe operation outside configured limits.</p>
+</section>
 <nav class="detail-footer" aria-label="Adjacent projects">
 <a class="detail-home-link" href="hall.html">← Hall-Effect Wafer Measurements</a>
 <span aria-hidden="true"> · </span>
