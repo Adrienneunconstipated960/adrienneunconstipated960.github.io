@@ -35,7 +35,31 @@
 /* Diagrams contain fine labels: pan rather than shrink them to illegible mobile sizes. */
 @media(max-width:650px){
   .project-visual-gallery__figure{max-width:100%;overflow-x:auto;overscroll-behavior-inline:contain;scrollbar-width:thin;scrollbar-color:#b9759e transparent}
-  .project-visual-gallery__figure::before{content:"Swipe sideways to inspect the full diagram ↔";display:block;padding:7px 3px 11px;color:#97567e;font:700 11px/1.5 var(--sans,system-ui,sans-serif)}
+  .project-visual-gallery__figure:has(img)::before{content:"Swipe sideways to inspect the full diagram ↔";display:block;padding:7px 3px 11px;color:#97567e;font:700 11px/1.5 var(--sans,system-ui,sans-serif)}
   .project-visual-gallery__figure img{width:720px;min-width:720px;max-width:none;height:auto}
   :root[data-theme="dark"] .project-visual-gallery__figure::before{color:#ffbbdc}
+}
+
+/* Preserve responsive inline demo video without horizontal scrolling. */
+.project-visual-gallery__figure video{
+  display:block;
+  width:100%;
+  height:auto;
+  max-width:100%;
+  aspect-ratio:16/9;
+  object-fit:contain;
+  border:1px solid #554960;
+  border-radius:13px;
+  background:#181a28;
+}
+@media(max-width:650px){
+  .project-visual-gallery__figure:has(video){
+    overflow:visible;
+  }
+  .project-visual-gallery__figure video{
+    width:100%;
+    min-width:0;
+    max-width:100%;
+    border-radius:11px;
+  }
 }
