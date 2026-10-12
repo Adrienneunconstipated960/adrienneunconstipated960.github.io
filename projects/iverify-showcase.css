@@ -68,3 +68,11 @@
 .iverify-concept-figure img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#1a1a2b}
 .iverify-concept-figure{background:#1a1a2b;border-color:#756078}
 :root[data-theme="dark"] .iverify-concept-figure img{background:#181827}
+
+
+@media(max-width:650px){
+  .iverify-concept-figure{max-width:100%;overflow-x:auto;overscroll-behavior-inline:contain;scrollbar-width:thin;scrollbar-color:#b9759e transparent}
+  .iverify-concept-figure::before{content:"Swipe sideways to inspect the full diagram ↔";display:block;padding:9px 13px;color:#97567e;background:#f7eaf2;font:700 11px/1.5 var(--sans,system-ui,sans-serif)}
+  .iverify-concept-figure img{width:720px;min-width:720px;max-width:none;height:auto}
+  :root[data-theme="dark"] .iverify-concept-figure::before{background:#3e293a;color:#ffbbdc}
+}
