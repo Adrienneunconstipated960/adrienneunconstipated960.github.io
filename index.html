@@ -171,7 +171,7 @@
 <section class="section featured-projects-section" id="featured-projects" aria-labelledby="featured-projects-title">
       <div class="featured-projects-inner">
         <div class="featured-projects-head">
-          <p class="eyebrow" id="featured-projects-title">FEATURED / ENGINEERING WORK</p>
+          <h2 class="eyebrow" id="featured-projects-title">FEATURED / ENGINEERING WORK</h2>
           <p>Select a project to see the methods, results, and evidence status.</p>
         </div>
         <div class="featured-project-grid">
@@ -637,12 +637,13 @@
         <span class="ambient-sky-arc"><span class="ambient-orbit-runner"><span class="ambient-orbit-dot"></span></span></span>
         <span class="ambient-planet ambient-planet-robot ambient-planet--sage" aria-hidden="true"><span class="ambient-planet-body"></span><span class="ambient-planet-ring"></span></span>
       </div>
-      <div class="container robot-layout">
+      <div class="container robot-layout" data-robot-mode="3d">
         <div class="robot-copy" data-ambient-reveal>
           <p class="eyebrow">05 / KINEMATICS STUDY</p>
           <h2>Interactive <em>robot motion.</em></h2>
-          <p>Choose a pose and watch this simplified, ceiling-mounted arm move. It's a small interactive way to explore the ideas behind joint motion.</p>
-          <p class="robot-aside">Illustrative 2D kinematics only. This is not a hardware controller or a collision-validated simulation.</p>
+          <p>Explore a ceiling-mounted robotic arm in an illustrative 3D chamber, or switch to the simplified 2D motion study.</p>
+          <p class="robot-aside" id="robot-view-description">3D mode is selected. Use the chamber presets and joint controls on the right. This is an educational illustration, not validated motion planning or a hardware controller.</p>
+          <div class="robot-2d-controls" id="robot-2d-controls" hidden>
           <div class="robot-action-row"><button aria-pressed="true" class="pose-button active" data-pose="home" type="button">Home</button><button aria-pressed="false" class="pose-button" data-pose="hello" type="button">Say hello</button><button aria-pressed="false" class="pose-button" data-pose="reach" type="button">Reach</button><button aria-pressed="false" class="pose-button" data-pose="inspect" type="button">Inspect</button></div>
           <div class="sequence-wrap"><button type="button" id="animate-button" class="sequence-button">Run motion sequence ↗</button><button type="button" id="stop-button" class="sequence-stop" hidden>Stop sequence</button></div>
 <div class="robot-tuner" aria-label="Manual joint controls">
@@ -653,9 +654,10 @@
 <div class="joint-row"><label for="joint-wrist">Wrist angle</label><output id="wrist-input-value" for="joint-wrist">0°</output><input id="joint-wrist" data-joint-control type="range" min="-90" max="90" step="1" value="0" aria-describedby="wrist-input-value"></div>
 <div class="tuner-bottom"><p>Angles are illustrative, not mechanical joint limits.</p><button class="tuner-reset" type="button" id="reset-robot">Reset to home</button></div>
 </div>
+          </div>
         </div>
         <div class="robot-console" data-view="3d">
-          <div class="console-header"><span class="console-title"><span class="live-pip"></span> KAILANI'S ROBOT LAB</span><span class="console-tag">EDUCATIONAL DEMOS</span><div class="robot-view-picker" role="group" aria-label="Choose robot visualization"><button type="button" data-robot-view="2d" aria-pressed="false">2D view</button><button type="button" data-robot-view="3d" aria-pressed="true">3D view</button></div></div>
+          <div class="console-header"><span class="console-title"><span class="live-pip"></span> KAILANI'S ROBOT LAB</span><span class="console-tag">EDUCATIONAL DEMOS</span><div class="robot-view-picker" role="group" aria-label="Choose robot visualization"><button type="button" data-robot-view="2d" aria-pressed="false" aria-controls="robot-2d-controls arm-svg">2D view</button><button type="button" data-robot-view="3d" aria-pressed="true" aria-controls="robot-3d-canvas">3D view</button></div></div>
           <svg aria-label="Animated side view of a robotic arm hanging from the ceiling of a test chamber" id="arm-svg" role="img" viewbox="0 0 500 430">
 <defs><pattern height="25" id="simGrid" patternunits="userSpaceOnUse" width="25"><path d="M25 0H0V25" fill="none" opacity=".3" stroke="#74526c" stroke-width=".8"></path></pattern><lineargradient id="armGradient" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#ffc9dd"></stop><stop offset="1" stop-color="#e48ab8"></stop></lineargradient></defs>
 <rect fill="url(#simGrid)" height="430" width="500" x="0" y="0"></rect>
@@ -670,7 +672,7 @@
 <g fill="#edc5d8" opacity=".8"><path d="M124 101v-10m-5 5h10M380 144v-10m-5 5h10M133 347v-10m-5 5h10" stroke="#edc5d8" stroke-width="1.4"></path></g>
 </svg>
 <details class="robot-3d-details" open>
-            <summary>3D chamber viewer · orbit, presets and joint controls</summary>
+            <summary>Chamber view and joint settings</summary>
             <div class="robot-3d-body">
               <div class="robot-3d-canvas-wrap">
                 <canvas id="robot-3d-canvas" class="robot-3d-canvas" width="600" height="460" role="img" tabindex="0" aria-label="Interactive 3D illustration of the robotic arm in a 36 inch cubical chamber. Use arrow keys or drag to rotate the view."></canvas>
