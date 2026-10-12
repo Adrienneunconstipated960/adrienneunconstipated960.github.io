@@ -31,23 +31,13 @@
 <header class="detail-heading">
 <p class="eyebrow">GitHub · Electrical simulation</p><h1>ProDriver Sim</h1><p>Putting LED-driver behavior into a model</p>
 </header>
-<nav class="detail-jump" aria-label="Jump to project sections"><span>ON THIS PAGE</span><a href="#project-method">Methods &amp; tools</a><a href="#project-results">Outcomes</a><a href="#project-evidence">Evidence &amp; limitations</a><a href="#prodriver-visuals">Engineering graphics</a></nav>
-<article class="detail-card" aria-label="ProDriver Sim engineering detail">
+<nav class="detail-jump" aria-label="Project sections"><span>EXPLORE THIS PROJECT</span><a href="#project-overview">Overview</a><a href="#prodriver-visuals">Visual walkthrough</a><a href="#project-method">Approach</a><a href="#project-results">Findings</a><a href="#project-evidence">Evidence</a></nav>
+<section class="project-overview" id="project-overview" aria-label="Project overview">
 <span class="detail-tag">PROJECT 13 / 16</span>
 <p class="detail-lead">I wanted a tool that could connect electrical measurements with predictions. The simulation provides a way to compare driver and fixture behavior with observed bench results.</p>
 
 
-<div id="project-method" class="detail-grid">
-<section class="detail-panel"><h2>Engineering challenge</h2><p>Estimate how electrical operating conditions affect an LED driver and fixture.</p></section>
-<section class="detail-panel"><h2>Methods and approach</h2><p>Model voltage, current, load, and efficiency; compare predicted behavior with measurements.</p></section>
-<section class="detail-panel"><h2>Tools and environment</h2><p>Python, PyQt6, electrical modeling, bench testing.</p></section>
-<section class="detail-panel"><h2>Evidence and limitations</h2><p>This page summarizes the work documented in the portfolio project book. Where underlying test data, design files, or screenshots are not public, the summary does not imply those materials were independently verified.</p></section>
-</div>
-<div id="project-results" class="detail-results"><h2>Recovered engineering model</h2><p>The original public Python application and LED driver/module JSON profiles were recovered. The implementation interpolates module I-V curves, estimates efficiency from driver profile tables, calculates DC output and estimated input power, and flags operating-limit violations. The current simulation reports out-of-range conditions rather than automatically limiting driver output.</p></div>
-<div class="detail-panel"><h2>Engineering calculations and validation</h2><p>Using the public model tables, the nominal HO7 4800 lm configuration predicts 44.7 V at 0.60 A, or 26.82 W output. The HO7 6400 lm configuration predicts 44.7 V at 0.80 A, or 35.76 W output. These values are calculated estimates, not recovered bench readings. An independent offline model check, a synthetic test suite, and a verification matrix document what can be reproduced and what still requires instrument testing.</p></div>
-<div class="detail-buttons"><a href="#prodriver-visuals">Explore electrical modeling graphics ↓</a><a href="index.html">Browse all projects ↗</a></div>
-<p id="project-evidence" class="detail-source-note">The engineering diagrams below use source-backed electrical model features and archived public configuration tables. Their estimates are not new bench measurements; the original PyQt6 interface, physical operating limits and fixture performance have not been revalidated here.</p>
-</article>
+</section>
 <section class="project-visual-gallery" id="prodriver-visuals" aria-labelledby="prodriver-visuals-title">
 <header class="project-visual-gallery__head">
  <p class="eyebrow">LED DRIVER DESIGN / VISUAL CASE STUDY</p>
@@ -69,8 +59,25 @@
  <figure class="project-visual-gallery__figure"><img src="prodriver/media/power-estimates.svg" width="1280" height="720" decoding="async" loading="lazy" alt="Two ProDriver simulation output panels showing predicted LED module output power 26.82 and 35.76 watts, estimated input power 30.36 and 40.24 watts, and model efficiencies around 88 percent; explicitly not bench readings.">
  <figcaption>Derived estimates from the archived BST1 driver and HO7 module tables at nominal 120 V input. The output-power operating points lie below the driver's earliest archived output-power efficiency-table point, so endpoint clamping adds uncertainty. No calibration or hardware efficiency validation is implied.</figcaption></figure>
 </article>
-<p class="project-visual-gallery__note"><strong>Evidence boundary:</strong> The archived application and its configuration tables provide a reproducible electrical model, not verified fixture performance. These figures do not establish input current waveform, AC losses, device lifetime, LED junction temperature, actual delivered lumens, or safe operation outside configured limits.</p>
+
 </section>
+<article class="detail-card" aria-label="ProDriver Sim engineering detail">
+<h2 class="project-details-title">Engineering details</h2>
+
+
+
+<div id="project-method" class="detail-grid">
+<section class="detail-panel"><h2>Challenge</h2><p>Estimate how electrical operating conditions affect an LED driver and fixture.</p></section>
+<section class="detail-panel"><h2>Approach</h2><p>Model voltage, current, load, and efficiency; compare predicted behavior with measurements.</p></section>
+<section class="detail-panel"><h2>Tools</h2><p>Python, PyQt6, electrical modeling, bench testing.</p></section>
+
+</div>
+<div id="project-results" class="detail-results"><h2>Recovered engineering model</h2><p>The original public Python application and LED driver/module JSON profiles were recovered. The implementation interpolates module I-V curves, estimates efficiency from driver profile tables, calculates DC output and estimated input power, and flags operating-limit violations. The current simulation reports out-of-range conditions rather than automatically limiting driver output.</p></div>
+<div class="detail-panel"><h2>Engineering calculations and validation</h2><p>Using the public model tables, the nominal HO7 4800 lm configuration predicts 44.7 V at 0.60 A, or 26.82 W output. The HO7 6400 lm configuration predicts 44.7 V at 0.80 A, or 35.76 W output. These values are calculated estimates, not recovered bench readings. An independent offline model check, a synthetic test suite, and a verification matrix document what can be reproduced and what still requires instrument testing.</p></div>
+
+
+</article>
+<section class="project-evidence" id="project-evidence" aria-labelledby="project-evidence-title"><h2 id="project-evidence-title">Evidence &amp; limitations</h2><p><strong>Evidence boundary:</strong> The archived application and its configuration tables provide a reproducible electrical model, not verified fixture performance. These figures do not establish input current waveform, AC losses, device lifetime, LED junction temperature, actual delivered lumens, or safe operation outside configured limits.</p></section>
 <nav class="detail-footer" aria-label="Adjacent projects">
 <a class="detail-home-link" href="hall.html">← Hall-Effect Wafer Measurements</a>
 <span aria-hidden="true"> · </span>
