@@ -552,3 +552,257 @@ section[id]{scroll-margin-top:86px}
 :root[data-theme="dark"] .resume-page .actions button{
   background:#17475a;color:#fff;
 }
+
+
+/* Pink accents and active joint control surfaces, October 2026 */
+/* Accessible custom range inputs: colorful, visible, keyboard operable. */
+.joint-row input[type="range"],
+.robot-3d-control input[type="range"]{
+  --range-progress:50%;
+  --range-active:#ba497d;
+  --range-inactive:#a994ab;
+  -webkit-appearance:none;
+  appearance:none;
+  display:block;
+  width:100%;
+  height:32px;
+  min-height:32px;
+  margin:6px 0 3px;
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  cursor:grab;
+  opacity:1;
+  touch-action:pan-y;
+}
+.joint-row input[type="range"]:active,
+.robot-3d-control input[type="range"]:active{cursor:grabbing}
+.joint-row input[type="range"]::-webkit-slider-runnable-track,
+.robot-3d-control input[type="range"]::-webkit-slider-runnable-track{
+  height:10px;
+  border-radius:999px;
+  background:linear-gradient(90deg,var(--range-active) 0 var(--range-progress),var(--range-inactive) var(--range-progress) 100%);
+  border:1px solid rgba(64,41,68,.16);
+}
+.joint-row input[type="range"]::-moz-range-track,
+.robot-3d-control input[type="range"]::-moz-range-track{
+  height:10px;border-radius:999px;
+  background:linear-gradient(90deg,var(--range-active) 0 var(--range-progress),var(--range-inactive) var(--range-progress) 100%);
+  border:1px solid rgba(64,41,68,.16);
+}
+.joint-row input[type="range"]::-webkit-slider-thumb,
+.robot-3d-control input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance:none;appearance:none;
+  width:23px;height:23px;margin-top:-7px;
+  border:3px solid #fff;
+  border-radius:50%;
+  background:#a93370;
+  box-shadow:0 0 0 2px #822754,0 3px 8px rgba(43,23,43,.3);
+  transition:box-shadow .16s ease,background-color .16s ease;
+}
+.joint-row input[type="range"]::-moz-range-thumb,
+.robot-3d-control input[type="range"]::-moz-range-thumb{
+  width:18px;height:18px;
+  border:3px solid #fff;
+  border-radius:50%;
+  background:#a93370;
+  box-shadow:0 0 0 2px #822754,0 3px 8px rgba(43,23,43,.3);
+}
+.joint-row input[type="range"]:is(:hover,:focus-visible)::-webkit-slider-thumb,
+.robot-3d-control input[type="range"]:is(:hover,:focus-visible)::-webkit-slider-thumb{
+  background:#d74f94;
+  box-shadow:0 0 0 5px rgba(186,73,125,.33),0 3px 8px rgba(43,23,43,.3);
+}
+.joint-row input[type="range"]:is(:hover,:focus-visible)::-moz-range-thumb,
+.robot-3d-control input[type="range"]:is(:hover,:focus-visible)::-moz-range-thumb{
+  background:#d74f94;
+  box-shadow:0 0 0 5px rgba(186,73,125,.33),0 3px 8px rgba(43,23,43,.3);
+}
+.joint-row input[type="range"]:focus-visible,
+.robot-3d-control input[type="range"]:focus-visible{
+  outline:3px solid #ee93c0;
+  outline-offset:5px;
+  border-radius:8px;
+}
+.joint-row input[type="range"]:disabled,
+.robot-3d-control input[type="range"]:disabled{cursor:not-allowed;opacity:.6}
+
+/* Saturated berry for important surfaces, pale pink only for text on dark.
+   Deep backgrounds stay distinct so that the site isn't monochromatic. */
+:root[data-theme="dark"]{
+  --berry-deep:#682443;
+  --berry:#982e62;
+  --berry-hover:#b6477b;
+  --berry-link:#ffc1dc;
+  --berry-outline:#b15c88;
+  --berry-wash:rgba(167,48,104,.15);
+}
+:root[data-theme="dark"] .hero{
+  background-image:radial-gradient(ellipse 65% 72% at 6% 22%,rgba(143,37,83,.18),transparent 80%);
+}
+:root[data-theme="dark"] .featured-projects-section,
+:root[data-theme="dark"] .skills-section{
+  background-image:radial-gradient(ellipse 65% 50% at 100% 0%,rgba(147,47,91,.12),transparent 80%);
+}
+:root[data-theme="dark"] .section-heading::after{
+  content:"";
+  display:block;
+  width:65px;height:4px;
+  margin-top:20px;
+  border-radius:999px;
+  background:linear-gradient(90deg,#b94480,#f2a7cb);
+}
+:root[data-theme="dark"] .hero .eyebrow{
+  color:#ffd2e7;background:#54243e;border-color:#ae4c79;
+}
+:root[data-theme="dark"] :is(.eyebrow,.project-kicker,.featured-project-card .featured-category,.repo-category){
+  color:var(--berry-link);
+}
+:root[data-theme="dark"] :is(.feature-project,.repo-card,.project-card,.featured-project-card){
+  border-top:2px solid var(--berry-outline);
+}
+:root[data-theme="dark"] .featured-project-card{
+  background:linear-gradient(155deg,rgba(108,38,78,.21),rgba(40,38,54,.93) 46%);
+}
+:root[data-theme="dark"] :is(.feature-project,.repo-card,.project-card,.technical-dossier){
+  box-shadow:0 12px 34px rgba(18,10,22,.2);
+}
+:root[data-theme="dark"] .featured-project-card:is(:hover,:focus-visible),
+:root[data-theme="dark"] .repo-card:focus-within{
+  border-color:#dd88b3;
+  box-shadow:0 16px 40px rgba(116,31,74,.2);
+}
+:root[data-theme="dark"] :is(.nav-links a[aria-current="location"],.nav-links a[href="#contact"],
+ .github-intro a,.resume-quick-links a,.repo-link,.text-link){
+  color:var(--berry-link);
+}
+:root[data-theme="dark"] :is(.btn-primary,.nav-links .nav-cta,.back-top,
+ .repo-filter.active,.repo-filter[aria-pressed="true"],
+ .directory-filter-set button[aria-pressed="true"],.pose-button.active,
+ .pose-button[aria-pressed="true"]){
+  background:var(--berry);color:#fff;border-color:#c06190;
+}
+:root[data-theme="dark"] :is(.btn-primary,.nav-links .nav-cta,.back-top,
+ .repo-filter.active,.directory-filter-set button[aria-pressed="true"],
+ .pose-button.active):hover{
+  background:var(--berry-hover);color:#fff;
+}
+:root[data-theme="dark"] .resume-note{
+  border-left:4px solid #c2588f;
+  background:linear-gradient(120deg,#382438,#282636 60%);
+}
+:root[data-theme="dark"] .project-page .detail-card,
+:root[data-theme="dark"] .case-studies-section .technical-dossier{
+  border-top:3px solid #b84c81;
+}
+:root[data-theme="dark"] .timeline-dot{background:#eb88b4}
+:root[data-theme="dark"] .skill-column{border-top-color:#b94c83}
+:root[data-theme="dark"] .project-metrics{border-color:#745271}
+:root[data-theme="dark"] .robot-tuner{
+  background:linear-gradient(145deg,#43253c,#2e293b 72%);
+  border:2px solid #b24d83;
+  box-shadow:0 12px 28px rgba(27,14,30,.18),inset 0 1px 0 rgba(255,189,222,.12);
+  color:var(--dark-text);
+}
+:root[data-theme="dark"] .robot-tuner h3{
+  color:#fff3f9;font-size:17px;font-weight:750;
+}
+:root[data-theme="dark"] .robot-tuner :is(.tuner-hint,.tuner-bottom p){
+  color:#f0dce9;
+}
+:root[data-theme="dark"] .robot-tuner .joint-row{
+  background:rgba(29,21,36,.5);
+  border:1px solid #875074;
+  border-radius:12px;
+  padding:9px 12px 10px;
+  margin:11px 0;
+}
+:root[data-theme="dark"] .robot-tuner .joint-row label{
+  color:#fff4fa;font-size:13px;font-weight:700;
+}
+:root[data-theme="dark"] .robot-tuner .joint-row output{
+  color:#fff3f8;
+  background:#912c5e;
+  border:1px solid #d46b9f;
+  min-width:60px;
+  padding:5px 9px;
+  border-radius:8px;
+  font-weight:750;
+  text-align:center;
+}
+:root[data-theme="dark"] .robot-tuner .tuner-reset{
+  background:#962f63;
+  color:#fff;
+  border:1px solid #d780ad;
+}
+:root[data-theme="dark"] .robot-tuner .tuner-reset:hover{
+  background:#ba477f;
+  color:#fff;
+}
+:root[data-theme="dark"] .robot-3d-details{
+  border-color:#9e4c7a;
+  background:#211d2d;
+}
+:root[data-theme="dark"] .robot-3d-details>summary{
+  background:#51223e;
+  color:#fff3fa;
+  border-bottom:1px solid #98507e;
+}
+:root[data-theme="dark"] .robot-3d-details>summary:hover{
+  background:#762d55;
+  color:#fff;
+}
+:root[data-theme="dark"] .robot-3d-control{
+  background:#352438;
+  border:1px solid #91517a;
+  padding:11px 12px;
+  border-radius:11px;
+  color:#fff4fa;
+  font-size:12px;
+  font-weight:700;
+}
+:root[data-theme="dark"] .robot-3d-control label{
+  color:#fff4fa;
+}
+:root[data-theme="dark"] .robot-3d-control output{
+  color:#fff;
+  background:#922f64;
+  border:1px solid #d46b9f;
+  border-radius:7px;
+  padding:2px 7px;
+  font-size:12px;
+  min-width:44px;
+  text-align:center;
+}
+:root[data-theme="dark"] .robot-3d-tools button{
+  background:#492b44;
+  border-color:#ab6595;
+  color:#fff3fb;
+}
+:root[data-theme="dark"] .robot-3d-tools button:hover,
+:root[data-theme="dark"] .robot-3d-tools button:focus-visible{
+  background:#793055;color:#fff;
+}
+:root[data-theme="dark"] .robot-3d-tools button[aria-pressed="true"]{
+  background:#d773a7;
+  color:#261727;
+  border-color:#ef9bc4;
+}
+:root[data-theme="dark"] .robot-view-picker button[aria-pressed="true"]{
+  background:#d773a7;color:#261727;border-color:#ef9bc4;
+}
+:root[data-theme="dark"] .joint-row input[type="range"],
+:root[data-theme="dark"] .robot-3d-control input[type="range"]{
+  --range-active:#dc5f9a;
+  --range-inactive:#7f6885;
+}
+:root[data-theme="dark"] .robot-3d-help{
+  color:#eee2ec;
+}
+@media(prefers-reduced-motion:reduce){
+  .joint-row input[type="range"]::-webkit-slider-thumb,
+  .robot-3d-control input[type="range"]::-webkit-slider-thumb{
+    transition:none;
+  }
+}
