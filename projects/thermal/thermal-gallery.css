@@ -130,3 +130,11 @@
 }
 @media(max-width:440px){.thermal-fact-row{grid-template-columns:1fr 1fr}.thermal-fact strong{font-size:19px}}
 @media(prefers-reduced-motion:reduce){.thermal-showcase *{scroll-behavior:auto}}
+
+
+@media(max-width:650px){
+  .thermal-feature figure{max-width:100%;overflow-x:auto;overscroll-behavior-inline:contain;scrollbar-width:thin;scrollbar-color:#b9759e transparent}
+  .thermal-feature figure::before{content:"Swipe sideways to inspect the full diagram ↔";display:block;padding:7px 3px 11px;color:#97567e;font:700 11px/1.5 var(--sans,system-ui,sans-serif)}
+  .thermal-feature img{width:720px;min-width:720px;max-width:none;height:auto}
+  :root[data-theme="dark"] .thermal-feature figure::before{color:#ffbbdc}
+}
