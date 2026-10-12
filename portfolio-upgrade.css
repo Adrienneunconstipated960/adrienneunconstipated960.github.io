@@ -929,3 +929,18 @@ section[id]{scroll-margin-top:86px}
   .project-page .detail-nav-actions{gap:10px 14px}
   .project-page .detail-nav-actions a{font-size:11px}
 }
+
+
+/* Consolidated project figure and directory styles. */
+.project-page .detail-figure{border:1px solid #ded5df;background:#f9f7fa;width:100%;max-width:100%;margin:23px 0 28px;padding:clamp(10px,1.7vw,17px);border-radius:14px}
+.project-page .detail-figure img,.project-page .detail-figure video{display:block;width:100%;height:auto;max-height:560px;object-fit:contain;border-radius:9px;background:#ece7ed}
+.project-page .detail-figure figcaption{margin-top:10px;padding:0 4px;font-size:12px;line-height:1.75;color:#605267}
+.project-directory-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.project-directory-grid .featured-project-card{min-height:175px}
+.project-page .directory-intro{max-width:78ch;color:#5d5867;line-height:1.8;margin:0 0 26px}
+.project-directory-grid .featured-category{overflow-wrap:anywhere}
+:root[data-theme="dark"] .project-page .detail-figure{background:#302b3c;border-color:#78637a}
+:root[data-theme="dark"] .project-page .detail-figure img,:root[data-theme="dark"] .project-page .detail-figure video{background:#1c2230}
+:root[data-theme="dark"] .project-page .detail-figure figcaption,:root[data-theme="dark"] .project-page .directory-intro{color:#ede0ee}
+@media(max-width:850px){.project-directory-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:540px){.project-directory-grid{grid-template-columns:1fr}.project-directory-grid .featured-project-card{min-height:0}}
