@@ -43,5 +43,39 @@ check(home.includes('data-robot-view="3d"'),'Robot view picker missing');
 check((directory.match(/data-gallery-category=/g)||[]).length===16,'16 categorized gallery cards required');
 check(fs.readFileSync(path.join(root,'robots.txt'),'utf8').includes(domain),'robots.txt wrong host');
 check(fs.readFileSync(path.join(root,'sitemap.xml'),'utf8').includes(domain),'sitemap.xml wrong host');
+
+/* Additional accessibility and fragment-link checks. */
+const cachedIds=new Map();
+function getIds(absolutePath){
+  if(!cachedIds.has(absolutePath)){
+    const html=fs.readFileSync(absolutePath,'utf8');
+    cachedIds.set(absolutePath,new Set([...html.matchAll(/\sid=["']([^"']+)["']/g)].map(m=>m[1])));
+  }
+  return cachedIds.get(absolutePath);
+}
+for(const file of htmlFiles){
+  const absolute=path.join(root,file);
+  const markup=fs.readFileSync(absolute,'utf8');
+  if(file.startsWith('projects/')){
+    check(!/<style\b[^>]*>/i.test(markup),file+' has duplicated inline project styles');
+  }
+  for(const match of markup.matchAll(/<img\b[^>]*>/g)){
+    check(/\balt\s*=/.test(match[0]),file+' image missing alternative text');
+  }
+  for(const match of markup.matchAll(/\bhref=["']([^"']+)["']/g)){
+    const url=match[1];
+    if(!url.includes('#')||/^(https?:|\/\/|mailto:|tel:)/i.test(url))continue;
+    const [targetRef,rawFragment]=url.split('#');
+    if(!rawFragment)continue;
+    const target=targetRef?path.resolve(root,path.dirname(file),targetRef.split('?')[0]):absolute;
+    if(!target.startsWith(root+path.sep)||!target.endsWith('.html')||!fs.existsSync(target))continue;
+    let fragment=rawFragment;
+    try{fragment=decodeURIComponent(rawFragment)}catch{/* Test the unmodified anchor name. */}
+    check(getIds(target).has(fragment),file+' references missing section '+url);
+  }
+}
+check(home.includes('id="robot-2d-controls" hidden'),'2D panel should start hidden while 3D view is selected');
+check(home.includes('data-robot-mode="3d"'),'3D view should start as the selected robot mode');
+
 console.log((failed?'FAIL':'PASS')+': '+(checks-failed)+'/'+checks+' static checks');
 if(failed)process.exitCode=1;
