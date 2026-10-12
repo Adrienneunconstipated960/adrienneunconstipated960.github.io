@@ -76,3 +76,12 @@
   .iverify-concept-figure img{width:720px;min-width:720px;max-width:none;height:auto}
   :root[data-theme="dark"] .iverify-concept-figure::before{background:#3e293a;color:#ffbbdc}
 }
+
+
+/* Match the visual case studies' readable captions and explanatory copy. */
+.iverify-showcase-header p:last-child{font-size:15px;line-height:1.8}
+.iverify-concept-copy p,.iverify-section>p{font-size:15px;line-height:1.8}
+.iverify-concept-copy li,.iverify-status :is(p,li),.iverify-safety{font-size:14px;line-height:1.75}
+.iverify-concept-figure figcaption{font-size:13px;line-height:1.75}
+.iverify-target span,.iverify-flow span{font-size:12px;line-height:1.6}
+@media(max-width:650px){.iverify-concept-figure img{width:1100px;min-width:1100px;max-width:none;height:auto}}
