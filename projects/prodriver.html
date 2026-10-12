@@ -12,13 +12,13 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 <script>try{document.documentElement.dataset.theme=localStorage.getItem('kailani-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch{document.documentElement.dataset.theme='light'}</script>
 <link rel="stylesheet" href="../portfolio.css?v=20261011-14">
-<link rel="stylesheet" href="../portfolio-upgrade.css?v=20261011">
-<link rel="stylesheet" href="project-visuals.css?v=20261012-v1">
+<link rel="stylesheet" href="../portfolio-upgrade.css?v=20261011-readability">
+<link rel="stylesheet" href="project-visuals.css?v=20261011-readability">
 <meta property="og:image" content="https://kailania.vercel.app/assets/sls-rocket-kailani.jpeg">
 <meta property="og:image:alt" content="Kailani at NASA Marshall Space Flight Center">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://kailania.vercel.app/assets/sls-rocket-kailani.jpeg">
-<script src="../portfolio-upgrade.js?v=20261011" defer></script>
+<script src="../portfolio-upgrade.js?v=20261011-readability" defer></script>
 </head>
 <body class="project-page">
 <a class="skip-link" href="#project-main">Skip to project details</a>
@@ -34,7 +34,7 @@
 <nav class="detail-jump" aria-label="Project sections"><span>EXPLORE THIS PROJECT</span><a href="#project-overview">Overview</a><a href="#prodriver-visuals">Visual walkthrough</a><a href="#project-method">Approach</a><a href="#project-results">Findings</a><a href="#project-evidence">Evidence</a></nav>
 <section class="project-overview" id="project-overview" aria-label="Project overview">
 <span class="detail-tag">PROJECT 13 / 16</span>
-<p class="detail-lead">I wanted a tool that could connect electrical measurements with predictions. The simulation provides a way to compare driver and fixture behavior with observed bench results.</p>
+<p class="detail-lead">ProDriver Sim estimates LED-module voltage, driver efficiency, and power from archived configuration tables. Its predicted operating points help identify limits and plan comparisons with future bench measurements.</p>
 
 
 </section>
@@ -67,9 +67,9 @@
 
 
 <div id="project-method" class="detail-grid">
-<section class="detail-panel"><h2>Challenge</h2><p>Estimate how electrical operating conditions affect an LED driver and fixture.</p></section>
-<section class="detail-panel"><h2>Approach</h2><p>Model voltage, current, load, and efficiency; compare predicted behavior with measurements.</p></section>
-<section class="detail-panel"><h2>Tools</h2><p>Python, PyQt6, electrical modeling, bench testing.</p></section>
+<section class="detail-panel"><h3>Challenge</h3><p>Estimate how electrical operating conditions affect an LED driver and fixture.</p></section>
+<section class="detail-panel"><h3>Approach</h3><p>Interpolate LED module voltage from current lookup points, estimate driver efficiency and input power, and flag operating-limit violations. Physical measurements are needed to validate the predictions.</p></section>
+<section class="detail-panel"><h3>Tools</h3><p>Python, PyQt6, LED I–V lookup tables, driver efficiency profiles, electrical modeling.</p></section>
 
 </div>
 <div id="project-results" class="detail-results"><h2>Recovered engineering model</h2><p>The original public Python application and LED driver/module JSON profiles were recovered. The implementation interpolates module I-V curves, estimates efficiency from driver profile tables, calculates DC output and estimated input power, and flags operating-limit violations. The current simulation reports out-of-range conditions rather than automatically limiting driver output.</p></div>
