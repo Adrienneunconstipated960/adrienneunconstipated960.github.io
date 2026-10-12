@@ -187,3 +187,368 @@ section[id]{scroll-margin-top:86px}
  .robot-console .console-header{padding:12px}
  .robot-view-picker{width:100%;margin-left:0;justify-content:flex-end}
 }
+
+
+/* Dark mode readability pass: October 2026.
+   High-contrast text and matching surfaces, while keeping paper book pages
+   and the printable résumé light with their original dark ink. */
+:root[data-theme="dark"]{
+  --bg:#191923;
+  --paper:#242332;
+  --soft:#302b3c;
+  --soft-alt:#393247;
+  --ink:#f8f5fc;
+  --secondary:#e6ddea;
+  --border:#61556d;
+  --rose:#f1a7cd;
+  --rose-dark:#ffbedb;
+  --plum:#f8f2fa;
+  --eng-ink:#f8f5fc;
+  --eng-graphite:#dfd5e4;
+  --eng-rule:#65596f;
+  --muted:#e0d4e1;
+  --pink-deep:#ffc1df;
+  --dark-text:#f8f5fc;
+  --dark-body:#e6ddea;
+  --dark-muted:#d7c9dd;
+  --dark-link:#ffc5e0;
+  --dark-surface:#282636;
+  --dark-raised:#343044;
+  --dark-border:#655b74;
+  --draft-paper:#1d1c29;
+  --draft-minor:rgba(196,177,205,.075);
+  --draft-major:rgba(196,177,205,.14);
+}
+:root[data-theme="dark"] body,
+:root[data-theme="dark"] body.project-page{
+  background:#191923;color:var(--dark-text);
+}
+:root[data-theme="dark"] :is(h1,h2,h3,h4,h5,h6){
+  color:var(--dark-text);
+}
+:root[data-theme="dark"] :is(p,li,dd,blockquote){
+  color:var(--dark-body);
+}
+:root[data-theme="dark"] :is(small,figcaption,dt,output){
+  color:var(--dark-muted);
+}
+:root[data-theme="dark"] .eyebrow,
+:root[data-theme="dark"] :is(h1,h2,h3) em,
+:root[data-theme="dark"] .project-kicker{
+  color:var(--dark-link);
+}
+:root[data-theme="dark"] :is(.hero-subtitle,.hero-description,.hero-trust-row,
+ .hero-photo figcaption,.figure-index,.section-heading>p,.section-description,
+ .section-heading>p:not(.eyebrow),.hero-signoff,.robot-aside,
+ .timeline-date,.resume-small,.resume-caption,.footer-inner p,.top-link){
+  color:var(--dark-body);
+}
+:root[data-theme="dark"] .site-header .logo,
+:root[data-theme="dark"] .footer-logo{color:var(--dark-text)}
+:root[data-theme="dark"] .nav-links a,
+:root[data-theme="dark"] .detail-nav-actions a{color:var(--dark-text)}
+:root[data-theme="dark"] .nav-links a:hover,
+:root[data-theme="dark"] .nav-links a[aria-current="location"],
+:root[data-theme="dark"] :is(.text-link,.repo-link,.repo-more a,.github-intro a,
+ .resume-quick-links a,.detail-home-link,.detail-home,.dossier-detail-link){
+  color:var(--dark-link);
+}
+:root[data-theme="dark"] :is(.btn-primary,.nav-links .nav-cta,.back-top){
+  background:#82335c;color:#fff;border-color:#a85b83;
+}
+:root[data-theme="dark"] :is(.btn-primary,.nav-links .nav-cta,.back-top):hover{
+  background:#9b4872;color:#fff;
+}
+:root[data-theme="dark"] .btn-outline{
+  border-color:#ad8faa;background:#2e293a;color:#f8f2fa;
+}
+:root[data-theme="dark"] .btn-outline:hover{background:#41334b;color:#fff}
+:root[data-theme="dark"] .btn-dark{background:#f5d9e8;color:#271f2d;border-color:#f5d9e8}
+:root[data-theme="dark"] .btn-dark:hover{background:#fff;color:#271f2d}
+:root[data-theme="dark"] .skip-link{background:#f4dce8;color:#1f1728}
+:root[data-theme="dark"] :is(.hero .eyebrow,.engineering-focus,
+ .feature-project,.repo-card,.project-card,.featured-project-card,
+ .education-panel,.resume-note,.video-demo){
+  border-color:var(--dark-border);
+}
+:root[data-theme="dark"] .engineering-focus{background:rgba(44,40,54,.85)}
+:root[data-theme="dark"] .engineering-focus>div+div{border-left-color:var(--dark-border)}
+:root[data-theme="dark"] .engineering-focus .focus-code,
+:root[data-theme="dark"] .engineering-focus small{color:var(--dark-muted)}
+:root[data-theme="dark"] .engineering-focus strong{color:var(--dark-text)}
+:root[data-theme="dark"] .feature-project,
+:root[data-theme="dark"] .work-section .feature-project,
+:root[data-theme="dark"] .project-card,
+:root[data-theme="dark"] .repo-card,
+:root[data-theme="dark"] .featured-project-card,
+:root[data-theme="dark"] .resume-note,
+:root[data-theme="dark"] .video-demo{
+  background:var(--dark-surface);color:var(--dark-text);
+}
+:root[data-theme="dark"] :is(.featured-project-card strong,.repo-card h3,
+ .project-card h3,.resume-note strong,.project-metrics strong){
+  color:var(--dark-text);
+}
+:root[data-theme="dark"] :is(.featured-project-card small,.featured-project-card .featured-category,
+ .featured-project-card .featured-more,.project-card small,.project-year,
+ .repo-card>p,.github-section .repo-card>p,.repo-category,
+ .repo-meta,.repo-result-count,.github-section .repo-result-count,
+ .repo-more,.feature-content>p:not(.project-kicker),.work-section .feature-content>p:not(.project-kicker),
+ .project-metrics span){
+  color:var(--dark-body);
+}
+:root[data-theme="dark"] :is(.about-chips span,.tag-row span,.repo-meta span,.interest-tags span){
+  color:var(--dark-body);background:var(--dark-raised);
+  border-color:var(--dark-border);
+}
+:root[data-theme="dark"] .featured-project-card:hover,
+:root[data-theme="dark"] .repo-card:hover{border-color:#d6a8c6}
+:root[data-theme="dark"] .feature-visual{background:#30293a}
+:root[data-theme="dark"] .feature-visual figcaption{
+  background:#f9ecf4;color:#38223a;
+}
+:root[data-theme="dark"] .github-section,
+:root[data-theme="dark"] .bookshelf-section,
+:root[data-theme="dark"] .resume-section,
+:root[data-theme="dark"] .case-studies-section,
+:root[data-theme="dark"] .interests-section,
+:root[data-theme="dark"] .experience-section,
+:root[data-theme="dark"] .about-section{
+  background:#1f1d2b;border-color:var(--dark-border);
+}
+:root[data-theme="dark"] :is(.pathway,.project-index,.github-refine,
+ .repo-empty,.engineering-flow li,.shelf-preview,.shelf-level.is-previewing .shelf-preview){
+  background:var(--dark-surface);border-color:var(--dark-border);
+}
+:root[data-theme="dark"] :is(.pathway strong,.project-index-heading,
+ .github-refine>summary,.shelf-preview strong,.shelf-label-row h3){
+  color:var(--dark-text);
+}
+:root[data-theme="dark"] :is(.pathway small,.project-index-caption,
+ .shelf-preview [data-preview-text],.shelf-collection-description,
+ .shelf-label-row h3 span,.shelf-swipe-hint,.bookshelf-help){
+  color:var(--dark-body);
+}
+:root[data-theme="dark"] .pathway-icon{
+  background:var(--dark-raised);color:var(--dark-link);
+}
+:root[data-theme="dark"] :is(.project-index>summary:hover,
+ .project-index[open]>summary,.github-refine>summary:hover,
+ .github-refine[open]>summary){background:var(--dark-raised)}
+:root[data-theme="dark"] .project-index-symbol{
+  background:var(--dark-raised);border-color:var(--dark-border);
+}
+:root[data-theme="dark"] .project-index-symbol:before,
+:root[data-theme="dark"] .project-index-symbol:after{background:var(--dark-link)}
+:root[data-theme="dark"] .github-profile-link,
+:root[data-theme="dark"] .repo-filter,
+:root[data-theme="dark"] :is(.pose-button,.sequence-button,.sequence-stop,.tuner-reset){
+  background:var(--dark-raised);color:var(--dark-text);
+  border-color:var(--dark-border);
+}
+:root[data-theme="dark"] .repo-filter.active,
+:root[data-theme="dark"] :is(.pose-button.active,.pose-button[aria-pressed="true"]){
+  background:#82335c;color:#fff;border-color:#a55a80;
+}
+:root[data-theme="dark"] .repo-filter:hover,
+:root[data-theme="dark"] :is(.pose-button,.sequence-button,.sequence-stop):hover{
+  background:#51405b;color:#fff;
+}
+:root[data-theme="dark"] .repo-search-wrap label,
+:root[data-theme="dark"] .directory-toolbar label,
+:root[data-theme="dark"] .joint-row label{
+  color:var(--dark-text);
+}
+:root[data-theme="dark"] :is(.repo-search-wrap input,.directory-toolbar input){
+  background:#302b3d;color:var(--dark-text);
+  border-color:#887994;
+}
+:root[data-theme="dark"] :is(.repo-search-wrap input,.directory-toolbar input)::placeholder{
+  color:#d0bfd8;opacity:1;
+}
+:root[data-theme="dark"] .directory-filter-set button[aria-pressed="true"]{
+  background:#82335c;color:#fff;border-color:#ae688c;
+}
+:root[data-theme="dark"] .directory-result-count,
+:root[data-theme="dark"] .repo-result-count{color:var(--dark-body)}
+:root[data-theme="dark"] .directory-empty{color:var(--dark-text);border-color:var(--dark-border)}
+:root[data-theme="dark"] .directory-empty button{color:var(--dark-link)}
+:root[data-theme="dark"] .engineering-flow{
+  border-color:var(--dark-border);
+}
+:root[data-theme="dark"] .engineering-flow .flow-label,
+:root[data-theme="dark"] .engineering-flow li>span{
+  color:var(--dark-link);
+}
+:root[data-theme="dark"] .engineering-flow li{color:var(--dark-text)}
+:root[data-theme="dark"] .timeline-date,
+:root[data-theme="dark"] .skill-column p,
+:root[data-theme="dark"] .about-honors{color:var(--dark-body)}
+:root[data-theme="dark"] .skill-column{border-color:var(--dark-border)}
+:root[data-theme="dark"] .bookshelf-cabinet{
+  background:linear-gradient(160deg,#302636,#252333);
+  border-color:var(--dark-border);
+}
+:root[data-theme="dark"] .shelf-preview-label,
+:root[data-theme="dark"] .shelf-label-row h3 span{color:var(--dark-link)}
+:root[data-theme="dark"] .shelf-collection-link{
+  background:#3b3047;color:var(--dark-text);
+  border-color:#89788f;
+}
+:root[data-theme="dark"] .shelf-collection-link:hover{background:#51405b;color:#fff}
+:root[data-theme="dark"] .shelf-level{
+  --collection-ink:#e8c0df;
+}
+:root[data-theme="dark"] .book-spine{
+  color:var(--spine-text);
+}
+:root[data-theme="dark"] .book-page,
+:root[data-theme="dark"] .book-spread{
+  color:#3b2e3d;
+}
+/* Book pages are intentionally light paper, so restore dark text in that context. */
+:root[data-theme="dark"] .book-page :is(p,li,dd,dt,small,figcaption,blockquote){
+  color:#534450;
+}
+:root[data-theme="dark"] .book-page :is(h1,h2,h3,h4,h5,strong){
+  color:#382b3c;
+}
+:root[data-theme="dark"] .book-page :is(.book-page-number,.book-page-chapter,
+ .book-project-link,.book-project-facts dt){
+  color:#704258;
+}
+:root[data-theme="dark"] .project-book-dialog .book-modal-subtitle{
+  color:#574452;
+}
+/* Dossier cards use many hand-authored fixed colors and nested figure surfaces. */
+:root[data-theme="dark"] .case-studies-section .technical-dossier,
+:root[data-theme="dark"] .section .technical-dossier{
+  background:var(--dark-surface);border-color:var(--dark-border);
+  border-left-color:#d9a1c3;color:var(--dark-text);
+}
+:root[data-theme="dark"] .dossier-intro h2,
+:root[data-theme="dark"] .dossier-head h4,
+:root[data-theme="dark"] .dossier-notes h5,
+:root[data-theme="dark"] .dossier-notes strong,
+:root[data-theme="dark"] .dossier-footer strong,
+:root[data-theme="dark"] .dossier-chain strong,
+:root[data-theme="dark"] .dossier-evidence strong,
+:root[data-theme="dark"] .nasa-arch-stage strong,
+:root[data-theme="dark"] .nasa-arch-branch strong,
+:root[data-theme="dark"] .dossier-verification h5,
+:root[data-theme="dark"] .verification-table tbody th{
+  color:var(--dark-text);
+}
+:root[data-theme="dark"] :is(.dossier-intro>p:last-child,.dossier-summary,
+ .dossier-notes p,.dossier-notes li,.dossier-evidence small,
+ .dossier-chain small,.dossier-footer p,.dossier-source-note,
+ .dossier-figure .figure-foot,.nasa-system-architecture p){
+  color:var(--dark-body);
+}
+:root[data-theme="dark"] :is(.dossier-id,.dossier-figure figcaption,.chain-index,
+ .dossier-evidence>div>span,.nasa-arch-label,.verification-table caption){
+  color:var(--dark-muted);
+}
+:root[data-theme="dark"] :is(.dossier-head,.dossier-footer,.dossier-verification){
+  border-color:var(--dark-border);
+}
+:root[data-theme="dark"] .dossier-status{
+  background:var(--dark-raised);color:var(--dark-text);
+  border-color:var(--dark-border);
+}
+:root[data-theme="dark"] :is(.dossier-role,.dossier-evidence>div,
+ .dossier-chain li,.nasa-arch-stage,.nasa-arch-branch){
+  background:var(--dark-raised);border-color:var(--dark-border);
+}
+:root[data-theme="dark"] .dossier-role strong{color:var(--dark-link)}
+:root[data-theme="dark"] .dossier-role p{color:var(--dark-body)}
+:root[data-theme="dark"] .dossier-figure{
+  background:linear-gradient(to right,rgba(230,215,238,.045) 1px,transparent 1px),
+    linear-gradient(to bottom,rgba(230,215,238,.045) 1px,transparent 1px),
+    #2d2a3a;
+  border-color:var(--dark-border);
+}
+:root[data-theme="dark"] .dossier-footer a,
+:root[data-theme="dark"] .dossier-footer a:is(:hover,:focus-visible){
+  color:var(--dark-link);
+}
+:root[data-theme="dark"] .verification-scroll{
+  background:var(--dark-raised);border-color:var(--dark-border);
+}
+:root[data-theme="dark"] .verification-table{color:var(--dark-body)}
+:root[data-theme="dark"] .verification-table thead th{
+  background:#443a50;color:var(--dark-text);
+}
+:root[data-theme="dark"] .verification-table caption{
+  background:#352d40;color:var(--dark-body);
+}
+:root[data-theme="dark"] .verification-table :is(th,td){
+  border-bottom-color:var(--dark-border);
+}
+/* Project directory and individual case studies. */
+:root[data-theme="dark"] body.project-page,
+:root[data-theme="dark"] .project-page .project-paper{
+  background:#1d1c29;color:var(--dark-text);
+}
+:root[data-theme="dark"] .project-page .detail-navigation{
+  background:#272333;border-color:var(--dark-border);
+}
+:root[data-theme="dark"] .project-page :is(.detail-home,.detail-nav-actions a,
+ .detail-home-link){color:var(--dark-link)}
+:root[data-theme="dark"] .project-page :is(.detail-heading h1,.detail-heading>p:last-child,
+ .detail-tag,.detail-lead,.detail-footer){color:var(--dark-text)}
+:root[data-theme="dark"] .project-page .detail-card{
+  background:var(--dark-surface);border-color:var(--dark-border);
+  color:var(--dark-text);
+}
+:root[data-theme="dark"] .project-page :is(.detail-panel,.detail-results){
+  background:var(--dark-raised);border-color:var(--dark-border);
+}
+:root[data-theme="dark"] .project-page :is(.detail-panel h2,.detail-results h2){
+  color:var(--dark-link);
+}
+:root[data-theme="dark"] .project-page :is(.detail-panel p,.detail-results p,
+ .detail-source-note){color:var(--dark-body)}
+:root[data-theme="dark"] .project-page .detail-buttons a{
+  background:#3e3349;color:var(--dark-text);
+  border-color:var(--dark-border);
+}
+:root[data-theme="dark"] .project-page .detail-buttons a:first-child{
+  background:#82335c;color:#fff;border-color:#a85b83;
+}
+:root[data-theme="dark"] .project-page .detail-buttons a:is(:hover,:focus-visible){
+  background:#51405b;color:#fff;
+}
+:root[data-theme="dark"] .project-page .detail-jump a{
+  background:var(--dark-raised);color:var(--dark-text);
+  border-color:var(--dark-border);
+}
+:root[data-theme="dark"] .project-page .detail-jump span{
+  color:var(--dark-muted);
+}
+/* The original 2D simulator is an inverse-color console; preserve its palette. */
+:root[data-theme="dark"] :is(.console-title,.console-tag,.console-bottom,
+ .telemetry,.robot-view-picker button,.robot-3d-tools button){
+  color:#f8f2fa;
+}
+:root[data-theme="dark"] .robot-3d-help{color:#e7dbea}
+:root[data-theme="dark"] .robot-3d-status{color:#c0f4d9}
+:root[data-theme="dark"] .robot-3d-status[data-warning="true"]{color:#ffc9c9}
+:root[data-theme="dark"] .robot-view-picker button[aria-pressed="true"],
+:root[data-theme="dark"] .robot-3d-tools button[aria-pressed="true"]{
+  color:#271d31;
+}
+/* Contrast in résumé intentionally stays dark text on white paper, including
+   print and browser dark-mode preferences. */
+:root[data-theme="dark"] .resume-page .page :is(p,li,small,dt,dd){
+  color:#243a4a;
+}
+:root[data-theme="dark"] .resume-page .page :is(h1,h2,h3,strong,b){
+  color:#162d40;
+}
+:root[data-theme="dark"] .resume-page .page a{color:#095f7b}
+:root[data-theme="dark"] .resume-page .page .sub{color:#405b70}
+:root[data-theme="dark"] .resume-page .actions a,
+:root[data-theme="dark"] .resume-page .actions button{
+  background:#17475a;color:#fff;
+}
