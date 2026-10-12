@@ -22,6 +22,7 @@
 
   const search=document.getElementById('directory-search');
   const cards=[...document.querySelectorAll('[data-gallery-category]')];
+  const groups=[...document.querySelectorAll('[data-gallery-group]')];
   const buttons=[...document.querySelectorAll('[data-gallery-filter]')];
   const count=document.getElementById('directory-count');
   const empty=document.getElementById('directory-empty');
@@ -34,6 +35,10 @@
       const matchQuery=!q||card.textContent.toLowerCase().includes(q);
       card.hidden=!(matchType&&matchQuery);
       if(!card.hidden)visible++;
+    });
+    groups.forEach(group=>{
+      const hasResults=[...group.querySelectorAll('[data-gallery-category]')].some(card=>!card.hidden);
+      group.hidden=!hasResults;
     });
     if(count)count.textContent='Showing '+visible+' of '+cards.length+' engineering projects';
     if(empty)empty.hidden=visible!==0;
