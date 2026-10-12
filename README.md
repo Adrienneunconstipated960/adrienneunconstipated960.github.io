@@ -379,3 +379,10 @@ User-confirmed scope: ROS2 and Thermal Desktop were both used on **the same NASA
 - Added two compact tool-use panels *inside* the NASA case study without changing the page's section flow or adding decorative spacers.
 - Preserved the previously grounded 34 system requirements, six planned scenarios, and 10^-7 torr target. These remain scope/constraints, not measured performance or completed qualification outcomes.
 - Preserved all 16 book records/two shelves, three technical case studies, all user photos and media, and the background star and flower illustrations.
+
+
+## NASA Thermal Desktop analysis modes (October 2026)
+
+The user clarified that Thermal Desktop was used for **both steady-state and transient thermal analysis** of the NASA robotic arm in the high-vacuum lunar-dust testing project. The site now states both analysis types in the NASA feature, technical case study, tool-use panel, experience section, and NASA project book. ROS2 remains documented as the tool for **arm control and calibration** in that same project.
+
+This clarification adds no estimated temperatures, heat loads, material properties, solver settings, validated margins, or completed qualification claims. Book/asset counts and existing media remain unchanged.
