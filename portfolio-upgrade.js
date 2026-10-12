@@ -85,7 +85,7 @@
     if(controls)controls.hidden=chosen!=='2d';
     if(description)description.textContent=chosen==='2d'
       ? '2D mode is selected. Use the presets and manual joint controls below. Joint angles are illustrative, not physical limits.'
-      : '3D mode is selected. Use the chamber presets and joint controls on the right. This is an educational illustration, not validated motion planning or a hardware controller.';
+      : '3D mode is selected. Use the chamber presets and joint controls in the chamber viewer. This is an educational illustration, not validated motion planning or a hardware controller.';
     buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.robotView===chosen)));
   }
   buttons.forEach(b=>b.addEventListener('click',()=>show(b.dataset.robotView)));
