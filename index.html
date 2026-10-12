@@ -642,13 +642,13 @@
           <p class="eyebrow">05 / KINEMATICS STUDY</p>
           <h2>Interactive <em>robot motion.</em></h2>
           <p>Explore a ceiling-mounted robotic arm in an illustrative 3D chamber, or switch to the simplified 2D motion study.</p>
-          <p class="robot-aside" id="robot-view-description">3D mode is selected. Use the chamber presets and joint controls on the right. This is an educational illustration, not validated motion planning or a hardware controller.</p>
+          <p class="robot-aside" id="robot-view-description">3D mode is selected. Use the presets and joint controls in the chamber viewer. This is an educational illustration, not validated motion planning or a hardware controller.</p>
           <div class="robot-2d-controls" id="robot-2d-controls" hidden>
           <div class="robot-action-row"><button aria-pressed="true" class="pose-button active" data-pose="home" type="button">Home</button><button aria-pressed="false" class="pose-button" data-pose="hello" type="button">Say hello</button><button aria-pressed="false" class="pose-button" data-pose="reach" type="button">Reach</button><button aria-pressed="false" class="pose-button" data-pose="inspect" type="button">Inspect</button></div>
           <div class="sequence-wrap"><button type="button" id="animate-button" class="sequence-button">Run motion sequence ↗</button><button type="button" id="stop-button" class="sequence-stop" hidden>Stop sequence</button></div>
 <div class="robot-tuner" aria-label="Manual joint controls">
 <h3>Explore the 2D joint model</h3>
-<p class="tuner-hint">These controls are active. Move any slider to switch the display to the 2D model. For the 3D arm, use the pink joint controls beside its chamber view.</p>
+<p class="tuner-hint">Move a slider to adjust the 2D model, or choose a preset above. These angles are illustrative, not physical joint limits.</p>
 <div class="joint-row"><label for="joint-shoulder">Shoulder angle</label><output id="shoulder-input-value" for="joint-shoulder">-48°</output><input id="joint-shoulder" data-joint-control type="range" min="-90" max="90" step="1" value="-48" aria-describedby="shoulder-input-value"></div>
 <div class="joint-row"><label for="joint-elbow">Elbow angle</label><output id="elbow-input-value" for="joint-elbow">96°</output><input id="joint-elbow" data-joint-control type="range" min="-120" max="135" step="1" value="96" aria-describedby="elbow-input-value"></div>
 <div class="joint-row"><label for="joint-wrist">Wrist angle</label><output id="wrist-input-value" for="joint-wrist">0°</output><input id="joint-wrist" data-joint-control type="range" min="-90" max="90" step="1" value="0" aria-describedby="wrist-input-value"></div>
