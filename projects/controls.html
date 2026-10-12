@@ -12,12 +12,12 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 <script>try{document.documentElement.dataset.theme=localStorage.getItem('kailani-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch{document.documentElement.dataset.theme='light'}</script>
 <link rel="stylesheet" href="../portfolio.css?v=20261011-14">
-<link rel="stylesheet" href="../portfolio-upgrade.css?v=20261011">
+<link rel="stylesheet" href="../portfolio-upgrade.css?v=20261011-readability">
 <meta property="og:image" content="https://kailania.vercel.app/assets/sls-rocket-kailani.jpeg">
 <meta property="og:image:alt" content="Kailani at NASA Marshall Space Flight Center">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://kailania.vercel.app/assets/sls-rocket-kailani.jpeg">
-<script src="../portfolio-upgrade.js?v=20261011" defer></script>
+<script src="../portfolio-upgrade.js?v=20261011-readability" defer></script>
 </head>
 <body class="project-page">
 <a class="skip-link" href="#project-main">Skip to project details</a>
@@ -37,9 +37,9 @@
 
 
 <div id="project-method" class="detail-grid">
-<section class="detail-panel"><h2>Challenge</h2><p>Measure small strain signals and dynamic responses while implementing stable feedback control on real equipment.</p></section>
-<section class="detail-panel"><h2>Approach</h2><p>Use a strain-gauge half-bridge and calibrated amplifier, an oscilloscope and function generator for frequency sweeps, MATLAB step-response simulations, and op-amp controller circuits on a DC motor board. Compare rise time, settling time, phase response, and overshoot between models and measurements.</p></section>
-<section class="detail-panel"><h2>Tools</h2><p>MATLAB, P/PID feedback, strain gauges, Wheatstone bridge, RLC frequency response, oscilloscope, function generator, DC motor controller board.</p></section>
+<section class="detail-panel"><h3>Challenge</h3><p>Measure small strain signals and dynamic responses while implementing stable feedback control on real equipment.</p></section>
+<section class="detail-panel"><h3>Approach</h3><p>Use a strain-gauge half-bridge and calibrated amplifier, an oscilloscope and function generator for frequency sweeps, MATLAB step-response simulations, and op-amp controller circuits on a DC motor board. Compare rise time, settling time, phase response, and overshoot between models and measurements.</p></section>
+<section class="detail-panel"><h3>Tools</h3><p>MATLAB, P/PID feedback, strain gauges, Wheatstone bridge, RLC frequency response, oscilloscope, function generator, DC motor controller board.</p></section>
 
 </div>
 <div id="project-results" class="detail-results"><h2>Documented outcome</h2><p>The strain experiment characterized vibration near 49.3 Hz. Increasing proportional gain shortened measured rise and settling times, but P-control experiments showed roughly tenfold differences from the simulation; some PID measurements differed by over 50%. These discrepancies motivated stronger component and setup verification.</p></div>
