@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-labelledby="ti di"><title id="ti">IVerify: Mechanical concept · illustrative exploded view</title><desc id="di">Educational reconstruction based on the public design concept. PARAMETRIC RECONSTRUCTION · DIMENSIONS AND COMPONENTS NOT PHYSICALLY VALIDATED.</desc><defs><linearGradient id="back" x2="1" y2="1"><stop stop-color="#151722"/><stop offset="1" stop-color="#262039"/></linearGradient><linearGradient id="pink" x2="1" y2="1"><stop stop-color="#89395e"/><stop offset="1" stop-color="#37233c"/></linearGradient><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0L10 5L0 10" fill="none" stroke="#e69ebf" stroke-width="1.5"/></marker><pattern id="grid" width="38" height="38" patternUnits="userSpaceOnUse"><path d="M38 0H0V38" fill="none" stroke="#7c667b" opacity=".12"/></pattern></defs><g font-family="system-ui,-apple-system,'Segoe UI',sans-serif"><rect width="1280" height="720" rx="23" fill="url(#back)"/><rect width="1280" height="720" rx="23" fill="url(#grid)"/><rect x="38" y="34" width="7" height="85" rx="3" fill="#d7518d"/><text x="68" y="74" font-size="40" font-weight="800" fill="#fbeefe" >IVerify</text><text x="70" y="109" font-size="19" font-weight="600" fill="#e98cba" >Mechanical concept · illustrative exploded view</text>
+<text x="49" y="157" font-size="16" font-weight="800" fill="#f2b0d2" >RECONSTRUCTED CLAMP ASSEMBLY · NOT RECOVERED ORIGINAL CAD</text>
+<rect x="50" y="188" width="790" height="440" rx="17" fill="#1b2231" stroke="#6b526e" stroke-width="1.6"/>
+<g transform="translate(185 220)">
+ <path d="M110 195C144 127 178 90 220 61S310 36 358 61L466 119" fill="none" stroke="#75bed3" stroke-width="27" opacity=".55" stroke-linecap="round"/>
+ <path d="M110 195C144 127 178 90 220 61S310 36 358 61L466 119" fill="none" stroke="#c3f5ff" stroke-width="7" opacity=".7" stroke-linecap="round"/>
+ <path d="M155 83L231 22L373 22L444 83L445 122L378 84L233 84L168 134Z" fill="#2b3548" stroke="#d87eb1" stroke-width="3"/>
+ <path d="M132 251L227 191L378 191L469 251L447 304L147 304Z" fill="#273347" stroke="#78c5de" stroke-width="3"/>
+ <path d="M147 304L167 327H429L447 304" fill="none" stroke="#a4b7ca" stroke-width="2"/>
+ <path d="M222 101V184M374 103V185" stroke="#dc7faf" stroke-width="2" stroke-dasharray="6 7"/>
+ <circle cx="224" cy="100" r="8" fill="#e986b3"/><circle cx="375" cy="100" r="8" fill="#e986b3"/>
+ <rect x="294" y="128" width="40" height="66" rx="9" fill="#8c93ad" stroke="#f1d6e8" stroke-width="3"/>
+ <circle cx="314" cy="129" r="9" fill="#e2a66f"/>
+ <path d="M314 185V235" stroke="#d2a379" stroke-width="7" stroke-linecap="round"/>
+ <path d="M514 102L590 112L590 246L514 236Z" fill="#285b56" stroke="#82d0c5" stroke-width="3"/>
+ <rect x="529" y="127" width="40" height="42" rx="5" fill="#1a3341" stroke="#61c0c4"/>
+ <g fill="#d27fb2"><circle cx="535" cy="197" r="8"/><circle cx="555" cy="197" r="8"/><circle cx="575" cy="197" r="8"/></g>
+ <path d="M466 249L511 225" stroke="#b97fa6" stroke-width="3" stroke-dasharray="6 7"/>
+ </g>
+<rect x="870" y="188" width="359" height="440" rx="17" fill="#2c2538" stroke="#ab6595" stroke-width="1.6"/>
+<text x="897" y="234" font-size="22" font-weight="750" fill="#fff" >Component callouts</text>
+<text x="898" y="281" font-size="18" font-weight="750" fill="#f49fc9" >A · Removable jaw</text><text x="898" y="305" font-size="14" font-weight="500" fill="#e9dceb" >Conceptual detachable face</text><text x="898" y="343" font-size="18" font-weight="750" fill="#f49fc9" >B · Reference tubing</text><text x="898" y="367" font-size="14" font-weight="500" fill="#e9dceb" >3.0 mm assumed diameter</text><text x="898" y="405" font-size="18" font-weight="750" fill="#f49fc9" >C · Fixed jaw</text><text x="898" y="429" font-size="14" font-weight="500" fill="#e9dceb" >Holds the reference tube</text><text x="898" y="467" font-size="18" font-weight="750" fill="#f49fc9" >D · Contact plunger</text><text x="898" y="491" font-size="14" font-weight="500" fill="#e9dceb" >Placeholder mechanical element</text><text x="898" y="529" font-size="18" font-weight="750" fill="#f49fc9" >E · Indicator board</text><text x="898" y="553" font-size="14" font-weight="500" fill="#e9dceb" >Unverified electronics layout</text>
+<text x="100" y="600" font-size="14" font-weight="500" fill="#d7d7e6" >Exploded separation highlights how the external tubing sensor could be assembled.</text>
+<text x="48" y="691" font-size="14" font-weight="500" fill="#c5bace" >PARAMETRIC RECONSTRUCTION · DIMENSIONS AND COMPONENTS NOT PHYSICALLY VALIDATED</text></g></svg>
