@@ -17,6 +17,7 @@
 .project-page .detail-figure img,.project-page .detail-figure video{display:block;width:100%;height:auto;max-height:410px;object-fit:contain;border-radius:5px;background:#ece7ed}
 .project-page .detail-figure figcaption{margin-top:10px;font-size:11px;line-height:1.6;color:#716978}
 </style>
+<link rel="stylesheet" href="project-visuals.css?v=20261012-v1">
 <meta property="og:image" content="https://kailania.vercel.app/assets/sls-rocket-kailani.jpeg">
 <meta property="og:image:alt" content="Kailani at NASA Marshall Space Flight Center">
 <meta name="twitter:card" content="summary_large_image">
@@ -34,7 +35,7 @@
 <header class="detail-heading">
 <p class="eyebrow">EE421 · December 2025 · Semiconductor lab</p><h1>Hall-Effect Wafer Measurements</h1><p>Characterizing charge carriers in a semiconductor wafer</p>
 </header>
-<nav class="detail-jump" aria-label="Jump to project sections"><span>ON THIS PAGE</span><a href="#project-method">Methods &amp; tools</a><a href="#project-results">Outcomes</a><a href="#project-evidence">Evidence &amp; limitations</a></nav>
+<nav class="detail-jump" aria-label="Jump to project sections"><span>ON THIS PAGE</span><a href="#project-method">Methods &amp; tools</a><a href="#project-results">Outcomes</a><a href="#project-evidence">Evidence &amp; limitations</a><a href="#hall-visuals">Engineering graphics</a></nav>
 <article class="detail-card" aria-label="Hall-Effect Wafer Measurements engineering detail">
 <span class="detail-tag">PROJECT 12 / 16</span>
 <p class="detail-lead">I used a semiconductor measurement setup to investigate the electrical transport properties of a wafer. The experiment combined the Hall effect with Van der Pauw measurements, connecting an applied magnetic field and measured voltage to resistivity, carrier type, concentration, and mobility. It also taught me how easily physical contacts and sample setup can influence what seems like a simple number.</p>
@@ -47,12 +48,33 @@
 <section class="detail-panel"><h2>Evidence and limitations</h2><p>This page summarizes the work documented in the portfolio project book. Where underlying test data, design files, or screenshots are not public, the summary does not imply those materials were independently verified.</p></section>
 </div>
 <div id="project-results" class="detail-results"><h2>Recovered laboratory results</h2><p>The original December 2025 EE421 report was recovered. Its summary records resistivity of 11 ± 177 mΩ (units as written), carrier concentration of (1.99 ± 3.04) × 10¹⁵ cm⁻³, and mobility of (2.90 ± 4.62) × 10⁵ cm²/(V·s). The controller produced 15 n-type and 15 p-type classifications. Because the reported uncertainties exceed all three nominal estimates, no reliable carrier type or material specification can be inferred. The resistivity unit is dimensionally ambiguous and requires the original instrument export for clarification.</p></div>
-<figure class="detail-figure"><img src="hall/visuals/wafer_setup.svg" alt="Educational diagram of a four-contact wafer connected conceptually to an M91 FastHall and MeasureLINK system; not the original wiring" loading="lazy" width="980" height="550"><figcaption>Reconstructed measurement concept, not a photograph or verified original connection diagram.</figcaption></figure>
-<figure class="detail-figure"><img src="hall/visuals/reported_results.svg" alt="Comparison of three historical reported central values with their larger-than-estimate uncertainty magnitudes, not original raw data" loading="lazy" width="980" height="590"><figcaption>Values transcribed from the original report. Bars compare estimate and uncertainty magnitudes on separate scales; no raw voltage or field series were recovered.</figcaption></figure>
 <div class="detail-panel"><h2>Recovered engineering work</h2><p>Using the original report as evidence, I documented the Hall coefficient, Van der Pauw sheet-resistance equation, resistivity, single-carrier density, and mobility calculations. A new Python analysis tool and numerical tests support follow-up work using future verified measurements. The original wafer dimensions, individual resistance measurements, Hall voltage series, instrument configuration and calibration records were not available.</p></div>
-<div class="detail-buttons"><a href="https://github.com/kalarcon775/kalarcon775.github.io/tree/main/projects/hall" target="_blank" rel="noopener noreferrer">View engineering reconstruction ↗</a><a href="https://github.com/kalarcon775/kalarcon775.github.io/blob/main/projects/hall/analysis/hall_analysis.py" target="_blank" rel="noopener noreferrer">View analysis source ↗</a><a href="index.html">Browse all projects ↗</a></div>
-<p id="project-evidence" class="detail-source-note">This page is based on the existing portfolio project description. It distinguishes reported results from targets and does not publish restricted NASA files or unavailable raw data.</p>
+<div class="detail-buttons"><a href="#hall-visuals">Explore Hall-effect diagrams ↓</a><a href="index.html">Browse all projects ↗</a></div>
+<p id="project-evidence" class="detail-source-note">The three case-study graphics below are educational diagrams or plot the original report’s summary values only. Original instrument exports, actual contact geometry and raw voltage traces remain unavailable.</p>
 </article>
+<section class="project-visual-gallery" id="hall-visuals" aria-labelledby="hall-visuals-title">
+<header class="project-visual-gallery__head">
+ <p class="eyebrow">SEMICONDUCTOR ENGINEERING / VISUAL CASE STUDY</p>
+ <h2 id="hall-visuals-title">How Hall measurements reveal wafer properties</h2>
+ <p>These illustrations explain the four-contact method, documented December 2025 results, and the equations linking measured signals to transport properties. They are newly constructed from the available report and general measurement theory, not screenshots or instrument exports.</p>
+</header>
+<article class="project-visual-gallery__item" aria-labelledby="hall-setup-title">
+ <div class="project-visual-gallery__top"><div><h3 id="hall-setup-title">Four contacts, magnetic field and measurement hardware</h3><p>The Van der Pauw geometry uses four edge contacts, while the Hall measurement relates magnetic field and transverse voltage to charge-carrier behavior. The original laboratory used an M91 FastHall controller and MeasureLINK software.</p></div><span class="project-visual-gallery__count">FIG 01 / SETUP CONCEPT</span></div>
+ <figure class="project-visual-gallery__figure"><img src="hall/media/four-contact-measurement.svg" width="1280" height="720" loading="lazy" decoding="async" alt="Dark-pink and cyan conceptual Hall-effect diagram depicting a four-contact wafer, perpendicular magnetic field, current, voltage direction, Van der Pauw stage, M91 FastHall controller and MeasureLINK software.">
+ <figcaption>Conceptual test configuration only. Contacts and polarity are assigned for illustration; the original wafer geometry, exact lead wiring, magnetic-field settings and test fixture photographs were not recovered.</figcaption></figure>
+</article>
+<article class="project-visual-gallery__item" aria-labelledby="hall-results-title">
+ <div class="project-visual-gallery__top"><div><h3 id="hall-results-title">The reported results and why uncertainty matters</h3><p>The recovered conclusion lists nominal resistivity, carrier concentration and mobility values, each with uncertainty greater than its corresponding estimate. It also records 15 n-type and 15 p-type classifications, an inconclusive split.</p></div><span class="project-visual-gallery__count">FIG 02 / REPORTED DATA</span></div>
+ <figure class="project-visual-gallery__figure"><img src="hall/media/reported-uncertainty.svg" width="1280" height="720" loading="lazy" decoding="async" alt="Three comparison bars for historical EE421 laboratory estimates versus larger uncertainty magnitudes: resistivity 11 ± 177 mΩ as written, carrier concentration 1.99 ± 3.04 times ten to the fifteenth per cubic centimeter, mobility 2.90 ± 4.62 times ten to the fifth square centimeters per volt-second; and an equal split of 15 n-type and 15 p-type classifications.">
+ <figcaption>These values come from the original December 2025 report summary, not reconstructed measurements. Bar lengths compare magnitudes separately within each row and do not represent statistical confidence intervals. The original report writes resistivity as “mΩ,” lacking a bulk-resistivity length unit; its intended dimensional meaning remains unresolved.</figcaption></figure>
+</article>
+<article class="project-visual-gallery__item" aria-labelledby="hall-method-title">
+ <div class="project-visual-gallery__top"><div><h3 id="hall-method-title">From wafer measurements to transport estimates</h3><p>A four-terminal resistance measurement, wafer thickness, Hall voltage, current and magnetic field enter the Van der Pauw and Hall calculations. Contact quality, polarity, the uncertainty method and calibration have to be established before treating the outputs as material specifications.</p></div><span class="project-visual-gallery__count">FIG 03 / ANALYSIS WORKFLOW</span></div>
+ <figure class="project-visual-gallery__figure"><img src="hall/media/analysis-workflow.svg" width="1280" height="720" loading="lazy" decoding="async" alt="Educational semiconductor test workflow with contact checks, Van der Pauw four-terminal resistance method, Hall voltage measurement under magnetic field and derived transport equations; a box lists missing raw measurement inputs.">
+ <figcaption>Source-informed method diagram. The available evidence does not supply individual Rₐ/Rᵦ resistances, thickness, signed Hall voltages, magnetic field and current records, or calibration exports. Equations illustrate a simplified single-carrier model, not a reconstruction of those missing data.</figcaption></figure>
+</article>
+<p class="project-visual-gallery__note"><strong>Evidence boundary:</strong> The results graphic transcribes the original report summary; the setup and equations are educational reconstructions. Reported uncertainty definitions are unknown, and all three ± terms exceed their central estimates. No definite carrier type, doping classification or reliable material specification is claimed.</p>
+</section>
 <nav class="detail-footer" aria-label="Adjacent projects">
 <a class="detail-home-link" href="vna.html">← Virtual Network Analyzer</a>
 <span aria-hidden="true"> · </span>
