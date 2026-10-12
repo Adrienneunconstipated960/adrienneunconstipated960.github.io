@@ -17,6 +17,7 @@
 .project-page .detail-figure img,.project-page .detail-figure video{display:block;width:100%;height:auto;max-height:410px;object-fit:contain;border-radius:5px;background:#ece7ed}
 .project-page .detail-figure figcaption{margin-top:10px;font-size:11px;line-height:1.6;color:#716978}
 </style>
+<link rel="stylesheet" href="thermal/thermal-gallery.css?v=20261012">
 <meta property="og:image" content="https://kailania.vercel.app/assets/sls-rocket-kailani.jpeg">
 <meta property="og:image:alt" content="Kailani at NASA Marshall Space Flight Center">
 <meta name="twitter:card" content="summary_large_image">
@@ -34,7 +35,7 @@
 <header class="detail-heading">
 <p class="eyebrow">2025–2026 · Test automation</p><h1>Thermal Controller &amp; Logger</h1><p>Making temperature measurements easier to trust</p>
 </header>
-<nav class="detail-jump" aria-label="Jump to project sections"><span>ON THIS PAGE</span><a href="#project-method">Methods &amp; tools</a><a href="#project-results">Outcomes</a><a href="#project-evidence">Evidence &amp; limitations</a></nav>
+<nav class="detail-jump" aria-label="Jump to project sections"><span>ON THIS PAGE</span><a href="#project-method">Methods &amp; tools</a><a href="#project-results">Outcomes</a><a href="#project-evidence">Evidence &amp; limitations</a><a href="#thermal-visuals">Visual case study</a></nav>
 <article class="detail-card" aria-label="Thermal Controller &amp; Logger engineering detail">
 <span class="detail-tag">PROJECT 10 / 16</span>
 <p class="detail-lead">I built tools to take repetitive engineering thermal tests and make them easier to monitor, compare, and document. The interesting part was not just collecting numbers, but helping engineers recognize stable conditions and produce repeatable reports.</p>
@@ -47,10 +48,65 @@
 <section class="detail-panel"><h2>Evidence and limitations</h2><p>This page summarizes the work documented in the portfolio project book. Where underlying test data, design files, or screenshots are not public, the summary does not imply those materials were independently verified.</p></section>
 </div>
 <div id="project-results" class="detail-results"><h2>Documented outcome</h2><p>A more traceable and repeatable thermal-testing workflow through the surviving Python application. The original acquisition and UI source has been recovered, but no new instrument calibration or hardware performance tests have been completed in this archival pass.</p></div>
-<div class="detail-panel"><h2>Recovered engineering files</h2><p>The original code includes Pico TC-08 thermocouple acquisition, optional Arduino ambient control, a multi-channel trend display, and CSV and Excel reporting. I reconstructed the software architecture, documented the serial interface, and added a verification plan and standalone CSV audit utility. Four synthetic tests of the audit utility passed; physical thermal-testing results remain unverified.</p></div>
-<div class="detail-buttons"><a href="https://github.com/kalarcon775/Thermal-Logger" target="_blank" rel="noopener noreferrer">Original application source ↗</a><a href="https://github.com/kalarcon775/kalarcon775.github.io/tree/main/projects/thermal" target="_blank" rel="noopener noreferrer">Engineering recovery files ↗</a><a href="index.html">Browse all projects ↗</a></div>
-<p id="project-evidence" class="detail-source-note">This page is based on the existing portfolio project description. It distinguishes reported results from targets and does not publish restricted NASA files or unavailable raw data.</p>
+<div class="detail-panel"><h2>Software architecture recovered from source inspection</h2><p>The original code includes Pico TC-08 thermocouple acquisition, optional Arduino ambient control, a multi-channel trend display, and CSV and Excel reporting. I reconstructed the software architecture, documented the serial interface, and added a verification plan and standalone CSV audit utility. Four synthetic tests of the audit utility passed; physical thermal-testing results remain unverified.</p></div>
+<div class="detail-buttons"><a href="#thermal-visuals">Explore the system illustrations ↗</a><a href="index.html">Browse all projects ↗</a></div>
+<p id="project-evidence" class="detail-source-note">The engineering narrative and source-based illustrations are not a hardware-validation report. No actual thermal test traces, proprietary test records or source downloads are included on this page.</p>
 </article>
+<section id="thermal-visuals" class="thermal-showcase" aria-labelledby="thermal-visuals-title">
+  <header class="thermal-showcase-head">
+    <p class="eyebrow">THERMAL VALIDATION / SOFTWARE VISUALIZATION</p>
+    <h2 id="thermal-visuals-title">A clearer view of the testing workflow.</h2>
+    <p>The surviving application contains the acquisition, graphing, optional ambient-control interface, and reporting logic described below. These graphics were reconstructed from the publicly documented features. They are not captures of the original software running on physical equipment.</p>
+  </header>
+  <div class="thermal-fact-row" aria-label="Source-supported software configuration">
+    <div class="thermal-fact"><strong>8 channels</strong><span>External thermocouple inputs on the Pico TC-08</span></div>
+    <div class="thermal-fact"><strong>1.0 s</strong><span>Nominal UI poll interval, not verified acquisition timing</span></div>
+    <div class="thermal-fact"><strong>10 readings</strong><span>Default rolling trend assessment window</span></div>
+    <div class="thermal-fact"><strong>3.0 °C</strong><span>Default maximum-minus-minimum trend band</span></div>
+  </div>
+
+  <article class="thermal-feature" aria-labelledby="thermal-ui-title">
+    <div class="thermal-feature-heading">
+      <div><h3 id="thermal-ui-title">Instrument interface and live trending</h3><p>The desktop application uses Tkinter for test configuration, channel selection and reporting. A separate graph window displays temperature trends with selectable channels. This illustration shows the type of interface, not a screenshot of the deployed application.</p></div>
+      <span class="thermal-figure-number">FIG 01 / APPLICATION</span>
+    </div>
+    <figure>
+      <img src="thermal/media/logger-interface-concept.svg" alt="Conceptual dark-themed Thermal Logger interface with channel selectors and four colored illustrative temperature traces; all graph values are synthetic." width="1280" height="700" decoding="async" loading="lazy">
+      <figcaption>Source-informed interface illustration. Traces are synthetic examples, not recovered lab measurements, actual logger screenshots, or validated performance data. The original logger supports up to eight thermocouple channels and optional ambient-control functions.</figcaption>
+    </figure>
+  </article>
+
+  <article class="thermal-feature" aria-labelledby="thermal-path-title">
+    <div class="thermal-feature-heading">
+      <div><h3 id="thermal-path-title">How the data moves through the system</h3><p>A Pico TC-08 supplies thermocouple readings to the Python application through the vendor Windows driver. The application coordinates graph updates, test metadata and exports. An optional serial connection can send setpoints and feedback to Arduino control hardware.</p></div>
+      <span class="thermal-figure-number">FIG 02 / SYSTEM PATH</span>
+    </div>
+    <figure>
+      <img src="thermal/media/system-architecture.svg" alt="Source-based system flow from up to eight thermocouples through Pico TC-08, Windows driver, Python Tkinter coordinator, and live plots or CSV and Excel export. An optional unverified Arduino controller branch is shown." width="1280" height="650" decoding="async" loading="lazy">
+      <figcaption>Functional architecture traced from public code and documentation. The optional Arduino firmware, wiring and heater behavior were not recovered or physically retested. A nominal one-second UI schedule is not proof of exact sample timestamps.</figcaption>
+    </figure>
+    <div class="thermal-description-split">
+      <div class="thermal-note"><strong>Data capture and reporting</strong><p>Test metadata, selected temperature channels and sample numbers are exported to CSV, with an optional formatted Excel version.</p></div>
+      <div class="thermal-note"><strong>Important timing limitation</strong><p>Exported sample indices are not actual acquisition timestamps. Sampling jitter, driver accuracy and long-duration reliability require hardware testing.</p></div>
+    </div>
+  </article>
+
+  <article class="thermal-feature" aria-labelledby="thermal-stability-title">
+    <div class="thermal-feature-heading">
+      <div><h3 id="thermal-stability-title">How rolling stability is evaluated</h3><p>The original display logic examines the range of the most recent valid readings. With the default settings, a 10-reading window is within the configured band when its maximum minus minimum is no greater than 3.0 °C.</p></div>
+      <span class="thermal-figure-number">FIG 03 / TREND RULE</span>
+    </div>
+    <figure>
+      <img src="thermal/media/rolling-window-rule.svg" alt="Side-by-side simulated ten-sample thermal line graphs. Example A has a 1.2 degree Celsius range within a 3.0 degree configured band; Example B has a 5.3 degree range outside the band. Both plots are synthetic." width="1280" height="650" decoding="async" loading="lazy">
+      <figcaption>Mathematically calculated example windows using synthetic values. This figure explains a software display rule only; neither series is experimental data. The range check does not independently establish thermal equilibrium, sensor accuracy, calibration or repeatability.</figcaption>
+    </figure>
+    <div class="thermal-description-split">
+      <div class="thermal-note"><strong>Source-supported capabilities</strong><ul><li>Live multichannel trends and channel selection</li><li>Optional ambient setpoint interface</li><li>CSV metadata and optional Excel reports</li></ul></div>
+      <div class="thermal-note"><strong>Verification still needed</strong><ul><li>Pico TC-08 calibration and real sample timing</li><li>Arduino controller firmware and circuit</li><li>Original test-data provenance and hardware outcomes</li></ul></div>
+    </div>
+  </article>
+  <p class="thermal-boundary"><strong>Evidence and publication boundary:</strong> The graphics describe recovered software structure and synthetic calculation examples, not actual thermocouple measurements. Internal engineering logs, employer records, proprietary reports and source files are not provided for download from this project page.</p>
+</section>
 <nav class="detail-footer" aria-label="Adjacent projects">
 <a class="detail-home-link" href="iverify.html">← IVerify</a>
 <span aria-hidden="true"> · </span>
