@@ -73,11 +73,19 @@
 (() => {
   'use strict';
   const consoleEl=document.querySelector('.robot-console');
+  const layout=document.querySelector('.robot-layout');
+  const controls=document.getElementById('robot-2d-controls');
+  const description=document.getElementById('robot-view-description');
   const buttons=[...document.querySelectorAll('[data-robot-view]')];
-  if(!consoleEl||!buttons.length)return;
+  if(!consoleEl||!layout||!buttons.length)return;
   function show(mode){
     const chosen=mode==='2d'?'2d':'3d';
     consoleEl.dataset.view=chosen;
+    layout.dataset.robotMode=chosen;
+    if(controls)controls.hidden=chosen!=='2d';
+    if(description)description.textContent=chosen==='2d'
+      ? '2D mode is selected. Use the presets and manual joint controls below. Joint angles are illustrative, not physical limits.'
+      : '3D mode is selected. Use the chamber presets and joint controls on the right. This is an educational illustration, not validated motion planning or a hardware controller.';
     buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.robotView===chosen)));
   }
   buttons.forEach(b=>b.addEventListener('click',()=>show(b.dataset.robotView)));
