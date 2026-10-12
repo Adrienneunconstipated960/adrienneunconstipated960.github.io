@@ -63,3 +63,8 @@
 @media(max-width:760px){.iverify-concept-grid{grid-template-columns:1fr}.iverify-target-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.iverify-flow{grid-template-columns:repeat(2,minmax(0,1fr))}.iverify-flow li::after{display:none}}
 @media(max-width:500px){.iverify-concept-grid{gap:18px}.iverify-target-grid{gap:8px}.iverify-status-grid{grid-template-columns:1fr}.iverify-flow{grid-template-columns:1fr}.iverify-links a{width:100%}}
 @media print{.iverify-showcase{box-shadow:none}.iverify-concept-grid{break-inside:avoid}.iverify-target{break-inside:avoid}}
+
+/* Display the restored visual-first exploded concept in place of source-file downloads. */
+.iverify-concept-figure img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#1a1a2b}
+.iverify-concept-figure{background:#1a1a2b;border-color:#756078}
+:root[data-theme="dark"] .iverify-concept-figure img{background:#181827}
