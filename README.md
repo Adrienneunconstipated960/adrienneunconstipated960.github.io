@@ -1,15 +1,17 @@
-# Kailani | Engineering & Curiosity
+# Kailani Alarcon | Electrical Engineering Portfolio
 
-A minimalist, elegant portfolio that maintains a blush-and-plum aesthetic while focusing attention on engineering work, actual GitHub repositories, and personal photographs.
+A technical engineering portfolio featuring NASA robotic-arm work, detailed project case studies, a 16-project interactive bookshelf, source-code links, and personal media. It retains a muted blush/plum aesthetic, Mexican and Samoan floral motifs, and subtle space animation.
 
 ## Files
 
-- `index.html`, `styles.css`, `script.js`
-- `assets/` with six selectively integrated personal photographs and the provided PDF resume
+- `index.html`, `script.js`, `bookshelf.js`, `enhancements.js`, `ux.js`, `ambient.js`
+- `portfolio.css`, the compiled single-file stylesheet used by GitHub Pages
+- Eight source stylesheets (see the build order in `build-css.js`)
+- `favicon.svg`, `robots.txt`, `sitemap.xml`, and the `assets/` folder with existing personal media and resume
 
 ## Preview locally
 
-Open `index.html` in a browser, or use `python -m http.server 8000` to preview at `http://localhost:8000`.
+Use `python -m http.server 8000` in the repository root and preview at `http://localhost:8000`. After editing a source stylesheet, run `node build-css.js` before committing so that `portfolio.css` reflects the changes.
 
 ## Publish on GitHub Pages
 
@@ -386,3 +388,35 @@ User-confirmed scope: ROS2 and Thermal Desktop were both used on **the same NASA
 The user clarified that Thermal Desktop was used for **both steady-state and transient thermal analysis** of the NASA robotic arm in the high-vacuum lunar-dust testing project. The site now states both analysis types in the NASA feature, technical case study, tool-use panel, experience section, and NASA project book. ROS2 remains documented as the tool for **arm control and calibration** in that same project.
 
 This clarification adds no estimated temperatures, heat loads, material properties, solver settings, validated margins, or completed qualification claims. Book/asset counts and existing media remain unchanged.
+
+
+## Engineering portfolio navigation and verification release (October 2026)
+
+The home page is now organized for rapid technical assessment:
+
+1. Hero with direct navigation to engineering case studies and the resume.
+2. NASA Marshall work (featured project).
+3. Independent **Engineering Case Studies** section: NASA robotics, IVerify capstone, and instrumentation labs.
+4. Interactive two-shelf library (exactly 16 project books; eight per shelf).
+5. Public code, interactive robot lab, experience, skills, about, interests, resume, and contact.
+
+The main navigation links directly to NASA Work, Case Studies, Bookshelf, Code, Robot Lab, Experience, and Resume. The academic case studies are no longer visually or semantically nested inside the NASA experience section. Existing section anchor IDs, crosslinks and the full book dialog are preserved.
+
+### Engineering-content changes
+
+- Reduced repetition across the NASA hero, feature, and detailed case study; each now serves a different scanning/depth purpose.
+- Replaced the generic NASA case-study workflow figure with a **conceptual parallel-workstreams systems architecture**: design constraints feed ROS2 arm control/calibration and Thermal Desktop steady-state/transient high-vacuum modeling, with the work interpreted in requirements and verification planning. The diagram **does not claim direct ROS2/Thermal Desktop software integration**.
+- Added a dedicated technical status matrix to all three case studies: activities/requirements, methods, and documented result or verification status.
+- NASA status uses the reported 34 requirements and six *planned* test scenarios, without inventing calibration precision, thermal margins, vacuum qualification or completed testing.
+- IVerify status preserves the senior capstone's preliminary bench findings and distinguishes the two-LED prototype from clinical/three-color requirements.
+- The instrumentation case references the selected EE370L lab waveform and avoids fabricated averaged results.
+- Source reports, NASA internal images, raw data and user-owned media **were not published or modified**.
+
+### CSS, accessibility and search metadata
+
+- The deployed HTML now loads **one local `portfolio.css` bundle** rather than eight separate CSS files. All original CSS source stylesheets remain in the repository. The zero-dependency `build-css.js` script concatenates the eight sources in the **original cascade order**, intentionally preserving visuals and styling behavior rather than deleting rules without browser regression testing. Run `node build-css.js` after changing CSS source.
+- The new case-studies CSS includes readable layouts at mobile widths, keyboard-scrollable verification tables, accessible table headings and captions, visible focus styling, high-contrast fallbacks, and reduced-motion support.
+- Added a vector `favicon.svg`, canonical link, absolute Open Graph image URL, social-sharing metadata, `robots.txt`, and `sitemap.xml`.
+- Existing 16 book spines/two shelves, space/flowers, project links, robot lab, photos, two videos and resume PDF remain in place.
+
+Static validation confirms HTML structure, unique IDs, internal anchors, book-data alignment, source-asset references, syntax, CSS order and bundle contents. Live visual/browser and Lighthouse performance tests should still be run on the deployed site; no unmeasured performance score is claimed.

@@ -11,13 +11,13 @@
   gap:19px;
 }
 .dossier-intro{max-width:780px;margin-bottom:8px}
-.dossier-intro h3{
+.dossier-intro h2{
   margin:0 0 11px;
   font:500 clamp(31px,3.5vw,43px)/1.2 var(--serif);
   color:#463448;
   letter-spacing:-.035em;
 }
-.dossier-intro h3 em{color:#a16e8b}
+.dossier-intro h2 em{color:#a16e8b}
 .dossier-intro>p:last-child{
   font-size:14px;
   line-height:1.8;
@@ -306,45 +306,101 @@
   .dossier-figure{background:#fff}
 }
 
+/* Independent case-study section; no empty separator rows. */
+.case-studies-section{
+  background:radial-gradient(ellipse 40% 35% at 95% 10%,rgba(174,146,184,.07),transparent 90%),#faf8fb;
+  border-block:1px solid #eee7ef;
+}
+.case-studies-section .technical-dossiers{margin:0 auto}
+.case-studies-section .dossier-intro h2{
+  font-size:clamp(32px,3.5vw,45px);line-height:1.2;
+  margin:0 0 11px;max-width:800px;
+}
+.case-studies-section .technical-dossier{background:#fffefe}
 
-/* NASA: clarify what each technical tool actually contributed to one project. */
-.dossier-nasa-tools{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:12px;
-  margin:-6px 0 24px;
+/* FIG. A: related, parallel NASA engineering workstreams. */
+.nasa-dossier .dossier-body{grid-template-columns:minmax(0,1fr);gap:22px}
+.nasa-dossier .dossier-notes{max-width:95ch}
+.dossier-system-figure{max-width:100%;width:100%;padding:clamp(15px,2.5vw,27px)}
+.nasa-system-architecture{
+  display:flex;flex-direction:column;align-items:stretch;
+  gap:27px;margin:4px auto 0;max-width:850px;
 }
-.dossier-nasa-tools>div{
-  padding:16px 18px;
-  min-width:0;
-  background:#f8f6f9;
-  border:1px solid #ddd4e1;
-  border-top:2px solid #9a87ab;
-  border-radius:7px;
+.nasa-arch-stage,.nasa-arch-branch{
+  border:1px solid #cfd6df;border-top:3px solid #a79bb1;
+  border-radius:7px;background:#fffefd;position:relative;
+  min-width:0;padding:14px clamp(13px,2.1vw,20px);text-align:center;
 }
-.dossier-nasa-tools>div:nth-child(2){border-top-color:#8497a6}
-.dossier-nasa-tool-label{
-  display:block;
-  font:700 10px/1.45 var(--eng-mono,ui-monospace,monospace);
-  letter-spacing:.055em;
-  color:#745d7e;
+.nasa-arch-stage{max-width:640px;width:100%;align-self:center}
+.nasa-arch-branches{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:13px;width:100%;position:relative;align-items:stretch;
 }
-.dossier-nasa-tools strong{
-  display:block;
-  margin-top:8px;
-  font:700 17px/1.35 var(--sans);
-  color:#394658;
+.nasa-arch-branch{border-top-color:#8da0b2;display:flex;flex-direction:column;justify-content:center}
+.nasa-arch-branch:nth-child(2){border-top-color:#a18ba9}
+.nasa-arch-output{border-top-color:#8d9eaa}
+.nasa-arch-input::after,.nasa-arch-branches::after{
+  content:"↓";position:absolute;bottom:-24px;left:calc(50% - 7px);
+  color:#8c7d93;font:700 16px/1 var(--eng-mono,monospace);
 }
-.dossier-nasa-tools p{
-  margin:6px 0 0;
-  font:400 12px/1.7 var(--sans);
-  color:#5d5c68;
-  max-width:46ch;
+.nasa-arch-label{
+  display:block;margin-bottom:6px;font:700 10px/1.5 var(--eng-mono,monospace);
+  color:#796581;letter-spacing:.055em;
 }
-@media(max-width:600px){
-  .dossier-nasa-tools{grid-template-columns:1fr;gap:9px;margin:0 0 20px}
-  .dossier-nasa-tools>div{padding:13px 15px}
+.nasa-arch-stage strong,.nasa-arch-branch strong{
+  display:block;color:#384759;font:700 15px/1.4 var(--sans);
+}
+.nasa-system-architecture p{
+  margin:6px auto 0;max-width:51ch;
+  font:400 12px/1.65 var(--sans);color:#68707a;
+}
+.dossier-system-figure .figure-foot{margin-top:21px}
+
+/* Requirement/measurement status tables. */
+.dossier-verification{margin-top:26px;padding-top:19px;border-top:1px solid #e4dee6}
+.dossier-verification h5{
+  color:#65516e;font:700 11px/1.5 var(--eng-mono,monospace);
+  letter-spacing:.055em;text-transform:uppercase;margin:0 0 11px;
+}
+.verification-scroll{
+  max-width:100%;overflow-x:auto;border:1px solid #dbe0e7;
+  border-radius:7px;background:#fff;scrollbar-color:#aea4b6 transparent;
+}
+.verification-scroll:focus-visible{outline:3px solid #835f81;outline-offset:3px}
+.verification-table{
+  border-collapse:collapse;width:100%;min-width:590px;table-layout:fixed;
+  font-size:12px;line-height:1.65;color:#535966;
+}
+.verification-table caption{
+  caption-side:bottom;padding:9px 13px;border-top:1px solid #e7e2e9;
+  text-align:left;font-size:10px;color:#746d7b;background:#fbfafc;
+}
+.verification-table :is(th,td){
+  text-align:left;vertical-align:top;padding:12px 13px;
+  border-bottom:1px solid #e8e6eb;overflow-wrap:break-word;
+}
+.verification-table thead th{
+  background:#f1edf3;color:#66526b;
+  font:700 10px/1.55 var(--eng-mono,monospace);
+  letter-spacing:.025em;text-transform:uppercase;
+}
+.verification-table tbody th{font-weight:700;color:#434c5c}
+.verification-table tr:last-child :is(td,th){border-bottom:0}
+.verification-table th:nth-child(1){width:26%}
+.verification-table th:nth-child(2){width:32%}
+.verification-table th:nth-child(3){width:42%}
+@media(max-width:650px){
+  .case-studies-section .dossier-intro h2{font-size:clamp(32px,8vw,42px)}
+  .nasa-system-architecture{gap:25px}
+  .nasa-arch-branches{grid-template-columns:1fr;gap:9px}
+  .nasa-arch-input::after,.nasa-arch-branches::after{bottom:-22px}
+  .dossier-system-figure{padding:15px 12px}
+  .verification-table{min-width:560px;font-size:11px}
+  .verification-table :is(th,td){padding:10px 11px}
+  .dossier-verification{margin-top:20px}
 }
 @media print{
-  .dossier-nasa-tools>div{break-inside:avoid}
+  .verification-scroll{overflow:visible}
+  .verification-table{min-width:0}
+  .nasa-arch-stage,.nasa-arch-branch{break-inside:avoid}
 }
