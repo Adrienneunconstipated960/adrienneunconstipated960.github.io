@@ -30,22 +30,23 @@
 <header class="detail-heading">
 <p class="eyebrow">EE421 · October 2025 · Digital design</p><h1>Pipelined VHDL ALU</h1><p>A clocked four-bit arithmetic and logic unit</p>
 </header>
-<nav class="detail-jump" aria-label="Jump to project sections"><span>ON THIS PAGE</span><a href="#project-method">Methods &amp; tools</a><a href="#project-results">Outcomes</a><a href="#project-evidence">Evidence &amp; limitations</a></nav>
-<article class="detail-card" aria-label="Pipelined VHDL ALU engineering detail">
-<span class="detail-tag">PROJECT 07 / 16</span>
-<p class="detail-lead">I designed and tested a four-bit arithmetic and logic unit from a high-level datapath down to the individual logic blocks. Four chained one-bit full adders form the arithmetic core; registered inputs and outputs make the results stable and predictable. The design uses board switches and a pushbutton for commands, with LEDs and seven-segment displays as visible feedback.</p>
+<nav class="detail-jump" aria-label="Project sections"><span>EXPLORE THIS PROJECT</span><a href="#project-overview">Overview</a><a href="#project-method">Approach</a><a href="#project-results">Findings</a><a href="#project-evidence">Evidence</a></nav>
+<section class="project-overview" id="project-overview" aria-label="Project overview"><span class="detail-tag">PROJECT 07 / 16</span><p class="detail-lead">I designed and tested a four-bit arithmetic and logic unit from a high-level datapath down to the individual logic blocks. Four chained one-bit full adders form the arithmetic core; registered inputs and outputs make the results stable and predictable. The design uses board switches and a pushbutton for commands, with LEDs and seven-segment displays as visible feedback.</p></section>
+<article class="detail-card" aria-label="Pipelined VHDL ALU engineering detail"><h2 class="project-details-title">Engineering details</h2>
+
 
 
 <div id="project-method" class="detail-grid">
-<section class="detail-panel"><h2>Engineering challenge</h2><p>Implement multiple arithmetic and logic operations with a one-clock-cycle registered interface and clearly observable hardware outputs.</p></section>
-<section class="detail-panel"><h2>Methods and approach</h2><p>Combine a four-bit ripple-carry adder, operand selection logic, an XOR path, input/output flip-flops and a seven-segment decoder. Test pass-through, increment, addition, subtraction and XOR operations with representative switch settings.</p></section>
-<section class="detail-panel"><h2>Tools and environment</h2><p>VHDL, ripple-carry adder, sequential logic, FPGA I/O mapping, binary LED readout, seven-segment display.</p></section>
-<section class="detail-panel"><h2>Evidence and limitations</h2><p>This page summarizes the work documented in the portfolio project book. Where underlying test data, design files, or screenshots are not public, the summary does not imply those materials were independently verified.</p></section>
+<section class="detail-panel"><h2>Challenge</h2><p>Implement multiple arithmetic and logic operations with a one-clock-cycle registered interface and clearly observable hardware outputs.</p></section>
+<section class="detail-panel"><h2>Approach</h2><p>Combine a four-bit ripple-carry adder, operand selection logic, an XOR path, input/output flip-flops and a seven-segment decoder. Test pass-through, increment, addition, subtraction and XOR operations with representative switch settings.</p></section>
+<section class="detail-panel"><h2>Tools</h2><p>VHDL, ripple-carry adder, sequential logic, FPGA I/O mapping, binary LED readout, seven-segment display.</p></section>
+
 </div>
 <div id="project-results" class="detail-results"><h2>Documented outcome</h2><p>A tested synchronous design with outputs updating on the following clock cycle. Debugging pin assignments and competing LED drivers reinforced disciplined hardware integration.</p></div>
-<div class="detail-buttons"><a href="index.html">Browse all projects ↗</a></div>
-<p id="project-evidence" class="detail-source-note">This page is based on the existing portfolio project description. It distinguishes reported results from targets and does not publish restricted NASA files or unavailable raw data.</p>
+
+
 </article>
+<section class="project-evidence" id="project-evidence" aria-labelledby="project-evidence-title"><h2 id="project-evidence-title">Evidence &amp; limitations</h2><p>Project methods and findings follow the available portfolio records. Original raw data and independent test evidence are not represented where unavailable.</p></section>
 <nav class="detail-footer" aria-label="Adjacent projects">
 <a class="detail-home-link" href="vhdl.html">← VHDL Digital Logic</a>
 <span aria-hidden="true"> · </span>
