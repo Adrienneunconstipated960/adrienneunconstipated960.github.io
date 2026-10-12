@@ -1,0 +1,10 @@
+scene,brightness_percent,start_code,R_slot1,G_slot2,B_slot3,W_slot4,provenance
+red,0,0,0,0,0,0,"Calculated from original 255-byte scene and dimmer; not measured"
+red,1,0,2,0,0,0,"Calculated from original 255-byte scene and dimmer; not measured"
+red,10,0,25,0,0,0,"Calculated from original 255-byte scene and dimmer; not measured"
+red,50,0,127,0,0,0,"Calculated from original 255-byte scene and dimmer; not measured"
+red,100,0,255,0,0,0,"Calculated from original 255-byte scene and dimmer; not measured"
+green,100,0,0,255,0,0,"Calculated scene bytes, not a fixture reading"
+blue,100,0,0,0,255,0,"Calculated scene bytes, not a fixture reading"
+white,100,0,0,0,0,255,"Calculated scene bytes, not a fixture reading"
+off,100,0,0,0,0,0,"Calculated scene bytes, not a fixture reading"
