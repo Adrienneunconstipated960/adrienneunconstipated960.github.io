@@ -135,6 +135,9 @@
     controls.forEach(name=>{
       if(!ranges[name])return;
       ranges[name].value=String(Math.round(pose[name]));
+      const min=Number(ranges[name].min),max=Number(ranges[name].max);
+      const progress=max>min?100*(Number(ranges[name].value)-min)/(max-min):0;
+      ranges[name].style.setProperty('--range-progress',clamp(progress,0,100).toFixed(2)+'%');
       const output=document.getElementById('r3d-'+name+'-value');
       if(output)output.textContent=Math.round(pose[name])+(name==='grip'?'%':'°');
     });
