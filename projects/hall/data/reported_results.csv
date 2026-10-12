@@ -1,0 +1,6 @@
+metric,value,reported_plus_minus,unit_as_written,source,notes
+resistivity,11,177,mOhm,EE421_Lab2_2025_p5,"Unit as written; bulk-resistivity length factor missing"
+carrier_concentration,1.99e15,3.04e15,cm^-3,EE421_Lab2_2025_p5,"Large uncertainty exceeds nominal"
+hall_mobility,2.90e5,4.62e5,cm^2/(V*s),EE421_Lab2_2025_p5,"Large uncertainty exceeds nominal"
+n_type_classifications,15,,count,EE421_Lab2_2025_p5,"Classification evidence, not confident material typing"
+p_type_classifications,15,,count,EE421_Lab2_2025_p5,"Classification evidence, not confident material typing"
