@@ -1143,3 +1143,115 @@ section[id]{scroll-margin-top:86px}
     gap:11px;
   }
 }
+
+
+/* Final project reading-scale and semantic card pass (2026-10). */
+/* Treat each card title as a useful heading, not an 11px metadata label. */
+.project-page .detail-grid>.detail-panel h3{
+  margin:0 0 10px;
+  color:#6b3359;
+  font:750 clamp(16px,1.65vw,19px)/1.4 var(--sans);
+  letter-spacing:-.015em;
+  text-transform:none;
+}
+.project-page .detail-grid>.detail-panel p{
+  color:#4c4555;
+  font-size:15px;
+  line-height:1.8;
+  overflow-wrap:break-word;
+}
+.project-page .detail-results{
+  margin:18px 0;
+  padding:clamp(18px,2.7vw,27px);
+  border-left:4px solid #b44a82;
+}
+.project-page .detail-results h2{
+  font:650 clamp(20px,2vw,24px)/1.4 var(--serif);
+  color:#513a56;
+  letter-spacing:-.01em;
+  text-transform:none;
+  margin:0 0 9px;
+}
+.project-page .detail-results p,
+.project-page .detail-card>.detail-panel p{
+  font-size:15px;
+  line-height:1.85;
+  color:#4b4653;
+  max-width:84ch;
+}
+.project-page .detail-card>.detail-panel h2{
+  color:#543b5d;
+  font:650 clamp(18px,2vw,22px)/1.4 var(--serif);
+  letter-spacing:0;
+  text-transform:none;
+  margin-bottom:10px;
+}
+.project-page .detail-heading>p:last-child{
+  color:#5a4d5b;
+  font-size:clamp(15px,1.7vw,18px);
+  line-height:1.7;
+}
+.project-visual-gallery__top p,
+.thermal-feature-heading p{
+  font-size:15px;
+  line-height:1.78;
+  color:#554b5b;
+}
+.project-visual-gallery__figure figcaption,
+.thermal-feature figcaption,
+.iverify-concept-figure figcaption{
+  font-size:13px;
+  line-height:1.8;
+}
+.project-visual-gallery__head p:last-child,
+.thermal-showcase-head>p:last-child,
+.iverify-showcase-header p:last-child{
+  font-size:15px;
+  line-height:1.8;
+}
+.project-page .project-evidence p{font-size:14px;line-height:1.8}
+.project-page .detail-jump a{font-size:12px}
+.project-page .detail-card :is(code,kbd){
+  font-size:.93em;
+  border-radius:4px;
+  padding:1px 4px;
+  overflow-wrap:anywhere;
+}
+.project-page .detail-card code{
+  background:rgba(110,70,111,.08);
+  color:#673656;
+}
+:root[data-theme="dark"] .project-page .detail-grid>.detail-panel h3,
+:root[data-theme="dark"] .project-page .detail-results h2,
+:root[data-theme="dark"] .project-page .detail-card>.detail-panel h2{
+  color:#ffd0e5;
+}
+:root[data-theme="dark"] .project-page .detail-grid>.detail-panel p,
+:root[data-theme="dark"] .project-page .detail-results p,
+:root[data-theme="dark"] .project-page .detail-card>.detail-panel p,
+:root[data-theme="dark"] .project-page .detail-heading>p:last-child{
+  color:#f0e3ef;
+}
+:root[data-theme="dark"] .project-page .detail-card code{
+  background:#49344a;
+  color:#ffd2e7;
+}
+:root[data-theme="dark"] .project-page .detail-results{
+  border-left-color:#e987b7;
+}
+/* No side-scrolling or tiny line lengths on compact screens. */
+@media(max-width:640px){
+  .project-page .detail-card,
+  .project-overview,.project-page .detail-panel,.project-page .detail-results{
+    overflow-wrap:anywhere;
+  }
+  .project-page .detail-grid>.detail-panel p,
+  .project-page .detail-results p,
+  .project-page .detail-card>.detail-panel p{
+    font-size:15px;
+    line-height:1.75;
+  }
+  .project-page .detail-grid>.detail-panel h3{font-size:17px}
+  .project-page .detail-jump{margin-bottom:19px}
+  .project-page .detail-jump a{min-height:44px}
+}
