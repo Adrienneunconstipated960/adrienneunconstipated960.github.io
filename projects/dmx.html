@@ -31,26 +31,13 @@
 <header class="detail-heading">
 <p class="eyebrow">GitHub · Lighting control</p><h1>DMX Controller</h1><p>A browser interface connected to physical lights</p>
 </header>
-<nav class="detail-jump" aria-label="Jump to project sections"><span>ON THIS PAGE</span><a href="#project-method">Methods &amp; tools</a><a href="#project-results">Outcomes</a><a href="#project-evidence">Evidence &amp; limitations</a><a href="#dmx-visuals">Engineering graphics</a></nav>
-<article class="detail-card" aria-label="DMX Controller engineering detail">
+<nav class="detail-jump" aria-label="Project sections"><span>EXPLORE THIS PROJECT</span><a href="#project-overview">Overview</a><a href="#dmx-visuals">Visual walkthrough</a><a href="#project-method">Approach</a><a href="#project-results">Findings</a><a href="#project-evidence">Evidence</a></nav>
+<section class="project-overview" id="project-overview" aria-label="Project overview">
 <span class="detail-tag">PROJECT 15 / 16</span>
 <p class="detail-lead">This project brings a familiar browser interface to a hardware lighting-control problem. Choosing a scene or brightness setting produces commands for an Arduino-based DMX system.</p>
 
 
-<div id="project-method" class="detail-grid">
-<section class="detail-panel"><h2>Engineering challenge</h2><p>Translate simple user controls into real output for RGBW lighting hardware.</p></section>
-<section class="detail-panel"><h2>Methods and approach</h2><p>Use Flask to receive browser inputs and send serial commands to Arduino for DMX output.</p></section>
-<section class="detail-panel"><h2>Tools and environment</h2><p>Python, Flask, Arduino, serial communication, DMX.</p></section>
-<section class="detail-panel"><h2>Evidence and limitations</h2><p>The application source establishes command handling, RGBW channel values and DMX frame construction. Hardware timing, transceiver wiring and actual fixture response remain unverified; the demonstration video alone does not establish DMX protocol compliance.</p></section>
-</div>
-<div id="project-results" class="detail-results"><h2>Recovered lighting-control system</h2><p>The original Flask interface and Arduino Mega sketch are available in GitHub. The controller sends newline-delimited serial commands at 115,200 baud, and the firmware constructs DMX frames with a zero start code and four RGBW data channels. The original sketch's invalid <code>fconst</code> declaration was corrected; the Flask service now listens on localhost by default. The existing demonstration video is preserved, but physical DMX timing and fixture response have not been retested in this recovery.</p></div>
-
-
-
-<div class="detail-panel"><h2>Recovered engineering and verification</h2><p>The source describes seven scene commands, dimming from 0% to 100%, a six-color gradient, and a 20-second nominal demonstration timeline. An independent offline reference model and 13 synthetic tests check the channel assignment, integer dimming, scene sequencing and timing calculations. Arduino compilation, physical signal integrity, luminaire channel mapping and current ratings require a subsequent hardware test. The original HTTP endpoints do not authenticate users, so the recovered app should remain local-only unless explicitly secured.</p></div>
-<div class="detail-buttons"><a href="#dmx-visuals">Explore the lighting-control graphics ↓</a><a href="index.html">Browse all projects ↗</a></div>
-<p id="project-evidence" class="detail-source-note">These graphics document the recovered source and calculations, not recorded fixture measurements. The video is existing portfolio demonstration footage; no oscilloscope trace, fixture photometry or independently verified DMX qualification is claimed.</p>
-</article>
+</section>
 <section class="project-visual-gallery" id="dmx-visuals" aria-labelledby="dmx-visuals-title">
 <header class="project-visual-gallery__head">
  <p class="eyebrow">EMBEDDED CONTROL / VISUAL CASE STUDY</p>
@@ -79,8 +66,28 @@
  <figure class="project-visual-gallery__figure"><img src="dmx/media/scene-dimming.svg" width="1280" height="720" loading="lazy" decoding="async" alt="Twenty-second idealized DMX demonstration sequence of red, green, blue, white, gradient and off stages, with calculated DMX brightness bytes for zero, one, ten, fifty and one-hundred percent commands.">
  <figcaption>Nominal scene order and computed DMX bytes are source-derived, not measured fixture currents or lumens. The actual demo-gradient entry may start at a later color because the sketch reuses elapsed animation state; timing and visual fidelity remain unverified.</figcaption></figure>
 </article>
-<p class="project-visual-gallery__note"><strong>Evidence boundary:</strong> Source inspection and offline synthetic tests establish the intended control logic only. Arduino compilation, RS-485 wiring, electrical DMX timing, output channel order, fixture response and lighting safety require hardware checks. No proprietary logs, raw measurements or source downloads are included on this page.</p>
+
 </section>
+<article class="detail-card" aria-label="DMX Controller engineering detail">
+<h2 class="project-details-title">Engineering details</h2>
+
+
+
+<div id="project-method" class="detail-grid">
+<section class="detail-panel"><h2>Challenge</h2><p>Translate simple user controls into real output for RGBW lighting hardware.</p></section>
+<section class="detail-panel"><h2>Approach</h2><p>Use Flask to receive browser inputs and send serial commands to Arduino for DMX output.</p></section>
+<section class="detail-panel"><h2>Tools</h2><p>Python, Flask, Arduino, serial communication, DMX.</p></section>
+
+</div>
+<div id="project-results" class="detail-results"><h2>Recovered lighting-control system</h2><p>The original Flask interface and Arduino Mega sketch are available in GitHub. The controller sends newline-delimited serial commands at 115,200 baud, and the firmware constructs DMX frames with a zero start code and four RGBW data channels. The original sketch's invalid <code>fconst</code> declaration was corrected; the Flask service now listens on localhost by default. The existing demonstration video is preserved, but physical DMX timing and fixture response have not been retested in this recovery.</p></div>
+
+
+
+<div class="detail-panel"><h2>Recovered engineering and verification</h2><p>The source describes seven scene commands, dimming from 0% to 100%, a six-color gradient, and a 20-second nominal demonstration timeline. An independent offline reference model and 13 synthetic tests check the channel assignment, integer dimming, scene sequencing and timing calculations. Arduino compilation, physical signal integrity, luminaire channel mapping and current ratings require a subsequent hardware test. The original HTTP endpoints do not authenticate users, so the recovered app should remain local-only unless explicitly secured.</p></div>
+
+
+</article>
+<section class="project-evidence" id="project-evidence" aria-labelledby="project-evidence-title"><h2 id="project-evidence-title">Evidence &amp; limitations</h2><p><strong>Evidence boundary:</strong> Source inspection and offline synthetic tests establish the intended control logic only. Arduino compilation, RS-485 wiring, electrical DMX timing, output channel order, fixture response and lighting safety require hardware checks. No proprietary logs, raw measurements or source downloads are included on this page.</p></section>
 <nav class="detail-footer" aria-label="Adjacent projects">
 <a class="detail-home-link" href="huemotion.html">← HueMotion</a>
 <span aria-hidden="true"> · </span>
