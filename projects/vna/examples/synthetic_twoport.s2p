@@ -1,0 +1,6 @@
+! SYNTHETIC TRAINING FILE. Not original VNA, SOLT, or DUT measurement data.
+! Two-port record order: Freq, S11, S21, S12, S22.
+# GHz S DB R 50
+0.1 -20 0 -3 -10 -60 0 -18 20
+1.0 -15 -15 -2.5 -30 -60 0 -15 0
+6.0 -12 30 -2 -120 -60 0 -10 -45

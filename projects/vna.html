@@ -46,8 +46,9 @@
 <section class="detail-panel"><h2>Tools and environment</h2><p>MATLAB, two-port VNA, RF calibration, S-parameter visualization.</p></section>
 <section class="detail-panel"><h2>Evidence and limitations</h2><p>This page summarizes the work documented in the portfolio project book. Where underlying test data, design files, or screenshots are not public, the summary does not imply those materials were independently verified.</p></section>
 </div>
-<div id="project-results" class="detail-results"><h2>Documented outcome</h2><p>An automated analysis workflow covering 100 MHz to 6 GHz.</p></div>
-<div class="detail-buttons"><a href="index.html">Browse all projects ↗</a></div>
+<div id="project-results" class="detail-results"><h2>Documented outcome</h2><p>The original project described a MATLAB analysis workflow for two-port RF measurements from 100 MHz to 6 GHz, including a 12-term SOLT calibration approach. The original calibrated files and source were not recovered during the current archive review.</p></div>
+<div class="detail-panel"><h2>Reconstructed engineering files</h2><p>A newly written MATLAB Touchstone S2P analyzer and a Python cross-check utility calculate S11, S21, return loss, VSWR and input impedance. The recovery package documents RF equations, calibration requirements, and a verification plan. Six Python unit tests passed using explicitly synthetic RF data. This reconstruction does not connect to the original VNA or implement 12-term SOLT correction.</p></div>
+<div class="detail-buttons"><a href="https://github.com/kalarcon775/kalarcon775.github.io/tree/main/projects/vna" target="_blank" rel="noopener noreferrer">View reconstructed VNA engineering files ↗</a><a href="index.html">Browse all projects ↗</a></div>
 <p id="project-evidence" class="detail-source-note">This page is based on the existing portfolio project description. It distinguishes reported results from targets and does not publish restricted NASA files or unavailable raw data.</p>
 </article>
 <nav class="detail-footer" aria-label="Adjacent projects">
