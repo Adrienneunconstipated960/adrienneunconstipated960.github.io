@@ -13,6 +13,6 @@
 | H09 | 15 n-type / 15 p-type classification | **Report-only** | Classification criteria or signed records unavailable |
 | H10 | Resistivity unit clarification | **Unresolved** | Original M91 export should confirm bulk unit (e.g. Ω·cm) |
 | H11 | Real calibration and contact quality | **Not rerun** | Repeat M91 and reference measurements |
-| H12 | Software tests | **Provided** | Seven synthetic equation/units tests; hardware unavailable |
+| H12 | Software tests | **Passed, synthetic** | Seven Python unit tests executed; source matched published Git blob SHA |
 
 The published figures are conceptual and/or based on **reported summary values**, never on generated replicas of missing instrument readings. Software tests confirm mathematical implementation only, not accuracy of the original sample results.
