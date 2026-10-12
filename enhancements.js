@@ -39,6 +39,9 @@
   const updateSliders = values => {
     sliders.forEach((slider, i) => {
       slider.value = String(Math.round(values[i]));
+      const min = Number(slider.min), max = Number(slider.max);
+      const progress = max > min ? 100 * (Number(slider.value) - min) / (max - min) : 0;
+      slider.style.setProperty('--range-progress', Math.max(0, Math.min(100, progress)).toFixed(2) + '%');
       const output = document.getElementById(slider.getAttribute('aria-describedby'));
       if (output) output.textContent = slider.value + '°';
     });
