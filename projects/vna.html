@@ -31,23 +31,13 @@
 <header class="detail-heading">
 <p class="eyebrow">2025 · RF measurements</p><h1>Virtual Network Analyzer</h1><p>Turning RF measurements into readable engineering data</p>
 </header>
-<nav class="detail-jump" aria-label="Jump to project sections"><span>ON THIS PAGE</span><a href="#project-method">Methods &amp; tools</a><a href="#project-results">Outcomes</a><a href="#project-evidence">Evidence &amp; limitations</a><a href="#vna-visuals">Engineering graphics</a></nav>
-<article class="detail-card" aria-label="Virtual Network Analyzer engineering detail">
+<nav class="detail-jump" aria-label="Project sections"><span>EXPLORE THIS PROJECT</span><a href="#project-overview">Overview</a><a href="#vna-visuals">Visual walkthrough</a><a href="#project-method">Approach</a><a href="#project-results">Findings</a><a href="#project-evidence">Evidence</a></nav>
+<section class="project-overview" id="project-overview" aria-label="Project overview">
 <span class="detail-tag">PROJECT 11 / 16</span>
 <p class="detail-lead">For this measurement project, I used software to connect calibration, data acquisition, and visualization. I liked that even careful RF work could become easier to examine and communicate through automation.</p>
 
 
-<div id="project-method" class="detail-grid">
-<section class="detail-panel"><h2>Engineering challenge</h2><p>Automate two-port RF measurements while accounting for calibration errors.</p></section>
-<section class="detail-panel"><h2>Methods and approach</h2><p>Control the measurement workflow in MATLAB, use 12-term SOLT calibration, and visualize S-parameters.</p></section>
-<section class="detail-panel"><h2>Tools and environment</h2><p>MATLAB, two-port VNA, RF calibration, S-parameter visualization.</p></section>
-<section class="detail-panel"><h2>Evidence and limitations</h2><p>This page summarizes the work documented in the portfolio project book. Where underlying test data, design files, or screenshots are not public, the summary does not imply those materials were independently verified.</p></section>
-</div>
-<div id="project-results" class="detail-results"><h2>Documented outcome</h2><p>The original project described a MATLAB analysis workflow for two-port RF measurements from 100 MHz to 6 GHz, including a 12-term SOLT calibration approach. The original calibrated files and source were not recovered during the current archive review.</p></div>
-<div class="detail-panel"><h2>Analysis reconstruction and limitations</h2><p>A newly written MATLAB Touchstone S2P analyzer and a Python cross-check utility calculate S11, S21, return loss, VSWR and input impedance. The recovery package documents RF equations, calibration requirements, and a verification plan. Six Python unit tests passed using explicitly synthetic RF data. No restored instrument link, original measurement trace, or implemented 12-term SOLT correction is being claimed.</p></div>
-<div class="detail-buttons"><a href="#vna-visuals">View visual case study ↓</a><a href="index.html">Browse all projects ↗</a></div>
-<p id="project-evidence" class="detail-source-note">The engineering graphics below are source-informed diagrams or synthetic illustrations; original hardware screenshots, calibrated S-parameter data, and exact acquisition setup have not been independently recovered.</p>
-</article>
+</section>
 <section class="project-visual-gallery" id="vna-visuals" aria-labelledby="vna-visuals-title">
 <header class="project-visual-gallery__head">
   <p class="eyebrow">RF ENGINEERING / VISUAL CASE STUDY</p>
@@ -66,8 +56,25 @@
  <div class="project-visual-gallery__top"><div><h3 id="vna-solt-title">Why SOLT calibration matters</h3><p>The Open, Short, Load, Thru sequence provides reference measurements for reducing systematic error. This figure describes the method referenced by the project, not a claim that a complete calibration routine has been recovered or rerun.</p></div><span class="project-visual-gallery__count">FIG 03 / CALIBRATION</span></div>
  <figure class="project-visual-gallery__figure"><img src="vna/media/solt-calibration.svg" width="1280" height="720" loading="lazy" decoding="async" alt="Educational illustration of Open, Short, Load, and Thru references leading to calibration-model solving and corrected DUT response interpretation."><figcaption>Generalized SOLT calibration workflow. The original project described 12-term calibration; the later archive reconstruction does not implement or verify that correction. No actual calibration coefficients or instrument performance are asserted.</figcaption></figure>
 </article>
-<p class="project-visual-gallery__note"><strong>Evidence boundary:</strong> These portfolio images explain RF engineering concepts supported by the project description. They are not recovered lab screenshots, experimental plots, or a validated instrument implementation.</p>
+
 </section>
+<article class="detail-card" aria-label="Virtual Network Analyzer engineering detail">
+<h2 class="project-details-title">Engineering details</h2>
+
+
+
+<div id="project-method" class="detail-grid">
+<section class="detail-panel"><h2>Challenge</h2><p>Automate two-port RF measurements while accounting for calibration errors.</p></section>
+<section class="detail-panel"><h2>Approach</h2><p>Control the measurement workflow in MATLAB, use 12-term SOLT calibration, and visualize S-parameters.</p></section>
+<section class="detail-panel"><h2>Tools</h2><p>MATLAB, two-port VNA, RF calibration, S-parameter visualization.</p></section>
+
+</div>
+<div id="project-results" class="detail-results"><h2>Documented outcome</h2><p>The original project described a MATLAB analysis workflow for two-port RF measurements from 100 MHz to 6 GHz, including a 12-term SOLT calibration approach. The original calibrated files and source were not recovered during the current archive review.</p></div>
+<div class="detail-panel"><h2>Analysis reconstruction and limitations</h2><p>A newly written MATLAB Touchstone S2P analyzer and a Python cross-check utility calculate S11, S21, return loss, VSWR and input impedance. The recovery package documents RF equations, calibration requirements, and a verification plan. Six Python unit tests passed using explicitly synthetic RF data. No restored instrument link, original measurement trace, or implemented 12-term SOLT correction is being claimed.</p></div>
+
+
+</article>
+<section class="project-evidence" id="project-evidence" aria-labelledby="project-evidence-title"><h2 id="project-evidence-title">Evidence &amp; limitations</h2><p><strong>Evidence boundary:</strong> These portfolio images explain RF engineering concepts supported by the project description. They are not recovered lab screenshots, experimental plots, or a validated instrument implementation.</p></section>
 <nav class="detail-footer" aria-label="Adjacent projects">
 <a class="detail-home-link" href="thermal.html">← Thermal Controller &amp; Logger</a>
 <span aria-hidden="true"> · </span>
